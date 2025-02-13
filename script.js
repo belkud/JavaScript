@@ -99,4 +99,13 @@ let memory = 10000
 console.log(memory/820 - (memory%820)/820 );
 console.log(Math.floor(memory/820));
 
+let n2 = 15
+console.log(n%2==0);
+
+let name2 = document.querySelector('#name')
+console.log(name2.innerHTML);
+
+
+console.log(window.location.search.split('').splice(11).join(''));
+console.log(name2.value);
 
