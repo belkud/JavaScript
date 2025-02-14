@@ -110,6 +110,8 @@ console.log(parseInt(window.location.search.split('').splice(11).join('')));
 console.log(name2.value);
 
 
+//! мини календарь
+
 let todays = new Date
 
 let today = document.querySelector('#today')
@@ -119,22 +121,22 @@ switch (todays.getDay()) {
     case 0:
         today.innerHTML = 'Восресенье'
         break;
-    case 1:
+        case 1:
         today.innerHTML = 'Понедельник'
         break;
     case 2:
         today.innerHTML = 'Вторник'
         break;
-    case 3:
-        today.innerHTML = 'Среда'
-        break;
-    case 4:
+        case 3:
+            today.innerHTML = 'Среда'
+            break;
+            case 4:
         today.innerHTML = 'Четверг'
         break;
     case 5:
         today.innerHTML = 'Пятница'
         break;
-    case 6:
+        case 6:
         today.innerHTML = 'Суббота'
         break;
         
@@ -142,4 +144,11 @@ switch (todays.getDay()) {
         today.innerHTML = 'Неверный диапазон'
         break;
 }
+//! мини календарь, завершение
+
+let days = document.querySelector('#days')
+days.children[todays.getDay()-1].style.background = 'rgb(200, 59, 59)'
+days.children[todays.getDay()-1].style.color = 'white'
+days.children[todays.getDay()-1].style.padding = '5px'
+days.children[todays.getDay()-1].style.marginLeft = '-3px'
 
