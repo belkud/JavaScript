@@ -48,7 +48,6 @@ balance(15, 9)
 
 
 let text = document.querySelector('#text')
-text.innerHTML += 555
 
 
 
@@ -102,15 +101,11 @@ console.log(Math.floor(memory/820));
 let n2 = 15
 console.log(n%2==0);
 
-let name2 = document.querySelector('#name')
-console.log(name2.innerHTML);
 
 
-console.log(parseInt(window.location.search.split('').splice(11).join('')));
-console.log(name2.value);
 
 
-//! мини календарь
+//! мини календари
 
 let todays = new Date
 
@@ -133,9 +128,9 @@ switch (todays.getDay()) {
             case 4:
         today.innerHTML = 'Четверг'
         break;
-    case 5:
-        today.innerHTML = 'Пятница'
-        break;
+        case 5:
+            today.innerHTML = 'Пятница'
+            break;
         case 6:
         today.innerHTML = 'Суббота'
         break;
@@ -143,12 +138,28 @@ switch (todays.getDay()) {
         default:
         today.innerHTML = 'Неверный диапазон'
         break;
-}
-//! мини календарь, завершение
-
-let days = document.querySelector('#days')
-days.children[todays.getDay()-1].style.background = 'rgb(200, 59, 59)'
-days.children[todays.getDay()-1].style.color = 'white'
-days.children[todays.getDay()-1].style.padding = '5px'
+    }
+    
+    let days = document.querySelector('#days')
+    days.children[todays.getDay()-1].style.background = 'rgb(200, 59, 59)'
+    days.children[todays.getDay()-1].style.color = 'white'
+    days.children[todays.getDay()-1].style.padding = '5px'
 days.children[todays.getDay()-1].style.marginLeft = '-3px'
+
+//! мини календари, завершение
+
+
+let info = window.location.search.slice(1)
+console.log(info);
+
+let extra_info = info.split('&')
+console.log(extra_info);
+
+for (let i = 0; i < extra_info.length; i++) {
+    console.log(extra_info[i]);
+    text.innerHTML += extra_info[i] + '\n'
+}
+
+
+
 
