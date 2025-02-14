@@ -109,3 +109,37 @@ console.log(name2.innerHTML);
 console.log(parseInt(window.location.search.split('').splice(11).join('')));
 console.log(name2.value);
 
+
+let todays = new Date
+
+let today = document.querySelector('#today')
+today.innerHTML = todays.getDay()
+
+switch (todays.getDay()) {
+    case 0:
+        today.innerHTML = 'Восресенье'
+        break;
+    case 1:
+        today.innerHTML = 'Понедельник'
+        break;
+    case 2:
+        today.innerHTML = 'Вторник'
+        break;
+    case 3:
+        today.innerHTML = 'Среда'
+        break;
+    case 4:
+        today.innerHTML = 'Четверг'
+        break;
+    case 5:
+        today.innerHTML = 'Пятница'
+        break;
+    case 6:
+        today.innerHTML = 'Суббота'
+        break;
+        
+        default:
+        today.innerHTML = 'Неверный диапазон'
+        break;
+}
+
