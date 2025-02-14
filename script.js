@@ -106,6 +106,6 @@ let name2 = document.querySelector('#name')
 console.log(name2.innerHTML);
 
 
-console.log(window.location.search.split('').splice(11).join(''));
+console.log(parseInt(window.location.search.split('').splice(11).join('')));
 console.log(name2.value);
 
