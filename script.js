@@ -178,4 +178,4 @@ for (let i = 0; i < extra_info.length; i++) {
 
 console.log(window.screen);
 
-
+let inFo = '123'
