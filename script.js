@@ -176,6 +176,6 @@ for (let i = 0; i < extra_info.length; i++) {
     text.innerHTML += inf[1] + '\n'
 }
 
-
+console.log(window.screen);
 
 

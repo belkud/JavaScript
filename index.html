@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style1000.css"> -->
 </head>
 
 <body>
@@ -56,6 +57,47 @@
             transform: scale(1.1);
         }
     </style>
+
+
+
+        <div id="fl">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+
+<style>
+    #fl {
+        display: flex;
+        /* flex-wrap: wrap; */
+        /* flex-direction: column; */
+    }
+
+    #fl div{
+        /* padding: 50px; */
+        border: 1px solid #000;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #fl div:nth-child(3){
+        background-color: aqua;
+        flex-grow: 5;
+        /* flex-basis: 50%;   */
+    }
+    #fl div:nth-child(4){
+        flex-shrink: 0;
+        background-color: greenyellow;  
+        
+    }
+</style>
+
+        
 
     <script>
         // document.write('<div id="text2">gfgdfg</div>')
