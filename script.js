@@ -1,3 +1,17 @@
+
+
+
+//! https://nodejs.org/en - ссылка на скачивание nodeJS
+
+// через пуск зайти в PowerShell (нажимаем правой кнопкой мыши -> запуск от имени администратора)
+// Get-ExecutionPolicy
+// Set-ExecutionPolicy unrestricted
+// подтвердить Y
+
+//! npm create vite
+
+
+
 console.log(333 +123);
 
 let pol = 'vov'
@@ -149,15 +163,17 @@ days.children[todays.getDay()-1].style.marginLeft = '-3px'
 //! мини календари, завершение
 
 
-let info = window.location.search.slice(1)
+let info = window.location.search
 console.log(info);
 
 let extra_info = info.split('&')
 console.log(extra_info);
 
 for (let i = 0; i < extra_info.length; i++) {
-    console.log(extra_info[i]);
-    text.innerHTML += extra_info[i] + '\n'
+    let inf = extra_info[i].split('=')
+    console.log(inf[1]);
+
+    text.innerHTML += inf[1] + '\n'
 }
 
 
