@@ -165,6 +165,8 @@ days.children[todays.getDay()].classList.add('newClass')
 console.log(window.screen);
 console.log(todays.getDay());
 
+console.log(days.nextElementSibling);
+console.log(days.baseURI);
 
 //! мини календари, завершение
 
@@ -188,11 +190,32 @@ console.log(extra_info);
 
 for (let i = 0; i < extra_info.length; i++) {
     let inf = extra_info[i].split('=')
-    console.log(inf[1]);
-
     text.innerHTML += inf[1] + '\n'
 }
 
+
+// let use = prompt('Введите логин')
+// let password = prompt('Введите пароль')
+// if (use=='admin' || password=='admin') {
+//     console.log('пользователь/пароль совпали');
+// } else {
+//     console.log('пользователь/пароль неверны');
+// }
+
+
+let obj = [5, 7, 'abc']
+console.log(typeof obj);
+
+
+
+
+console.log(window.location);
+console.log(window.history);
+console.log(window.navigator);
+console.log(window.screen);
+
+let u = 6
+console.log(++u);
 
 
 
