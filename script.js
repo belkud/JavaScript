@@ -170,6 +170,16 @@ console.log(todays.getDay());
 
 
 
+
+
+
+
+
+
+
+
+
+
 let info = window.location.search
 console.log(info);
 
