@@ -14,7 +14,7 @@
 
 console.log(333 +123);
 
-let pol = 'vov'
+let pol = 'vova'
 
 let pol2 = pol.split('').reverse().join('')
 console.log(pol2);
