@@ -124,43 +124,50 @@ console.log(n%2==0);
 let todays = new Date
 
 let today = document.querySelector('#today')
-today.innerHTML = todays.getDay()
+today.innerHTML == todays.getDay()
 
 switch (todays.getDay()) {
     case 0:
-        today.innerHTML = 'Восресенье'
+        today.innerHTML = 'Воскресенье'
         break;
-        case 1:
+    case 1:
         today.innerHTML = 'Понедельник'
         break;
     case 2:
         today.innerHTML = 'Вторник'
         break;
-        case 3:
-            today.innerHTML = 'Среда'
-            break;
-            case 4:
+    case 3:
+        today.innerHTML = 'Среда'
+        break;
+    case 4:
         today.innerHTML = 'Четверг'
         break;
-        case 5:
-            today.innerHTML = 'Пятница'
-            break;
-        case 6:
-        today.innerHTML = 'Суббота'
+    case 5:
+        today.innerHTML = 'Пятница'
         break;
-        
-        default:
+    case 6:
+        today.innerHTML = 'Суббота'
+        break;    
+    default:
         today.innerHTML = 'Неверный диапазон'
         break;
     }
     
-    let days = document.querySelector('#days')
-    days.children[todays.getDay()-1].style.background = 'rgb(200, 59, 59)'
-    days.children[todays.getDay()-1].style.color = 'white'
-    days.children[todays.getDay()-1].style.padding = '5px'
-days.children[todays.getDay()-1].style.marginLeft = '-3px'
+
+let days = document.querySelector('#days')
+if (todays.getDay()==0) {
+    days.children[todays.getDay()+7].classList.add('newClass')
+}
+
+days.children[todays.getDay()].classList.add('newClass') 
+
+
+console.log(window.screen);
+console.log(todays.getDay());
+
 
 //! мини календари, завершение
+
 
 
 let info = window.location.search
@@ -176,20 +183,6 @@ for (let i = 0; i < extra_info.length; i++) {
     text.innerHTML += inf[1] + '\n'
 }
 
-console.log(window.screen);
 
-let info2 = 'qe'
-console.log(typeof info2);
-
-let info21 = 5
-console.log(typeof info21);
-
-console.log(info21>info2);
-
-let info3 = 'qe' * 4
-console.log(info3);
-
-let info4
-console.log(info4);
 
 

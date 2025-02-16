@@ -27,127 +27,52 @@
     </style>
 
 
-    <div id="text2">123</div>
 
-
-    <div>Сегодня у нас:</div>
-    <div id="today"></div>
-    <div id="days">
-        <div>Понедельник</div>
-        <div>Вторник</div>
-        <div>Среда</div>
-        <div>Четверг</div>
-        <div>Пятница</div>
-        <div>Суббота</div>
-        <div>Воскресенье</div>
+    <div style="display: flex; gap: 10px;">
+        <div>Сегодня у нас:</div>
+        <div id="today"></div>
     </div>
-    <style>
-        #days div {
-            background-color: lightgray;
-            width: 120px;
-            text-align: center;
-            padding: 2px;
-            transition: .3s;
-        }
+    <br>
 
-        #days div:hover {
-            background-color: pink !important;
-            cursor: pointer;
-            transform: scale(1.1);
-        }
-    </style>
-
-<div id="gr">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
-    <div>11</div>
-    <div>12</div>
-    <div>13</div>
-    <div>14</div>
-    <div>16</div>
-    <div>17</div>
-    <div>18</div>
-    <div>19</div>
-    <div>20</div>
+<div id="days">
+    <div style="background: transparent !important;"></div>
+    <div>Понедельник</div>
+    <div>Вторник</div>
+    <div>Среда</div>
+    <div>Четверг</div>
+    <div>Пятница</div>
+    <div>Суббота</div>
+    <div>Воскресенье</div>
 </div>
-
 <style>
-    #gr {
-        display: grid;
-        grid-template-columns:  1fr 1fr 1fr;
+#days div {
+    background: lightgray;
+    width: 120px;
+    text-align: center;
+    padding: 2px;
+    transition: .3s;
+}    
 
-    }
+#days div:hover {
+    background-color: pink !important;
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
-    #gr div {
-        background-color: lawngreen;
-        border: 1px solid #000;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    #gr div:nth-child(6) {
-        background-color: yellow;
-        grid-row: 4/5;
-        grid-column: 3/4;
-    }
-
-
-
+.newClass {
+    background: red !important;
+    color: white;
+    padding: 5px !important;
+    margin-left: -3px !important;
+}
 
 </style>
 
 
 
-        <div id="fl">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-        </div>
-
-<style>
-    #fl {
-        display: flex;
-        /* flex-wrap: wrap; */
-        /* flex-direction: column; */
-    }
-
-    #fl div{
-        /* padding: 50px; */
-        border: 1px solid #000;
-        width: 200px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #fl div:nth-child(3){
-        background-color: aqua;
-        flex-grow: 5;
-        /* flex-basis: 50%;   */
-    }
-    #fl div:nth-child(4){
-        flex-shrink: 0;
-        background-color: greenyellow;  
-        
-    }
-</style>
 
         
 
-    <script>
-        // document.write('<div id="text2">gfgdfg</div>')
-    </script>
 
     <script type="module" src="script.js"></script>
 </body>
