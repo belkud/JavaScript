@@ -4,25 +4,29 @@
 
 
 
+//! 1. var - устаревшие названия переменных (лучше их не писать)
 var x = 10
 console.log(x)
-// var - устаревшие названия переменных (лучше их не писать)
-// let - нельзя чтобы две переменные были под одним названием, но мы можем менять их значения
-// const - константа, значения неизменны
 
 var x = 12
 console.log(x)
 
+//! 2. let - используем их(т.к. let не повторяются), но мы можем менять их значения
+let y = 6
+console.log(y);
+y= 4 //меняем значение let
+console.log(y);
 
 
-
+//! 3. const - константа, значение не меняется
 const z = 25
-
+// z=5 - вызовет ошибку 
 console.log(z);
 
-let y = 6
+
 let y2 = 3
 
+//! арифметические операции
 console.log(y+y2)
 console.log(y-y2)
 console.log(y*y2)
@@ -31,20 +35,33 @@ console.log(y**2) // возведение числа в степень
 console.log(y%y2) // остаток от деления 
 
 
-let whiteColorWithBlackColor
+//! названия переменных
+let whiteColorWithBlackColor //лучше этот вариант
 let white_color_with_black_color
 
+
+//! типы данных
 let a = 5
-console.log(typeof a)
+console.log(typeof a) //number
 
 let b = 'abc'
-console.log(typeof b)
+console.log(typeof b) //string
 
 let c
-console.log(typeof c)
+console.log(typeof c) //underfined (переменная была объявлена, но ей не было присвоено значение)
 
-let d = 'abc' * 5
-console.log(d)
+let u = null // когда нужно явно указать, что переменная не имеет значения или «пустое» состояние.
+console.log(u);
+
+let d = 'abc' * 5 
+console.log(d) // NaN (Not-a-Number) - невозможность преобразовать к числу
+
+console.log(y>y2);// «Boolean» (сравнение) имеет два значения «true» и «false»
+
+let h = [a, b, c]
+console.log(typeof h);// object (коллекция переменных)
+
+
 
 console.log(y==y2); //'>' '<' '>=' '<=' '==' сравнение переменных (boolean)
  
