@@ -62,7 +62,6 @@ let h = [a, b, c]
 console.log(typeof h);// object (коллекция переменных)
 
 
-
 console.log(y==y2); //'>' '<' '>=' '<=' '==' сравнение переменных (boolean)
  
 // let surname = prompt('Введите ваше имя')
