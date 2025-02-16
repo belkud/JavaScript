@@ -178,4 +178,18 @@ for (let i = 0; i < extra_info.length; i++) {
 
 console.log(window.screen);
 
-let inFo = '123'
+let info2 = 'qe'
+console.log(typeof info2);
+
+let info21 = 5
+console.log(typeof info21);
+
+console.log(info21>info2);
+
+let info3 = 'qe' * 4
+console.log(info3);
+
+let info4
+console.log(info4);
+
+
