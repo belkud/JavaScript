@@ -22,3 +22,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+
+
+
+// prompt
+console.log(num1 + operator + num2);
