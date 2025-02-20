@@ -65,7 +65,6 @@ Package name: » (оставляем название как есть)
 
 7. Если все правильно, то выйдет окно:
 Done. Now run:
-
 cd  
 npm install
 npm run dev
