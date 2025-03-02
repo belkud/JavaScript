@@ -35,3 +35,7 @@ a {
   position: fixed;
   margin-left: 85%;
 }
+
+.color {
+  color: transparent;
+}

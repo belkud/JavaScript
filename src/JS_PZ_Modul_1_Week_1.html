@@ -14,98 +14,99 @@
     <p>Задание: Запрашивать данные у пользователя необходимо с помощью 
     prompt(), а выводить результат с помощью alert().</p>
 
-    //! 1. Запросите у пользователя число, возведите это число во
-    //! 2-ю степень и выведите на экран.
+    <h4>1. Запросите у пользователя число, возведите это число во
+    2-ю степень и выведите на экран.</h4>
     
-    // let userNum = Number(prompt('Введите число'))
-    // console.log('Возведение числа в квадрат ' + userNum + ' = ' + userNum**2)
-    
-    
-    //! 2. Запросите у пользователя 2 числа и выведите среднее 
-    //! арифметическое этих чисел
-    
-    // let num1 = 4
-    // let num2 = 12
-    // console.log((num1+num2)/2)
+    <p>let userNum = Number(prompt('Введите число')) <br>
+    console.log('Возведение числа в квадрат ' + userNum + ' = ' + userNum**2)</p>
     
     
-    //! 3. Запросите у пользователя длину стороны квадрата
-    //!  и выведите площадь такого квадрата.
+    <h4>2. Запросите у пользователя 2 числа и выведите среднее 
+    арифметическое этих чисел</h4>
     
-    let side = 10
-    console.log('Площадь квадрата = ' + side*side + ' Метров'); //1 способ написания
-    console.log(`Площадь квадрата = ${side*side} Метров`); //2 способ написания
+    <p>let num1 = 4 <br>
+    let num2 = 12 <br>
+    console.log((num1+num2)/2)</p>
     
-    // 4. Реализуйте конвертор из километров в мили (пользователь
-    // вводит километры, программа выводит мили). 1 км = 0,621371
-    // миль. Это значение укажите в коде как константу.
     
-    const kilometres = 100
-    console.log(Math.trunc(kilometres*0.621371) + ' мили')
+    <h4>3. Запросите у пользователя длину стороны квадрата
+     и выведите площадь такого квадрата.</h4>
     
-    // 5. Реализуйте калькулятор. Пользователь вводит два числа,
-    // а программа выводит результаты действий + - * / между
-    // этими числами.
+    <p>let side = 10 <br>
+    console.log('Площадь квадрата = ' + side*side + ' Метров')</p>
     
-    let number1 = 20
-    let number2 = 10
-    let operator = '+'
+    <h4>4. Реализуйте конвертор из километров в мили (пользователь
+    вводит километры, программа выводит мили). 1 км = 0,621371
+    миль. Это значение укажите в коде как константу.</h4>
     
-    switch (operator) {
-        case '+':
-            console.log (number1 + number2)  
-            break;
-        case '-':
-            console.log (number1 - number2)  
-        break;
-        case '*':
-            console.log (number1 * number2)  
-        break;
-        case '/':
-            console.log (number1 / number2)  
-        break;
-            default:
-                console.log ('введите правильно данные')
-                break;
+    <p>const kilometres = 100 <br>
+    console.log(Math.trunc(kilometres*0.621371) + ' мили')</p>
+    
+    <h4>5. Реализуйте калькулятор. Пользователь вводит два числа,
+    а программа выводит результаты действий + - * / между
+    этими числами.</h4>
+    
+    <p>let number1 = 20 <br>
+    let number2 = 10 <br>
+    let operator = '+' <br>
+    <h5>Первый способ решения</h5>
+    <blockquote>
+switch (operator) { <br>
+        case '+': <br>
+            console.log (number1 + number2) <br>  
+            break; <br>
+        case '-': <br>
+            console.log (number1 - number2) <br>  
+        break; <br>
+        case '*': <br>
+            console.log (number1 * number2) <br>  
+        break; <br>
+        case '/': <br>
+            console.log (number1 / number2) <br>  
+        break; <br>
+            default: <br>
+                console.log ('введите правильно данные') <br>
+                break; <br>
+    } <br>
+    
+</blockquote>    
+    
+<h5>Второй способ решения</h5>
+ <blockquote>   
+    if (operator == '+') { <br>  
+    <span class="color">....</span>console.log (number1 + number2) <br>  
+    } else if (operator == '-'){ <br>  
+        console.log (number1 - number2) <br>  
+    } else if (operator == '*') { <br>  
+        console.log (number1 * number2) <br>  
+    } else if (operator == '/') { <br>  
+        console.log (number1 / number2) <br>  
+    } else { <br>  
+        console.log ('введите правильно данные') <br>  
     }
+</blockquote>
+</p>
     
     
+    <h4>6. Пользователь вводит значения a и b для формулы a * x + b = 0,
+    а программа считает и выводит значение x </h4>
+    
+    <p>a * x + b = 0  <br>
+    a * x = -b <br>
+    x = -b / a <br>
+     <br>
+    let a = 5 <br>
+    let b = 15 <br>
+    console.log('x = ' + -b/a);</p>
     
     
+    <h4>7. Запросите у пользователя текущее время (часы и минуты)
+    и выведите, сколько часов и минут осталось до следующего
+    дня.</h4>
     
-    if (operator == '+') {
-        console.log (number1 + number2)
-    } else if (operator == '-'){
-        console.log (number1 - number2)
-    } else if (operator == '*') {
-        console.log (number1 * number2)
-    } else if (operator == '/') {
-        console.log (number1 / number2)
-    } else {
-        console.log ('введите правильно данные')
-    }
-    
-    
-    
-    //! 6. Пользователь вводит значения a и b для формулы a * x + b = 0,
-    //! а программа считает и выводит значение x
-    
-    // a * x + b = 0
-    // a * x = -b
-    // x = -b / a
-    
-    let a = 5
-    let b = 15
-    console.log('x = ' + -b/a);
-    
-    
-    //! 7. Запросите у пользователя текущее время (часы и минуты)
-    //! и выведите, сколько часов и минут осталось до следующего
-    //! дня.
-    
-    // let minutes = Number(prompt('Введите минуты'))
-    // let hours = Number(prompt('Введите часы'))
-    // console.log('До полуночи остало: ' + (23-hours) + ' часа и ' + (60-minutes) + ' Минут' );
+    <p>let minutes = Number(prompt('Введите минуты')) <br>
+    let hours = Number(prompt('Введите часы')) <br>
+    console.log('До полуночи остало: ' + (23-hours) + ' часа и ' + (60-minutes) + ' Минут' )</p>
     
     
 
