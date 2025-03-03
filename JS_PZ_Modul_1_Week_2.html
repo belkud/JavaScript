@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css">
+    <title>Vite + TS</title>
+  </head>
+  <body>
+
+<button class="button_fixed"><a href="index.html">Назад</a></button>
+
+    <h3>Модуль 1</h3>
+    <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
+    <p>Задание: Запрашивать данные у пользователя необходимо с помощью 
+    prompt(), а выводить результат с помощью alert().</p>
+    
+    
+<h4>1. Запросите у пользователя его имя и выведите в ответ:
+«Привет, его имя!».</h4>
+
+<p> let userName = prompt ('Введите ваше имя') <br>
+console.log('привет ' + userName ) <br>
+</p>
+
+
+
+
+
+
+
+<style>
+
+
+    h4 {
+      color: blue;
+      margin-top: 30px;
+      margin-bottom: 0px;
+    }
+    
+    p{
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+    
+    button {
+      color: white;
+      background-color: blue;
+      padding:5px 15px;
+      border-radius: 5px;
+      transition: .5s;
+    }
+    
+    button:hover {
+      background-color: red;
+    }
+      
+    
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .button_fixed {
+      position: fixed;
+      margin-left: calc(100% - 100px);
+    }
+    
+    .color {
+      color: transparent;
+    }
+    
+     </style>
+    
+        <script type="module" src="/src/main.ts"></script>
+      </body>
+    </html>
