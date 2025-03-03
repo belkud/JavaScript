@@ -3,11 +3,11 @@ import './style.css'
 //! <====================ОСНОВЫ jAVASCRIPT====================>
 
 //! 1. var - устаревшие названия переменных (лучше их не писать)
-var x = 10
-console.log(x)
+// var x = 10
+// console.log(x)
 
-var x = 12
-console.log(x)
+// var x = 12
+// console.log(x)
 
 
 //! 2. const - константа, значение не меняется
@@ -16,20 +16,20 @@ const z = 25
 console.log(z);
 
 //! 3. let - используем их(т.к. let не повторяются), но мы можем менять их значения
-let y = 6
-console.log(y);
-y= 4 //меняем значение let
-console.log(y);
+// let y = 6
+// console.log(y);
+// y= 4 //меняем значение let
+// console.log(y);
 
 let y2 = 3
 
 //! Арифметические операции
-console.log(y+y2)
-console.log(y-y2)
-console.log(y*y2)
-console.log(y/y2)
-console.log(y**2) // возведение числа в степень
-console.log(y%y2) // остаток от деления 
+// console.log(y+y2)
+// console.log(y-y2)
+// console.log(y*y2)
+// console.log(y/y2)
+// console.log(y**2) // возведение числа в степень
+// console.log(y%y2) // остаток от деления 
 
 
 //! Названия переменных
@@ -55,7 +55,7 @@ console.log(u);
 let d = 'abc' * 5 
 console.log(d) // NaN (Not-a-Number) - невозможность преобразовать к числу
 
-console.log(y>y2);// «Boolean» (сравнение) имеет два значения «true» и «false»
+// console.log(y>y2);// «Boolean» (сравнение) имеет два значения «true» и «false»
 
 // let h = [a, b, c]
 // console.log(typeof h);// object (коллекция переменных)
@@ -370,4 +370,216 @@ if (numb%2==0) {
 } else {
     console.log('число не кратно двум');
 }
+
+
+
+
+
+
+//! Задания, в которых необходимо использовать тернарный
+//! оператор.
+
+//! 1. Запросить 2 числа и вывести большее из них.
+// let num1 = 15
+// let num2 = 7
+
+// console.log(num1>num2 ? num1 : num2); // тернарный оператор
+
+// if (num1>num2) { // if
+//     console.log(num1);
+// } else {
+//     console.log(num2);
+// }
+
+
+//! 2. Запросить 1 число и проверить, оно кратно 5 или нет.
+
+let h = 10
+h%5==0 ? console.log('число h кратно 5') : console.log('число h НЕ кратно 5');
+
+
+if (h%5==0) {
+    console.log('число h кратно 5')
+} else {
+    console.log('число h НЕ кратно 5')
+}
+
+
+//! 3. Запросить у пользователя название планеты. Если пользователь ввел «Земля» или «земля», то вывести «Привет,
+//! землянин!», в остальных случаях вывести «Привет, инопланетянин!»
+
+let userName = 'Марс'
+console.log(userName);
+
+if (userName =='Земля' || userName == 'земля') {
+    console.log('Привет землянин!')
+} else {
+    console.log('Привет инопланетянин!')
+}
+
+
+//! Реализовать калькулятор. Пользователь вводит 2 числа и
+//! знак (+ - * /). В зависимости от введенного знака решить
+//! пример и вывести результат.
+
+
+
+let num1 = 8
+let num2 = 12
+let operator = '+'
+
+switch (operator) {
+    case '+':
+        console.log(num1 + num2);
+        break;
+    case '-':
+        console.log(num1 - num2);
+        break;
+    case '*':
+        console.log(num1 * num2);
+        break
+    case '/':
+        console.log(num1 / num2);
+        break
+    default:
+        console.log('Введите правильные данные');
+        
+        break;
+}
+
+//! 5. Запросить координаты точки (x, y) и определить номер
+//! четверти, в которую попала эта точка. Необходимо учесть
+//! случаи попадания точки на оси X или Y или в начало
+//! координат.
+
+let x = -5
+let y = -7
+
+if (x>0 && y>0) {
+    console.log('Точка находится во второй четверти');
+} else if (x<0 && y>0)  {
+    console.log('Точка находится в первой четверти')
+} else if (x<0 && y<0) {
+    console.log('Точка находится в четвертой четверти')
+} else {
+    console.log('Точка находится в третьей четверти');
+}
+
+
+// i++
+// console.log(i);
+
+// i++
+// console.log(i);
+
+// i++
+// console.log(i);
+
+// i++
+// console.log(i);
+
+
+// while
+// do while
+// for
+
+
+// ++i i++
+// --i i--
+
+
+
+
+// while (i<15) {
+    //     console.log(i);  
+    //     i++
+    // }
+    
+    // console.log('================');
+    
+    // let p = 5
+    // while (p>0) {
+//     p--
+//     console.log(p);
+
+// }
+
+// console.log('================');
+// let r = 0;
+// do {
+    //     console.log(r);
+    
+//     r++;
+// } while (r < 3);
+
+
+// console.log('================');
+
+
+for (let i = 0; i < 6; i++) { //! прерывание цикла
+    
+    if (i==3) {
+        break
+    }
+    console.log(i);  
+}
+console.log('================');
+
+
+
+
+
+for (let i = 0; i < 10; i++) { //! переход к следующей итерации
+    if (i%2==0) {
+        continue
+    }
+    console.log(i);  
+}
+console.log('================');
+
+
+
+
+
+for (let i = 1; i < 10; i+=2) {
+    console.log(i);  
+    
+}
+
+
+
+
+for (let i = 0; i < 10; i++) { 
+    if (i%2==1) {
+        console.log(i);  
+    }
+}
+console.log('================');
+
+
+let i = 0
+console.log(++i);  
+console.log(i);
+
+
+i=0
+console.log(i--);
+console.log(i);
+
+let number = '1234567098'
+console.log(number.length);
+
+
+let array = [2, 4, 5, 3, 8]
+console.log(array);
+let count = 0
+for (let i = 0; i < array.length; i++) {
+    count+=array[i]
+}
+console.log(count);    
+
+
+
+
+
 
