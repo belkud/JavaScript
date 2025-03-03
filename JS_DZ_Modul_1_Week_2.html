@@ -66,7 +66,7 @@ switch (enterNumber) { <br>
 <h4>4. Запросить у пользователя год и проверить, високосный он 
 или нет. Високосный год либо кратен 400, либо кратен 4 и 
 при этом не кратен 100.</h4>
-<p>let age = Number(prompt('Введите год')) <br>
+<p>let age = Number(prompt('Введите год')) <br> <br>
     if (age%400==0) { <br>
         <span class="color">.....</span>console.log('год високосный'); <br>
     } else if (age%100==0) { <br>
@@ -83,17 +83,50 @@ switch (enterNumber) { <br>
 ство USD, выбирает, в какую валюту хочет перевести: EUR, 
 UAN или AZN, и получает в ответ соответствующую сумму.</h4>
 
- 
-<h4>7. Запросить у пользователя сумму покупки и вывести сумму 
-к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 
-до 500 – 5%, от 500 и выше – 7%.</h4>
+<p>
+let quantatyUSD = Number(prompt('Количество долларов?')) <br>
+let money = prompt('В какую валюту перевести? (EUR, UAN, AZN)' )  <br><br>
+switch (money) { <br>
+    case 'EUR': <br>
+        <span class="color">.....</span>console.log(quantatyUSD* 0.9); <br>
+        <span class="color">.....</span>break; <br>
+    case 'UAN': <br>
+        <span class="color">.....</span>console.log(quantatyUSD* 4); <br>
+        <span class="color">.....</span>break; <br>
+    case 'AZN': <br>
+        <span class="color">.....</span>console.log(quantatyUSD* 2); <br>
+        <span class="color">.....</span>break; <br>
+
+    default: <br>
+        <span class="color">.....</span>console.log('Данную валюту не переводим'); <br>
+        <span class="color">.....</span>break; <br>
+}
+</p> 
+
+
 
 <h4>9. Задать пользователю 3 вопроса, в каждом вопросе по 3 ва
 рианта ответа. За каждый правильный ответ начисляется 2 
 балла. После вопросов выведите пользователю количество 
 набранных баллов.</h4>
 
-
+<p>
+let answer1= prompt('Какой формы Земля?') <br>
+let answer2= Number(prompt('Какой сейчас год?')) <br>
+let answer3= prompt('Как по-английски будет "жёлтый"?') <br>
+ <br>
+let answerSumm = 0 <br>
+if (answer1 == 'круглая') { <br>
+    answerSumm+=2 <br>
+} <br>
+if (answer2==2025) { <br>
+    answerSumm+=2 <br>
+} <br>
+if (answer3=='yellow') { <br>
+    answerSumm+=2 <br>
+} <br>
+console.log(answerSumm); <br>
+</p>
 
 
 
