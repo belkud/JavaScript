@@ -238,27 +238,6 @@ if(num>0) {
 
 
 
-let rub = 1000
-if (rub>=200 && rub<300) {
-    console.log(rub - rub*0.03);
-} else if (rub>=300 && rub<500) {
-    console.log(rub - rub*0.05);
-} else if (rub>=500) {
-    console.log(rub - rub*0.07);
-} else {
-    console.log('Данные не корректны');
-}
-
-
-let nums = -5
-if (nums>0) {
-    console.log(nums);
-} else {
-    console.log(-nums);
-}
-console.clear()
-
-
 
 // round() — округление до ближайшего целого числа;
 // floor() — округление вниз;
@@ -307,10 +286,6 @@ if (numb%2==0) {
 
 
 
-
-
-//! 3. Запросить у пользователя название планеты. Если пользователь ввел «Земля» или «земля», то вывести «Привет,
-//! землянин!», в остальных случаях вывести «Привет, инопланетянин!»
 
 
 
@@ -430,7 +405,7 @@ for (let i = 0; i < array.length; i++) {
 console.log(count);    
 
 
-
+ 
 
 
 
