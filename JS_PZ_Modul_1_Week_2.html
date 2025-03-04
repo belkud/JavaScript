@@ -40,22 +40,108 @@
 случаи попадания точки на оси X или Y или в начало  
 координат.</h4>
 
+
+<blockquote>
+  let x = Number(prompt('Введите "x" ')) <br>
+  let y = Number(prompt('Введите "y" ')) <br>
+ <br>
+  if (x>0 && y>0) { <br>
+    <span class="color">.....</span>console.log('Точка находится во второй четверти'); <br>
+  } else if (x&#60;0 && y>0)  { <br>
+    <span class="color">.....</span>console.log('Точка находится в первой четверти') <br>
+  } else if (x&#60;0 && y>0) { <br>
+    <span class="color">.....</span>console.log('Точка находится в четвертой четверти') <br>
+  } else { <br>
+    <span class="color">.....</span>console.log('Точка находится в третьей четверти'); <br>
+  }
+</blockquote>
+  
  <h5>Задания, в которых необходимо использовать SWITCH.</h5>
  <h4>1. Запросить у пользователя номер месяца и вывести на экран 
 его название.</h4>
+  <p>
+let dayOfMounth = Number(prompt('Введите число')) <br>
+     <br>
+switch (dayOfMounth) { <br>
+    case 1: <br>
+        <span class="color">.....</span>console.log('Январь'); <br>
+        <span class="color">.....</span>break; <br>
+    case 2: <br>
+        <span class="color">.....</span>console.log('Февраль'); <br>
+        <span class="color">.....</span>break; <br>
+    case 3: <br>
+        <span class="color">.....</span>console.log('Март'); <br>
+        <span class="color">.....</span>break; <br>
+    case 4: <br>
+        <span class="color">.....</span>console.log('Апрель'); <br>
+        <span class="color">.....</span>break; <br>
+    // и так далее... <br>
+ <br>
+    default: <br>
+        <span class="color">.....</span>console.log('Вводимые данные неверны');   <br>  
+        <span class="color">.....</span>break; <br>
+}
+  </p>
+ 
  <h4>2. Реализовать калькулятор. Пользователь вводит 2 числа и 
 знак (+ - * /). В зависимости от введенного знака решить 
 пример и вывести результат.</h4>
- 
+ <p>
+let num1 = Number(prompt('Введите первое число')) <br>
+let num2 = Number(prompt('Введите второе число')) <br>
+let operator = prompt('Введите знак (+ - * /)') <br>
+ <br>
+switch (operator) { <br>
+    case '+': <br>
+        <span class="color">.....</span>console.log(num1 + num2); <br>
+        <span class="color">.....</span>break; <br>
+    case '-': <br>
+        <span class="color">.....</span>console.log(num1 - num2); <br>
+        <span class="color">.....</span>break; <br>
+    case '*': <br>
+        <span class="color">.....</span>console.log(num1 * num2); <br>
+        <span class="color">.....</span>break <br>
+    case '/': <br>
+        <span class="color">.....</span>console.log(num1 / num2); <br>
+        <span class="color">.....</span>break <br>
+    default: <br>
+        <span class="color">.....</span>console.log('Введите правильные данные'); <br>
+        <span class="color">.....</span>break; <br>
+}
+ </p>
+
 <h5>Задания, в которых необходимо использовать тернарный 
 оператор.</h5>
  <h4>1. Запросить 2 числа и вывести большее из них.</h4>
+<p>
+let x = 15 <br>
+let y = 7 <br>
+
+console.log(x > y ? x : y); // через тернарный оператор <br>
+ <br>
+if (x>y) { // тоже самое, только через if <br>
+    <span class="color">.....</span>console.log(x); <br>
+} else { <br>
+    <span class="color">.....</span>console.log(y); <br>
+} <br>
+</p>
+
  <h4>2. Запросить 1 число и проверить, оно кратно 5 или нет.</h4>
+  <p>
+  let a = Number(prompt('Введите число')) <br>
+  a%5==0 ? console.log('число a кратно 5') : console.log('число a НЕ кратно 5');
+  </p>
+
  <h4>3. Запросить у пользователя название планеты. Если поль
 зователь ввел «Земля» или «земля», то вывести «Привет, 
 землянин!», в остальных случаях вывести «Привет, ино
 планетянин!».</h4>
+<p>
+let planet = prompt('Введите название планеты') <br>
+planet =='Земля' || planet == 'земля' ? <br>
+console.log('Привет землянин!') : console.log('Привет инопланетянин!') <br>
 
+</p>
 
 
 
