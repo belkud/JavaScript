@@ -479,6 +479,8 @@ for (let i = 10; i <= 20; i++) {
         
 }
 
+console.clear()
+
 
 // 5. Запросить у пользователя 10 чисел и подсчитать, сколько
 // он ввел положительных, отрицательных и нулей. При этом
@@ -508,6 +510,180 @@ for (let i = 10; i <= 20; i++) {
 //   }
 // }
 // alert(` Из введённых цифр — положительных: ${positive}, отрицательных: ${negative}, нулей: ${zero}, четных: ${even}, нечетных: ${odd}.`)
+
+
+
+
+
+
+
+//! 1. Подсчитать сумму всех чисел в заданном пользователем
+//! диапазоне.
+
+// let UserN = 5 
+// let UserN2 = 20
+// let accum = 0 
+// for (let iter = UserN; iter < UserN2; iter++) {
+//     accum+=iter
+//     console.log(accum)
+    // console.log(`сумма счетчика =  ${accum} на итерации ${i}`);
+    // console.log('сумма счетчика = ' + accum + ' на итерации ' + i);    
+// }
+
+
+//! 2. Запросить 2 числа и найти только наибольший общий
+//! делитель.
+
+// let firstNum = 20
+// let secondNum = 30
+// let massive = [] as any
+
+
+// for (let i = 0; i < secondNum; i++) {
+//     if (secondNum%i==0 && firstNum%i==0) {
+//         massive.push(i)
+//     }
+            
+// }
+// console.log(massive);
+
+// console.log(Math.max(...massive)); // первый способ
+// console.log(massive[massive.length-1]); // второй способ
+// console.log(massive.pop()); // третий способ
+
+ 
+//! 3. Запросить у пользователя число и вывести все делители
+//! этого числа.
+
+let userNumber = 50
+let stringWithNumbers = ''
+
+
+
+for (let i = 0; i <= userNumber; i++) {
+    if (userNumber%i==0) {
+        // console.log(array2);
+        
+        stringWithNumbers+= i + ' ' //2-ой способ выведения делителей (через строку)
+        
+    }    
+}
+
+console.log(stringWithNumbers);
+
+
+
+
+let acc2 = 0
+let array2 = [] as any
+while (userNumber>acc2 ) {
+    acc2++
+    if (userNumber%acc2==0) {
+        array2.push(acc2)  //1-ый способ выведения делителей (через массив)
+    }
+}
+console.log(array2);
+
+
+
+//! 4. Определить количество цифр в введенном числе.
+let quantatyDigitals = 5555555 as any
+console.log(quantatyDigitals.toString().length);
+
+
+quantatyDigitals = '555767657657'
+let accumulator = 0
+for (let i = 0; i < quantatyDigitals.length; i++) {
+    accumulator++
+}
+console.log(`количество цифр в введенном числе = ${accumulator}`);
+
+
+
+
+
+
+
+//! 5. Запросить у пользователя 10 чисел и подсчитать, сколько
+//! он ввел положительных, отрицательных и нулей. При этом
+//! также посчитать, сколько четных и нечетных. Вывести
+//! статистику на экран. Учтите, что достаточно од
+
+let mass = [3, 5, 4, 6, -1, -6, 10, -8, 0, 3]
+let pos =0  
+let evenN= 0
+let zer= 0
+for (let i = 0; i < mass.length; i++) {
+    if (mass[i]>=0) {
+        pos++
+    }
+    if (mass[i]%2==0) {
+        evenN++
+    }
+    if (mass[i]==0) {
+        zer++
+    }
+            
+}
+console.log(`количество положительных элементов = ${pos}
+количество отрицательных элементов = ${10-pos}
+количество чётных элементов = ${evenN}
+количество нечётных элементов = ${10 - evenN}
+количество нолей = ${zer} 
+    `);
+
+
+
+    // let positiveN = 0
+    // let negativN = 0
+    // for (let i = 0;  i< 4; i++) {
+        // const element = Number(prompt('Введите число'))
+//         if (element>=0) {
+//             positiveN++
+//         }
+//         if (element<0) {
+//             negativN++
+//         }
+
+
+
+
+//     }
+
+// console.log(`положительных чисел ${positiveN},.....,,,,, отрицательных = ${negativN}`)
+
+
+
+
+//! 9. Вывести таблицу умножения для всех чисел от 2 до 9.
+//! Каждое число необходимо умножить на числа от 1 до 10.
+
+
+//! 1-ый способ решения задачи
+let multiplicationTable = [2, 3, 4, 5, 6, 7, 8, 9,]
+for (let i = 0; i < multiplicationTable.length; i++) {
+    console.log(multiplicationTable[i]);
+    
+    
+    
+}
+console.log();
+
+
+//! 2-ой способ решения задачи
+let stringOfMultTable = ''
+for (let i = 2; i <9; i++) {
+    for (let j = 1; j < 10; j++) {
+        stringOfMultTable+=i*j + ' '
+    }
+    stringOfMultTable+= '\n'
+}
+
+console.log(stringOfMultTable);
+
+
+
+
 
 
 
