@@ -660,26 +660,34 @@ console.log(`количество положительных элементов 
 
 
 //! 1-ый способ решения задачи
-let multiplicationTable = [2, 3, 4, 5, 6, 7, 8, 9,]
+let multiplicationTable = [1, 2, 3, 4, 5, 6, 7, 8, 9,] as any
+multiplicationTable.forEach(el => {
+    console.log(el);
+})
+
+let stringMass = ''
 for (let i = 0; i < multiplicationTable.length; i++) {
-    console.log(multiplicationTable[i]);
-    
+
+    stringMass+= multiplicationTable + '\n'
     
     
 }
-console.log();
+console.log(stringMass);
 
 
 //! 2-ой способ решения задачи
+
 let stringOfMultTable = ''
-for (let i = 2; i <9; i++) {
+let strAccum = 0
+for (let i = 1; i <=9; i++) {
+    strAccum++
+    stringOfMultTable+=  '\n' + 'строка №' + strAccum + ' = '
     for (let j = 1; j < 10; j++) {
         stringOfMultTable+=i*j + ' '
     }
-    stringOfMultTable+= '\n'
 }
-
 console.log(stringOfMultTable);
+
 
 
 
