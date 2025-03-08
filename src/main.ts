@@ -293,55 +293,11 @@ console.log('До полуночи остало: ' + (23-hours) + ' часа и 
 // 1. for 
 // 2. while
 // 3. do while
-
-
-// for (let i = 0; i <= 10; i++) {
-//     console.log(i);
-    
-// }
  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// let y = 25
-// let acc = 0
-// for (let i = 2; i < y; i++) {
-//     if (y % i == 0) {
-//         acc++
-//     }
-// }
-// console.log(acc > 0 ? 'число составное' : 'число простое')
-
-
-
-//! 4. Определить количество цифр в введенном числе
-
-let b = 12345
-console.log(b.toString().length);
-
-let b12 = '12345678'
-console.log(b12.length);
-
-
-for (let i = 10; i <= 20; i++) {
-    console.log(i);
-        
-}
-
-console.clear()
-
+ 
 
 // 5. Запросить у пользователя 10 чисел и подсчитать, сколько
 // он ввел положительных, отрицательных и нулей. При этом
@@ -520,23 +476,6 @@ console.log(`количество положительных элементов 
 //! Каждое число необходимо умножить на числа от 1 до 10.
 
 
-//! 1-ый способ решения задачи
-let multiplicationTable = [1, 2, 3, 4, 5, 6, 7, 8, 9,] as any
-multiplicationTable.forEach(el => {
-    console.log(el);
-})
-
-let stringMass = ''
-for (let i = 0; i < multiplicationTable.length; i++) {
-
-    stringMass+= multiplicationTable + '\n'
-    
-    
-}
-console.log(stringMass);
-
-
-//! 2-ой способ решения задачи
 
 let stringOfMultTable = ''
 let strAccum = 0
@@ -551,18 +490,6 @@ console.log(stringOfMultTable);
 
 
 
-
-
-
-console.clear()
-
-
-
-
-
-
-//! 5. Запросить число и проверить, простое ли оно. Простое
-//! число делится без остатка только на себя и на единицу.
 
 
 
