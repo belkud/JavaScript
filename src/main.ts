@@ -300,88 +300,6 @@ console.log('До полуночи остало: ' + (23-hours) + ' часа и 
     
 // }
  
-let num = 0
-
-
-
-// while (num<5) {
-//     console.log(num);
-//     num++  
-// }
-
-// do {
-//     console.log(num);
-//     num++
-// } while (num<5);
-
-
-
-// ■ Задания, в которых необходимо использовать WHILE.
-
-//! 1. Вывести # столько раз, сколько указал пользователь.
-
-let cell = 5
-let str = ''
-while (cell>0) {
-    cell--
-    str+='#'
-    console.log(str);
-}
-
-
-//! 2. Пользователь ввел число, а на экран вывелись все числа
-//! от введенного до 0.
-
-// let userNum = 5
-// let diapazone = ''
-// while (userNum>0) {
-//     diapazone += userNum
-//     console.log(diapazone);
-//     userNum-- 
-// }
-
-//! 3. Запросить число и степень. Возвести число в указанную
-//! степень и вывести результат.
-
-let x = 5
-let pow = 3
-
-while (pow>0) {
-    x**pow
-    console.log(x**pow);
-    pow--
-}
-console.clear()
-
-//! 4. Запросить 2 числа и найти все общие делители.
-
-// let num1 = 81
-// let num2 = 27
-// let devider = num1
-// while (devider>0) {
-//     if (num1%devider==0 && num2%devider==0) {
-//         console.log(devider);
-//     } 
-//     devider--
-// }
-
-//! 5. Посчитать факториал введенного пользователем числа.(от 0 до введеного числа)
-
-// let y = 5
-// let f = 1
-
-// while (y>0) {
-//     f*=y
-//     console.log(f);
-//     y--
-// }
-
-// Пошаговое выполнение итераций 1*5 5*4 20*3 60*2 120*1
-
-
-
-
-
 
 //! 3. Вывести все числа от 1 до 100, которые кратные указанному
 //! пользователем числу.
@@ -442,14 +360,14 @@ console.log('=======');
 
 
 
-let y = 25
-let acc = 0
-for (let i = 1; i <= y; i++) {
-    if (y % i == 0) {
-        acc++
-    }
-}
-console.log(acc > 2 ? 'число составное' : 'число простое')
+// let y = 25
+// let acc = 0
+// for (let i = 1; i <= y; i++) {
+//     if (y % i == 0) {
+//         acc++
+//     }
+// }
+// console.log(acc > 2 ? 'число составное' : 'число простое')
 
 
 
@@ -520,15 +438,15 @@ console.clear()
 //! 1. Подсчитать сумму всех чисел в заданном пользователем
 //! диапазоне.
 
-// let UserN = 5 
-// let UserN2 = 20
-// let accum = 0 
-// for (let iter = UserN; iter < UserN2; iter++) {
-//     accum+=iter
-//     console.log(accum)
-    // console.log(`сумма счетчика =  ${accum} на итерации ${i}`);
-    // console.log('сумма счетчика = ' + accum + ' на итерации ' + i);    
-// }
+let UserN = 5 
+let UserN2 = 20
+let accum = 0 
+for (let i = UserN; i < UserN2; i++) {
+    accum+=i
+    console.log(accum)
+    console.log(`сумма счетчика =  ${accum} на итерации ${i}`);
+    console.log('сумма счетчика = ' + accum + ' на итерации ' + i);    
+}
 
 
 //! 2. Запросить 2 числа и найти только наибольший общий
@@ -693,7 +611,16 @@ console.log(stringOfMultTable);
 
 
 
+console.clear()
 
+
+
+
+//! 4. Запросить 2 числа и найти все общие делители.
+
+
+
+//! 5. Посчитать факториал введенного пользователем числа.(от 0 до введеного числа)
 
 
 
