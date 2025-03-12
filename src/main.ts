@@ -568,17 +568,6 @@ console.log(year>4 ?
 // 3-ий год 1440 +20% = .....
 
 
-console.log(Math.round(5.4)) // округление до ближайшего числа
-
-console.log(Math.floor(5.9)) // округление вниз до ближайшего числа
-
-console.log(Math.ceil(5.2)) // округление вверх до ближайшего числа
-
-console.log(Math.trunc(5.4)); // отбрасывает дробную часть
-
-console.log((Math.random()*100).toFixed()); // 1-ый способ округления целого числа 
-console.log((Math.round(Math.random()*100))); // 2-ой способ округления целого числа
-console.log((Math.trunc(Math.random()*100))); // 3-ийй способ округления целого числа
 
 console.log('=======');
 
@@ -671,7 +660,249 @@ console.log(checkAge(5));
 
 
 
+//! 1. Написать функцию, которая принимает 2 числа и возвращает меньшее из них
 
+// function compareNumbers (x:number, y:number) {
+    // if (x>y) {
+    //     return y
+    // } else if (y>x) {
+    //     return x
+    // } else if(x==y) {
+    //     return 'x = y'
+    // } else {
+    //     return 'Введите корректные данные'
+    // }
+
+    // return x > y ? y : x
+
+// }
+// console.log(compareNumbers(20,10))
+
+
+//! 2. Написать функцию, которая возводит переданное число в указанную степень.
+
+function showNumberInPow (x:number, y:number) {
+    return x**y
+}
+console.log (showNumberInPow(2,3))
+
+console.clear()
+
+//! 3. Написать функцию, которая принимает 2 числа и знак(+ - * /), считает пример и возвращает результат.
+
+function calculateNumbers(x:number, operator:string, y:number) {
+    switch (operator) {
+        case '+':
+            return x + y
+        case '-':
+            return x - y
+        case '*':
+            return x * y
+        case '/':
+            return x / y
+        default:
+            return 'Введите правильно оператор'
+    }
+}
+
+console.log(calculateNumbers(5, '+', 4));
+console.log(calculateNumbers(5, '-', 4));
+console.log(calculateNumbers(5, '*', 4));
+console.log(calculateNumbers(5, '/', 4));
+console.log(calculateNumbers(5, 'abc', 4));
+
+//! 4. Написать функцию, которая проверяет, является ли переданное ей число простым.
+
+//? Простое число делится на единицу и само на себя
+
+function checkNumber (x:number) {
+    let acc = 0
+    for (let i = 2; i < x; i++) {  // диапазон чисел 2, 3, 4, 5
+        if (x%i==0) {     // 2, 3 делители числа 6
+            acc++      // количество делителей числа
+        }
+    }
+    return acc>0 ? 'Число сложное' : 'Число простое';
+             
+}
+
+
+console.log(checkNumber(6));
+
+
+//! 5. Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. 
+//! Вызовите функцию для всех чисел от 2 до 9.
+
+function multiplyNumber (x:number) {
+    let string = ''
+    for (let i = 2; i <=9; i++) {
+        string+= x * i + ' '
+    }
+    return  string
+}
+
+console.log(multiplyNumber(10))
+
+
+
+
+
+
+
+console.log((Math.random()*100).toFixed());   // 1-ый способ округления целого числа 
+console.log((Math.round(Math.random()*100))); // 2-ой способ округления целого числа
+console.log((Math.trunc(Math.random()*100))); // 3-й способ округления целого числа
+
+
+
+
+
+
+
+
+console.log(Math.round(5.4)) // округление до ближайшего числа
+
+console.log(Math.floor(9.9)) // округление вниз до ближайшего числа
+
+console.log(Math.ceil(5.2)) // округление вверх до ближайшего числа
+
+console.log(Math.trunc(5.4)); // отбрасывает дробную часть
+
+console.log('----------');
+
+
+console.log(10%4);
+
+
+
+// 9. Написать функцию, которая выводит все четные или нечетные числа, в указанном 
+// пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа
+// bool (true – четные, false – нечетные).
+
+// function showEvenOddNumberInDiapazone (min:number, max:number, bool:boolean) {
+
+// }
+
+// console.log(showEvenOddNumberInDiapazone(5, 15, false))
+ 
+//! Создайте функцию checkPassword(x), которая вернет
+//! значение true, если в качестве аргумента в нее будет
+//! передан допустимый пароль (одно из значений «Step»,
+//! «Web» или «JavaScript»). Иначе функция должна вернуть false.
+
+function checkPassword (pass:string) {
+    if (pass == 'Step' || pass == 'JavaScript' || pass == 'Web') {
+        return true
+    } else {
+        return false
+    }
+}
+console.log(checkPassword('Step'));
+
+
+
+
+//! 5. Создайте функцию определения знака числа sign(x),
+//! которая вернет значение –1, если аргумент «х» — отрицательное число, 1 — если 
+//! положительное, 0 — если аргумент «х» равен нулю.
+
+function determineSign (x:number) {
+    if (x>0) {
+        return 1
+    }
+    if (x<0) {
+        return -1
+    } 
+    if (x==0) {
+        return 0
+    }
+    return 'введите число'
+}
+console.log(determineSign(5))
+
+
+
+
+
+
+//! Написать функцию, которой передаем, имя, фамилия и возраст, и получаем строку "Привет 
+//! Иван Петров с возрастом 17 лет" (только здесь данные, которые были переданы в функцию)
+
+function showUserInfo (name:string, surname:string, age:number) {
+    return `Привет ${name} ${surname}, тебе ${age} лет`
+}
+console.log(showUserInfo('Ivan', 'Ivanov', 18));
+
+
+
+
+
+
+//! Написать функцию, которой передаем имя, и она возраващает приветствие в зависимости 
+//! от времени суток (Доброе утро\день\вечер\ночи Иван)
+
+let data = new Date
+console.log(`Текущее время: ${data.getHours()} часов и ${data.getMinutes()} минут `);
+
+function greetUser (name:string) {
+    let hours = data.getHours()
+
+if (hours>=6 && hours<12) {
+    return `Доброе утро ${name}`
+}
+if (hours<18) {
+    return `Добрый день ${name}`
+}
+if (hours<22) {
+    return `Добрый вечер ${name}`
+}
+return `Доброй ночи ${name}`
+}
+
+console.log(greetUser('Vasya'));
+console.log(greetUser('Petya'));
+
+
+
+
+// setTimeout(() => {
+    //     console.log('Привет Вася');
+    // }, 2000);
+    
+    
+    
+    
+
+// accum = 0
+
+// let stopTimer = setInterval(() => {
+//     accum++
+// console.log(accum);
+// }, 1000);
+
+// setTimeout(() => {
+//     clearInterval(stopTimer)
+// }, 4000);
+
+
+//! Вывести числа от 1 до 100 в столбец. К каждой цифре подписать состояние возраста 
+//! (1-17 ребенок, 18-30 - молодой, 30-55 - зрелый, от 55 - старый). Например. 33 - зрелый
+    
+
+function checkUserAge (i:number) {
+        if(i<=17){
+            console.log('Вы ребенок') ;
+        } else if(i<=30) {
+            console.log('Вы молодой') ;
+        } else if(i<=55) {
+            console.log('Вы зрелый') ;
+        } else {
+            console.log('Вы старый') ;
+
+        }                
+    }
+
+checkUserAge(80);
 
 
 
