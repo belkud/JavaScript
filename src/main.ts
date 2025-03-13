@@ -100,7 +100,7 @@ console.log(dates);
 console.log('Осталось ' + (23 - dates.getHours()) + ' часа и ' + (60 - dates.getMinutes()) + ' минут' );
 
 
-// 1.Условное ветвление: if
+//! 1.Условное ветвление: if
 // let age = 28
 // let age = +prompt('Сколько вам лет?')
 
@@ -111,22 +111,12 @@ console.log('Осталось ' + (23 - dates.getHours()) + ' часа и ' + (6
 // }
 
 
-// 2. Тернарный оператор
+//! 2. Тернарный оператор
 
 
 
 // 5<3 ? console.log('значение верно') : console.log('Значение не верно')
  
-
-// let nameJS = prompt('Какое «официальное» название JavaScript?') 
-
-// if (nameJS=='ECMAScript') {
-// console.log("Ответ правильный");
-// alert("Ответ правильный");
-// } else {
-//     console.log("Ответ НЕ правильный");
-// }
-
 
 
 // let a1 = 1
@@ -160,58 +150,6 @@ console.log(Math.trunc(5.6)); //отбрасывание дробной част
 
 
 
- 
-
-// i++
-// console.log(i);
-
-// i++
-// console.log(i);
-
-// i++
-// console.log(i);
-
-// i++
-// console.log(i);
-
-
-// while
-// do while
-// for
-
-
-// ++i i++
-// --i i--
-
-
-
-
-// while (i<15) {
-    //     console.log(i);  
-    //     i++
-    // }
-    
-    // console.log('================');
-    
-    // let p = 5
-    // while (p>0) {
-//     p--
-//     console.log(p);
-
-// }
-
-// console.log('================');
-// let r = 0;
-// do {
-    //     console.log(r);
-    
-//     r++;
-// } while (r < 3);
-
-
-// console.log('================');
-
-
 for (let i = 0; i < 6; i++) { //! прерывание цикла
     
     if (i==3) {
@@ -235,49 +173,8 @@ console.log('================');
 
 
 
-
-
-for (let i = 1; i < 10; i+=2) {
-    console.log(i);  
-    
-}
-
-
-
-
-for (let i = 0; i < 10; i++) { 
-    if (i%2==1) {
-        console.log(i);  
-    }
-}
-console.log('================');
-
-
-// let i = 0
-// console.log(++i);  
-// console.log(i);
-
-
-
-
-let number = '1234567098'
-console.log(number.length);
-
-
-let array = [2, 4, 5, 3, 8]
-console.log(array);
-let count = 0
-for (let i = 0; i < array.length; i++) {
-    count+=array[i]
-}
-console.log(count);    
-
-console.clear()
-
-
-
-console.log ( - -105)
-
+ 
+  
 
  
 
@@ -299,196 +196,7 @@ console.log('До полуночи остало: ' + (23-hours) + ' часа и 
 
  
 
-// 5. Запросить у пользователя 10 чисел и подсчитать, сколько
-// он ввел положительных, отрицательных и нулей. При этом
-// также посчитать, сколько четных и нечетных. Вывести
-// статистику на экран. Учтите, что достаточно одной переменной 
-// (не 10) для ввода чисел пользователем.
- 
 
-
-
-// for (let i = 1; i <= 10; i++) {
-//   const num = Number(prompt("Введите число"));
-//   if (num > 0) {
-//     positive++;
-//   }
-//   if (num < 0) {
-//     negative++;
-//   }
-//   if (num == 0) {
-//     zero++;
-//   }
-//   if (num % 2 == 1) {
-//     odd++;
-//   }
-//   if (num % 2 == 0) {
-//     even++;
-//   }
-// }
-// alert(` Из введённых цифр — положительных: ${positive}, отрицательных: ${negative}, нулей: ${zero}, четных: ${even}, нечетных: ${odd}.`)
-
-
-
-
-
-
-
-//! 1. Подсчитать сумму всех чисел в заданном пользователем
-//! диапазоне.
-
-let UserN = 5 
-let UserN2 = 20
-let accum = 0 
-for (let i = UserN; i < UserN2; i++) {
-    accum+=i
-    console.log(accum)
-    console.log(`сумма счетчика =  ${accum} на итерации ${i}`);
-    console.log('сумма счетчика = ' + accum + ' на итерации ' + i);    
-}
-
-
-//! 2. Запросить 2 числа и найти только наибольший общий
-//! делитель.
-
-// let firstNum = 20
-// let secondNum = 30
-// let massive = [] as any
-
-
-// for (let i = 0; i < secondNum; i++) {
-//     if (secondNum%i==0 && firstNum%i==0) {
-//         massive.push(i)
-//     }
-            
-// }
-// console.log(massive);
-
-// console.log(Math.max(...massive)); // первый способ
-// console.log(massive[massive.length-1]); // второй способ
-// console.log(massive.pop()); // третий способ
-
- 
-//! 3. Запросить у пользователя число и вывести все делители
-//! этого числа.
-
-let userNumber = 50
-let stringWithNumbers = ''
-
-
-
-for (let i = 0; i <= userNumber; i++) {
-    if (userNumber%i==0) {
-        // console.log(array2);
-        
-        stringWithNumbers+= i + ' ' //2-ой способ выведения делителей (через строку)
-        
-    }    
-}
-
-console.log(stringWithNumbers);
-
-
-
-
-let acc2 = 0
-let array2 = [] as any
-while (userNumber>acc2 ) {
-    acc2++
-    if (userNumber%acc2==0) {
-        array2.push(acc2)  //1-ый способ выведения делителей (через массив)
-    }
-}
-console.log(array2);
-
-
-
-//! 4. Определить количество цифр в введенном числе.
-let quantatyDigitals = 5555555 as any
-console.log(quantatyDigitals.toString().length);
-
-
-quantatyDigitals = '555767657657'
-let accumulator = 0
-for (let i = 0; i < quantatyDigitals.length; i++) {
-    accumulator++
-}
-console.log(`количество цифр в введенном числе = ${accumulator}`);
-
-
-
-
-
-
-
-//! 5. Запросить у пользователя 10 чисел и подсчитать, сколько
-//! он ввел положительных, отрицательных и нулей. При этом
-//! также посчитать, сколько четных и нечетных. Вывести
-//! статистику на экран. Учтите, что достаточно од
-
-let mass = [3, 5, 4, 6, -1, -6, 10, -8, 0, 3]
-let pos =0  
-let evenN= 0
-let zer= 0
-for (let i = 0; i < mass.length; i++) {
-    if (mass[i]>=0) {
-        pos++
-    }
-    if (mass[i]%2==0) {
-        evenN++
-    }
-    if (mass[i]==0) {
-        zer++
-    }
-            
-}
-console.log(`количество положительных элементов = ${pos}
-количество отрицательных элементов = ${10-pos}
-количество чётных элементов = ${evenN}
-количество нечётных элементов = ${10 - evenN}
-количество нолей = ${zer} 
-    `);
-
-
-
-    // let positiveN = 0
-    // let negativN = 0
-    // for (let i = 0;  i< 4; i++) {
-        // const element = Number(prompt('Введите число'))
-//         if (element>=0) {
-//             positiveN++
-//         }
-//         if (element<0) {
-//             negativN++
-//         }
-
-
-
-
-//     }
-
-// console.log(`положительных чисел ${positiveN},.....,,,,, отрицательных = ${negativN}`)
-
-
-
-
-//! 9. Вывести таблицу умножения для всех чисел от 2 до 9.
-//! Каждое число необходимо умножить на числа от 1 до 10.
-
-
-
-let stringOfMultTable = ''
-let strAccum = 0
-for (let i = 1; i <=9; i++) {
-    strAccum++
-    stringOfMultTable+=  '\n' + 'строка №' + strAccum + ' = '
-    for (let j = 1; j < 10; j++) {
-        stringOfMultTable+=i*j + ' '
-    }
-}
-console.log(stringOfMultTable);
-
-console.clear()
 
 
 //! Задание для самостоятельной работы
@@ -906,3 +614,12 @@ checkUserAge(80);
 
 
 
+
+
+
+
+
+
+
+
+  
