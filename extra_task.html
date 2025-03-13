@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="button_fixed"><a href="index.html">Назад</a></button>
+    <h3>Модуль 1</h3>
+    <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
+    <p>Выполнить задания, используя функцию</p>
+    
+<h4>1. Создайте функцию checkPassword(x), которая вернет значение true, если в качестве аргумента в нее будет
+    передан допустимый пароль (одно из значений «Step», «Web» или «JavaScript»). Иначе функция должна вернуть false.
+</h4>
+<pre>
+    function checkPassword (pass:string) {
+        if (pass == 'Step' || pass == 'JavaScript' || pass == 'Web') {
+            return true
+        } else {
+            return false
+        }
+    }
+    console.log(checkPassword('Step'));
+    
+</pre>
+    
+
+
+
+
+<h4>2. Создайте функцию определения знака числа sign(x), которая вернет значение –1, если аргумент «х» — отрицательное число, 1 — если 
+положительное, 0 — если аргумент «х» равен нулю.</h4>
+
+<pre>
+    function determineSign (x:number) {
+        if (x>0) {
+            return 1
+        }
+        if (x&#60;0) {
+            return -1
+        } 
+        if (x==0) {
+            return 0
+        }
+        return 'введите число'
+    }
+    console.log(determineSign(5))
+</pre>
+
+
+<h4>3. Написать функцию, которой передаем, имя, фамилия и возраст, и получаем строку "Привет 
+Иван Петров с возрастом 17 лет" (только здесь данные, которые были переданы в функцию)</h4>
+
+<pre>    
+    function showUserInfo (name:string, surname:string, age:number) {
+        return `Привет ${name} ${surname}, тебе ${age} лет`
+    }
+    console.log(showUserInfo('Ivan', 'Ivanov', 18));
+</pre>
+    
+
+
+<h4>4. Написать функцию, которой передаёт текущее время.</h4>
+
+<pre>
+    let data = new Date
+    console.log(`Текущее время: ${data.getHours()} часов и ${data.getMinutes()} минут `);
+</pre>
+
+
+
+<h4>5. Написать функцию, которой передаем имя, и она возраващает приветствие в зависимости 
+от времени суток (Доброе утро\день\вечер\ночи Иван)</h4>
+
+<pre>
+
+    function greetUser (name:string) {
+        let data = new Date
+        let hours = data.getHours()
+        
+        if (hours>=6 && hours&#60;12) {
+            return `Доброе утро ${name}`
+        }
+        if (hours&#60;18) {
+            return `Добрый день ${name}`
+        }
+        if (hours&#60;22) {
+            return `Добрый вечер ${name}`
+        }
+        return `Доброй ночи ${name}`
+    }
+    
+    console.log(greetUser('Vladimir'));
+</pre>
+
+
+
+
+<h4>6. Написать функцию, которая передаёт состояние возраста 
+(1-17 ребенок, 18-30 - молодой, 30-55 - зрелый, от 55 - старый). Например. 33 - зрелый</h4>
+    
+<pre>
+
+    function checkUserAge (i:number) {
+        if(i&#60;=17){
+            console.log('Вы ребенок') ;
+        } else if(i&#60;=30) {
+            console.log('Вы молодой') ;
+        } else if(i&#60;=55) {
+            console.log('Вы зрелый') ;
+        } else {
+            console.log('Вы старый') ; 
+        }                
+    }
+
+checkUserAge(25);
+</pre>
+
+
+
+
+
+    <style>
+        h4 {
+            color: blue;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        button {
+            color: white;
+            background-color: blue;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_fixed {
+            position: fixed;
+            margin-left: calc(100% - 100px);
+        }
+
+        .color {
+            color: transparent;
+        }
+    </style>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
