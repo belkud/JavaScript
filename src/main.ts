@@ -368,92 +368,6 @@ console.log(checkAge(5));
 
 
 
-//! 1. Написать функцию, которая принимает 2 числа и возвращает меньшее из них
-
-// function compareNumbers (x:number, y:number) {
-    // if (x>y) {
-    //     return y
-    // } else if (y>x) {
-    //     return x
-    // } else if(x==y) {
-    //     return 'x = y'
-    // } else {
-    //     return 'Введите корректные данные'
-    // }
-
-    // return x > y ? y : x
-
-// }
-// console.log(compareNumbers(20,10))
-
-
-//! 2. Написать функцию, которая возводит переданное число в указанную степень.
-
-function showNumberInPow (x:number, y:number) {
-    return x**y
-}
-console.log (showNumberInPow(2,3))
-
-console.clear()
-
-//! 3. Написать функцию, которая принимает 2 числа и знак(+ - * /), считает пример и возвращает результат.
-
-function calculateNumbers(x:number, operator:string, y:number) {
-    switch (operator) {
-        case '+':
-            return x + y
-        case '-':
-            return x - y
-        case '*':
-            return x * y
-        case '/':
-            return x / y
-        default:
-            return 'Введите правильно оператор'
-    }
-}
-
-console.log(calculateNumbers(5, '+', 4));
-console.log(calculateNumbers(5, '-', 4));
-console.log(calculateNumbers(5, '*', 4));
-console.log(calculateNumbers(5, '/', 4));
-console.log(calculateNumbers(5, 'abc', 4));
-
-//! 4. Написать функцию, которая проверяет, является ли переданное ей число простым.
-
-//? Простое число делится на единицу и само на себя
-
-function checkNumber (x:number) {
-    let acc = 0
-    for (let i = 2; i < x; i++) {  // диапазон чисел 2, 3, 4, 5
-        if (x%i==0) {     // 2, 3 делители числа 6
-            acc++      // количество делителей числа
-        }
-    }
-    return acc>0 ? 'Число сложное' : 'Число простое';
-             
-}
-
-
-console.log(checkNumber(6));
-
-
-//! 5. Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. 
-//! Вызовите функцию для всех чисел от 2 до 9.
-
-function multiplyNumber (x:number) {
-    let string = ''
-    for (let i = 2; i <=9; i++) {
-        string+= x * i + ' '
-    }
-    return  string
-}
-
-console.log(multiplyNumber(10))
-
-
-
-
 
 
 
@@ -623,3 +537,18 @@ checkUserAge(80);
 
 
   
+
+console.clear()
+
+
+
+
+
+//! 4. Написать функцию, которая проверяет, является ли переданное ей число простым.
+
+
+
+//! 5. Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. 
+//! Вызовите функцию для всех чисел от 2 до 9.
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="button_fixed"><a href="index.html">Назад</a></button>
+    <h3>Модуль 1</h3>
+    <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
+    <p>Выполнить задания, используя функцию</p>
+    
+<h4>1. Написать функцию, которая принимает 2 числа и возвращает меньшее из них.</h4>
+<pre>
+    function compareNumbers (x:number, y:number) {
+        return x > y ? y : x
+    }       
+    console.log(compareNumbers(10,20))
+</pre>
+    
+    
+<h4>2. Написать функцию, которая возводит переданное число в указанную степень.</h4>
+<pre>
+    function showNumberInPow (x:number, y:number) {
+        return x**y
+    }
+    console.log (showNumberInPow(2,3))        
+</pre>
+  
+    
+ <h4>3. Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.</h4>
+ <pre>
+    function calculateNumbers(x:number, operator:string, y:number) {
+        switch (operator) {
+            case '+':
+                return x + y
+            case '-':
+                return x - y
+            case '*':
+                return x * y
+            case '/':
+                return x / y
+            default:
+                return 'Введите правильно оператор'
+        }
+    }
+    console.log(calculateNumbers(5, '+', 4));
+</pre>
+     
+    
+<h4>4. Написать функцию, которая проверяет, является ли переданное ей число простым.</h4>
+<pre>
+(Простое число делится только на единицу и само на себя)
+
+function checkNumber (x:number) {
+    let acc = 0
+    for (let i = 2; i &#60; x; i++) {  // диапазон чисел
+        if (x%i==0) {              // делители числа
+            acc++                  // количество делителей
+        }
+    }
+    return acc>0 ? 'Число сложное' : 'Число простое';
+}
+
+console.log(checkNumber(6));
+</pre>
+
+
+<h4>5. Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. Вызовите функцию для
+        всех чисел от 2 до 9.</h4>
+
+<pre>
+
+function multiplyNumber (x:number) {
+    for (let i = 2; i &#60;=9; i++) {
+        console.log(x * i)
+    }
+}
+    
+console.log(multiplyNumber(10))
+    
+</pre>
+
+
+
+
+    <style>
+        h4 {
+            color: blue;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        button {
+            color: white;
+            background-color: blue;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .button_fixed {
+            position: fixed;
+            margin-left: calc(100% - 100px);
+        }
+
+        .color {
+            color: transparent;
+        }
+    </style>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
