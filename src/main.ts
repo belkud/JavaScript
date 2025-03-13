@@ -397,6 +397,12 @@ console.log(10%4);
 
 
 
+
+
+
+
+
+
 // 9. Написать функцию, которая выводит все четные или нечетные числа, в указанном 
 // пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа
 // bool (true – четные, false – нечетные).
@@ -408,58 +414,6 @@ console.log(10%4);
 // console.log(showEvenOddNumberInDiapazone(5, 15, false))
  
 
-
-
-
-
-
-//! 1. Создайте функцию checkPassword(x), которая вернет
-//! значение true, если в качестве аргумента в нее будет
-//! передан допустимый пароль (одно из значений «Step»,
-//! «Web» или «JavaScript»). Иначе функция должна вернуть false.
-
-function checkPassword (pass:string) {
-    if (pass == 'Step' || pass == 'JavaScript' || pass == 'Web') {
-        return true
-    } else {
-        return false
-    }
-}
-console.log(checkPassword('Step'));
-
-
-
-
-//! 2. Создайте функцию определения знака числа sign(x),
-//! которая вернет значение –1, если аргумент «х» — отрицательное число, 1 — если 
-//! положительное, 0 — если аргумент «х» равен нулю.
-
-function determineSign (x:number) {
-    if (x>0) {
-        return 1
-    }
-    if (x<0) {
-        return -1
-    } 
-    if (x==0) {
-        return 0
-    }
-    return 'введите число'
-}
-console.log(determineSign(5))
-
-
-
-
-
-
-//! 3. Написать функцию, которой передаем, имя, фамилия и возраст, и получаем строку "Привет 
-//! Иван Петров с возрастом 17 лет" (только здесь данные, которые были переданы в функцию)
-
-function showUserInfo (name:string, surname:string, age:number) {
-    return `Привет ${name} ${surname}, тебе ${age} лет`
-}
-console.log(showUserInfo('Ivan', 'Ivanov', 18));
 
 
 
