@@ -318,24 +318,24 @@ function getSumm (a:number, b=10) { // можем задавать параме�
 }
 console.log(getSumm(13,3));
 
-userName()
+// userName()
 
 // let name = 'Petya' // глобальная переменная
 
 
 
-function userName() {
-    let name = 'Dima' // локальная переменная
+// function userName() {
+//     let name = 'Dima' // локальная переменная
     
-    if (name=='' || name == 'Vasya') {
-        console.log('Данный пользователь ' + name + ' уже есть');
-    } else {
-        console.log(`Привет ${name}`);
-    }
-}
-console.log(`привет ${name}`);
+//     if (name=='' || name == 'Vasya') {
+//         console.log('Данный пользователь ' + name + ' уже есть');
+//     } else {
+//         console.log(`Привет ${name}`);
+//     }
+// }
+// console.log(`привет ${name}`);
 
-userName()
+// userName()
 
 function userName2() {
      let name = 'Kolya'
@@ -403,6 +403,32 @@ console.log(10%4);
 
 
 
+// setTimeout(() => {
+    //     console.log('Привет Вася');
+    // }, 2000);
+    
+    
+    
+    
+
+// accum = 0
+
+// let stopTimer = setInterval(() => {
+//     accum++
+// console.log(accum);
+// }, 1000);
+
+// setTimeout(() => {
+    //     clearInterval(stopTimer)
+    // }, 4000);
+    
+    
+  
+
+
+
+
+
 // 9. Написать функцию, которая выводит все четные или нечетные числа, в указанном 
 // пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа
 // bool (true – четные, false – нечетные).
@@ -442,11 +468,24 @@ if (hours<18) {
 }
 if (hours<22) {
     return `Добрый вечер ${name}`
+    // return 'Добрый вечер ' + name
 }
 return `Доброй ночи ${name}`
 }
 
 console.log(greetUser('Vladimir'));
+
+
+
+// console.log(5.4)
+// console.log(Math.floor(5.4))
+// console.log(Math.ceil(5.4))
+// console.log(Math.round(5.6))
+// console.log(Math.trunc(5.9999))
+
+// console.log(Math.min(2, 5, 7, 9, 25))
+// console.log(Math.max(2, 5, 7, 9, 25))
+
 
 
 
@@ -456,52 +495,140 @@ console.log(greetUser('Vladimir'));
     
 
 function checkUserAge (i:number) {
-        if(i<=17){
-            console.log('Вы ребенок') ;
-        } else if(i<=30) {
-            console.log('Вы молодой') ;
-        } else if(i<=55) {
-            console.log('Вы зрелый') ;
-        } else {
-            console.log('Вы старый') ;
+    if(i<=17){
+        console.log('Вы ребенок') ;
+    } else if(i<=30) {
+        console.log('Вы молодой') ;
+    } else if(i<=55) {
+        console.log('Вы зрелый') ;
+    } else {
+        console.log('Вы старый') ;
+        
+    }                    
+    }
+    
+    
+    checkUserAge(6);
+ 
 
-        }                
+
+function checkUserAge2 (i:number) {
+    if(i<=17){
+        return 'Вы ребенок' ;
+    } else if(i<=30) {
+        return 'Вы молодой' ;
+    } else if(i<=55) {
+        return 'Вы зрелый';
+    } else {
+        return 'Вы старый';
+        
+    }                    
+    }
+    
+console.log(checkUserAge2(6));    
+    
+        
+
+//! 6. Написать функцию, которая реализует работу оператора %.
+//! Функция принимает 2 параметра и возвращает остаток от
+//! деления первого параметра на второй. В функции использовать только 
+//! + - * /, оператор % не использовать. 
+
+function showRemain (num1:number, num2:number) {
+    let quantaty = Math.trunc(num1/num2)
+    return num1 - quantaty*num2
+}    
+console.log(showRemain(11, 5));
+
+
+//! 7. Написать функцию, которая принимает от 1 до 5 чисел и
+//! возвращает их сумму.
+
+function getSummNumbers(
+    num1:number,
+    num2=0,
+    num3=0,
+    num4=0,
+    num5=0,
+) {
+    return num1 + num2 + num3 + num4 + num5
+}    
+
+console.log(getSummNumbers(5, 5, 6));
+
+
+//! 8. Написать функцию, которая принимает от 1 до 5 чисел и
+//! возвращает большее из них.
+
+function findMaxNumber (
+    num1:number,
+    num2=-Infinity,
+    num3=-Infinity,
+    num4=-Infinity,
+    num5=-Infinity,
+) {
+    return Math.max(num1, num2, num3, num4, num5)
+}    
+console.log(findMaxNumber(-19, -10, -12, -3, -2));
+
+console.log('--------');
+
+
+
+//! 9. Написать функцию, которая выводит все четные или нечетные числа, в указанном 
+//! пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа
+//! bool (true – четные, false – нечетные).
+
+function showEvenOddNumberInDiapazone (minNumber:number, maxNumber:number, bool:boolean) {
+    for (let i = minNumber; i < maxNumber; i++) {
+        if (i%2==0 && bool==true) { //находим четные числа
+            console.log(i);   
+        }
+        if(i%2==1  && bool==false){
+            console.log(i);   
+        }
+    } 
+}
+
+showEvenOddNumberInDiapazone(3, 19, true);
+console.log('--------');
+showEvenOddNumberInDiapazone(10, 20, false);
+
+
+//! 10. Написать функцию, которая принимает дату (день, месяц, год) и возвращает дату следующего дня 
+//! в виде строки «дд.мм.гггг». Проверку на високосный год желательно написать отдельной функцией.
+
+function returnNextDay(day:number, mounth:number, year:number) {
+    if (day>=32) return 'Введите корректный день'
+    if (day==31 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) return 'Введите корректный день'
+    if (day>=30 && mounth==2 || day==29 && mounth==2 && year%4!=0) return 'Введите корректный день'
+    if (mounth>=13) return 'Введите корректный месяц'
+    if (day<=0 || mounth<=0 || year<=0) return 'введите положительное число'
+
+    if (day==31 && mounth==12){
+        year+=1, mounth=1, day=1
+    } else if (day==30 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) {
+        day=1
+        mounth+=1
+    } else if (day==31 && (mounth==3 || mounth==5 ||mounth==7 || mounth==8 || mounth==10 || mounth==12)) {
+        day=1
+        mounth+=1
+    } else if(day==28 && mounth==2 && year%4!=0 || day==29 && mounth==2 && year%4==0){
+        day=1
+        mounth+=1
+    } else {
+        day+=1
     }
 
-checkUserAge(25);
 
-
-
-
-
-
-
-
-
-
-
-
-// setTimeout(() => {
-    //     console.log('Привет Вася');
-    // }, 2000);
     
-    
-    
-    
+    return `«${day}.${mounth}.${year}»`
+}
+console.log(returnNextDay(31, 12, 2024));
 
-// accum = 0
+console.log(returnNextDay(17, 7, 2024));
 
-// let stopTimer = setInterval(() => {
-//     accum++
-// console.log(accum);
-// }, 1000);
-
-// setTimeout(() => {
-    //     clearInterval(stopTimer)
-    // }, 4000);
-    
-    
-  
+console.log(returnNextDay(31, 10, 2024));
 
 
 
