@@ -1,7 +1,9 @@
 body{
-  background-color: black;
+  background-color: lightgrey;
 }
-/* 
+
+
+
 h4 {
   color: blue;
   margin-top: 30px;
@@ -33,9 +35,9 @@ a {
 
 .button_fixed {
   position: fixed;
-  margin-left: 85%;
+  /* margin-left: calc(100% - 100px); */
 }
 
 .color {
   color: transparent;
-} */
+}
