@@ -529,3 +529,104 @@ console.log(checkUserAge2(6));
     
   
 
+//! 1. Написать функцию, которая вычисляет факториал заданного числа.
+
+//? факториал числа 5 1*2*3*4*5
+//? факториал числа 7 1*2*3*4*5*6*7
+
+function calculateFactorial (num:number):any {
+    if (num==1) {
+        return num
+    } else {
+        return num * calculateFactorial(num-1) //пошаговый разбор числа 3: 3 * (3-1=2) * (2-1=1)
+    }
+}
+
+console.log(calculateFactorial(1));
+console.log(calculateFactorial(3));
+console.log(calculateFactorial(15));
+
+
+//! 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом 
+//! порядке. И еще одну функцию – для вывода в обратном порядке.
+
+function showDiapazone (num1:number, num2:number):any {
+    if(num1==num2) {
+        return num1
+    } else {
+        return num1 + ' ' + showDiapazone(num1+1, num2)
+    }
+}
+
+console.log(showDiapazone(3,3))
+console.log(showDiapazone(3,10))
+
+function showReverseDiapazone (num1:number, num2:number):any {
+    if(num1==num2) {
+        return num1
+    } else {
+        return num2 + ' ' + showReverseDiapazone(num1, num2-1)
+    }
+}
+console.log(showReverseDiapazone(3,3))
+console.log(showReverseDiapazone(3,10))
+
+
+//! 3. Написать функцию, которая выводит переданное ей число задом наперед.
+//! Например: число 1234 вывести как 4321.
+
+function showReverseNumber(x:number):number {
+    if (x<10){
+        return x
+    } else {
+        return Number(x % 10 + '' + showReverseNumber(Math.floor(x/10)))
+    }
+}
+
+console.log(showReverseNumber(6))
+console.log(showReverseNumber(16))
+console.log(showReverseNumber(12345))
+
+// console.log(10 % 4);
+
+// console.log(1234);
+// console.log(Number(String(1234).split('').reverse().join('')));
+
+
+// console.log(Math.trunc(2.9435345));
+// console.log(1.2345.toFixed(2));
+
+//! 4. Написать функцию, которая считает сумму цифр числа.
+//! Например: число 1357, сумма 1 + 3 + 5 + 7 = 16.
+
+function calculateSumm (num1:number):any {
+    if(num1<10) {
+        return num1
+    } else {
+        return num1 % 10 + calculateSumm(Math.floor(num1/10))
+    }
+}
+
+console.log(calculateSumm(4))
+console.log(calculateSumm(123))
+console.log(calculateSumm(12345))
+
+
+//! 5. Написать функцию, которая принимает число и выводит соответствующее количество вложенных 
+//! пар круглых скобок. Например: число 4 – (((()))).
+
+
+function showBrackets(num:number):any {
+    if (num==1) {
+        return '()'
+    } else {
+        return '(' + showBrackets(num-1) +')'
+    }
+}
+
+console.log(showBrackets(1));
+console.log(showBrackets(3));
+console.log(showBrackets(9));
+
+
+
