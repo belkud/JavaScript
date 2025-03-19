@@ -628,5 +628,105 @@ console.log(showBrackets(1));
 console.log(showBrackets(3));
 console.log(showBrackets(9));
 
+console.log('----------------------');
 
+
+//!!!!!!!!!!!!!!!!!!!!!!! ОБЪЕКТЫ !!!!!!!!!!!!!!!!!!!!!!!!
+
+
+let name = 'Katya'
+let age = 33
+
+let user = {
+    name: 'Katya', // ключ : значение
+    age: 32,
+    // 0: '888',
+    // 5: 'abc',
+    city:'Sochi',
+    month:'March',
+    // likes_birds: true,  // console.log(user.likes_birds);
+    // "likes birds": true, // console.log(user['likes birds']);
+
+}
+
+let massive = [3, 5, 7, 9]
+let massive2 = ['Ann', 'Kate', 'Julia', 'Vika']
+
+
+
+
+
+
+
+console.log(user);
+console.log(user.age);
+
+user.age = 36 //перезапись значения по ключу
+console.log(user);
+
+//@ts-ignore
+delete user.month // удаление ключа
+console.log(user);
+
+
+
+console.log(user.name);
+
+console.log(user.likes_birds);
+console.log(user['likes birds']);
+
+console.log(user['name']);
+
+console.log('age' in user);
+console.log('table' in user);
+console.log(0 in user);
+ 
+for (const key in user) {
+    console.log(key + ' : ' + user[key]);
+    // console.log();
+    
+}
+
+
+
+let obj1 = {
+    numerator: 2,
+    denumerator: 3,
+}
+
+let obj2 = {
+    numerator: 4,
+    denumerator: 5,
+}
+
+console.log(obj1);
+console.log(obj2);
+
+// Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
+// с этим объектом.
+
+
+let time = {
+    hours: 15,
+    minutes: 65,
+    seconds: 90,
+}
+console.log(time);
+
+
+
+let person = {
+    name: "John",
+    surname: "Smith"
+};
+let person2 = {
+    name: "John",
+    surname: "Smith"
+};
+let person3 = person2 = person
+
+console.log(person==person2);
+console.log(person.name==person2.name);
+
+console.log(person==person3);
 
