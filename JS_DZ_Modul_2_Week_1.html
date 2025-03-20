@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
+                href="index.html">Назад</a></button></div>
+    <h3>Модуль 1</h3>
+    <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
+    <p>Задание: * Во всех заданиях обязательно использовать рекурсию..</p>
+
+
+    
+    
+    
+    
+
+
+    <h4>1. Написать функцию, которая вычисляет факториал заданного числа.</h4>
+    
+<pre>
+
+    факториал числа 5  1*2*3*4*5
+    факториал числа 7  1*2*3*4*5*6*7
+    
+    function calculateFactorial (num:number):any {
+        if (num==1) {
+            return num
+        } else {
+            return num * calculateFactorial(num-1) //пошаговый разбор числа 3: 3 * (3-1=2) * (2-1=1)
+        }
+    }
+    
+    console.log(calculateFactorial(1));
+    console.log(calculateFactorial(15));
+</pre>
+
+
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
