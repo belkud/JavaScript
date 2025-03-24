@@ -649,8 +649,8 @@ let user = {
 
 }
 
-let massive = [3, 5, 7, 9]
-let massive2 = ['Ann', 'Kate', 'Julia', 'Vika']
+// let massive = [3, 5, 7, 9]
+// let massive2 = ['Ann', 'Kate', 'Julia', 'Vika']
 
 
 
@@ -702,17 +702,6 @@ let obj2 = {
 console.log(obj1);
 console.log(obj2);
 
-// Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
-// с этим объектом.
-
-
-let time = {
-    hours: 15,
-    minutes: 65,
-    seconds: 90,
-}
-console.log(time);
-
 
 
 let person = {
@@ -729,4 +718,232 @@ console.log(person==person2);
 console.log(person.name==person2.name);
 
 console.log(person==person3);
+
+//! Задание 1
+//! Создать объект, описывающий автомобиль (производитель,
+//! модель, год выпуска, средняя скорость), и следующие функции
+//! для работы с этим объектом.
+
+
+let car2 = {
+    manufacture : 'Mazda',
+    model:'CRZ',
+    year:2013,
+    averageSpeed: 150,
+}
+
+let car = {
+    manufacture : 'Kia',
+    model:'Rio',
+    year:2013,
+    averageSpeed: 100,
+}
+//! 1. Функция для вывода на экран информации об автомобиле.
+
+function showInfoAboutCar(str:any) {
+    for (const key in str) {
+        console.log(`${key} : ${str[key]}`);                        
+        }
+}
+
+showInfoAboutCar(car)
+
+
+
+
+//! 2. Функция для подсчета необходимого времени для преодоления переданного расстояния со 
+//! средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать 
+//! перерыв на 1 час.
+
+function showTimeInTravel (distance:number, speed:number) {
+       let time = distance/speed 
+       let rest = Math.floor(time/4)
+       
+       if (time<=4) {
+        return distance/speed
+    //    } else if(time) {
+    //     return (time + rest) + ' часов'
+       } else {
+        return (time + rest) + ' часов'
+       }
+}
+
+console.log(showTimeInTravel(1200, car.averageSpeed))
+
+// 100 км - 1 час
+// 200 км - 2 часа
+// 300 км - 3 часа
+// 400 км - 4 часа
+// 500 км - 6 часа
+// 600 км - 7 часа
+// 700 км - 8 часа
+// 800 км - 9 часа
+// 900 км - 11 часа
+// 1000 км - 12 часов
+// 1100 км - 13 часов
+// 1200 км - 15 часов
+
+
+
+
+
+
+
+//! Задание 3
+//! Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для 
+//! работы с этим объектом.
+//! 3. Функция изменения времени на переданное количество
+//! минут.
+//! 4. Функция изменения времени на переданное количество
+//! часов.
+//! Учтите, что в последних 3-х функциях, при изменении одной
+//! части времени, может измениться и другая. Например: если ко
+//! времени «20:30:45» добавить 30 секунд, то должно получиться
+//! «20:31:15», а не «20:30:75».
+
+
+//! Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
+//! с этим объектом.
+
+let time = {
+    hours: 125,
+    minutes: 125,
+    seconds: 30,
+}
+console.log(time);
+
+
+//! 1. Функция вывода времени на экран.
+
+function showTime (time:any) {
+    return time
+}
+console.log(showTime(time));
+
+
+//! 2. Функция изменения времени на переданное количество
+//! секунд.
+
+function showSeconds (sec:any) {
+    sec = Math.trunc(time.seconds/60)  // смотрим сколько количество минут в числе 
+    if (time.seconds>59) { // если количество sec БОЛЬШЕ 59, то срабатывает первое условие
+        time.seconds = time.seconds - sec*60     // приводим секунды в 'нормальный' вид
+        time.minutes+=sec       // добавляем минуты
+        return time
+    } else {                  // если количество sec МЕНЬШЕ или РАВНО 59, то срабатывает второе условие
+        return time
+    }
+}
+console.log(showSeconds(time));
+
+
+//! 3. Функция изменения времени на переданное количество
+//! минут.
+
+
+function showMinutes (min:any) {
+    min = Math.trunc(time.minutes/60)
+    if (time.minutes>59) {
+        time.minutes = time.minutes - min*60
+        time.hours+=min
+        return time
+    }
+    return time
+}
+console.log(showMinutes(time));
+
+
+//! 4. Функция изменения времени на переданное количество часов.
+
+function showHours (hour:any) {
+    hour = Math.trunc(time.hours/24)
+    
+    if (time.hours>23) {
+        time.hours = time.hours - hour*24
+        // time.hours+=min
+        return time
+    }
+    return time
+}
+console.log(showHours(time));
+
+
+
+
+
+// let everything = [231, 'Sochi', alert()]
+// console.log(everything);
+
+
+let massive = [2, 5, 4, 6, 9, 4, 2, 1]
+console.log(massive[0]);
+console.log(massive[1]);
+console.log(massive.length +' количество элементов в массиве');
+
+
+
+
+let namiInMassive = [ 
+    'Ann', 
+    'Kate', 
+    'Sveta'
+]
+console.log(namiInMassive);
+
+console.log(namiInMassive[3] = 'Olga');
+console.log(namiInMassive);
+
+
+
+//! Методы массивов
+
+namiInMassive.push('table', 'computer') //! добавляет элементы в конец массива
+console.log(namiInMassive);
+
+namiInMassive.pop() //! удаляет ПОСЛЕДНИЙ элемент массива 
+console.log(namiInMassive);
+
+namiInMassive.unshift('Kolya', 'Ivan', 'Sergey') //! добавляет элементы в начало массива
+console.log(namiInMassive);
+
+
+namiInMassive.shift() //! удаляет ПЕРВЫЙ элемент массива
+
+
+let massive2 = [2, 5, 4, 6, 9, 4, 2, 1]
+console.log(massive2.sort()); //! сортирует элементы в порядке возрастания
+console.log(massive2.reverse()); //! сортирует элементы в порядке убывания
+
+console.log(namiInMassive);
+ 
+let computer = 'computer'
+console.log(typeof computer);
+console.log(computer.split('').reverse().join(''));
+
+
+
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random()*100));
+
+
+let mas = [ 1, 3, 4, 6, 2, 3, 45, 67, 78,]
+delete mas[1]
+delete mas[2]
+delete mas[3]
+delete mas[4]
+delete mas[5]
+delete mas[6]
+console.log(mas);
+delete mas[3]
+console.log(mas.length);
+
+console.log(Math.max(...mas) + ' - макс элемент массива');
+console.log(Math.min(...mas) + ' - мин элемент массива');
+
+
 
