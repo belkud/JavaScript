@@ -725,28 +725,22 @@ console.log(person==person3);
 //! для работы с этим объектом.
 
 
-let car2 = {
-    manufacture : 'Mazda',
-    model:'CRZ',
-    year:2013,
-    averageSpeed: 150,
-}
 
-let car = {
-    manufacture : 'Kia',
-    model:'Rio',
-    year:2013,
-    averageSpeed: 100,
-}
+// let car = {
+//     manufacture : 'Kia',
+//     model:'Rio',
+//     year:2013,
+//     averageSpeed: 100,
+// }
 //! 1. Функция для вывода на экран информации об автомобиле.
 
-function showInfoAboutCar(str:any) {
-    for (const key in str) {
-        console.log(`${key} : ${str[key]}`);                        
-        }
-}
+// function showInfoAboutCar(str:any) {
+//     for (const key in str) {
+//         console.log(`${key} : ${str[key]}`);                        
+//         }
+// }
 
-showInfoAboutCar(car)
+// showInfoAboutCar(car)
 
 
 
@@ -761,8 +755,6 @@ function showTimeInTravel (distance:number, speed:number) {
        
        if (time<=4) {
         return distance/speed
-    //    } else if(time) {
-    //     return (time + rest) + ' часов'
        } else {
         return (time + rest) + ' часов'
        }
@@ -802,70 +794,70 @@ console.log(showTimeInTravel(1200, car.averageSpeed))
 //! «20:31:15», а не «20:30:75».
 
 
-//! Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
-//! с этим объектом.
+// //! Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
+// //! с этим объектом.
 
-let time = {
-    hours: 125,
-    minutes: 125,
-    seconds: 30,
-}
-console.log(time);
-
-
-//! 1. Функция вывода времени на экран.
-
-function showTime (time:any) {
-    return time
-}
-console.log(showTime(time));
+// let time = {
+//     hours: 125,
+//     minutes: 125,
+//     seconds: 30,
+// }
+// console.log(time);
 
 
-//! 2. Функция изменения времени на переданное количество
-//! секунд.
+// //! 1. Функция вывода времени на экран.
 
-function showSeconds (sec:any) {
-    sec = Math.trunc(time.seconds/60)  // смотрим сколько количество минут в числе 
-    if (time.seconds>59) { // если количество sec БОЛЬШЕ 59, то срабатывает первое условие
-        time.seconds = time.seconds - sec*60     // приводим секунды в 'нормальный' вид
-        time.minutes+=sec       // добавляем минуты
-        return time
-    } else {                  // если количество sec МЕНЬШЕ или РАВНО 59, то срабатывает второе условие
-        return time
-    }
-}
-console.log(showSeconds(time));
+// function showTime (time:any) {
+//     return time
+// }
+// console.log(showTime(time));
 
 
-//! 3. Функция изменения времени на переданное количество
-//! минут.
+// //! 2. Функция изменения времени на переданное количество
+// //! секунд.
+
+// function showSeconds (sec:any) {
+//     sec = Math.trunc(time.seconds/60)  // смотрим сколько количество минут в числе 
+//     if (time.seconds>59) { // если количество sec БОЛЬШЕ 59, то срабатывает первое условие
+//         time.seconds = time.seconds - sec*60     // приводим секунды в 'нормальный' вид
+//         time.minutes+=sec       // добавляем минуты
+//         return time
+//     } else {                  // если количество sec МЕНЬШЕ или РАВНО 59, то срабатывает второе условие
+//         return time
+//     }
+// }
+// console.log(showSeconds(time));
 
 
-function showMinutes (min:any) {
-    min = Math.trunc(time.minutes/60)
-    if (time.minutes>59) {
-        time.minutes = time.minutes - min*60
-        time.hours+=min
-        return time
-    }
-    return time
-}
-console.log(showMinutes(time));
+// //! 3. Функция изменения времени на переданное количество
+// //! минут.
 
 
-//! 4. Функция изменения времени на переданное количество часов.
+// function showMinutes (min:any) {
+//     min = Math.trunc(time.minutes/60)
+//     if (time.minutes>59) {
+//         time.minutes = time.minutes - min*60
+//         time.hours+=min
+//         return time
+//     }
+//     return time
+// }
+// console.log(showMinutes(time));
 
-function showHours (hour:any) {
-    hour = Math.trunc(time.hours/24)
+
+// //! 4. Функция изменения времени на переданное количество часов.
+
+// function showHours (hour:any) {
+//     hour = Math.trunc(time.hours/24)
     
-    if (time.hours>23) {
-        time.hours = time.hours - hour*24
-        // time.hours+=min
-        return time
-    }
-    return time
-}
-console.log(showHours(time));
+//     if (time.hours>23) {
+//         time.hours = time.hours - hour*24
+//         // time.hours+=min
+//         return time
+//     }
+//     return time
+// }
+// console.log(showHours(time));
 
 
 

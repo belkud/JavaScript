@@ -26,14 +26,37 @@
 Учтите, что через каждые 4 часа дороги водителю необхо
 димо делать перерыв на 1 час.
  
-<h4>Задание 2
- Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, 
- и следующие функции для работы с этим объектом.</h4> <br>
- 1. Функция сложения 2-х объектов-дробей. <br>
- 2. Функция вычитания 2-х объектов-дробей. <br>
- 3. Функция умножения 2-х объектов-дробей. <br>
- 4. Функция деления 2-х объектов-дробей. <br>
- 5. Функция сокращения объекта-дроби.
+<pre>
+    let car = {
+        manufacture : 'Kia',
+        model:'Rio',
+        year:2013,
+        averageSpeed: 100,
+    }
+    
+1. Функция для вывода на экран информации об автомобиле.
+
+function showInfoAboutCar(str:any) {
+    for (const key in str) {
+        console.log(`${key} : ${str[key]}`);                        
+        }
+}
+showInfoAboutCar(car)
+
+
+2. Функция для подсчета необходимого времени
+
+ function showTimeInTravel (distance:number, speed:number) {
+     let time = distance/speed 
+     let rest = Math.floor(time/4)
+     
+     if (time&#60;=4) {
+      return distance/speed
+     } else {
+      return (time + rest) + ' часов'
+     }
+}
+</pre>
 
 <h4>Задание 3
  Создать объект, описывающий время (часы, минуты, секунды), и следующие 
@@ -54,6 +77,71 @@
     
 <pre>
 
+     Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы 
+     с этим объектом.
+    
+    let time = {
+        hours: 125,
+        minutes: 125,
+        seconds: 30,
+    }
+    console.log(time);
+    
+    
+     1. Функция вывода времени на экран.
+    
+    function showTime (time:any) {
+        return time
+    }
+    console.log(showTime(time));
+    
+    
+     2. Функция изменения времени на переданное количество
+     секунд.
+    
+    function showSeconds (sec:any) {
+        sec = Math.trunc(time.seconds/60)  // смотрим сколько количество минут в числе 
+        if (time.seconds>59) { // если количество sec БОЛЬШЕ 59, то срабатывает первое условие
+            time.seconds = time.seconds - sec*60     // приводим секунды в 'нормальный' вид
+            time.minutes+=sec       // добавляем минуты
+            return time
+        } else {                  // если количество sec МЕНЬШЕ или РАВНО 59, то срабатывает второе условие
+            return time
+        }
+    }
+    console.log(showSeconds(time));
+    
+    
+     3. Функция изменения времени на переданное количество
+     минут.
+    
+    
+    function showMinutes (min:any) {
+        min = Math.trunc(time.minutes/60)
+        if (time.minutes>59) {
+            time.minutes = time.minutes - min*60
+            time.hours+=min
+            return time
+        }
+        return time
+    }
+    console.log(showMinutes(time));
+    
+    
+     4. Функция изменения времени на переданное количество часов.
+    
+    function showHours (hour:any) {
+        hour = Math.trunc(time.hours/24)
+        
+        if (time.hours>23) {
+            time.hours = time.hours - hour*24
+            // time.hours+=min
+            return time
+        }
+        return time
+    }
+    console.log(showHours(time));
+    
 </pre>
 
 
