@@ -760,7 +760,7 @@ function showTimeInTravel (distance:number, speed:number) {
        }
 }
 
-console.log(showTimeInTravel(1200, car.averageSpeed))
+// console.log(showTimeInTravel(1200, car.averageSpeed))
 
 // 100 км - 1 час
 // 200 км - 2 часа
@@ -887,30 +887,6 @@ console.log(namiInMassive);
 
 
 
-//! Методы массивов
-
-namiInMassive.push('table', 'computer') //! добавляет элементы в конец массива
-console.log(namiInMassive);
-
-namiInMassive.pop() //! удаляет ПОСЛЕДНИЙ элемент массива 
-console.log(namiInMassive);
-
-namiInMassive.unshift('Kolya', 'Ivan', 'Sergey') //! добавляет элементы в начало массива
-console.log(namiInMassive);
-
-
-namiInMassive.shift() //! удаляет ПЕРВЫЙ элемент массива
-
-
-let massive2 = [2, 5, 4, 6, 9, 4, 2, 1]
-console.log(massive2.sort()); //! сортирует элементы в порядке возрастания
-console.log(massive2.reverse()); //! сортирует элементы в порядке убывания
-
-console.log(namiInMassive);
- 
-let computer = 'computer'
-console.log(typeof computer);
-console.log(computer.split('').reverse().join(''));
 
 
 
@@ -924,18 +900,219 @@ console.log(Math.round(Math.random()*100));
 
 
 let mas = [ 1, 3, 4, 6, 2, 3, 45, 67, 78,]
-delete mas[1]
-delete mas[2]
-delete mas[3]
-delete mas[4]
-delete mas[5]
-delete mas[6]
+
 console.log(mas);
-delete mas[3]
 console.log(mas.length);
 
 console.log(Math.max(...mas) + ' - макс элемент массива');
 console.log(Math.min(...mas) + ' - мин элемент массива');
 
+//! Задание 1
+//! Создать массив из 10 случайных чисел и написать несколько
+//! функций для работы с ним.
+let massiveWithRandomNumbers:number[] = []
+for (let i = 1; i <= 10; i++) {
+    let num = Math.round(Math.random()*100)
+    massiveWithRandomNumbers.push(num)
+}
+
+// console.log(massiveWithRandomNumbers);
 
 
+//! 1. Функция принимает массив и выводит его на экран.
+
+function showMassive (massive:number[]) {
+    return massive
+}
+// console.log(showMassive(massiveWithRandomNumbers))
+
+ 
+
+//! 2. Функция принимает массив и выводит только четные
+//! элементы.
+function showEvenElem (x:number[]) {
+
+    //! 1-ый способ решения через цикл for
+
+    for (let i = 0; i < x.length; i++) {
+        if (x[i]%2==0) {
+            console.log(x[i]);
+        }            
+    }
+    
+    //! 2-ой способ решения через цикл for of
+
+    for (const el of x) {
+        if (el%2==0) {
+            console.log(el);
+        }
+    }
+        
+
+}
+
+showEvenElem(massiveWithRandomNumbers)
+
+ 
+
+
+
+
+console.log('------------');
+
+
+//! 3. Функция принимает массив и возвращает сумму всех
+//! элементов массива.
+
+function showUnionSumm (mass:number[]) { // название функции и её параметр
+    let accum  = 0     // (аккамулятор) - сюда мы записываем общую сумму чисел
+    for (let i = 0; i < mass.length; i++) { // количество повторений цикла
+        accum+=mass[i] // суммируем элементы между собой
+       
+    }
+    return accum // возвращем общую сумму 
+}
+
+console.log(showUnionSumm(massiveWithRandomNumbers)); // вызов функции и передача аргумента
+
+
+
+//! 4. Функция принимает массив и возвращает его максимальный элемент.
+function findMaxElement (x:number[]) {
+    return `
+наибольший элемент = ${Math.max(...x)}, 
+наименьший элемент = ${Math.min(...x)}
+    `
+}
+console.log(findMaxElement(massiveWithRandomNumbers));
+
+
+
+
+
+
+//! 5. Функция добавления нового элемента в массив по указанному индексу.
+
+
+
+mas = [ 1, 3, 4, 6, 2, 3, 45, 67, 78,]
+
+function addNewElement (mass:number[], index:number, userNum:number) {
+    mass.splice(index, 0, userNum)
+    return mass
+}
+console.log(addNewElement(massiveWithRandomNumbers, 3, 555));
+
+console.log(addNewElement(mas, 3, 555));
+
+
+massiveWithRandomNumbers = [47, 50, 78, 32, 46, 100, 15, 76, 27, 2]
+
+
+
+
+
+//! 6. Функция удаления элемента из массива по указанному
+//! индексу
+
+function deleteElement(mass:number[], index:number) {
+    mass.splice (index, 1)
+    return mass
+}
+console.log(deleteElement(massiveWithRandomNumbers, 4));
+
+
+console.log('=============')
+
+
+massiveWithRandomNumbers = [47, 50, 78, 32, 46, 100, 15, 76, 27, 2] 
+console.log(massiveWithRandomNumbers);
+
+massiveWithRandomNumbers.push (333)
+console.log(massiveWithRandomNumbers);
+
+
+
+
+console.log(Math.max(...massiveWithRandomNumbers)) //! первый способ нахождения max числа
+
+
+
+let arr = [1, 4, 6, 8,]
+console.log(arr);
+
+let arr2 = [1, 4, 6, 8,]
+console.log(arr == arr2);
+
+
+console.log(arr[0] == arr2[0]);
+console.log(arr[1] == arr2[1]);
+console.log(arr[2] == arr2[2]);
+
+
+//! Методы массивов
+
+namiInMassive.push('table', 'computer') //! добавляет элементы в конец массива
+console.log(namiInMassive);
+
+namiInMassive.pop() //! удаляет ПОСЛЕДНИЙ элемент массива 
+console.log(namiInMassive);
+
+namiInMassive.unshift('Kolya', 'Ivan', 'Sergey') //! добавляет элементы в начало массива
+console.log(namiInMassive);
+
+
+namiInMassive.shift() //! удаляет ПЕРВЫЙ элемент массива
+console.log(namiInMassive.shift());
+
+
+
+let massive2 = [2, 5, 4, 6, 9, 4, 2, 1]
+console.log(massive2.sort()); //! сортирует элементы в порядке возрастания
+console.log(massive2.reverse()); //! сортирует элементы в порядке убывания
+
+console.log(namiInMassive);
+
+let computer = 'computer'
+console.log(typeof computer);
+console.log(computer.split('').reverse().join(''));
+
+let massive3 = [2, 5, 4, 6, 9, 4, 2, 1]
+console.log(massive3);
+console.log(String(massive3)); // метод, который оборачивает массив в строку
+
+
+namiInMassive = [ 
+    'Ann',   
+    'Kate',   
+    'Sveta'    
+]
+console.log(String(namiInMassive).split(',').join('-'));
+
+//! метод split - разделяет по  символу
+//! метод join - соединяет по  символу  
+
+
+
+let str = '2,5,4,6,9,4,2,1'
+console.log(str.split(',').join(' '));
+
+let example = 'метод, который оборачивает массив в строку'
+console.log(example.split(' ').join('-'));
+
+
+
+//! (название массива).splice(2, 0, 555) 
+//! первый - индекс элемента, 
+//! второй - сколько элементов мы хотим удалить, 
+//! третий - добавление нового элемента(ов)
+
+
+massive3 = [2, 5, 4, 6, 9, 4, 2, 1]
+let newArray = massive3.splice(4,7)
+
+console.log(massive3);
+console.log(newArray);
+
+console.log(newArray.concat(2324, massive3, 1234));
+console.log(massive3.concat(newArray));
