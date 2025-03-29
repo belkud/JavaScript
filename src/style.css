@@ -1,11 +1,14 @@
 body{
   background: yellow;
-  background: url(public/back.webp);
+  background: url(./public/back.webp);
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;
 }
 
+/* body button {
+  border: 2px solid red;
+} */
 
 
 h4 {
