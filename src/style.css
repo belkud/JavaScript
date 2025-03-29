@@ -1,6 +1,6 @@
 body{
   background: yellow;
-  background: url(public/);
+  background: url(public/back.webp);
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;
@@ -25,13 +25,13 @@ button {
   background-color: blue;
   padding:5px 15px;
   border-radius: 5px;
-  transition: .5s;
+  transition: 1.5s;
   filter: drop-shadow(0px 0px 4px aliceblue); 
 }
 
 button:hover {
   background-color: red;
-  filter: drop-shadow(0px 0px 8px aliceblue); 
+  filter: drop-shadow(0px 0px px aliceblue); 
   /* transform: scale(1.03); */
 }
   
