@@ -1,7 +1,5 @@
 import './style.css'
 
-// document.body.
-// border: 2px solid red;
 
 
 
@@ -1121,3 +1119,9 @@ console.log(newArray);
 
 console.log(newArray.concat(2324, massive3, 1234));
 console.log(massive3.concat(newArray));
+
+
+
+
+
+
