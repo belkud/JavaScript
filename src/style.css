@@ -1,6 +1,6 @@
 body{
   background: yellow;
-  background: url(back.webp);
+  background: url(public/);
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;
