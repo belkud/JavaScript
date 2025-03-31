@@ -1120,8 +1120,255 @@ console.log(newArray);
 console.log(newArray.concat(2324, massive3, 1234));
 console.log(massive3.concat(newArray));
 
+console.log('-------------------');
+
+
+//! 1. Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if 
+//! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.
+
+
+let array = [2, 5, 9, 15, 0, 4]
+
+//! первый способ решения цикл for
+let arrayWitnNewElem = []
+for (let i = 0; i < array.length; i++) {
+    if (array[i]>3 && array[i]<10) {
+        arrayWitnNewElem.push(array[i]);
+    }   
+}
+console.log(arrayWitnNewElem);
+
+
+//! второй способ решения цикл for of
+const newMass = []
+for (const el of array) {
+    if (el>3 && el<10) {
+        newMass.push(el)
+    }
+}
+console.log(newMass);
+
+
+// !2. Дан массив с числами. Числа могут быть положительными и отрицательными. Найдите сумму 
+// !положительных элементов массива.
+
+let massive5 = [2, 5, -9, -15, 0, 4, -6, 5]
+
+let accumulyator = 0
+for (const el of massive5) {
+    if (el>0) {
+        accumulyator+=el   
+    }
+}
+console.log(accumulyator);
+
+
+// !3. Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и оператора if п
+// !роверьте есть ли в массиве элемент со значением, равным 4. Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо.
+
+const newArr = [1, 2, 5, 9, 4, 13, 4, 10]
+for (let i = 0; i < newArr.length; i++) {
+        if(newArr[i]==4) {
+            console.log('Есть');
+            break
+        }    
+}
+
+
+// !4. Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только те
+// ! числа из массива, которые начинаются на цифру 1, 2 или 5.
+const massWithNum = [10, 20, 30, 50, 235, 3000]
+for (let i = 0; i < massWithNum.length; i++) {
+    
+    let num = String(massWithNum[i]) // здесь переводим элементы массива в строки
+    
+    if (num[0]=='1' || num[0]=='2' || num[0]=='5') {
+        console.log(num);      
+    }
+ 
+}
+
+
+// !5. Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку
+// ! ' 1-2-3-4-5-6-7-8-9-'.
+
+const newMassive = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(newMassive.toString().split(',').join('-'));
+
+
+
+// !6. Составьте массив дней недели. С помощью цикла for выведите все дни недели.
+
+let dayOfWeek = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье',]
+console.log(dayOfWeek);
+
+for (let i = 0; i < dayOfWeek.length; i++) {
+    console.log(dayOfWeek[i]);
+        
+}
+
+
+dayOfWeek = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье',]
+
+console.log(dayOfWeek.indexOf('среда'));
+
+
+
+console.log(dayOfWeek.slice(1,4)); //! slice КОПИРУЕТ часть массива и не изменяет его
+console.log(dayOfWeek);
+
+dayOfWeek.splice(3, 0, 'Monday', 'Tuesday') //! splice может удалять старые элементы массива и записывать новые
+
+console.log(dayOfWeek);
+
+
+
+let mass1= [1, 2, 3, 4, 5]
+let mass2 = [1, 2, 5,]
+console.log(mass1.concat(mass2)); //! concat соединяет данные из массивов
+
+
+mass1= [1, 2, 3, 4, 5]
+
+mass1.forEach(function name (el){
+    console.log(el*2)
+})
+
+mass1.forEach((el)=>{
+    console.log(el*2)
+})
+
+console.log(mass1);
+
+
+//! 1. Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if 
+//! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.
+
+//! первый способ решения цикл for
+
+array = [2, 5, 9, 15, 0, 4]
+
+let massWithNumbers:number[] = []
+
+array.forEach((el)=> {
+    if (el>3 && el<10) {
+       massWithNumbers.push(el)         
+    }
+})
+console.log(massWithNumbers);
+
+
+// const newMass = []
+// for (const el of array) {
+//     if (el>3 && el<10) {
+//         newMass.push(el)
+//     }
+// }
+// console.log(newMass);
 
 
 
 
+// let arrayWitnNewElem = []
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i]>3 && array[i]<10) {
+//         arrayWitnNewElem.push(array[i]);
+//     }   
+// }
+// console.log(arrayWitnNewElem);
 
+
+
+array = [2, 5, 9, 5, 0, 6,]
+
+console.log(array.indexOf(5)); //! метод indexOf показывает индекс элемента с начала массива
+
+console.log(array.lastIndexOf(5)); //! метод lastIndexOf показывает индекс элемента с конца массива
+
+console.log(array.includes(5)); //! includes - показывает наличие элемента в массиве
+
+// array.find((el)=> {
+//     if (el>3) {
+//         console.log(el);
+        
+//     }
+// })
+
+console.log('--------------');
+
+
+let users:any[] = [
+    {id: 1, name: "Вася", payment: 20000},
+    {id: 2, name: "Петя", payment: 25000},
+    {id: 3, name: "Маша", payment: 15000}
+];
+
+let usersName:number[] = []
+
+users.map(el=> usersName.push(el.id * el.payment))
+console.log(usersName);
+
+
+
+
+// console.log(usersName);
+
+console.log('--------------');
+let unionPayment = 0
+users.forEach(el=> unionPayment+=el.payment)
+console.log(`общая зарплата работников = ${unionPayment} рублей`);
+
+let sortPayment = [] as any
+
+users.forEach(el=> sortPayment.push(el.payment))
+console.log(sortPayment.sort());
+console.log(sortPayment.reverse());
+
+
+
+  
+  // возвращает массив, состоящий из двух первых пользователей
+  let someUsers = users.find(el=>el.payment>=20000) //! выводит первое верное значение и на нём завешается
+  console.log(someUsers);
+
+  let someUsers2 = users.filter(el=>el.payment>=20000) //! filter выводит ВСЕ верные значениЯ
+  console.log(...someUsers2);
+        
+    
+  array = [2, 5, 9, 5, 0, 6,]
+  let test = array.find(el=> el>3)
+  console.log(test);
+  
+
+
+array = [2, 5, 6,]
+
+let acc = 0
+array.forEach (el=>acc+=el) //! forEach перебирает каждый элемент массива (по аналогии с циклом for)
+console.log(acc);
+
+
+
+
+let reduce = array.reduce((acc, el)=>acc+=el) //! reduce нужен для вычисления одного значения на основе всех элементов массива
+console.log(reduce);
+
+
+
+  
+
+// map(func) – создаёт новый массив из результатов вызова func для каждого элемента.
+// sort(func) – сортирует массив «на месте», а потом возвращает его.
+// reverse()
+
+
+array = [2, 5, 9, 8]
+console.log(array.reverse()); //! reverse - меняет порядок элементов задом наперёд
+
+console.log(array.sort()); //! sort - сортирует элементы в порядке возрастания
+
+let testMap = array.map(el=>el*10) //! создаёт новый массив и НЕ меняет исходный массив
+console.log(testMap);
+
+array.copyWithin
+ 
