@@ -1340,4 +1340,4 @@ array.copyWithin
 
 
 
-array = [2, 5, 9, 15, 0, 4]
+ 
