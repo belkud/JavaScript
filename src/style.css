@@ -1,6 +1,8 @@
 body{
-  background: yellow;
   background: url(./public/back.webp);
+  background: url(./public/back2.webp);
+  /* background: black; */
+  /* backdrop-filter:grayscale(1); */
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;
@@ -14,11 +16,11 @@ body{
 
 h4 {
   color: red;
-  text-shadow: 0px 0px 15px black;
-  /* text-shadow: 0px 0px 2px aliceblue; */
+  text-shadow: 0px 0px 5px black;
+  /* text-shadow: 0px 0px 10px aliceblue; */
   margin-top: 30px;
   margin-bottom: 0px;
-  background-color: black;
+  /* background-color: black; */
 }
 
 p{
