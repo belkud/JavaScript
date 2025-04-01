@@ -1140,61 +1140,65 @@ console.log(arrayWitnNewElem);
 
 
 //! второй способ решения цикл for of
-const newMass = []
-for (const el of array) {
-    if (el>3 && el<10) {
-        newMass.push(el)
-    }
-}
-console.log(newMass);
+// const newMass = []
+// for (const el of array) {
+//     if (el>3 && el<10) {
+//         newMass.push(el)
+//     }
+// }
+// console.log(newMass);
 
 
 // !2. Дан массив с числами. Числа могут быть положительными и отрицательными. Найдите сумму 
 // !положительных элементов массива.
 
-let massive5 = [2, 5, -9, -15, 0, 4, -6, 5]
+// let massive5 = [2, 5, -9, -15, 0, 4, -6, 5]
 
-let accumulyator = 0
-for (const el of massive5) {
-    if (el>0) {
-        accumulyator+=el   
-    }
-}
-console.log(accumulyator);
+// let accumulyator = 0
+// for (const el of massive5) {
+//     if (el>0) {
+//         accumulyator+=el   
+//     }
+// }
+// console.log(accumulyator);
 
 
 // !3. Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и оператора if п
 // !роверьте есть ли в массиве элемент со значением, равным 4. Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо.
 
-const newArr = [1, 2, 5, 9, 4, 13, 4, 10]
-for (let i = 0; i < newArr.length; i++) {
-        if(newArr[i]==4) {
-            console.log('Есть');
-            break
-        }    
-}
+// const newArr = [1, 2, 5, 9, 4, 13, 4, 10]
+// for (let i = 0; i < newArr.length; i++) {
+//         if(newArr[i]==4) {
+//             console.log('Есть');
+//             break
+//         }    
+// }
 
 
 // !4. Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только те
 // ! числа из массива, которые начинаются на цифру 1, 2 или 5.
-const massWithNum = [10, 20, 30, 50, 235, 3000]
-for (let i = 0; i < massWithNum.length; i++) {
+// const massWithNum = [10, 20, 30, 50, 235, 3000]
+// for (let i = 0; i < massWithNum.length; i++) {
     
-    let num = String(massWithNum[i]) // здесь переводим элементы массива в строки
+//     let num = String(massWithNum[i]) // здесь переводим элементы массива в строки
     
-    if (num[0]=='1' || num[0]=='2' || num[0]=='5') {
-        console.log(num);      
-    }
- 
-}
+//     if (num[0]=='1' || num[0]=='2' || num[0]=='5') {
+//         console.log(num);      
+//     }
+// }
 
 
 // !5. Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку
 // ! ' 1-2-3-4-5-6-7-8-9-'.
 
-const newMassive = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-console.log(newMassive.toString().split(',').join('-'));
+// const newMassive = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// let string = ''
+// for (let i = 0; i < newMassive.length; i++) {
+//         string+=newMassive[i] + '-'
+// }
+// console.log(string);
 
+ 
 
 
 // !6. Составьте массив дней недели. С помощью цикла for выведите все дни недели.
@@ -1203,8 +1207,7 @@ let dayOfWeek = ['понедельник', 'вторник', 'среда', 'че
 console.log(dayOfWeek);
 
 for (let i = 0; i < dayOfWeek.length; i++) {
-    console.log(dayOfWeek[i]);
-        
+    console.log(dayOfWeek[i]);  
 }
 
 
@@ -1240,42 +1243,6 @@ mass1.forEach((el)=>{
 
 console.log(mass1);
 
-
-//! 1. Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if 
-//! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.
-
-//! первый способ решения цикл for
-
-array = [2, 5, 9, 15, 0, 4]
-
-let massWithNumbers:number[] = []
-
-array.forEach((el)=> {
-    if (el>3 && el<10) {
-       massWithNumbers.push(el)         
-    }
-})
-console.log(massWithNumbers);
-
-
-// const newMass = []
-// for (const el of array) {
-//     if (el>3 && el<10) {
-//         newMass.push(el)
-//     }
-// }
-// console.log(newMass);
-
-
-
-
-// let arrayWitnNewElem = []
-// for (let i = 0; i < array.length; i++) {
-//     if (array[i]>3 && array[i]<10) {
-//         arrayWitnNewElem.push(array[i]);
-//     }   
-// }
-// console.log(arrayWitnNewElem);
 
 
 
@@ -1325,9 +1292,7 @@ console.log(sortPayment.sort());
 console.log(sortPayment.reverse());
 
 
-
-  
-  // возвращает массив, состоящий из двух первых пользователей
+ 
   let someUsers = users.find(el=>el.payment>=20000) //! выводит первое верное значение и на нём завешается
   console.log(someUsers);
 
@@ -1372,3 +1337,7 @@ console.log(testMap);
 
 array.copyWithin
  
+
+
+
+array = [2, 5, 9, 15, 0, 4]

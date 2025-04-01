@@ -2,7 +2,6 @@ body{
   background: url(./public/back.webp);
   background: url(./public/back2.webp);
   /* background: black; */
-  /* backdrop-filter:grayscale(1); */
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;

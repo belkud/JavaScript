@@ -20,22 +20,120 @@
 <h4>1. Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и 
     оператора if выведите на экран столбец тех элементов массива, которые больше 3-х, 
     но меньше 10.</h4>
+    <pre>
+        
+let array = [2, 5, 9, 15, 0, 4]
+
+
+<span style="text-decoration: underline; font-size: 1.2em;">Первый способ цикл for</span>
+
+let arrayWitnNewElem = []
+for (let i = 0; i &#60; array.length; i++) {
+    if (array[i]>3 && array[i]&#60;10) {
+        arrayWitnNewElem.push(array[i]);
+    }   
+}
+console.log(arrayWitnNewElem);
+
+
+
+<span style="text-decoration: underline; font-size: 1.2em;">Второй способ цикл for of</span>
+
+const newMass = []
+for (const el of array) {
+    if (el>3 && el&#60;10) {
+        newMass.push(el)
+    }
+}
+console.log(newMass);
+
+
+
+<span style="text-decoration: underline; font-size: 1.2em;">Третий способ метод forEach()</span>
+
+let massWithNumbers:number[] = []
+
+array.forEach((el)=> {
+    if (el>3 && el&#60;10) {
+       massWithNumbers.push(el)         
+    }
+})
+console.log(massWithNumbers);
+
+    </pre>
     
 <h4>2. Дан массив с числами. Числа могут быть положительными и отрицательными. 
     Найдите сумму положительных элементов массива.</h4>
-        
+
+    <pre>
+let massive = [2, 5, -9, -15, 0, 4, -6, 5]
+
+let acc = 0
+for (const el of massive) {
+    if (el>0) {
+        acc+=el   
+    }
+}
+console.log(acc);
+
+    </pre>
+
 <h4>3. Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и 
 оператора if проверьте есть ли в массиве элемент со значением, равным 4. 
 Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо.</h4> 
-        
+
+<pre>
+const newArr = [1, 2, 5, 9, 4, 13, 4, 10]
+
+for (let i = 0; i &#60; newArr.length; i++) {
+    if(newArr[i]==4) {
+        console.log('Есть');
+        break
+    }    
+}
+
+</pre>
+
+
 <h4>4. Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только 
 те числа из массива, которые начинаются на цифру 1, 2 или 5.</h4> 
-        
+    <pre>
+const massWithNum = [10, 20, 30, 50, 235, 3000]
+for (let i = 0; i &#60; massWithNum.length; i++) {
+    
+    let num = String(massWithNum[i]) // здесь переводим элементы массива в строки
+    
+    if (num[0]=='1' || num[0]=='2' || num[0]=='5') {
+        console.log(num);      
+    }
+}
+    </pre>      
+
+
 <h4>5. Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку '
 1-2-3-4-5-6-7-8-9-'.</h4> 
+<pre>
+    
+const newMassive = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let str = ''
+for (let i = 0; i &#60; newMassive.length; i++) {
+        str+=newMassive[i] + '-'
+}
+console.log(str);
+
+</pre>
+
         
 <h4>6. Составьте массив дней недели. С помощью цикла for выведите все дни недели.</h4>
-        
+<pre>
+    
+let dayOfWeek = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье',]
+console.log(dayOfWeek);
+
+for (let i = 0; i  &#60; dayOfWeek.length; i++) {
+    console.log(dayOfWeek[i]);  
+}
+</pre>
         
 
 
