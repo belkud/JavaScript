@@ -65,3 +65,9 @@ a {
 }
 
 
+#infoAboutItems {
+  background-color: rgb(226, 222, 222, .8);
+  color: red;
+  padding: 20px;
+  margin: 10px;
+}
