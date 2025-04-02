@@ -1339,5 +1339,158 @@ array.copyWithin
  
 
 
+//! 1. У вас есть 5 чисел. Найдите наибольшее и наименьшее из них.
+let newArr = [4, 7, 9, 12, 20, 5, 1, 3]
+
+//? первый способ решения
+console.log(Math.max(...newArr));
+console.log(Math.min(...newArr));
+
+//? второй способ решения
+console.log(newArr.sort((a,b)=>a-b).pop());
+console.log(newArr.sort((a,b)=>a-b).shift());
+
+
+//! 2. Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой.
+
+let array2 = [1, 2, 3]
+console.log(array2.reverse());
+
+//! 3. Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в порядке убывания.
+newArr = [4, 7, 9, 12, 20, 5, 1, 3]
+console.log(newArr.sort((a,b)=>a-b));
+console.log(newArr.sort((a,b)=>b-a));
+
+//! 4. Есть 2 массива: let a = ['a', 'b', 'c']; let b = [1, 2, 3]; Объедините их, чтобы получилось: ['a', 'b', 'c', 1, 2, 3]
+let a:any[] = ['a', 'b', 'c']; 
+let b = [1, 2, 3];
+console.log(a.concat(b));
+
+//! 5. У нас есть некий массив с данными: const fruits = ["Banana", "Orange", "Apple", "Mango"]; Проверьте, есть ли в этом массиве значение Banana
+const fruits = ["Banana", "Orange", "Apple", "Mango"]
+console.log(fruits.includes('Banana'));
+
+
+//! 6. Напишите программу, которая будет преобразовывать число от 1 до 12 в соответствующее 
+//! название месяца (Январь, февраль, ...)
+
+let months = ['янв','февр','март','апр','май','июнь','июль','авг','сент','окт','нояб','дек',]
+
+//? первый способ решения
+months.forEach((el, index)=>console.log(`${el} - ${index+1}`))
+
+//? второй способ решения
+// for (let i = 0; i < months.length; i++) {
+//     console.log(i+1 + ' - '  + months[i]);
+// }
+
+
+//! 7. У нас есть объект: let obj = { 'name':['Вася', 'Петя', 'Коля'], 'age':[11, 30, 20], }; 
+//! Получите Петю из массива arr. Посчитайте, сколько элементов находится в name.
+let obj = { 
+    'name':['Вася', 'Петя', 'Коля'], 
+    'age':[11, 30, 20], 
+}
+console.log(obj.name.filter((el)=>el == 'Петя'));
+console.log(obj.name[1]);
+console.log(obj.name.length);
+
+//! 8. Поиск по массиву объектов let arr = [{'id':'1','prop1':'val1'},{'id':'2','prop1':'val2'}] 
+//! Этот набор данных формируется выборкой из базы данных. Нужно получить объект, у которого id=2.
+let arrray = [
+    {'id':'1','prop1':'val1'},
+    {'id':'2','prop1':'val2'}
+]
+let newUser = arrray.find((el)=>el.id=='2')
+console.log(newUser)
+
+
+
+//! 9. У вас есть массив: var arr = [ "Hi", "Hello", "Bonjour"]; Добавьте к нему еще один 
+//! элемент в конец, чтобы получился следующий массив [ "Hi", "Hello", "Bonjour", "Hola"]
+
+var testArray = [ "Hi", "Hello", "Bonjour"]
+testArray.push("Hola")
+console.log(testArray);
+
+
+//! Задания повышенной сложности (по желанию)
+//! 10. У нас есть 3 товара. У каждого товара есть цена, название и стоимость доставки. 
+//! Стоимость доставки для всех товаров одинаковая.
+
+let items = [
+    {name:'milk', price: 50, delivery:30},
+    {name:'eggs', price: 80, delivery:50},
+    {name:'bread', price: 100, delivery:20},
+]
+
+let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
+infoAboutItems.innerHTML = JSON.stringify(items) + '<br>' 
+
+//! 1. Выведите на экран общую стоимость всех товаров вместе со стоимостью доставки.
+
+
+// let priceWithDelivery = items.map(el=>el.price + el.delivery).reduce((acc,el)=>acc+=el) // можно решить в одну строчку
+// infoAboutItems.innerHTML += priceWithDelivery + ' рублей общая стоимость всех товаров'
+
+let priceWithDelivery = items.map(el=>el.price + el.delivery) //считаем стоимость товара + доставку по строкам
+
+let accum = 0
+priceWithDelivery.forEach(el=>accum+=el) // считаем общую стоимость
+infoAboutItems.innerHTML += accum + ' рублей общая стоимость всех товаров' + '<br>'
+
+
+
+//! 2. Сделайте так, чтобы меняя стоимость доставки в одном месте, общая стоимость автоматически пересчитывалась.
+
+let Delivery = items.map(el=>el.delivery) // достаем данные о доставке (её стоимость)
+let maxDelivery =Math.max(...Delivery) // находим максимальную цену доставки
+
+
+let accum2 = 0
+items.map(el=>accum2 += el.price + maxDelivery)
+infoAboutItems.innerHTML += accum2 + ' рублей общая стоимость всех товаров в пересчетё с новой доставкой' + '<br>' + '<br>' + '<br>'
+
+
+
+
+
+
+//! 11. Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия 
+//! товара, количества и цены за единицу товара. Написать следующие функции.
+let items2 = [
+    {name:'milk', price: 50,  quantity:1},
+    {name:'eggs', price: 80,  quantity:2},
+    {name:'bread', price: 100, quantity:3},
+]
+
 
  
+//! 1. Распечатка чека на экран.
+let infoInHTML = items2.map(el=>JSON.stringify(el) + '<br>')
+infoAboutItems.innerHTML += infoInHTML
+
+//! 2. Подсчет общей суммы покупки.
+let unionSumm = 0
+items2.forEach(el=>unionSumm+=el.price*el.quantity)
+
+infoAboutItems.innerHTML += 'Общая стоимость покупки = ' + unionSumm + ' рублей'  + '<br>'
+
+//! 3. Получение самой дорогой покупки в чеке.
+
+let maxPrice = items2.map(el=>el.price*el.quantity)
+infoAboutItems.innerHTML += 'Самая дорогая покупка в чеке = ' + Math.max(...maxPrice) + ' рублей'  + '<br>'
+
+
+
+
+//! 4. Подсчет средней стоимости одного товара в чеке.
+ 
+let quantity = 0    
+items2.forEach(el=>quantity+=el.quantity) // считаем общее количество товара
+
+let averagePrice = unionSumm / quantity
+
+infoAboutItems.innerHTML += 'Средняя стоимость одного товара в чеке = ' +  averagePrice + ' рублей'  + '<br>'
+
+
