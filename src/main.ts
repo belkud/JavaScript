@@ -1499,5 +1499,5 @@ items2.forEach(el=>quantity+=el.quantity) // считаем общее коли�
 
 let averagePrice = unionSumm / quantity
 
-infoAboutItems2.innerHTML += 'Средняя стоимость одного товара в чеке = ' +  averagePrice + ' рублей'  + '<br>'
+infoAboutItems2.innerHTML += 'Средняя цена одного товара = ' +  averagePrice + ' рублей'  + '<br>'
 

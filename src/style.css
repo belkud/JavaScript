@@ -69,14 +69,14 @@ a {
   background-color: rgb(226, 222, 222, .2);
   color: red;
   padding: 20px;
-  margin: 10px;
+  margin: 50px;
   width: 300px;
 }
 
 #infoAboutItems2 {
   background-color: rgb(226, 222, 222);
   padding: 20px;
-  margin: 10px;
+  margin: 50px;
   width: 300px;
   color: black;
 }
