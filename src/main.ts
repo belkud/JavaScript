@@ -1425,10 +1425,9 @@ let items = [
 ]
 
 let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
-// items.forEach(el=>infoAboutItems.innerHTML+=JSON.stringify(el) + '<br>')
 
-
-items.forEach(el=>infoAboutItems.innerHTML+=`${el.name}` + '<br>')
+infoAboutItems.innerHTML+= 'Товары: <br>'
+items.forEach(el=>infoAboutItems.innerHTML+=`${JSON.stringify(el)}` + '<br>')
 
 
 
@@ -1473,19 +1472,20 @@ let items2 = [
 
  
 //! 1. Распечатка чека на экран.
+let infoAboutItems2 = document.getElementById('infoAboutItems2') as HTMLDivElement
 let infoInHTML = items2.map(el=>JSON.stringify(el) + '<br>')
-infoAboutItems.innerHTML += infoInHTML
+infoAboutItems2.innerHTML += infoInHTML
 
 //! 2. Подсчет общей суммы покупки.
 let unionSumm = 0
 items2.forEach(el=>unionSumm+=el.price*el.quantity)
 
-infoAboutItems.innerHTML += 'Общая стоимость покупки = ' + unionSumm + ' рублей'  + '<br>'
+infoAboutItems2.innerHTML += 'Общая стоимость покупки = ' + unionSumm + ' рублей'  + '<br>'
 
 //! 3. Получение самой дорогой покупки в чеке.
 
 let maxPrice = items2.map(el=>el.price*el.quantity)
-infoAboutItems.innerHTML += 'Самая дорогая покупка в чеке = ' + Math.max(...maxPrice) + ' рублей'  + '<br>'
+infoAboutItems2.innerHTML += 'Самая дорогая покупка в чеке = ' + Math.max(...maxPrice) + ' рублей'  + '<br>'
 
 
 
@@ -1497,5 +1497,5 @@ items2.forEach(el=>quantity+=el.quantity) // считаем общее коли�
 
 let averagePrice = unionSumm / quantity
 
-infoAboutItems.innerHTML += 'Средняя стоимость одного товара в чеке = ' +  averagePrice + ' рублей'  + '<br>'
+infoAboutItems2.innerHTML += 'Средняя стоимость одного товара в чеке = ' +  averagePrice + ' рублей'  + '<br>'
 
