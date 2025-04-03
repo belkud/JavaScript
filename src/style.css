@@ -74,9 +74,9 @@ a {
 }
 
 #infoAboutItems2 {
-  background-color: rgb(226, 222, 222, .2);
-  color: red;
+  background-color: rgb(226, 222, 222);
   padding: 20px;
   margin: 10px;
   width: 300px;
+  color: black;
 }

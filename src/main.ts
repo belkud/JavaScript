@@ -1381,8 +1381,8 @@ months.forEach((el, index)=>console.log(`${el} - ${index+1}`))
 
 //? второй способ решения
 // for (let i = 0; i < months.length; i++) {
-//     console.log(i+1 + ' - '  + months[i]);
-// }
+    //     console.log(i+1 + ' - '  + months[i]);
+    // }
 
 
 //! 7. У нас есть объект: let obj = { 'name':['Вася', 'Петя', 'Коля'], 'age':[11, 30, 20], }; 
@@ -1441,7 +1441,7 @@ items.forEach(el=>infoAboutItems.innerHTML+=`${JSON.stringify(el)}` + '<br>')
 let priceWithDelivery = items.map(el=>el.price + el.delivery) //считаем стоимость товара + доставку по строкам
 let accum = 0 // сюда записываем общую стоимость
 priceWithDelivery.forEach(el=>accum+=el) // считаем общую стоимость
-infoAboutItems.innerHTML += `<br> Общая стоимость всех товаров = 
+infoAboutItems.innerHTML += `<br> <br> Общая стоимость всех товаров = 
 ${accum} рублей ` + '<br>' + '<br>' // выводим общую стоимость товаров
 
 
@@ -1464,17 +1464,19 @@ ${accum2} рублей` + '<br>' + '<br>' // выводим общую стои�
 //! 11. Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия 
 //! товара, количества и цены за единицу товара. Написать следующие функции.
 let items2 = [
-    {name:'milk', price: 50,  quantity:1},
-    {name:'eggs', price: 80,  quantity:2},
-    {name:'bread', price: 100, quantity:3},
+    {name:'Milk', price: 50,  quantity:1},
+    {name:'Eggs', price: 80,  quantity:2},
+    {name:'Bread', price: 100, quantity:3},
 ]
 
 
- 
+
 //! 1. Распечатка чека на экран.
 let infoAboutItems2 = document.getElementById('infoAboutItems2') as HTMLDivElement
-let infoInHTML = items2.map(el=>JSON.stringify(el) + '<br>')
-infoAboutItems2.innerHTML += infoInHTML
+items2.forEach(el=>infoAboutItems2.innerHTML+=`
+    ${el.name} <br> цена: ${el.price}, кол-во: ${el.quantity}
+` + '<br>'+ '<br>')
+
 
 //! 2. Подсчет общей суммы покупки.
 let unionSumm = 0
