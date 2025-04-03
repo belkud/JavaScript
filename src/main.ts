@@ -1342,11 +1342,11 @@ array.copyWithin
 //! 1. У вас есть 5 чисел. Найдите наибольшее и наименьшее из них.
 let newArr = [4, 7, 9, 12, 20, 5, 1, 3]
 
-//? первый способ решения
+// первый способ решения
 console.log(Math.max(...newArr));
 console.log(Math.min(...newArr));
 
-//? второй способ решения
+// второй способ решения
 console.log(newArr.sort((a,b)=>a-b).pop());
 console.log(newArr.sort((a,b)=>a-b).shift());
 
@@ -1409,7 +1409,7 @@ console.log(newUser)
 //! 9. У вас есть массив: var arr = [ "Hi", "Hello", "Bonjour"]; Добавьте к нему еще один 
 //! элемент в конец, чтобы получился следующий массив [ "Hi", "Hello", "Bonjour", "Hola"]
 
-var testArray = [ "Hi", "Hello", "Bonjour"]
+let testArray = [ "Hi", "Hello", "Bonjour"]
 testArray.push("Hola")
 console.log(testArray);
 
@@ -1419,13 +1419,19 @@ console.log(testArray);
 //! Стоимость доставки для всех товаров одинаковая.
 
 let items = [
-    {name:'milk', price: 50, delivery:30},
-    {name:'eggs', price: 80, delivery:50},
-    {name:'bread', price: 100, delivery:20},
+    {name:'Milk', price: 50, delivery:30},
+    {name:'Eggs', price: 80, delivery:50},
+    {name:'Bread', price: 100, delivery:20},
 ]
 
 let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
-infoAboutItems.innerHTML = JSON.stringify(items) + '<br>' 
+// items.forEach(el=>infoAboutItems.innerHTML+=JSON.stringify(el) + '<br>')
+
+
+items.forEach(el=>infoAboutItems.innerHTML+=`${el.name}` + '<br>')
+
+
+
 
 //! 1. Выведите на экран общую стоимость всех товаров вместе со стоимостью доставки.
 
@@ -1434,22 +1440,22 @@ infoAboutItems.innerHTML = JSON.stringify(items) + '<br>'
 // infoAboutItems.innerHTML += priceWithDelivery + ' рублей общая стоимость всех товаров'
 
 let priceWithDelivery = items.map(el=>el.price + el.delivery) //считаем стоимость товара + доставку по строкам
-
-let accum = 0
+let accum = 0 // сюда записываем общую стоимость
 priceWithDelivery.forEach(el=>accum+=el) // считаем общую стоимость
-infoAboutItems.innerHTML += accum + ' рублей общая стоимость всех товаров' + '<br>'
+infoAboutItems.innerHTML += `<br> Общая стоимость всех товаров = 
+${accum} рублей ` + '<br>' + '<br>' // выводим общую стоимость товаров
 
 
 
 //! 2. Сделайте так, чтобы меняя стоимость доставки в одном месте, общая стоимость автоматически пересчитывалась.
 
-let Delivery = items.map(el=>el.delivery) // достаем данные о доставке (её стоимость)
-let maxDelivery =Math.max(...Delivery) // находим максимальную цену доставки
+let Delivery = items.map(el=>el.delivery) // достаем стоимость каждой доставки
+let maxDelivery =Math.max(...Delivery) // находим доставку с максимальной стоимостью
 
-
-let accum2 = 0
-items.map(el=>accum2 += el.price + maxDelivery)
-infoAboutItems.innerHTML += accum2 + ' рублей общая стоимость всех товаров в пересчетё с новой доставкой' + '<br>' + '<br>' + '<br>'
+let accum2 = 0 // сюда записываем общую стоимость с макс доставкой
+items.map(el=>accum2 += el.price + maxDelivery) //
+infoAboutItems.innerHTML += `Общая стоимость всех товаров в пересчетё с новой доставкой = 
+${accum2} рублей` + '<br>' + '<br>' // выводим общую стоимость товаров с макс доставкой
 
 
 
@@ -1492,5 +1498,4 @@ items2.forEach(el=>quantity+=el.quantity) // считаем общее коли�
 let averagePrice = unionSumm / quantity
 
 infoAboutItems.innerHTML += 'Средняя стоимость одного товара в чеке = ' +  averagePrice + ' рублей'  + '<br>'
-
 
