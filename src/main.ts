@@ -1424,10 +1424,10 @@ let items = [
     {name:'Bread', price: 100, delivery:20},
 ]
 
-let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
+// let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
 
-infoAboutItems.innerHTML+= 'Товары: <br>'
-items.forEach(el=>infoAboutItems.innerHTML+=`${JSON.stringify(el)}` + '<br>')
+// infoAboutItems.innerHTML+= 'Товары: <br>'
+// items.forEach(el=>infoAboutItems.innerHTML+=`${JSON.stringify(el)}` + '<br>')
 
 
 
@@ -1438,23 +1438,23 @@ items.forEach(el=>infoAboutItems.innerHTML+=`${JSON.stringify(el)}` + '<br>')
 // let priceWithDelivery = items.map(el=>el.price + el.delivery).reduce((acc,el)=>acc+=el) // можно решить в одну строчку
 // infoAboutItems.innerHTML += priceWithDelivery + ' рублей общая стоимость всех товаров'
 
-let priceWithDelivery = items.map(el=>el.price + el.delivery) //считаем стоимость товара + доставку по строкам
-let accum = 0 // сюда записываем общую стоимость
-priceWithDelivery.forEach(el=>accum+=el) // считаем общую стоимость
-infoAboutItems.innerHTML += `<br> <br> Общая стоимость всех товаров = 
-${accum} рублей ` + '<br>' + '<br>' // выводим общую стоимость товаров
+// let priceWithDelivery = items.map(el=>el.price + el.delivery) //считаем стоимость товара + доставку по строкам
+// let accum = 0 // сюда записываем общую стоимость
+// priceWithDelivery.forEach(el=>accum+=el) // считаем общую стоимость
+// infoAboutItems.innerHTML += `<br> <br> Общая стоимость всех товаров = 
+// ${accum} рублей ` + '<br>' + '<br>' // выводим общую стоимость товаров
 
 
 
 //! 2. Сделайте так, чтобы меняя стоимость доставки в одном месте, общая стоимость автоматически пересчитывалась.
 
-let Delivery = items.map(el=>el.delivery) // достаем стоимость каждой доставки
-let maxDelivery =Math.max(...Delivery) // находим доставку с максимальной стоимостью
+// let Delivery = items.map(el=>el.delivery) // достаем стоимость каждой доставки
+// let maxDelivery =Math.max(...Delivery) // находим доставку с максимальной стоимостью
 
-let accum2 = 0 // сюда записываем общую стоимость с макс доставкой
-items.map(el=>accum2 += el.price + maxDelivery) //
-infoAboutItems.innerHTML += `Общая стоимость всех товаров в пересчетё с новой доставкой = 
-${accum2} рублей` + '<br>' + '<br>' // выводим общую стоимость товаров с макс доставкой
+// let accum2 = 0 // сюда записываем общую стоимость с макс доставкой
+// items.map(el=>accum2 += el.price + maxDelivery) //
+// infoAboutItems.innerHTML += `Общая стоимость всех товаров в пересчетё с новой доставкой = 
+// ${accum2} рублей` + '<br>' + '<br>' // выводим общую стоимость товаров с макс доставкой
 
 
 
@@ -1463,41 +1463,255 @@ ${accum2} рублей` + '<br>' + '<br>' // выводим общую стои�
 
 //! 11. Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия 
 //! товара, количества и цены за единицу товара. Написать следующие функции.
-let items2 = [
-    {name:'Milk', price: 50,  quantity:1},
-    {name:'Eggs', price: 80,  quantity:2},
-    {name:'Bread', price: 100, quantity:3},
-]
+// let items2 = [
+//     {name:'Milk', price: 50,  quantity:1},
+//     {name:'Eggs', price: 80,  quantity:2},
+//     {name:'Bread', price: 100, quantity:3},
+// ]
 
 
 
 //! 1. Распечатка чека на экран.
-let infoAboutItems2 = document.getElementById('infoAboutItems2') as HTMLDivElement
-items2.forEach(el=>infoAboutItems2.innerHTML+=`
-    ${el.name} <br> цена: ${el.price}, кол-во: ${el.quantity}
-` + '<br>'+ '<br>')
+// let infoAboutItems2 = document.getElementById('infoAboutItems2') as HTMLDivElement
+// items2.forEach(el=>infoAboutItems2.innerHTML+=`
+//     ${el.name} <br> цена: ${el.price}, кол-во: ${el.quantity}
+// ` + '<br>'+ '<br>')
 
 
 //! 2. Подсчет общей суммы покупки.
-let unionSumm = 0
-items2.forEach(el=>unionSumm+=el.price*el.quantity)
+// let unionSumm = 0
+// items2.forEach(el=>unionSumm+=el.price*el.quantity)
 
-infoAboutItems2.innerHTML += 'Общая стоимость покупки = ' + unionSumm + ' рублей'  + '<br>'
+// infoAboutItems2.innerHTML += 'Общая стоимость покупки = ' + unionSumm + ' рублей'  + '<br>'
 
 //! 3. Получение самой дорогой покупки в чеке.
 
-let maxPrice = items2.map(el=>el.price*el.quantity)
-infoAboutItems2.innerHTML += 'Самая дорогая покупка в чеке = ' + Math.max(...maxPrice) + ' рублей'  + '<br>'
+// let maxPrice = items2.map(el=>el.price*el.quantity)
+// infoAboutItems2.innerHTML += 'Самая дорогая покупка в чеке = ' + Math.max(...maxPrice) + ' рублей'  + '<br>'
 
 
 
 
 //! 4. Подсчет средней стоимости одного товара в чеке.
  
-let quantity = 0    
-items2.forEach(el=>quantity+=el.quantity) // считаем общее количество товара
+// let quantity = 0    
+// items2.forEach(el=>quantity+=el.quantity) // считаем общее количество товара
 
-let averagePrice = unionSumm / quantity
+// let averagePrice = unionSumm / quantity
 
-infoAboutItems2.innerHTML += 'Средняя цена одного товара = ' +  averagePrice + ' рублей'  + '<br>'
+// infoAboutItems2.innerHTML += 'Средняя цена одного товара = ' +  averagePrice + ' рублей'  + '<br>'
 
+// console.log(5+5);
+
+
+
+
+
+
+let string = 'Средняя цена ОДного товара'
+console.log(string.length);
+
+let string2 = string.split(' ')
+console.log(string2.length);
+
+
+console.log(string);
+
+console.log(string.toUpperCase());
+console.log(string.toLowerCase());
+
+function camelize(str:string) {
+    let splitStr = str.split('-')
+    let mass:string[] = []
+
+    for (let i = 0; i < splitStr.length; i++) {
+        mass.push(splitStr[i].slice(0,1).toUpperCase(), splitStr[i].slice(1))
+    }
+    
+    let str2 = mass.join('')
+    return str2[0].toLowerCase() + str2.slice(1)
+}
+
+console.log(camelize('background-color'));
+console.log(camelize('background-color'));
+console.log(camelize('list-style-image'));
+console.log(camelize('list-style-image-image-image-image'));
+
+
+let massives = [5, 2, 1, 10, -10, 8]
+console.log(massives);
+console.log(massives.sort((a,b)=>a-b)); // сортировка по возрастанию
+console.log(massives.sort((a,b)=>b-a)); //обратная сортировка
+
+let arrSort = ["HTML", "JavaScript", "CSS"]
+console.log(arrSort);
+
+
+
+
+function sortStringByAlphabet (mass:string[]) {
+    let sortedMass= mass
+
+    sortedMass.sort()
+    return sortedMass
+
+}
+console.log(sortStringByAlphabet(["HTML", "JavaScript", "CSS"]));
+
+
+//! Трансформировать в массив имён
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let newUsers = [ vasya, petya, masha ];
+console.log(...newUsers.sort((a,b)=>a.age - b.age));
+
+
+//! возвратить средний возраст.
+let accumAge = 0
+newUsers.map(el=>accumAge+=el.age)
+console.log(Math.trunc(accumAge/newUsers.length));
+
+
+console.log((newUsers.reduce((acc,el)=>acc+=el.age, 0)/newUsers.length).toFixed(1));
+
+
+
+let strings = ["кришна", "кришна", "харе", "харе",
+    "харе", "харе", "кришна", "кришна", ":-O"
+  ];
+console.log(strings);
+
+
+let massWithUniqElement:string[] = []
+for (let i = 0; i < strings.length; i++) {
+    if (!massWithUniqElement.includes(strings[i]) ) {
+        massWithUniqElement.push(strings[i])        
+    }
+}
+console.log(massWithUniqElement);
+
+
+
+
+
+
+
+
+let massWithUniqElement2:string[] = []
+
+for (const el of strings) {
+    massWithUniqElement2.push(el)
+}
+console.log(massWithUniqElement2);
+
+
+
+
+let billion = 1000000000;
+let billion2 = 1_000_000_000;
+let billion3 = 1e+9
+
+console.log(billion);
+console.log(billion2);
+console.log(billion3);
+
+let mcs = 0.000001
+let mcs2 = 1e-6
+console.log(mcs);
+console.log(mcs2);
+
+
+
+let num = 255;
+console.log(num.toString());
+
+console.log(255.000.toString());
+console.log(255.000.toString(2));
+console.log(255.000.toString(16));
+console.log(255.000.toString(36));
+
+
+let num2 = 1.2345;
+console.log(typeof Number(num2.toFixed(2)));
+
+
+
+//! Math.floor
+//! Округление в меньшую сторону: 3.1 становится 3, а -1.1 — -2.
+
+//! Math.ceil
+//! Округление в большую сторону: 3.1 становится 4, а -1.1 — -1.
+
+//! Math.round
+//! Округление до ближайшего целого: 3.1 становится 3, 3.6 — 4, а -1.1 — -1.
+
+//! Math.trunc
+//! Обрезает дробную часть
+
+
+//! toString() - переводит число в строку
+//! toFixed() - округляет число  до n знаков после запятой 
+
+
+console.log(typeof 123..toString());
+
+console.log((0.1 + 0.2).toFixed(1) == 0.3.toString());
+console.log(0.3);
+
+// parseInt и parseFloat
+
+let width = '100px'
+console.log(parseInt(width));
+console.log(parseFloat(width));
+
+
+let nums = '123.123px'
+console.log(parseInt(nums));
+console.log(parseFloat(nums));
+
+
+
+
+
+function scoreLowelInString(str:string) {
+    let acc = 0
+    for (let i = 0; i < str.length; i++) {
+        if(str[i]=='а'|| str[i]=='е' ) {
+                acc++
+        }        
+    }
+return str.length 
+
+}
+
+console.log(scoreLowelInString(`Написать функцию, 
+    которая считает  
+    количество гласных букв в 
+    переданной строке`))
+
+  let x = 'беспЛатно' 
+  let y = 'БеспЛАТно'
+
+  console.log(x==y);
+  console.log(x.toLowerCase()==y.toLowerCase());
+  
+
+
+  console.log(y.toLowerCase());
+  
+
+//   еле
+//   Лепс спел
+
+//   лампочка
+
+let singer = 'лепс спел'
+if (singer == singer.split('').reverse().join('')) {
+    console.log('Число палиндром');
+} else {
+    console.log('Число не палиндром');
+}
+
+console.log(('количество гласных букв в ').split(''));
