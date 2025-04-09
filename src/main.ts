@@ -1720,3 +1720,4 @@ console.log(('количество гласных букв в ').split(''));
 
 let JS_PZ_Modul_2_Week_3 = document.getElementById('string') as HTMLDivElement
 JS_PZ_Modul_2_Week_3.innerHTML +='33333333333333333'
+JS_PZ_Modul_2_Week_3.innerText +='555555555555555'
