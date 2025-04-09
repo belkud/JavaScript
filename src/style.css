@@ -84,3 +84,30 @@ a {
   width: 300px;
   color: black;
 }
+
+
+#container button {
+  margin-top: 5px;
+}
+
+  button {
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    padding:5px 15px;
+    transition: .5s;
+  }
+
+  button:hover {
+    background-color: red;
+  }
+
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .theory {
+    background-color: rgb(26, 171, 50);
+  }
