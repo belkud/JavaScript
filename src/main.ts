@@ -1719,9 +1719,219 @@ console.log(('количество гласных букв в ').split(''));
 
 
 let JS_PZ_Modul_2_Week_3 = document.getElementById('string') as HTMLDivElement
-JS_PZ_Modul_2_Week_3.innerHTML +='33333333333333333'
-JS_PZ_Modul_2_Week_3.innerText +='555555555555555'
-JS_PZ_Modul_2_Week_3.textContent+='qqqqqqqqqqqq'
+ 
 
-JS_PZ_Modul_2_Week_3.style.background ='blue'
 
+
+//! Задание
+//! 1. Написать функцию, которая принимает 2 строки и сравнивает их длину. Функция возвращает 1, если в первой
+//! строке больше символов, чем во второй; -1 – если во второй больше символов, чем в первой; или 0 – если строки
+//! одинаковой длины.
+
+function compareStrings(str1:string, str2:string) {
+    if (str1.length>str2.length) {
+        return 1
+    } 
+    if (str1.length<str2.length) {
+        return -1
+    } 
+    return 0
+}
+console.log(compareStrings('Написать функцию, которая переводит в верхний регистр', 'Написать функцию, которая считает количество гласных'));
+console.log(compareStrings('Написать функцию, в верхний регистр', 'Написать функцию, которая считает количество гласных'));
+console.log(compareStrings('Написать функцию, в верхний регистр', 'Написать функцию, в верхний регистр'));
+
+
+
+//! 2. Написать функцию, которая переводит в верхний регистр
+//! первый символ переданной строки.
+function changeRegister(str:string) {
+
+        return str[0].toUpperCase() + str.slice(1)
+}
+console.log(changeRegister('которая переводит в верхний регистр'));
+
+
+//! 3. Написать функцию, которая считает количество гласных
+//! букв в переданной строке.
+
+
+function scoreLowelInStrings (str:string) {
+let mass:any[] = ['ы', 'а', 'о', 'у', 'е', 'я', 'и', 'ю', 'ё', 'э',]
+    let accum = 0    
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < mass.length; j++) {
+            if (str[i]==mass[j]) {
+                accum++
+            }
+        }
+    }
+    return accum
+}
+console.log(scoreLowelInStrings('которая переводит в верхний регистр'));
+console.log(scoreLowelInStrings('регистр'));
+
+
+
+
+//! 4. Написать функцию для проверки спама в переданной
+//! строке. Функция возвращает true, если строка содержит
+//! спам. Спамом считать следующие слова: 100% бесплатно,
+//! увеличение продаж, только сегодня, не удаляйте, ххх.
+//! Функция должна быть нечувствительна к регистру.
+
+function checkSpam (str:string) {
+    let mass = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх']
+    for (const el of mass) {
+        if (str.toLowerCase().includes(el)) {
+            return 'Есть спам'
+        }
+        
+    }
+    return 'Спама нету'
+}
+console.log(checkSpam('Спамом считать следующие слова: 100% Бесплатно'));
+console.log(checkSpam('Функция принимает строку ххх'));
+
+
+
+
+//! 5. Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. Если длина строки
+//! больше, чем максимальная, то необходимо отбросить
+//! лишние символы, добавив вместо них троеточие.
+//! Например: truncate(“Hello, world!”, 8) должна вернуть
+//! “Hello...”.
+
+function reduceString (str:string, num:number) {
+
+    return str.slice(0, num) + '...'
+}
+
+console.log(reduceString('Hello, world!', 8));
+console.log(reduceString('Написать функцию, которая проверяет', 20));
+
+
+
+//! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
+
+// еле
+// Лепс спел
+// а Роза упала на лапу Азора
+
+function checkPalindrom (str:string) {
+    let reverseStr = str.split('').reverse().join('')   
+    if (reverseStr.toLowerCase() == str.toLowerCase()) {
+        return 'строка палиндром'
+    }
+    
+    let extraStr = ''
+    for (const el of str) {
+        extraStr+=el.trim().toLowerCase()
+        if (extraStr = reverseStr.toLowerCase()) {
+            return 'строка палиндром'
+            
+        }
+    }
+    return 'не палиндром'
+
+}
+
+
+console.log(checkPalindrom('еле'));
+console.log(checkPalindrom('Лепс спел'));
+console.log(checkPalindrom(' а Роза упала на лапу Азора '));
+
+
+
+
+//! 7. Написать функцию, которая считает количество слов в
+//! предложении.
+
+function scoreWords (str:string) {
+
+    return 'Количество слов в строке = ' + str.split(' ').length
+} 
+console.log(scoreWords('Написать функцию, которая считает количество слов'));
+console.log(scoreWords('Написать функцию'));
+
+
+//! 8. Написать функцию, которая возвращает самое длинное
+//! слово из предложения.
+
+
+function findLongestWord (str:string) {
+    return str.split(' ').sort((a,b)=> b.length - a.length)[0]
+} 
+console.log(findLongestWord('Написать функцию, которая возвращает самое длинное'));
+
+
+
+//! 9. Написать функцию, которая считает среднюю длину слова
+//! в предложении.
+
+function averageLenght(str:string) {
+    let symbols = str.split('').length
+    let words = str.split(' ').length
+    return `среднее количество символов с слове = ${(symbols/words).toFixed(2)}  символов`
+}
+
+console.log(averageLenght('Написать функцию, которая считает среднюю длину слова'));
+
+
+
+
+//! 10. Написать функцию, которая принимает строку и символ
+//! и выводит индексы, по которым находится этот символ в
+//! строке. Также вывести, сколько всего раз встречается этот
+//! символ в строке. 
+
+function showIndexsOfElem (str:string, el:string) {
+    let massive = []
+    let accum = 0
+    for (let i = 0; i < str.length; i++) {
+            if (str[i]==el) {
+                accum++
+                massive.push (i)
+            }
+    }
+    return `индексы элемента '${el}' = ${massive}, количество повторений элемента = ${accum}`
+}
+ 
+console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'а'));
+console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'е'));
+console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'к'));
+
+
+let number = 100
+console.log(number.toString());
+console.log(number);
+
+let r = 12.36;
+console.log(r.toFixed(0));
+
+
+
+
+
+
+let strTest = 'Hi';
+
+// strTest.slice(0,1).toLowerCase() 
+
+console.log(strTest.slice(0,1) + 'aaa');
+console.log(strTest);
+
+let str2 = 'Widget with id www'
+
+console.log(str2.indexOf('aaa'));
+
+console.log(str2.indexOf('d', 14));
+
+console.log(str2.indexOf('id', 3));
+console.log(str2.indexOf('get'));
+console.log(str2.indexOf('www'));
+
+let date = '10/08/2020'
+
+//@ts-ignore
+console.log('“' + date.replaceAll('/', '”,“') + '”');
