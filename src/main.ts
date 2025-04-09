@@ -1724,3 +1724,4 @@ JS_PZ_Modul_2_Week_3.innerText +='555555555555555'
 JS_PZ_Modul_2_Week_3.textContent+='qqqqqqqqqqqq'
 
 JS_PZ_Modul_2_Week_3.style.background ='blue'
+
