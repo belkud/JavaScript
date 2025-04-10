@@ -1913,6 +1913,7 @@ let strTest = 'Hi';
 
 console.log(strTest.slice(0,1) + 'aaa');
 console.log(strTest);
+console.log(strTest);
 
 let str2 = 'Widget with id www'
 // let str2 = 'Widget with id www'
