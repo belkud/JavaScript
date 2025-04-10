@@ -1886,6 +1886,7 @@ function showIndexsOfElem (str:string, el:string) {
                 massive.push (i)
             }
     }
+    return 'индексы элемента' + el + '=' + massive + ', количество повторений элемента = ' + accum
     return `индексы элемента '${el}' = ${massive}, количество повторений элемента = ${accum}`
 }
  

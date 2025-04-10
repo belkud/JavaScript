@@ -19,13 +19,6 @@
 
 
 
-
-
-    &#60;
-
-
-    <h4></h4>
-
     <script>
         document.write(`
 <pre>
@@ -48,15 +41,14 @@ console.log(compareStrings('qwdr', 'dssd'));
 
 
 
-
-
 <h4> 2.Написать функцию, которая переводит в верхний регистр
 первый символ переданной строки. </h4>
-function changeRegister(str:string) {
 
-        return str[0].toUpperCase() + str.slice(1)
+function changeRegister(str:string) {
+    return str[0].toUpperCase() + str.slice(1)
 }
 console.log(changeRegister('которая переводит в верхний регистр'));
+
 
 
 <h4>3. Написать функцию, которая считает количество гласных
@@ -91,7 +83,6 @@ function checkSpam (str:string) {
         if (str.toLowerCase().includes(el)) {
             return 'Есть спам'
         }
-        
     }
     return 'Спама нету'
 }
@@ -100,13 +91,11 @@ console.log(checkSpam('Функция принимает строку ххх'));
 
 
 
-
 <h4>5. Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. Если длина строки
 больше, чем максимальная, то необходимо отбросить лишние символы, добавив вместо них троеточие.
 Например: truncate(“Hello, world!”, 8) должна вернуть “Hello...”. </h4>
 
 function reduceString (str:string, num:number) {
-
     return str.slice(0, num) + '...'
 }
 
@@ -115,6 +104,78 @@ console.log(reduceString('Написать функцию, которая про
 
 
 
+<h4>6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.</h4>
+
+function checkPalindrom (str:string) {
+    let deleteSpace = '' as any //сюда пишем строку БЕЗ пробелов
+    str.toLowerCase().split(' ').forEach(el=>deleteSpace+=(el.trim())) //убираем пробелы между словами
+    let reverseStr = deleteSpace.split('').reverse().join('') // меняем элементы в обратном порядке  
+      if (reverseStr == deleteSpace) {
+          return 'строка палиндром'
+      }
+     return 'строка не палиндром'
+  } 
+  
+  
+  console.log(checkPalindrom('еле'));
+  console.log(checkPalindrom('Лепс спел'));
+  console.log(checkPalindrom(' а Роза упала на лапу Азора '));
+
+
+
+<h4>7. Написать функцию, которая считает количество слов в предложении.</h4>
+
+function scoreWords (str:string) {
+    return 'Количество слов в строке = ' + str.split(' ').length
+} 
+console.log(scoreWords('Написать функцию, которая считает количество слов'));
+console.log(scoreWords('Написать функцию'));
+
+
+
+<h4>8. Написать функцию, которая возвращает самое длинное
+слово из предложения.</h4>
+
+
+function findLongestWord (str:string) {
+    return str.split(' ').sort((a,b)=> b.length - a.length)[0]
+} 
+console.log(findLongestWord('Написать функцию, которая возвращает самое длинное'));
+
+
+
+<h4>9. Написать функцию, которая считает среднюю длину слова
+в предложении.</h4>
+
+
+function averageLenght(str:string) {
+    let symbols = str.split('').length
+    let words = str.split(' ').length
+    return 'среднее количество символов с слове =' + (symbols/words).toFixed(2) +  'символов'
+}
+console.log(averageLenght('Написать функцию, которая считает среднюю длину слова'));
+
+
+
+
+<h4>10. Написать функцию, которая принимает строку и символ
+и выводит индексы, по которым находится этот символ в
+строке. Также вывести, сколько всего раз встречается этот
+символ в строке.</h4>
+
+
+function showIndexsOfElem (str:string, el:string) {
+    let massive = []
+    let accum = 0
+    for (let i = 0; i < str.length; i++) {
+            if (str[i]==el) {
+                accum++
+                massive.push (i)
+            }
+    }
+    return 'индексы элемента' + el + '=' + massive + ', количество повторений элемента = ' + accum
+} 
+console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'а'));
 
 
 
