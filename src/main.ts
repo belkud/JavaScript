@@ -1915,6 +1915,7 @@ console.log(strTest.slice(0,1) + 'aaa');
 console.log(strTest);
 
 let str2 = 'Widget with id www'
+// let str2 = 'Widget with id www'
 
 console.log(str2.indexOf('aaa'));
 
@@ -1928,5 +1929,8 @@ let date = '10/08/2020'
 
 //@ts-ignore
 console.log('“' + date.replaceAll('/', '”,“') + '”');
+
+
+
 
 
