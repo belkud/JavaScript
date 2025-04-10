@@ -1,38 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/style.css">
-        <title>Document</title>
-        <script type="module" src="./src/main.ts"></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Document</title>
+    <script type="module" src="./src/main.ts"></script>
+</head>
 
 <body>
     <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
                 href="index.html">Назад</a></button></div>
     <h3>Модуль 2</h3>
-    <h3>ТЕМА: ОБЪЕКТ. МАССИВЫ. ОБЪЕКТ ARRAY. СТРОКИ. 
-        ОБЪЕКТ STRING. ОБЪЕКТ DATE. ОБЪЕКТ MATH.  
+    <h3>ТЕМА: ОБЪЕКТ. МАССИВЫ. ОБЪЕКТ ARRAY. СТРОКИ.
+        ОБЪЕКТ STRING. ОБЪЕКТ DATE. ОБЪЕКТ MATH.
         ВВЕДЕНИЕ В ООП</h3>
-    
-<div id="string">eee </div>
 
-<h4>    Задание 1
- Создать объект, описывающий автомобиль (производитель, 
-модель, год выпуска, средняя скорость), и следующие функции 
-для работы с этим объектом.</h4><br>
- 1. Функция для вывода на экран информации об автомобиле. <br>
- 2. Функция для подсчета необходимого времени для пре- 
-одоления переданного расстояния со средней скоростью. 
-Учтите, что через каждые 4 часа дороги водителю необхо
-димо делать перерыв на 1 час.
- 
-<pre>
-   
+
+
+
+
     &#60;
-      
+
+
+    <h4></h4>
+
+    <script>
+        document.write(`
+<pre>
+
+<h4> 1.Написать функцию, которая принимает 2 строки и сравнивает их длину. Функция 
+возвращает 1, если в первой строке больше символов, чем во второй; -1 –  если во второй 
+больше символов, чем в первой; или 0 – если строки одинаковой длины.</h4><br>
+
+function compareStrings (str1:string, str2:string) {
+    if (str1.length>str2.length) {
+        return 1
+    }
+    if (str1.length&#60;str2.length) {
+        return -1
+    }
+    return 0
+}
+
+console.log(compareStrings('qwdr', 'dssd'));
+
+
+
+
+
+<h4> 2.Написать функцию, которая переводит в верхний регистр
+первый символ переданной строки. </h4>
+function changeRegister(str:string) {
+
+        return str[0].toUpperCase() + str.slice(1)
+}
+console.log(changeRegister('которая переводит в верхний регистр'));
+
+
+<h4>3. Написать функцию, которая считает количество гласных
+букв в переданной строке.</h4>
+
+
+function scoreLowelInStrings (str:string) {
+let mass:any[] = ['ы', 'а', 'о', 'у', 'е', 'я', 'и', 'ю', 'ё', 'э',]
+    let accum = 0    
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < mass.length; j++) {
+            if (str[i]==mass[j]) {
+                accum++
+            }
+        }
+    }
+    return accum
+}
+console.log(scoreLowelInStrings('которая переводит в верхний регистр'));
+console.log(scoreLowelInStrings('регистр'));
+
+
+
+
+<h4>4. Написать функцию для проверки спама в переданной строке. Функция возвращает true,
+если строка содержит спам. Спамом считать следующие слова: 100% бесплатно, увеличение продаж, 
+только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.</h4>
+
+function checkSpam (str:string) {
+    let mass = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх']
+    for (const el of mass) {
+        if (str.toLowerCase().includes(el)) {
+            return 'Есть спам'
+        }
+        
+    }
+    return 'Спама нету'
+}
+console.log(checkSpam('Спамом считать следующие слова: 100% Бесплатно'));
+console.log(checkSpam('Функция принимает строку ххх'));
+
+
+
+
+<h4>5. Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. Если длина строки
+больше, чем максимальная, то необходимо отбросить лишние символы, добавив вместо них троеточие.
+Например: truncate(“Hello, world!”, 8) должна вернуть “Hello...”. </h4>
+
+function reduceString (str:string, num:number) {
+
+    return str.slice(0, num) + '...'
+}
+
+console.log(reduceString('Hello, world!', 8));
+console.log(reduceString('Написать функцию, которая проверяет', 20));
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+`)
+    </script>
 
 
 

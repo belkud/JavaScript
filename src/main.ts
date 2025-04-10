@@ -1812,34 +1812,26 @@ console.log(reduceString('Написать функцию, которая про
 
 
 
+
 //! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
 
-// еле
-// Лепс спел
-// а Роза упала на лапу Азора
-
 function checkPalindrom (str:string) {
-    let reverseStr = str.split('').reverse().join('')   
-    if (reverseStr.toLowerCase() == str.toLowerCase()) {
-        return 'строка палиндром'
-    }
-    
-    let extraStr = ''
-    for (const el of str) {
-        extraStr+=el.trim().toLowerCase()
-        if (extraStr = reverseStr.toLowerCase()) {
-            return 'строка палиндром'
-            
-        }
-    }
-    return 'не палиндром'
-
-}
+    let deleteSpace = '' as any //сюда пишем строку БЕЗ пробелов
+    str.toLowerCase().split(' ').forEach(el=>deleteSpace+=(el.trim())) //убираем пробелы между словами
+    let reverseStr = deleteSpace.split('').reverse().join('') // меняем элементы в обратном порядке  
+      if (reverseStr == deleteSpace) {
+          return 'строка палиндром'
+      }
+     return 'строка не палиндром'
+  } 
+  
+  
+  console.log(checkPalindrom('еле'));
+  console.log(checkPalindrom('Лепс спел'));
+  console.log(checkPalindrom(' а Роза упала на лапу Азора '));
+  
 
 
-console.log(checkPalindrom('еле'));
-console.log(checkPalindrom('Лепс спел'));
-console.log(checkPalindrom(' а Роза упала на лапу Азора '));
 
 
 
@@ -1935,3 +1927,5 @@ let date = '10/08/2020'
 
 //@ts-ignore
 console.log('“' + date.replaceAll('/', '”,“') + '”');
+
+
