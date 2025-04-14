@@ -1633,8 +1633,8 @@ console.log(255.000.toString(16));
 console.log(255.000.toString(36));
 
 
-let num2 = 1.2345;
-console.log(typeof Number(num2.toFixed(2)));
+// let num2 = 1.2345;
+// console.log(typeof Number(num2.toFixed(2)));
 
 
 
@@ -1930,6 +1930,146 @@ let date = '10/08/2020'
 
 //@ts-ignore
 console.log('“' + date.replaceAll('/', '”,“') + '”');
+
+
+
+
+
+//! 1. Написать функцию, которая принимает строку и выводит статистику о ней: количество букв, 
+//! количество цифр и количество других знаков.
+
+function showStringStatistic (str:any) {
+    let symbols = str.toLowerCase().split('')
+    let accum1 = 0 // сюда пишем количество букв
+    let accum2 = 0 // сюда пишем количество букв
+        for (let i = 0; i < symbols.length; i++) {
+            if (symbols[i]>='а' && symbols[i]<='я') {
+                accum1++
+            } 
+            if (symbols[i]==' ' || symbols[i]==','|| symbols[i]=='.') {
+                accum2++
+            }    
+        }
+
+    return `
+    Количество букв = ${accum1}
+    Количество символов = ${accum2}
+    Количество цифр = ${symbols.length - accum1 - accum2}
+    `
+}
+console.log(showStringStatistic('количество букв, 5'));
+
+
+
+
+//! 2. Написать функцию, которая принимает двузначное число и возвращает его в текстовом виде.
+//! Например: 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.
+
+
+let num1 = ['ноль','один','два','три','четыре','пять','шесть','семь','восемь','девять',]
+let num2 = ['десять','одиннадцать','двенадать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать',]
+let num3 = ['двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто']
+
+function writeDidgitalsInText(num:any){
+    if (num>=0 && num<=9) {
+        return num1[num]
+    }
+    if (num<=19) {
+        return num2[num-10]
+    }
+    if (num<=99) {
+        let firstNum = num.toString()[0]
+        let secondNum = num.toString()[1]
+        return num3[firstNum-2] + ' ' + num1[secondNum]
+    }
+
+return 'Введите корректное число'
+} 
+console.log(writeDidgitalsInText(8));
+console.log(writeDidgitalsInText(19));
+console.log(writeDidgitalsInText(23));
+console.log(writeDidgitalsInText(125));
+
+
+
+let cat = {
+    name: 'Vasya',
+    age:5,
+
+    //! запись свойства  внутри объекта
+    say: function (){
+        return 'котик сказал мяу'
+    },
+    
+    //! сокращенная запись метода внутри объекта
+    walk() {
+        console.log( 'котик ' + this.name + ' может гулять')    
+    } ,
+    feed:feed,
+}
+
+console.log(cat.say());
+cat.walk();
+
+console.log(cat);
+
+function feed () {
+    console.log( 'Покормить кота')
+}
+feed()
+
+console.log(cat);
+
+//@ts-ignore
+cat.color = 'black'
+console.log(cat);
+
+cat.eat = function () {
+    return 'кот поел'
+}
+
+cat.run = () => {
+    return 'кот побежал'
+}
+
+
+console.log('qwerty'.split(''));
+
+
+let dog = cat
+console.log(dog);
+dog.walk()
+
+
+
+
+
+function User (name:string){
+    this.name = name;
+    this.group = 'Web45';
+    this.city = 'Sochi'
+}
+console.log(User);
+
+let user1 = new User('Vanya')
+console.log(user1);
+
+let user2 = new User('Vitya')
+console.log(user2);
+
+
+
+let user3 = {
+name : 'asfadf', 
+group : 'sdfsdf',
+city: 'afdasf' ,
+}
+console.log(user3);
+
+let nickname = 'Ivan'
+let surname = 'Ivanov'
+
+console.log(` привет новый пользователь ${nickname} ${surname} `);
 
 
 
