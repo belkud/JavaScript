@@ -2075,3 +2075,157 @@ console.log(` привет новый пользователь ${nickname} ${sur
 
 
 
+//! посчитать буквы, числа и символы
+
+function scoreSymbols (str:any) {
+    let splitStr = str.toLowerCase().split('')
+    let accNum = 0
+    let accLet = 0 // на русс буквы
+    let accLet2 = 0 // на англ буквы
+
+    for (let i = 0; i < splitStr.length; i++) {
+            if (splitStr[i]>='0' && splitStr[i]<='9') {
+                accNum++  // считаем цифры
+            }        
+            if (splitStr[i]>='а' && splitStr[i]<='я') {
+                accLet++ // считаем русс буквы
+            }        
+            if (splitStr[i]>='a' && splitStr[i]<='z') {
+                accLet2++ // считаем англ буквы
+            }        
+    }
+    
+    return `
+        количество цифр: ${accNum},
+        количество русс букв: ${accLet},
+        количество англ букв: ${accLet2},
+        количество символов: ${splitStr.length -accNum -accLet - accLet2}
+    `
+}
+
+console.log(scoreSymbols('на ААААААААААААААААА тек @#$ 9 0123 sda'));
+
+
+
+
+
+function showSumm (a:number, b:number) {
+    return a + b
+} 
+console.log(showSumm(3,4));
+
+
+//! 'длинный' тип записи
+let summ = function show (a:number, b:number) {
+    return a + b
+} 
+console.log(summ(3,5));
+
+
+//! короткий тип записи
+let summ2 = (a:number,b:number) => {
+    return a + b 
+}
+console.log(summ2(3,5));
+
+
+
+let letter = (x:string) => {
+    return x
+}
+console.log(letter('abc'));
+
+
+//! когда у нас один параметр круглые скобки можно опускать
+
+//@ts-ignore
+let letter3 = x => {
+    return x
+}
+console.log(letter3('abc'));
+
+
+//! также мы можем опускать 'return' и опускать фигурные скобки
+let letter4 = x => x
+console.log(letter4('abcde'));
+
+
+
+let showMass = (mass:number[]) => {
+    let acc = 0
+    mass.forEach(e=>acc+=e)
+    return acc
+    
+    // return mass.reduce((acc,e)=>acc+e)
+}
+console.log(showMass([5, 8, 3]));
+
+let age2 = 10
+console.log(age2 >18 ? 'вы взрослый' : 'вы ребенок') 
+
+ 
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!! Опциональная цепочка '?.' !!!!!!!!!!!!!!!!!!!!!
+
+let car = {
+    country : 'China',
+    year:2024,
+    extraInfo : {
+        color:'white',
+        engine: '123 hourses'
+    }
+}
+
+console.log(car.country);
+console.log(car['country']);
+
+//! через условный оператор
+// if (car.extraInfo) {
+//     console.log(car.extraInfo.color);
+// } else {
+//     console.log(undefined);
+// }
+
+
+//! через тернарный оператор
+// console.log(car.extraInfo ? car.extraInfo.color : undefined)
+
+
+
+
+
+console.log(`
+    Страна : ${car.country},
+    год : ${car.year},
+    доп. инфо : ${car.extraInfo?.['engine']} 
+    `);
+
+
+
+
+
+    //! если пользователь ни ввёл своё имя мы его 'просим' ввести.
+let userName = 'aaaa'
+
+if (userName=='') {
+    console.log('Введите ваше имя');
+}  else {
+    console.log(userName); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
