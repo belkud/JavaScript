@@ -707,20 +707,20 @@ console.log(obj2);
 
 
 
-let person = {
-    name: "John",
-    surname: "Smith"
-};
-let person2 = {
-    name: "John",
-    surname: "Smith"
-};
-let person3 = person2 = person
+// let person = {
+//     name: "John",
+//     surname: "Smith"
+// };
+// let person2 = {
+//     name: "John",
+//     surname: "Smith"
+// };
+// let person3 = person2 = person
 
-console.log(person==person2);
-console.log(person.name==person2.name);
+// console.log(person==person2);
+// console.log(person.name==person2.name);
 
-console.log(person==person3);
+// console.log(person==person3);
 
 //! Задание 1
 //! Создать объект, описывающий автомобиль (производитель,
@@ -2279,6 +2279,82 @@ console.log(arr1.sort((a,b)=>a-b)); //!sort(): сортирует массив
 arr1.unshift(100, 200, 300)
 console.log(arr1); //! unshift(): добавляет новый элемент в начало массива
 
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!! Object.keys, values, entries !!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Позволяют преобразовывать в массив ключи или значения взятые от объектов (с дальнешим примением методов массива)
+
+
+
+const countryCapital = {
+    Russia: 'Moscow',
+    Germany: 'Berlin',
+    Portugue: 'Lissabone',
+}
+console.log(Object.keys(countryCapital));
+console.log(Object.values(countryCapital));
+
+let capitals = Object.entries(countryCapital)
+console.log(...capitals);
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!! Деструктуризация!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+let Vasya = {
+    surname3: 'Vasilek',
+    age3: 20,
+}
+console.log(Vasya);
+
+const {surname3, age3:years} = Vasya
+
+console.log(surname3);
+console.log(Vasya.surname3);
+console.log(surname3 == Vasya.surname3);
+
+console.log(years);
+
+
+
+
+
+
+let [a3,b3, , d3] = 'abcde'
+
+console.log(a3);
+console.log(b3);
+// console.log(c3);
+console.log(d3);
+
+
+
+let person1 ='Ivan'
+let person2 = 'Vasya'
+
+console.log([person1, person2] = [person2, person1])
+
+console.log(person1, person2);
+
+
+
+
+
+
+
+let color = [ , 'yellow', 'green', 'blue', 'black']
+console.log(color);
+
+const [color1 ='оранжевый', color2, ...colors] = color
+
+// console.log(color[0]);
+console.log(color1, color2, colors);
 
 
 
