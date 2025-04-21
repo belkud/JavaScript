@@ -2219,11 +2219,65 @@ if (userName=='') {
 }
 
 
+//! методы массивов повторение
+
+let arr1 = [5, 10, 9, 12, 5, 8, 2, 9, 5]
+let arr12 = [10, 12, 5]
+console.log(arr1.concat(arr12)); //! объединяет элементы двух массивов в один массив
+
+console.log(arr1.every(el=>el>6)); //! проверяет, все ли элементы соответствуют определенному условию
+
+console.log(arr1.filter(el=>el%2==0)); //! filter(): фильтрует элементы массива
+
+console.log(arr1.find(el=> el<9)) //!find(): возвращает первый элемент массива, который соответствует некоторому условию
+
+console.log(arr1.findLast(el=> el<9)) //!findLast(): возвращает последний элемент массива, который соответствует некоторому условию
+
+console.log(arr1.findIndex(el=>el==5)); //! findIndex(): возвращает индекс первого элемента массива, который соответствует некоторому условию
+
+console.log(arr1.findLastIndex(el=>el==5)); // !findLastIndex(): возвращает индекс последнего элемента, который соответствует условию
+
+arr1.forEach(el=>console.log(el*2)) //!  forEach() применяет определенную функцию к каждому элементу массива
+
+console.log(arr1.includes(5)); //! includes(): проверяет, есть ли в массиве значение
+
+console.log(arr1.indexOf(5, 4)) //! возвращают индекс первого включения элемента в массиве.);
+
+console.log(arr1.join('_')) //! join(): объединяет элементы массива в строку
+
+console.log(arr1.lastIndexOf(9));//! lastIndexOf(): возвращают индекс последнего включения элемента в массиве.
+
+let newMass = arr1.map(e=> { 
+    return e*5
+});
+console.log(newMass);
+
+ console.log(arr1.pop()); //! pop(): удаление элемента с конца массива
 
 
 
+ arr1 = [5, 10, 9, 12, 5, 8, 2, 9, 5]
+ arr1.push(1, 2, 3)
+ console.log(arr1); //! push(): добавление элемента в конец массива
+ 
+ console.log(arr1.reduce((acc,e)=>acc+=e, 0) );//!reduce(): объединяет элементы массива в одно значение 
 
+console.log(arr1.reverse());//! reverse(): располагает элементы массива в обратном порядке
 
+console.log(arr1.shift()); //!shift(): удаляет первый элемент массива
+console.log(arr1);
+
+console.log(arr1.slice(3,5)) //! slice(): вырезает отдельные элементы из массива
+
+arr1.splice (2,3, 'word')
+console.log(arr1); //! splice(): добавление/удаление элементов на определенных позициях в массиве
+
+console.log(arr1.some(e=>e==10)); //! some(): проверяет, соответствует ли хотя бы один элемент условию.
+
+console.log(arr1.sort((a,b)=>a-b)); //!sort(): сортирует массив
+
+arr1.unshift(100, 200, 300)
+console.log(arr1); //! unshift(): добавляет новый элемент в начало массива
 
 
 
