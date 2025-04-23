@@ -2358,4 +2358,142 @@ console.log(color1, color2, colors);
 
 
 
+//!!!!!!!!!!!!!!!!!!!!!!!! Конструктор, оператор "new" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function Aircraft (model:any, age:number) {
+    this.model = model; //! динамические данные (меняются с каждой новой переменной)
+    this.age = age;
+    this.company = 'Boeing'; //! статические данные (они не меняются)
+    this.country = 'USA';
+    this.fuel = function () {
+        console.log('Заправить самолет');
+    };
+    this.fly = () => {
+        return 'данный самолёт может летать'
+    };
+    repared:repared;
+}
+
+let aircraft1 = new Aircraft('Boeng 777', 12)
+console.log(aircraft1);
+
+let aircraft2 = new Aircraft ('Boeing 999', 5)
+console.log(aircraft2);
+
+
+console.log(Aircraft.prototype)
+console.log(aircraft1);
+
+
+aircraft1.fuel()
+console.log(aircraft1)
+
+
+
+function repared () {
+    console.log('Самолет отремонтирован')
+}
+repared()
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Класс: базовый синтаксис !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+class Airplane {
+    coutry = 'Russia' //! статические данные (они не меняются)
+    city = 'Moscow'
+    constructor(model:any, year:number) {
+            this.model = model //! динамические данные (меняются с каждой новой переменной)
+            this.year = year
+    }
+    fly() { //! вызов метода
+console.log(` Самолёт ${this.model} летит,  ${this.year} лет`);
+    }
+    get year () {
+        return `${this._year}`
+    }
+
+    set year (value:any) {
+        if (value<5) {
+            this._year = 'Самолёт новый ' + value 
+        } else {
+            this._year = 'Самолёт старый ' + value
+        }        
+    }
+
+
+}
+
+
+// console.log(typeof Airplane);
+// console.log(airplane1);
+
+// console.log(Airplane.prototype.constructor == Airplane);
+
+// console.log(airplane1.model);
+
+ 
+let airplane1 = new Airplane('Boeng 777', 12)
+airplane1.fly();
+
+let airplane2 = new Airplane('Boeng 999', 3)
+airplane2.fly();
+
+
+
+//! Задание 1
+//! Реализовать класс, описывающий простой маркер. В классе
+//! должны быть следующие компоненты:
+//! ■ поле, которое хранит цвет маркера;
+//! ■ поле, которое хранит количество чернил в маркере (в процентах);
+//! ■ метод для печати (метод принимает строку и выводит
+//! текст соответствующим цветом; текст выводится до тех
+//! пор, пока в маркере есть чернила; один не пробельный
+//! символ – это 1% чернил в маркере).
+
+
+
+                                //! div находится в файле JS_DZ_Modul_2_Week_3.html
+let marker_text = document.getElementById('marker_text') as HTMLDivElement
+marker_text.innerHTML = ''
+
+
+class Marker {
+    constructor(color:string, ink:number){
+        this.color = color // цвет маркера
+        this.ink = ink // насколько символов хватит чернил в маркере
+    }
+
+    print(text:any) {
+        // marker_text.style.color = `${this.color}` //! один из способов изменения CSS свойства
+        // console.log(1 -i/num);
+
+        
+        for (let i = 0; i < this.ink; i++) {
+        marker_text.innerHTML+='<br>'       
+        
+            marker_text.innerHTML+= `
+            <div style="color: ${this.color}; opacity: ${1- i/this.ink };">${text[i]}</div> <br>
+            ` 
+            marker_text.innerHTML+='<br>'
+        }
+    }
+}
+
+let marker1 = new Marker('red', 25)
+marker1.print('1234dfgdfgdfg56789012345678901234rtrtertergerg567890')
+
+
+let marker2 = new Marker('green', 10)
+marker2.print('dsfgdfghgfjh4565r687klyft76i')
+
+let marker3 = new Marker('blue', 15)
+marker3.print('dsfgdfgfadsfadfdasfsdt76i')
+
+
+
+
+
 
