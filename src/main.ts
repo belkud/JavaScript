@@ -2457,8 +2457,6 @@ airplane2.fly();
 
                                 //! div находится в файле JS_DZ_Modul_2_Week_3.html
 let marker_text = document.getElementById('marker_text') as HTMLDivElement
-marker_text.innerHTML = ''
-
 
 class Marker {
     constructor(color:string, ink:number){
@@ -2467,23 +2465,19 @@ class Marker {
     }
 
     print(text:any) {
-        // marker_text.style.color = `${this.color}` //! один из способов изменения CSS свойства
-        // console.log(1 -i/num);
-
+        // marker_text.style.color = `${this.color}` //! один из способов изменения CSS свойства       
         
-        for (let i = 0; i < this.ink; i++) {
-        marker_text.innerHTML+='<br>'       
-        
+        for (let i = 0; i < text.length; i++) {
             marker_text.innerHTML+= `
-            <div style="color: ${this.color}; opacity: ${1- i/this.ink };">${text[i]}</div> <br>
-            ` 
-            marker_text.innerHTML+='<br>'
+            <span style="color: ${this.color}; opacity: ${1- i/text.length };">${text[i]}</span>
+            `  //! выводим текст в html файл ( с помощью свойства innerHTML)
         }
+      
     }
 }
 
-let marker1 = new Marker('red', 25)
-marker1.print('1234dfgdfgdfg56789012345678901234rtrtertergerg567890')
+let marker1 = new Marker('red', 10)
+marker1.print('1 _  2f fsd74')
 
 
 let marker2 = new Marker('green', 10)
@@ -2491,6 +2485,9 @@ marker2.print('dsfgdfghgfjh4565r687klyft76i')
 
 let marker3 = new Marker('blue', 15)
 marker3.print('dsfgdfgfadsfadfdasfsdt76i')
+
+let marker4 = new Marker('orange', 15)
+marker4.print('dfgdfgfadsfadfdasfsdt76i')
 
 
 
