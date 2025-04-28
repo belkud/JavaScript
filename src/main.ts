@@ -2172,17 +2172,17 @@ console.log(age2 >18 ? 'вы взрослый' : 'вы ребенок')
 
 //!!!!!!!!!!!!!!!!!!!!! Опциональная цепочка '?.' !!!!!!!!!!!!!!!!!!!!!
 
-let car = {
-    country : 'China',
-    year:2024,
-    extraInfo : {
-        color:'white',
-        engine: '123 hourses'
-    }
-}
+// let car = {
+//     country : 'China',
+//     year:2024,
+//     extraInfo : {
+//         color:'white',
+//         engine: '123 hourses'
+//     }
+// }
 
-console.log(car.country);
-console.log(car['country']);
+// console.log(car.country);
+// console.log(car['country']);
 
 //! через условный оператор
 // if (car.extraInfo) {
@@ -2199,11 +2199,11 @@ console.log(car['country']);
 
 
 
-console.log(`
-    Страна : ${car.country},
-    год : ${car.year},
-    доп. инфо : ${car.extraInfo?.['engine']} 
-    `);
+// console.log(`
+//     Страна : ${car.country},
+//     год : ${car.year},
+//     доп. инфо : ${car.extraInfo?.['engine']} 
+//     `);
 
 
 
@@ -2358,6 +2358,12 @@ console.log(color1, color2, colors);
 
 
 
+
+
+
+
+
+
 //!!!!!!!!!!!!!!!!!!!!!!!! Конструктор, оператор "new" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 function Aircraft (model:any, age:number) {
@@ -2479,7 +2485,6 @@ class Marker {
 let marker1 = new Marker('red', 10)
 marker1.print('1 _  2f fsd74')
 
-
 let marker2 = new Marker('green', 10)
 marker2.print('dsfgdfghgfjh4565r687klyft76i')
 
@@ -2492,5 +2497,153 @@ marker4.print('dfgdfgfadsfadfdasfsdt76i')
 
 
 
+//! Задание 1 / JS_PZ_Modul_2_Week_4
+//! Реализовать класс PrintMaсhine, которой состоит из:
+//! ■ размера шрифта;
+//! ■ цвета шрифта;
+//! ■ семейства шрифта;
+//! ■ метода print(), который принимает текст и печатает его
+//! соответствующим шрифтом с помощью document.write().
+//! Создать объект такого класса и продемонстрировать работу
+//! метода.
+
+let printMaсhine = document.getElementById('printMaсhine') as HTMLDivElement
+
+class PrintMaсhine {
+        tag
+        color
+        fontFamily
+    constructor(tag:any, color:string, fontFamily:string) {
+            this.tag = tag
+            this.color = color
+            this.fontFamily = fontFamily
+    }
+    printText(text:any) {
+        printMaсhine.innerHTML+= `<${this.tag} style="color:${this.color}; 
+        font-family: ${this.fontFamily};">${text}</${this.tag}>`
+    }
+}
+
+let pencil1 = new PrintMaсhine('h6', 'yellow', 'monospace')
+pencil1.printText('Какой-нибудь текст')
+
+let pencil2 = new PrintMaсhine('h2', 'red', '')
+pencil2.printText('Какой-нибудь текст')
+
+let pencil3 = new PrintMaсhine('p', 'green', '')
+pencil3.printText('Какой-нибудь текст')
+
+
+
+
+
+//! Задание 1 / JS_PZ_Modul_2_Week_5
+//! Реализовать класс Button, который содержит ширину, высоту,
+//! текст кнопки и метод showBtn(), который выводит кнопку на экран
+//! с помощью тега button.
+
+class Button {
+    width
+    height
+    background
+    constructor(width:number, height:number, background:string){
+            this.width = width
+            this.height = height
+            this.background = background
+    }
+    showBtn(value:string) {
+        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background};">${value}</button>`
+    }
+}
+
+let button1 = new Button(150, 30, 'red')
+button1.showBtn('Добавить')
+
+let button2 = new Button(100, 40, 'black')
+button2.showBtn('Удалить')
+
+let button3 = new Button(120, 40, 'orange')
+button3.showBtn('Переместить')
+
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!! Прототипное наследование !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+let transport = {
+    age: 5,
+    color: 'white',
+    drive() {
+        return 'можем управлять'
+    }
+}
+
+console.log(transport);
+
+
+
+
+
+let bus = {
+    number : 105,
+}
+
+bus.__proto__ = transport //! первый способ присвоения прототипа
+console.log(bus);
+
+ 
+
+
+let car = {
+    doors: 4,
+    age: 10,
+    __proto__ : transport, //! второй способ присвоения прототипа
+}
+
+
+
+
+
+
+
+
+
+
+console.log('количество лет = ' + car.age);
+console.log('количество дверей в машине = ' + car.doors);
+
+console.log(car); //! собстсвенные свойства
+console.log(car.__proto__);//! унаследованные свойства 
+
+console.log (car.drive())
+console.log (car.__proto__.drive())
+console.log (car.__proto__.drive() == car.drive())
+ 
+
+
+console.log(Object.keys(car)); //! данный метод показывает ТОЛЬКО собственные ключи объекта
+
+for (const key in car) { //! Цикл for..in проходит не только по собственным, но и по унаследованным свойствам объекта.
+    console.log(key);
+    
+}
+
+console.log(Object.prototype);
+console.log(Array.prototype);
+console.log(Number.prototype);
+console.log(String.prototype);
+console.log(Function.prototype);
+
+
+console.log(car.__proto__ == transport);
+
+console.log(Date.prototype);
+
+// https://learn.javascript.ru/prototype-inheritance
+// https://learn.javascript.ru/function-prototype
 
 
