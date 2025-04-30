@@ -637,8 +637,8 @@ console.log('----------------------');
 //!!!!!!!!!!!!!!!!!!!!!!! ОБЪЕКТЫ !!!!!!!!!!!!!!!!!!!!!!!!
 
 
-let name = 'Katya'
-let age = 33
+// let name = 'Katya'
+// let age = 33
 
 let user = {
     name: 'Katya', // ключ : значение
@@ -2463,6 +2463,8 @@ airplane2.fly();
 
                                 //! div находится в файле JS_DZ_Modul_2_Week_3.html
 let marker_text = document.getElementById('marker_text') as HTMLDivElement
+// let info_about_marker = document.querySelector('#info_about_marker') as HTMLDivElement //! один из способа вывода информации в HTML файл
+let info_about_marker = document.getElementById('info_about_marker') as HTMLDivElement
 
 class Marker {
     constructor(color:string, ink:number){
@@ -2471,28 +2473,61 @@ class Marker {
     }
 
     print(text:any) {
+
         // marker_text.style.color = `${this.color}` //! один из способов изменения CSS свойства       
-        
+       
         for (let i = 0; i < text.length; i++) {
             marker_text.innerHTML+= `
             <span style="color: ${this.color}; opacity: ${1- i/text.length };">${text[i]}</span>
             `  //! выводим текст в html файл ( с помощью свойства innerHTML)
         }
-      
+        info_about_marker.innerHTML += `
+        Цвет маркера <span style="color:${this.color}; font-size:30px">${this.color}</span> <br>
+        Количество символов в чернилах: ${this.ink}     <br>
+        Количество напечатанных символов: ${text.length>this.ink ? this.ink : text.length}     <br>
+        <div id="battery">
+            <div id="inner_battery" style="background-color:${this.color}; height: 30px; width: ${this.ink}px;"></div>
+        </div> 
+<br>
+        `
     }
 }
 
-let marker1 = new Marker('red', 10)
-marker1.print('1 _  2f fsd74')
+let marker1 = new Marker('red', 20)
+marker1.print('1_2ffsd74')
 
-let marker2 = new Marker('green', 10)
-marker2.print('dsfgdfghgfjh4565r687klyft76i')
+let marker2 = new Marker('green', 50)
+marker2.print('dst76i')
 
 let marker3 = new Marker('blue', 15)
 marker3.print('dsfgdfgfadsfadfdasfsdt76i')
 
 let marker4 = new Marker('orange', 15)
 marker4.print('dfgdfgfadsfadfdasfsdt76i')
+
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!! посмотреть плавное изменение ширины батареек ???????
+let inner_battery = document.getElementById('inner_battery')
+let accBattery = 0
+setInterval(() => {
+    accBattery++
+    // console.log(inner_battery.style.width+= Number(100px));
+    
+    inner_battery.style.width+= 100 + 'px'
+}, 1000);
+//!!!!!!!!!!!!!!!! посмотреть плавное изменение ширины батареек ???????
+ 
+
+
+
+
+
 
 
 
@@ -2521,17 +2556,24 @@ class PrintMaсhine {
     printText(text:any) {
         printMaсhine.innerHTML+= `<${this.tag} style="color:${this.color}; 
         font-family: ${this.fontFamily};">${text}</${this.tag}>`
-    }
+
+
+}
 }
 
 let pencil1 = new PrintMaсhine('h6', 'yellow', 'monospace')
-pencil1.printText('Какой-нибудь текст')
+pencil1.printText('Как')
 
 let pencil2 = new PrintMaсhine('h2', 'red', '')
 pencil2.printText('Какой-нибудь текст')
 
 let pencil3 = new PrintMaсhine('p', 'green', '')
 pencil3.printText('Какой-нибудь текст')
+
+
+
+
+
 
 
 
@@ -2632,18 +2674,101 @@ for (const key in car) { //! Цикл for..in проходит не только
     
 }
 
-console.log(Object.prototype);
-console.log(Array.prototype);
-console.log(Number.prototype);
-console.log(String.prototype);
-console.log(Function.prototype);
 
 
 console.log(car.__proto__ == transport);
 
-console.log(Date.prototype);
 
 // https://learn.javascript.ru/prototype-inheritance
 // https://learn.javascript.ru/function-prototype
 
 
+
+console.log(Object.prototype);
+console.log(Array.prototype);
+console.log(Number.prototype);
+console.log(String.prototype);
+// console.log(Function.prototype);
+console.log(Date.prototype);
+
+
+
+let person = {
+    name : 'Petya'
+}
+
+console.log(person.__proto__ == Object.prototype);
+
+
+let mass = [1, 2, 3]
+console.log(mass.toString());
+console.log(mass.length);
+
+
+
+
+let numb = 5
+Number.prototype.show = () => {
+    return 'мы создали новый метод';
+}
+
+
+
+console.log(numb.show());
+
+
+let alphabet = 'abcde'
+console.log(alphabet);
+
+
+
+
+class City {
+    name:string
+    age:number
+    constructor (name:string, age:number) {
+        this.name  = name
+        this.age = age
+    }
+    welcome() {
+        return 'Добро пожаловать в ' + this.name;
+    }
+
+}
+
+let city = new City('Sochi', 300)
+console.log(city.welcome());
+console.log(city);
+
+
+
+
+class Country extends City {
+        countryName
+        
+    constructor(name:string, age:number, countryName:string) {
+        super(name, age)
+        this.countryName = countryName
+    }
+    welcome() { //! методы можем перезаписывать
+        return 'Приветствуем вас в ' + this.name;
+    }
+    population(people:number) {
+        return `${super.welcome()} население города ${this.name} = ${people} `//! мы можем возвращать родительские методы
+        //! super  работает ТОЛЬКО внутри нашего конструктора
+    }
+}
+
+
+let country = new Country('Moscow', 1000, 'Russia')
+console.log(country.population(10_000_000));
+console.log(country.population(50_000));
+
+console.log(country.welcome());
+
+
+let pressButton = document.getElementById('pressButton') as HTMLInputElement
+pressButton.addEventListener('input', ()=> {
+    console.log(pressButton.value);
+
+})
