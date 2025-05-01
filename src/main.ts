@@ -2506,21 +2506,15 @@ let marker4 = new Marker('orange', 15)
 marker4.print('dfgdfgfadsfadfdasfsdt76i')
 
 
-
-
-
-
-
-
 //!!!!!!!!!!!!!!!! посмотреть плавное изменение ширины батареек ???????
-let inner_battery = document.getElementById('inner_battery')
-let accBattery = 0
-setInterval(() => {
-    accBattery++
+// let inner_battery = document.getElementById('inner_battery')
+// let accBattery = 0
+// setInterval(() => {
+    // accBattery++
     // console.log(inner_battery.style.width+= Number(100px));
     
-    inner_battery.style.width+= 100 + 'px'
-}, 1000);
+    // inner_battery.style.width+= 100 + 'px'
+// }, 1000);
 //!!!!!!!!!!!!!!!! посмотреть плавное изменение ширины батареек ???????
  
 
@@ -2721,6 +2715,10 @@ let alphabet = 'abcde'
 console.log(alphabet);
 
 
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Наследование классов!!!!!!!!!!!!!!!!!!!!!!!!1
 
 
 class City {
