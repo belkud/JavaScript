@@ -1,6 +1,6 @@
 import './style.css'
 
-
+let data1 = new Date()
 
 
 //! <====================ОСНОВЫ jAVASCRIPT====================>
@@ -2573,38 +2573,6 @@ pencil3.printText('Какой-нибудь текст')
 
 
 
-//! Задание 1 / JS_PZ_Modul_2_Week_5
-//! Реализовать класс Button, который содержит ширину, высоту,
-//! текст кнопки и метод showBtn(), который выводит кнопку на экран
-//! с помощью тега button.
-
-class Button {
-    width
-    height
-    background
-    constructor(width:number, height:number, background:string){
-            this.width = width
-            this.height = height
-            this.background = background
-    }
-    showBtn(value:string) {
-        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background};">${value}</button>`
-    }
-}
-
-let button1 = new Button(150, 30, 'red')
-button1.showBtn('Добавить')
-
-let button2 = new Button(100, 40, 'black')
-button2.showBtn('Удалить')
-
-let button3 = new Button(120, 40, 'orange')
-button3.showBtn('Переместить')
-
-
-
-
-
 
 
 
@@ -2770,3 +2738,200 @@ pressButton.addEventListener('input', ()=> {
     console.log(pressButton.value);
 
 })
+
+
+
+//! Задание 1
+//! Реализовать класс Button, который содержит ширину, высоту,
+//! текст кнопки и метод showBtn(), который выводит кнопку на экран
+//! с помощью тега button и функции document.write().
+
+class Button {
+    width
+    height
+    background
+    constructor(width:number, height:number, background:string){
+            this.width = width
+            this.height = height
+            this.background = background
+    }
+    showBtn(value:string) {
+        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background};">${value}</button>`
+    }
+}
+
+let button1 = new Button(150, 30, 'red')
+button1.showBtn('Добавить')
+
+let button2 = new Button(100, 40, 'black')
+button2.showBtn('Удалить')
+
+let button3 = new Button(120, 40, 'orange')
+button3.showBtn('Переместить')
+
+
+//! Реализовать класс BootstrapButton, унаследовав его от класса
+//! Button. Добавить поле color и переопределить метод showBtn()
+
+class BootstrapButton extends Button {
+        color
+    constructor(width:number, height:number, background:string, color:string) {
+        super(width,height,background)
+            this.color = color
+    }
+    showBtn(value:string) {
+        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background}; color:${this.color}">${value}</button>`
+    }
+}
+
+let bootstrapButton = new BootstrapButton(200, 50,  'gray', 'orange')
+bootstrapButton.showBtn('Кнопка Бутстрапа')
+
+
+
+
+
+
+//! Задание 3
+//! Реализовать класс, который описывает css класс.
+//! Класс CssClass должен содержать внутри себя:
+//! ■ название css класса;
+//! ■ массив стилей;
+//! ■ метод для установки стиля;
+//! ■ метод для удаления стиля;
+//! ■ метод getCss(), который возвращает css код в виде строки.
+
+let newString = ''
+let newString2 = ''
+
+class CssClass {
+    className
+    cssArray
+    constructor(className:string, cssArray:any[]) { //! ■ название css класса, ■ массив стилей;
+        this.className = className
+        this.cssArray = cssArray
+    }
+
+    setStyle() { //! ■ метод для установки стиля;
+        for (const el of this.cssArray) { //! массив перебираем по элементам
+            for (const key in el) { //! ключи и значения элементов записываем в строку
+                   newString+= key + ':' + el[key] + '; ' //! для применения стиля
+                   newString2+= key + ':' + el[key] + '; ' + '<br>' //! для вывода текста в html файл
+                }
+            }
+            printMaсhine.innerHTML+= `<div class="${this.className}" 
+            style="${newString}"> текст </div>`    //
+        }
+        deleteStyle (num:number) { //! ■ метод для удаления стиля;
+            delete this.cssArray[num]            
+        }
+        getCss() { //! ■ метод getCss(), который возвращает css код в виде строки.
+            console.log(newString);
+            printMaсhine.innerHTML+='Примененные стили: ' + '<br>' + newString2 + '<br>'
+            // printMaсhine.innerHTML = '' //! перезаписывание всего дива
+        }
+
+    }
+
+
+
+let class1 = new CssClass('newStyle', [
+    {background : 'lightgreen'},
+    {'font-size' : '30px'},
+    {width: '100px'},
+    {height: '50px'},
+    {margin: '25px'},
+    {padding: '25px'},
+    {border: '2px solid white'},
+])
+class1.deleteStyle(0)  //! метод удаления должен идти первым
+class1.deleteStyle(1)
+class1.setStyle()
+class1.getCss()
+console.log(CssClass.prototype);
+
+
+
+
+
+console.log(data1.getMilliseconds());
+
+let data2 = new Date() //! текущее время
+
+console.log(`Документ отрендерился за ${data2.getMilliseconds() - data1.getMilliseconds()} миллисекунду`);
+
+
+console.log(data2.toLocaleString());
+console.log(data2.toLocaleTimeString());
+
+
+console.log(Date.prototype);
+console.log(Object.prototype);
+console.log(Array.prototype);
+console.log(Number.prototype);
+console.log(String.prototype);
+
+let today = new Date()
+console.log(today.getTime()); //! timestamp (дата показывается в миллисекундах)
+
+console.log(today.getMonth())
+;
+console.log(today.getDay());
+
+
+
+
+
+console.log(data2.getHours());
+console.log(data2.getMinutes());
+console.log(data2.getSeconds());
+console.log(data2.getMilliseconds());
+
+
+console.log(data2.getDate());
+console.log(data2.getHours());
+console.log(data2.getHours() - data2.getUTCHours());
+
+let dateOfBirth = new Date('1945, 5, 9') //! мы можем указывать конкретную дату
+console.log(dateOfBirth);
+
+let dateOfBirth2 = new Date(1945, 5, 30) //! мы можем указывать конкретную дату
+console.log(dateOfBirth2);
+
+let newYearDay = new Date('2026')
+console.log(today.getTime());
+console.log(newYearDay.getTime());
+
+console.log(`До нового года осталось: ${ Math.floor((Number(newYearDay)-Number(today))/(24*60*60*1000))} дней`);
+
+console.log(+today == today.getTime()); //! оба способа перевода даты в timestamp (переводим дату в число)
+
+console.log(Date.now() == new Date().getTime());
+
+
+console.log(new Date().getTime());
+
+
+let ms = Date.parse('2012-01-26T13:51:50.417-07:00')
+console.log(ms);
+
+console.log(`Загрузка началась ${performance.now()}мс назад`);
+
+
+
+// Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут. Временная зона – местная.
+
+console.log(new Date('2024, 5, 5'))
+
+console.log(new Date(2012, 1, 20, 3, 12));
+
+
+
+
+function getWeekDay(dateOfTask:any) {
+    let dayOfWeeks = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
+    console.log(dayOfWeeks[dateOfTask.getDay()])
+}
+getWeekDay(new Date(2012, 0, 3))
+getWeekDay(new Date())
+
