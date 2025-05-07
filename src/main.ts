@@ -3058,5 +3058,82 @@ day1.showNextDate()
 
 
 
+//!!!!!!!!!!!!!!!!!!!!!! setTimeout и setInterval !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+// setTimeout(()=>{ 
+//         function city5() { //! первый вариант (такой себе)
+//         console.log('test');
+//     }
+//     city5()
+// },  3000);
+
+// setTimeout(()=>{ //! второй вариант
+//     console.log('test2');
+// },3000);
+
+
+// function hello () {
+//     console.log('привет');
+// }
+
+
+
+
+
+// setTimeout(() => { //! первый способ вывода функции
+//     hello()
+// }, 5000);
+
+// setTimeout(hello, 2000); //! второй способ вывода функции
+
+// setTimeout("console.log('Привет 2')", 1000);
+
+// setInterval(hello, 2000);
+
+// setInterval("console.log('Привет 2')", 1000);
+
+//! setTimeout и setInterval имеют одинаковый синтаксис
+
+//! setTimeout - выполняется один раз
+//! setInterval - выполняется через определенный промежуток времени
+
+//! clearInterval - отменяет действие через указанное время
+
+
+
+
+
+
+// let ac = 0
+// let stopInter = setInterval(()=> {
+//     ac++
+//     console.log(ac); 
+// },200)
+
+// setTimeout(() => { clearInterval(1000); stopInter}, 10000);
+
+
+
+
+// повторить с интервалом 2 секунды
+// let timerId = setInterval(() => console.log('tick'), 2000);
+
+// остановить вывод через 5 секунд
+// setTimeout(() => { clearInterval(timerId); console.log('stop'); }, 5000);
+
+
+// alert ('12344')
+
+// setTimeout(() => {
+//     alert ('432534635612344')
+    
+// }, 3000);
+
+
+
+setTimeout(() => {
+                console.log('123');                
+    }, 0);
+
+console.log('555');
