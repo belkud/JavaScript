@@ -2871,12 +2871,12 @@ console.log(Array.prototype);
 console.log(Number.prototype);
 console.log(String.prototype);
 
-let today = new Date()
-console.log(today.getTime()); //! timestamp (дата показывается в миллисекундах)
+let today2 = new Date()
+console.log(today2.getTime()); //! timestamp (дата показывается в миллисекундах)
 
-console.log(today.getMonth())
+console.log(today2.getMonth())
 ;
-console.log(today.getDay());
+console.log(today2.getDay());
 
 
 
@@ -2899,12 +2899,12 @@ let dateOfBirth2 = new Date(1945, 5, 30) //! мы можем указывать 
 console.log(dateOfBirth2);
 
 let newYearDay = new Date('2026')
-console.log(today.getTime());
+console.log(today2.getTime());
 console.log(newYearDay.getTime());
 
-console.log(`До нового года осталось: ${ Math.floor((Number(newYearDay)-Number(today))/(24*60*60*1000))} дней`);
+console.log(`До нового года осталось: ${ Math.floor((Number(newYearDay)-Number(today2))/(24*60*60*1000))} дней`);
 
-console.log(+today == today.getTime()); //! оба способа перевода даты в timestamp (переводим дату в число)
+console.log(+today2 == today2.getTime()); //! оба способа перевода даты в timestamp (переводим дату в число)
 
 console.log(Date.now() == new Date().getTime());
 
@@ -2934,4 +2934,129 @@ function getWeekDay(dateOfTask:any) {
 }
 getWeekDay(new Date(2012, 0, 3))
 getWeekDay(new Date())
+
+
+
+
+
+
+console.clear()
+
+
+
+
+
+//! Задание 2
+//! Реализуйте класс ExtendedDate, унаследовав его от стандартного класса Date и 
+//! добавив следующие возможности:
+//! ■ метод для вывода даты (числа и месяца) текстом;
+//! ■ метод для проверки – это прошедшая дата или будущая
+//! (если прошедшая, то метод возвращает false; если будущая или текущая, то true);
+//! ■ метод для проверки – високосный год или нет;
+//! ■ метод, возвращающий следующую дату.
+//! Создайте объект класса ExtendedDate и выведите на экран
+//! результаты работы новых методов.
+
+let today = new Date()
+
+class ExtendedDate {
+    year
+    month
+    day
+    constructor(year:number, month:number, day:number) {
+        this.year = year
+        this.month = month
+        this.day = day
+    }
+
+//! ■ метод для вывода даты (числа и месяца) текстом;
+    printDate(){
+        let days = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
+            'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое', 
+            'восемьнадцатое', 'девятнадцатое', 'двадцатое'
+        ]
+        
+        let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+
+        if (this.day>=1 && this.day<=20) {
+            console.log(days[this.day-1], months[this.month-1]);
+        } else if (this.day<30) {
+            console.log('двадцать ' + days[this.day-21], months[this.month-1])
+        } else if (this.day==30) {
+            console.log('тридцатое ' + months[this.month-1])
+        } else if (this.day==31) {
+            console.log('тридцать первое ' + months[this.month-1])
+        } else {
+            console.log(`число ${this.day} вне диапазона`);            
+        }
+        
+    }
+
+
+//! ■ метод для проверки – это прошедшая дата или будущая
+//! (если прошедшая, то метод возвращает false; если будущая или текущая, то true);
+    checkDate() {
+
+        let dateStr = `${this.year}${this.month<10 ? 0 + '' + this.month : this.month}${this.day<10 ? 0 + '' + this.day : this.day}`
+        let todayStr = `${today.getFullYear()}0${today.getMonth()+1}${today.getDate()<10 ? 0 + '' + today.getDate() : today.getDate()}`
+
+        console.log (todayStr>=dateStr ? 'Дата прошедшая' : 'Дата будущая')     
+    }
+
+
+//! ■ метод для проверки – високосный год или нет;
+
+    checkLeapYear() {
+        this.year%4==0 ? console.log('Год високосный') : console.log('Год не високосный')
+    }
+
+    //! ■ метод, возвращающий следующую дату.
+
+    showNextDate() {
+
+        let year = this.year
+        let mounth = this.month
+        let day = this.day
+
+        if (day>=32) return 'Введите корректный день'
+        if (day==31 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) return 'Введите корректный день'
+        if (day>=30 && mounth==2 || day==29 && mounth==2 && year%4!=0) return 'Введите корректный день'
+        if (mounth>=13) return 'Введите корректный месяц'
+        if (day<=0 || mounth<=0 || year<=0) return 'введите положительное число'
+    
+        if (day==31 && mounth==12){
+            year+=1, mounth=1, day=1
+        } else if (day==30 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) {
+            day=1
+            mounth+=1
+        } else if (day==31 && (mounth==3 || mounth==5 ||mounth==7 || mounth==8 || mounth==10 || mounth==12)) {
+            day=1
+            mounth+=1
+        } else if(day==28 && mounth==2 && year%4!=0 || day==29 && mounth==2 && year%4==0){
+            day=1
+            mounth+=1
+        } else {
+            day+=1
+        }
+    
+        console.log(`«${year}.${mounth}.${day}»`) 
+    }
+
+}
+
+let day1 = new ExtendedDate(2003, 3, 3)
+day1.printDate()
+day1.checkDate()
+day1.checkLeapYear()
+day1.showNextDate()
+
+
+
+
+
+
+
+
+
+
 
