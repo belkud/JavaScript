@@ -55,7 +55,7 @@ console.log(typeof c) //underfined (переменная была объявле
 let u = null // когда нужно явно указать, что переменная не имеет значения или «пустое» состояние.
 console.log(u);
 
-let d = 'abc' * 5 
+let d = 'abc' * 5
 console.log(d) // NaN (Not-a-Number) - невозможность преобразовать к числу
 
 // console.log(y>y2);// «Boolean» (сравнение) имеет два значения «true» и «false»
@@ -66,15 +66,15 @@ console.log(d) // NaN (Not-a-Number) - невозможность преобра
 
 //! Операторы сравнения
 //'>' '<' '>=' '<=' '==' '!=' сравнение переменных (Boolean)
- 
-console.log(5!=3) //(пять не ровно три) true
-console.log(5>3) //(пять больше чем три) true
-console.log(5<3) //(пять меньше чем три) false
+
+console.log(5 != 3) //(пять не ровно три) true
+console.log(5 > 3) //(пять больше чем три) true
+console.log(5 < 3) //(пять меньше чем три) false
 console.log("2" > "12"); // (строки сравниваются по первому символу, 2>1, ответ "true") 
 
-let letter1 ='a'
-let letter2 ='b'
-console.log(letter1<=letter2); // строки тоже имеют свою 'величину'
+let letter1 = 'a'
+let letter2 = 'b'
+console.log(letter1 <= letter2); // строки тоже имеют свою 'величину'
 
 
 //! Значения false (неверные значения)
@@ -93,14 +93,14 @@ console.log(Boolean(false));
 // let s2 = alert('Хотите закрыть окно')
 // let s3 = prompt('Хотите закрыть окно')
 
- 
+
 
 
 
 let dates = new Date
 console.log(dates);
 
-console.log('Осталось ' + (23 - dates.getHours()) + ' часа и ' + (60 - dates.getMinutes()) + ' минут' );
+console.log('Осталось ' + (23 - dates.getHours()) + ' часа и ' + (60 - dates.getMinutes()) + ' минут');
 
 
 //! 1.Условное ветвление: if
@@ -119,7 +119,7 @@ console.log('Осталось ' + (23 - dates.getHours()) + ' часа и ' + (6
 
 
 // 5<3 ? console.log('значение верно') : console.log('Значение не верно')
- 
+
 
 
 // let a1 = 1
@@ -153,12 +153,12 @@ console.log(Math.trunc(5.6)); //отбрасывание дробной част
 
 
 
-for (let i = 0; i < 6; i++) { 
-    
-    if (i==3) {
+for (let i = 0; i < 6; i++) {
+
+    if (i == 3) {
         break    //! прерывание цикла
     }
-    console.log(i);  
+    console.log(i);
 }
 console.log('================');
 
@@ -166,20 +166,20 @@ console.log('================');
 
 
 
-for (let i = 0; i < 10; i++) { 
-    if (i%2==0) {
+for (let i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
         continue    //! переход к следующей итерации
     }
-    console.log(i);  
+    console.log(i);
 }
 console.log('================');
 
 
 
- 
-  
 
- 
+
+
+
 
 // 7. Запросите у пользователя текущее время (часы и минуты) и выведите, сколько часов и минут осталось до следующего дня.
 // let minutes = Number(prompt('Введите минуты'))
@@ -187,17 +187,17 @@ console.log('================');
 
 let hours = 23
 let minutes = 5
-console.log('До полуночи остало: ' + (23-hours) + ' часа и ' + (60-minutes) + ' Минут' )
+console.log('До полуночи остало: ' + (23 - hours) + ' часа и ' + (60 - minutes) + ' Минут')
 
 
 // 1. for 
 // 2. while
 // 3. do while
- 
 
 
 
- 
+
+
 
 
 
@@ -245,7 +245,7 @@ console.log('До полуночи остало: ' + (23-hours) + ' часа и 
 //     }
 // }
 
- 
+
 
 //! 4. Напишите скрипт, который принимает от пользователя
 //! величину годовой депозитной ставки (в процентах)
@@ -254,23 +254,23 @@ console.log('До полуночи остало: ' + (23-hours) + ' часа и 
 
 
 let money = 1000  // количество денег
-let doubleMoney = money*2  // количество денег
+let doubleMoney = money * 2  // количество денег
 let deposit = 0.2 // процентная ставка
-let year =0  // количество лет для удвоения
+let year = 0  // количество лет для удвоения
 
-for (let i = 0; i < 10; i++) {    
-    money+=money*deposit //  1000 + 1000*20% - цикл выполнился 1 раз
-                         //  1200 + 1200*20% - цикл выполнился 2 раз
-                         //  1440 + 1680*20% - цикл выполнился 3 раз        
-    year++         
-   if (money>=doubleMoney) break
+for (let i = 0; i < 10; i++) {
+    money += money * deposit //  1000 + 1000*20% - цикл выполнился 1 раз
+    //  1200 + 1200*20% - цикл выполнился 2 раз
+    //  1440 + 1680*20% - цикл выполнился 3 раз        
+    year++
+    if (money >= doubleMoney) break
 }
 
-console.log(year>4 ?
+console.log(year > 4 ?
     `вклад увеличится вдвое через ${year} лет` :
     `вклад увеличится вдвое через ${year} года`
 );
- 
+
 
 // ставка 20 %
 
@@ -294,9 +294,9 @@ console.log('=======');
 //         acc++
 //         console.log(num);
 //     }
-    
+
 //     if (acc==10) break
-        
+
 // }
 
 
@@ -316,10 +316,10 @@ console.log('=======');
 console.log(getSumm(3));
 
 
-function getSumm (a:number, b=10) { // можем задавать параметр по умолчанию
-    return a+b
+function getSumm(a: number, b = 10) { // можем задавать параметр по умолчанию
+    return a + b
 }
-console.log(getSumm(13,3));
+console.log(getSumm(13, 3));
 
 // userName()
 
@@ -329,7 +329,7 @@ console.log(getSumm(13,3));
 
 // function userName() {
 //     let name = 'Dima' // локальная переменная
-    
+
 //     if (name=='' || name == 'Vasya') {
 //         console.log('Данный пользователь ' + name + ' уже есть');
 //     } else {
@@ -341,19 +341,19 @@ console.log(getSumm(13,3));
 // userName()
 
 function userName2() {
-     let name = 'Kolya'
-     console.log (name)
+    let name = 'Kolya'
+    console.log(name)
 }
 userName2()
 
 
 
 
-function enterName (name:string) {
-    if(typeof name!=='string'){  // проверка на тип данных (если случайно ввели в имя числа)
+function enterName(name: string) {
+    if (typeof name !== 'string') {  // проверка на тип данных (если случайно ввели в имя числа)
         return 'У вас введены числа'
-    } 
-    if (name=='') {
+    }
+    if (name == '') {
         return 'Введите ваше имя'
     }
     return name
@@ -362,9 +362,9 @@ console.log(enterName(''));
 
 
 
-function checkAge(age:number) {
+function checkAge(age: number) {
 
-return age>=18 ? 'вы взрослый' : 'вы ребенок'
+    return age >= 18 ? 'вы взрослый' : 'вы ребенок'
 
 }
 console.log(checkAge(5));
@@ -374,9 +374,9 @@ console.log(checkAge(5));
 
 
 
-console.log((Math.random()*100).toFixed());   // 1-ый способ округления целого числа 
-console.log((Math.round(Math.random()*100))); // 2-ой способ округления целого числа
-console.log((Math.trunc(Math.random()*100))); // 3-й способ округления целого числа
+console.log((Math.random() * 100).toFixed());   // 1-ый способ округления целого числа 
+console.log((Math.round(Math.random() * 100))); // 2-ой способ округления целого числа
+console.log((Math.trunc(Math.random() * 100))); // 3-й способ округления целого числа
 
 
 
@@ -396,7 +396,7 @@ console.log(Math.trunc(5.4)); // отбрасывает дробную част�
 console.log('----------');
 
 
-console.log(10%4);
+console.log(10 % 4);
 
 
 
@@ -407,12 +407,12 @@ console.log(10%4);
 
 
 // setTimeout(() => {
-    //     console.log('Привет Вася');
-    // }, 2000);
-    
-    
-    
-    
+//     console.log('Привет Вася');
+// }, 2000);
+
+
+
+
 
 // accum = 0
 
@@ -422,11 +422,11 @@ console.log(10%4);
 // }, 1000);
 
 // setTimeout(() => {
-    //     clearInterval(stopTimer)
-    // }, 4000);
-    
-    
-  
+//     clearInterval(stopTimer)
+// }, 4000);
+
+
+
 
 
 
@@ -441,7 +441,7 @@ console.log(10%4);
 // }
 
 // console.log(showEvenOddNumberInDiapazone(5, 15, false))
- 
+
 
 
 
@@ -459,21 +459,21 @@ console.log(`Текущее время: ${data.getHours()} часов и ${data.
 //! 5. Написать функцию, которой передаем имя, и она возраващает приветствие в зависимости 
 //! от времени суток (Доброе утро\день\вечер\ночи Иван)
 
-function greetUser (name:string) {
+function greetUser(name: string) {
     let data = new Date
     let hours = data.getHours()
 
-if (hours>=6 && hours<12) {
-    return `Доброе утро ${name}`
-}
-if (hours<18) {
-    return `Добрый день ${name}`
-}
-if (hours<22) {
-    return `Добрый вечер ${name}`
-    // return 'Добрый вечер ' + name
-}
-return `Доброй ночи ${name}`
+    if (hours >= 6 && hours < 12) {
+        return `Доброе утро ${name}`
+    }
+    if (hours < 18) {
+        return `Добрый день ${name}`
+    }
+    if (hours < 22) {
+        return `Добрый вечер ${name}`
+        // return 'Добрый вечер ' + name
+    }
+    return `Доброй ночи ${name}`
 }
 
 console.log(greetUser('Vladimir'));
@@ -495,42 +495,42 @@ console.log(greetUser('Vladimir'));
 
 //! 6. Написать функцию, которая передаёт состояние возраста 
 //! (1-17 ребенок, 18-30 - молодой, 30-55 - зрелый, от 55 - старый). Например. 33 - зрелый
-    
 
-function checkUserAge (i:number) {
-    if(i<=17){
-        console.log('Вы ребенок') ;
-    } else if(i<=30) {
-        console.log('Вы молодой') ;
-    } else if(i<=55) {
-        console.log('Вы зрелый') ;
+
+function checkUserAge(i: number) {
+    if (i <= 17) {
+        console.log('Вы ребенок');
+    } else if (i <= 30) {
+        console.log('Вы молодой');
+    } else if (i <= 55) {
+        console.log('Вы зрелый');
     } else {
-        console.log('Вы старый') ;
-        
-    }                    
+        console.log('Вы старый');
+
     }
-    
-    
-    checkUserAge(6);
- 
+}
 
 
-function checkUserAge2 (i:number) {
-    if(i<=17){
-        return 'Вы ребенок' ;
-    } else if(i<=30) {
-        return 'Вы молодой' ;
-    } else if(i<=55) {
+checkUserAge(6);
+
+
+
+function checkUserAge2(i: number) {
+    if (i <= 17) {
+        return 'Вы ребенок';
+    } else if (i <= 30) {
+        return 'Вы молодой';
+    } else if (i <= 55) {
         return 'Вы зрелый';
     } else {
         return 'Вы старый';
-        
-    }                    
+
     }
-    
-console.log(checkUserAge2(6));    
-    
-  
+}
+
+console.log(checkUserAge2(6));
+
+
 
 // //! 1. Написать функцию, которая вычисляет факториал заданного числа.
 
@@ -645,8 +645,8 @@ let user = {
     age: 32,
     // 0: '888',
     // 5: 'abc',
-    city:'Sochi',
-    month:'March',
+    city: 'Sochi',
+    month: 'March',
     // likes_birds: true,  // console.log(user.likes_birds);
     // "likes birds": true, // console.log(user['likes birds']);
 
@@ -683,11 +683,11 @@ console.log(user['name']);
 console.log('age' in user);
 console.log('table' in user);
 console.log(0 in user);
- 
+
 for (const key in user) {
     console.log(key + ' : ' + user[key]);
     // console.log();
-    
+
 }
 
 
@@ -752,15 +752,15 @@ console.log(obj2);
 //! средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать 
 //! перерыв на 1 час.
 
-function showTimeInTravel (distance:number, speed:number) {
-       let time = distance/speed 
-       let rest = Math.floor(time/4)
-       
-       if (time<=4) {
-        return distance/speed
-       } else {
+function showTimeInTravel(distance: number, speed: number) {
+    let time = distance / speed
+    let rest = Math.floor(time / 4)
+
+    if (time <= 4) {
+        return distance / speed
+    } else {
         return (time + rest) + ' часов'
-       }
+    }
 }
 
 // console.log(showTimeInTravel(1200, car.averageSpeed))
@@ -852,7 +852,7 @@ function showTimeInTravel (distance:number, speed:number) {
 
 // function showHours (hour:any) {
 //     hour = Math.trunc(time.hours/24)
-    
+
 //     if (time.hours>23) {
 //         time.hours = time.hours - hour*24
 //         // time.hours+=min
@@ -873,14 +873,14 @@ function showTimeInTravel (distance:number, speed:number) {
 let massive = [2, 5, 4, 6, 9, 4, 2, 1]
 console.log(massive[0]);
 console.log(massive[1]);
-console.log(massive.length +' количество элементов в массиве');
+console.log(massive.length + ' количество элементов в массиве');
 
 
 
 
-let namiInMassive = [ 
-    'Ann', 
-    'Kate', 
+let namiInMassive = [
+    'Ann',
+    'Kate',
     'Sveta'
 ]
 console.log(namiInMassive);
@@ -893,16 +893,16 @@ console.log(namiInMassive);
 
 
 
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
-console.log(Math.round(Math.random()*100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
+console.log(Math.round(Math.random() * 100));
 
 
-let mas = [ 1, 3, 4, 6, 2, 3, 45, 67, 78,]
+let mas = [1, 3, 4, 6, 2, 3, 45, 67, 78,]
 
 console.log(mas);
 console.log(mas.length);
@@ -913,9 +913,9 @@ console.log(Math.min(...mas) + ' - мин элемент массива');
 //! Задание 1
 //! Создать массив из 10 случайных чисел и написать несколько
 //! функций для работы с ним.
-let massiveWithRandomNumbers:number[] = []
+let massiveWithRandomNumbers: number[] = []
 for (let i = 1; i <= 10; i++) {
-    let num = Math.round(Math.random()*100)
+    let num = Math.round(Math.random() * 100)
     massiveWithRandomNumbers.push(num)
 }
 
@@ -924,39 +924,39 @@ for (let i = 1; i <= 10; i++) {
 
 //! 1. Функция принимает массив и выводит его на экран.
 
-function showMassive (massive:number[]) {
+function showMassive(massive: number[]) {
     return massive
 }
 // console.log(showMassive(massiveWithRandomNumbers))
 
- 
+
 
 //! 2. Функция принимает массив и выводит только четные
 //! элементы.
-function showEvenElem (x:number[]) {
+function showEvenElem(x: number[]) {
 
     //! 1-ый способ решения через цикл for
 
     for (let i = 0; i < x.length; i++) {
-        if (x[i]%2==0) {
+        if (x[i] % 2 == 0) {
             console.log(x[i]);
-        }            
+        }
     }
-    
+
     //! 2-ой способ решения через цикл for of
 
     for (const el of x) {
-        if (el%2==0) {
+        if (el % 2 == 0) {
             console.log(el);
         }
     }
-        
+
 
 }
 
 showEvenElem(massiveWithRandomNumbers)
 
- 
+
 
 
 
@@ -967,11 +967,11 @@ console.log('------------');
 //! 3. Функция принимает массив и возвращает сумму всех
 //! элементов массива.
 
-function showUnionSumm (mass:number[]) { // название функции и её параметр
-    let accum  = 0     // (аккамулятор) - сюда мы записываем общую сумму чисел
+function showUnionSumm(mass: number[]) { // название функции и её параметр
+    let accum = 0     // (аккамулятор) - сюда мы записываем общую сумму чисел
     for (let i = 0; i < mass.length; i++) { // количество повторений цикла
-        accum+=mass[i] // суммируем элементы между собой
-       
+        accum += mass[i] // суммируем элементы между собой
+
     }
     return accum // возвращем общую сумму 
 }
@@ -981,7 +981,7 @@ console.log(showUnionSumm(massiveWithRandomNumbers)); // вызов функци
 
 
 //! 4. Функция принимает массив и возвращает его максимальный элемент.
-function findMaxElement (x:number[]) {
+function findMaxElement(x: number[]) {
     return `
 наибольший элемент = ${Math.max(...x)}, 
 наименьший элемент = ${Math.min(...x)}
@@ -998,9 +998,9 @@ console.log(findMaxElement(massiveWithRandomNumbers));
 
 
 
-mas = [ 1, 3, 4, 6, 2, 3, 45, 67, 78,]
+mas = [1, 3, 4, 6, 2, 3, 45, 67, 78,]
 
-function addNewElement (mass:number[], index:number, userNum:number) {
+function addNewElement(mass: number[], index: number, userNum: number) {
     mass.splice(index, 0, userNum)
     return mass
 }
@@ -1018,8 +1018,8 @@ massiveWithRandomNumbers = [47, 50, 78, 32, 46, 100, 15, 76, 27, 2]
 //! 6. Функция удаления элемента из массива по указанному
 //! индексу
 
-function deleteElement(mass:number[], index:number) {
-    mass.splice (index, 1)
+function deleteElement(mass: number[], index: number) {
+    mass.splice(index, 1)
     return mass
 }
 console.log(deleteElement(massiveWithRandomNumbers, 4));
@@ -1028,10 +1028,10 @@ console.log(deleteElement(massiveWithRandomNumbers, 4));
 console.log('=============')
 
 
-massiveWithRandomNumbers = [47, 50, 78, 32, 46, 100, 15, 76, 27, 2] 
+massiveWithRandomNumbers = [47, 50, 78, 32, 46, 100, 15, 76, 27, 2]
 console.log(massiveWithRandomNumbers);
 
-massiveWithRandomNumbers.push (333)
+massiveWithRandomNumbers.push(333)
 console.log(massiveWithRandomNumbers);
 
 
@@ -1085,10 +1085,10 @@ console.log(massive3);
 console.log(String(massive3)); // метод, который оборачивает массив в строку
 
 
-namiInMassive = [ 
-    'Ann',   
-    'Kate',   
-    'Sveta'    
+namiInMassive = [
+    'Ann',
+    'Kate',
+    'Sveta'
 ]
 console.log(String(namiInMassive).split(',').join('-'));
 
@@ -1112,7 +1112,7 @@ console.log(example.split(' ').join('-'));
 
 
 massive3 = [2, 5, 4, 6, 9, 4, 2, 1]
-let newArray = massive3.splice(4,7)
+let newArray = massive3.splice(4, 7)
 
 console.log(massive3);
 console.log(newArray);
@@ -1132,9 +1132,9 @@ let array = [2, 5, 9, 15, 0, 4]
 //! первый способ решения цикл for
 let arrayWitnNewElem = []
 for (let i = 0; i < array.length; i++) {
-    if (array[i]>3 && array[i]<10) {
+    if (array[i] > 3 && array[i] < 10) {
         arrayWitnNewElem.push(array[i]);
-    }   
+    }
 }
 console.log(arrayWitnNewElem);
 
@@ -1179,9 +1179,9 @@ console.log(arrayWitnNewElem);
 // ! числа из массива, которые начинаются на цифру 1, 2 или 5.
 // const massWithNum = [10, 20, 30, 50, 235, 3000]
 // for (let i = 0; i < massWithNum.length; i++) {
-    
+
 //     let num = String(massWithNum[i]) // здесь переводим элементы массива в строки
-    
+
 //     if (num[0]=='1' || num[0]=='2' || num[0]=='5') {
 //         console.log(num);      
 //     }
@@ -1198,7 +1198,7 @@ console.log(arrayWitnNewElem);
 // }
 // console.log(string);
 
- 
+
 
 
 // !6. Составьте массив дней недели. С помощью цикла for выведите все дни недели.
@@ -1207,7 +1207,7 @@ let dayOfWeek = ['понедельник', 'вторник', 'среда', 'че
 console.log(dayOfWeek);
 
 for (let i = 0; i < dayOfWeek.length; i++) {
-    console.log(dayOfWeek[i]);  
+    console.log(dayOfWeek[i]);
 }
 
 
@@ -1217,7 +1217,7 @@ console.log(dayOfWeek.indexOf('среда'));
 
 
 
-console.log(dayOfWeek.slice(1,4)); //! slice КОПИРУЕТ часть массива и не изменяет его
+console.log(dayOfWeek.slice(1, 4)); //! slice КОПИРУЕТ часть массива и не изменяет его
 console.log(dayOfWeek);
 
 dayOfWeek.splice(3, 0, 'Monday', 'Tuesday') //! splice может удалять старые элементы массива и записывать новые
@@ -1226,19 +1226,19 @@ console.log(dayOfWeek);
 
 
 
-let mass1= [1, 2, 3, 4, 5]
+let mass1 = [1, 2, 3, 4, 5]
 let mass2 = [1, 2, 5,]
 console.log(mass1.concat(mass2)); //! concat соединяет данные из массивов
 
 
-mass1= [1, 2, 3, 4, 5]
+mass1 = [1, 2, 3, 4, 5]
 
-mass1.forEach(function name (el){
-    console.log(el*2)
+mass1.forEach(function name(el) {
+    console.log(el * 2)
 })
 
-mass1.forEach((el)=>{
-    console.log(el*2)
+mass1.forEach((el) => {
+    console.log(el * 2)
 })
 
 console.log(mass1);
@@ -1257,22 +1257,22 @@ console.log(array.includes(5)); //! includes - показывает наличи
 // array.find((el)=> {
 //     if (el>3) {
 //         console.log(el);
-        
+
 //     }
 // })
 
 console.log('--------------');
 
 
-let users:any[] = [
-    {id: 1, name: "Вася", payment: 20000},
-    {id: 2, name: "Петя", payment: 25000},
-    {id: 3, name: "Маша", payment: 15000}
+let users: any[] = [
+    { id: 1, name: "Вася", payment: 20000 },
+    { id: 2, name: "Петя", payment: 25000 },
+    { id: 3, name: "Маша", payment: 15000 }
 ];
 
-let usersName:number[] = []
+let usersName: number[] = []
 
-users.map(el=> usersName.push(el.id * el.payment))
+users.map(el => usersName.push(el.id * el.payment))
 console.log(usersName);
 
 
@@ -1282,45 +1282,45 @@ console.log(usersName);
 
 console.log('--------------');
 let unionPayment = 0
-users.forEach(el=> unionPayment+=el.payment)
+users.forEach(el => unionPayment += el.payment)
 console.log(`общая зарплата работников = ${unionPayment} рублей`);
 
 let sortPayment = [] as any
 
-users.forEach(el=> sortPayment.push(el.payment))
+users.forEach(el => sortPayment.push(el.payment))
 console.log(sortPayment.sort());
 console.log(sortPayment.reverse());
 
 
- 
-  let someUsers = users.find(el=>el.payment>=20000) //! выводит первое верное значение и на нём завешается
-  console.log(someUsers);
 
-  let someUsers2 = users.filter(el=>el.payment>=20000) //! filter выводит ВСЕ верные значениЯ
-  console.log(...someUsers2);
-        
-    
-  array = [2, 5, 9, 5, 0, 6,]
-  let test = array.find(el=> el>3)
-  console.log(test);
-  
+let someUsers = users.find(el => el.payment >= 20000) //! выводит первое верное значение и на нём завешается
+console.log(someUsers);
+
+let someUsers2 = users.filter(el => el.payment >= 20000) //! filter выводит ВСЕ верные значениЯ
+console.log(...someUsers2);
+
+
+array = [2, 5, 9, 5, 0, 6,]
+let test = array.find(el => el > 3)
+console.log(test);
+
 
 
 array = [2, 5, 6,]
 
 let acc = 0
-array.forEach (el=>acc+=el) //! forEach перебирает каждый элемент массива (по аналогии с циклом for)
+array.forEach(el => acc += el) //! forEach перебирает каждый элемент массива (по аналогии с циклом for)
 console.log(acc);
 
 
 
 
-let reduce = array.reduce((acc, el)=>acc+=el) //! reduce нужен для вычисления одного значения на основе всех элементов массива
+let reduce = array.reduce((acc, el) => acc += el) //! reduce нужен для вычисления одного значения на основе всех элементов массива
 console.log(reduce);
 
 
 
-  
+
 
 // map(func) – создаёт новый массив из результатов вызова func для каждого элемента.
 // sort(func) – сортирует массив «на месте», а потом возвращает его.
@@ -1332,11 +1332,11 @@ console.log(array.reverse()); //! reverse - меняет порядок элем
 
 console.log(array.sort()); //! sort - сортирует элементы в порядке возрастания
 
-let testMap = array.map(el=>el*10) //! создаёт новый массив и НЕ меняет исходный массив
+let testMap = array.map(el => el * 10) //! создаёт новый массив и НЕ меняет исходный массив
 console.log(testMap);
 
 array.copyWithin
- 
+
 
 
 //! 1. У вас есть 5 чисел. Найдите наибольшее и наименьшее из них.
@@ -1347,8 +1347,8 @@ console.log(Math.max(...newArr));
 console.log(Math.min(...newArr));
 
 // второй способ решения
-console.log(newArr.sort((a,b)=>a-b).pop());
-console.log(newArr.sort((a,b)=>a-b).shift());
+console.log(newArr.sort((a, b) => a - b).pop());
+console.log(newArr.sort((a, b) => a - b).shift());
 
 
 //! 2. Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой.
@@ -1358,11 +1358,11 @@ console.log(array2.reverse());
 
 //! 3. Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в порядке убывания.
 newArr = [4, 7, 9, 12, 20, 5, 1, 3]
-console.log(newArr.sort((a,b)=>a-b));
-console.log(newArr.sort((a,b)=>b-a));
+console.log(newArr.sort((a, b) => a - b));
+console.log(newArr.sort((a, b) => b - a));
 
 //! 4. Есть 2 массива: let a = ['a', 'b', 'c']; let b = [1, 2, 3]; Объедините их, чтобы получилось: ['a', 'b', 'c', 1, 2, 3]
-let a:any[] = ['a', 'b', 'c']; 
+let a: any[] = ['a', 'b', 'c'];
 let b = [1, 2, 3];
 console.log(a.concat(b));
 
@@ -1374,34 +1374,34 @@ console.log(fruits.includes('Banana'));
 //! 6. Напишите программу, которая будет преобразовывать число от 1 до 12 в соответствующее 
 //! название месяца (Январь, февраль, ...)
 
-let months = ['янв','февр','март','апр','май','июнь','июль','авг','сент','окт','нояб','дек',]
+let months = ['янв', 'февр', 'март', 'апр', 'май', 'июнь', 'июль', 'авг', 'сент', 'окт', 'нояб', 'дек',]
 
 //? первый способ решения
-months.forEach((el, index)=>console.log(`${el} - ${index+1}`))
+months.forEach((el, index) => console.log(`${el} - ${index + 1}`))
 
 //? второй способ решения
 // for (let i = 0; i < months.length; i++) {
-    //     console.log(i+1 + ' - '  + months[i]);
-    // }
+//     console.log(i+1 + ' - '  + months[i]);
+// }
 
 
 //! 7. У нас есть объект: let obj = { 'name':['Вася', 'Петя', 'Коля'], 'age':[11, 30, 20], }; 
 //! Получите Петю из массива arr. Посчитайте, сколько элементов находится в name.
-let obj = { 
-    'name':['Вася', 'Петя', 'Коля'], 
-    'age':[11, 30, 20], 
+let obj = {
+    'name': ['Вася', 'Петя', 'Коля'],
+    'age': [11, 30, 20],
 }
-console.log(obj.name.filter((el)=>el == 'Петя'));
+console.log(obj.name.filter((el) => el == 'Петя'));
 console.log(obj.name[1]);
 console.log(obj.name.length);
 
 //! 8. Поиск по массиву объектов let arr = [{'id':'1','prop1':'val1'},{'id':'2','prop1':'val2'}] 
 //! Этот набор данных формируется выборкой из базы данных. Нужно получить объект, у которого id=2.
 let arrray = [
-    {'id':'1','prop1':'val1'},
-    {'id':'2','prop1':'val2'}
+    { 'id': '1', 'prop1': 'val1' },
+    { 'id': '2', 'prop1': 'val2' }
 ]
-let newUser = arrray.find((el)=>el.id=='2')
+let newUser = arrray.find((el) => el.id == '2')
 console.log(newUser)
 
 
@@ -1409,7 +1409,7 @@ console.log(newUser)
 //! 9. У вас есть массив: var arr = [ "Hi", "Hello", "Bonjour"]; Добавьте к нему еще один 
 //! элемент в конец, чтобы получился следующий массив [ "Hi", "Hello", "Bonjour", "Hola"]
 
-let testArray = [ "Hi", "Hello", "Bonjour"]
+let testArray = ["Hi", "Hello", "Bonjour"]
 testArray.push("Hola")
 console.log(testArray);
 
@@ -1419,9 +1419,9 @@ console.log(testArray);
 //! Стоимость доставки для всех товаров одинаковая.
 
 let items = [
-    {name:'Milk', price: 50, delivery:30},
-    {name:'Eggs', price: 80, delivery:50},
-    {name:'Bread', price: 100, delivery:20},
+    { name: 'Milk', price: 50, delivery: 30 },
+    { name: 'Eggs', price: 80, delivery: 50 },
+    { name: 'Bread', price: 100, delivery: 20 },
 ]
 
 // let infoAboutItems = document.getElementById('infoAboutItems')  as HTMLDivElement
@@ -1493,7 +1493,7 @@ let items = [
 
 
 //! 4. Подсчет средней стоимости одного товара в чеке.
- 
+
 // let quantity = 0    
 // items2.forEach(el=>quantity+=el.quantity) // считаем общее количество товара
 
@@ -1520,14 +1520,14 @@ console.log(string);
 console.log(string.toUpperCase());
 console.log(string.toLowerCase());
 
-function camelize(str:string) {
+function camelize(str: string) {
     let splitStr = str.split('-')
-    let mass:string[] = []
+    let mass: string[] = []
 
     for (let i = 0; i < splitStr.length; i++) {
-        mass.push(splitStr[i].slice(0,1).toUpperCase(), splitStr[i].slice(1))
+        mass.push(splitStr[i].slice(0, 1).toUpperCase(), splitStr[i].slice(1))
     }
-    
+
     let str2 = mass.join('')
     return str2[0].toLowerCase() + str2.slice(1)
 }
@@ -1540,8 +1540,8 @@ console.log(camelize('list-style-image-image-image-image'));
 
 let massives = [5, 2, 1, 10, -10, 8]
 console.log(massives);
-console.log(massives.sort((a,b)=>a-b)); // сортировка по возрастанию
-console.log(massives.sort((a,b)=>b-a)); //обратная сортировка
+console.log(massives.sort((a, b) => a - b)); // сортировка по возрастанию
+console.log(massives.sort((a, b) => b - a)); //обратная сортировка
 
 let arrSort = ["HTML", "JavaScript", "CSS"]
 console.log(arrSort);
@@ -1549,8 +1549,8 @@ console.log(arrSort);
 
 
 
-function sortStringByAlphabet (mass:string[]) {
-    let sortedMass= mass
+function sortStringByAlphabet(mass: string[]) {
+    let sortedMass = mass
 
     sortedMass.sort()
     return sortedMass
@@ -1564,30 +1564,30 @@ let vasya = { name: "Вася", age: 25 };
 let petya = { name: "Петя", age: 30 };
 let masha = { name: "Маша", age: 28 };
 
-let newUsers = [ vasya, petya, masha ];
-console.log(...newUsers.sort((a,b)=>a.age - b.age));
+let newUsers = [vasya, petya, masha];
+console.log(...newUsers.sort((a, b) => a.age - b.age));
 
 
 //! возвратить средний возраст.
 let accumAge = 0
-newUsers.map(el=>accumAge+=el.age)
-console.log(Math.trunc(accumAge/newUsers.length));
+newUsers.map(el => accumAge += el.age)
+console.log(Math.trunc(accumAge / newUsers.length));
 
 
-console.log((newUsers.reduce((acc,el)=>acc+=el.age, 0)/newUsers.length).toFixed(1));
+console.log((newUsers.reduce((acc, el) => acc += el.age, 0) / newUsers.length).toFixed(1));
 
 
 
 let strings = ["кришна", "кришна", "харе", "харе",
     "харе", "харе", "кришна", "кришна", ":-O"
-  ];
+];
 console.log(strings);
 
 
-let massWithUniqElement:string[] = []
+let massWithUniqElement: string[] = []
 for (let i = 0; i < strings.length; i++) {
-    if (!massWithUniqElement.includes(strings[i]) ) {
-        massWithUniqElement.push(strings[i])        
+    if (!massWithUniqElement.includes(strings[i])) {
+        massWithUniqElement.push(strings[i])
     }
 }
 console.log(massWithUniqElement);
@@ -1599,7 +1599,7 @@ console.log(massWithUniqElement);
 
 
 
-let massWithUniqElement2:string[] = []
+let massWithUniqElement2: string[] = []
 
 for (const el of strings) {
     massWithUniqElement2.push(el)
@@ -1675,14 +1675,14 @@ console.log(parseFloat(nums));
 
 
 
-function scoreLowelInString(str:string) {
+function scoreLowelInString(str: string) {
     let acc = 0
     for (let i = 0; i < str.length; i++) {
-        if(str[i]=='а'|| str[i]=='е' ) {
-                acc++
-        }        
+        if (str[i] == 'а' || str[i] == 'е') {
+            acc++
+        }
     }
-return str.length 
+    return str.length
 
 }
 
@@ -1691,16 +1691,16 @@ console.log(scoreLowelInString(`Написать функцию,
     количество гласных букв в 
     переданной строке`))
 
-  let x = 'беспЛатно' 
-  let y = 'БеспЛАТно'
+let x = 'беспЛатно'
+let y = 'БеспЛАТно'
 
-  console.log(x==y);
-  console.log(x.toLowerCase()==y.toLowerCase());
-  
+console.log(x == y);
+console.log(x.toLowerCase() == y.toLowerCase());
 
 
-  console.log(y.toLowerCase());
-  
+
+console.log(y.toLowerCase());
+
 
 //   еле
 //   Лепс спел
@@ -1719,7 +1719,7 @@ console.log(('количество гласных букв в ').split(''));
 
 
 let JS_PZ_Modul_2_Week_3 = document.getElementById('string') as HTMLDivElement
- 
+
 
 
 
@@ -1728,13 +1728,13 @@ let JS_PZ_Modul_2_Week_3 = document.getElementById('string') as HTMLDivElement
 //! строке больше символов, чем во второй; -1 – если во второй больше символов, чем в первой; или 0 – если строки
 //! одинаковой длины.
 
-function compareStrings(str1:string, str2:string) {
-    if (str1.length>str2.length) {
+function compareStrings(str1: string, str2: string) {
+    if (str1.length > str2.length) {
         return 1
-    } 
-    if (str1.length<str2.length) {
+    }
+    if (str1.length < str2.length) {
         return -1
-    } 
+    }
     return 0
 }
 console.log(compareStrings('Написать функцию, которая переводит в верхний регистр', 'Написать функцию, которая считает количество гласных'));
@@ -1745,9 +1745,9 @@ console.log(compareStrings('Написать функцию, в верхний �
 
 //! 2. Написать функцию, которая переводит в верхний регистр
 //! первый символ переданной строки.
-function changeRegister(str:string) {
+function changeRegister(str: string) {
 
-        return str[0].toUpperCase() + str.slice(1)
+    return str[0].toUpperCase() + str.slice(1)
 }
 console.log(changeRegister('которая переводит в верхний регистр'));
 
@@ -1756,12 +1756,12 @@ console.log(changeRegister('которая переводит в верхний 
 //! букв в переданной строке.
 
 
-function scoreLowelInStrings (str:string) {
-let mass:any[] = ['ы', 'а', 'о', 'у', 'е', 'я', 'и', 'ю', 'ё', 'э',]
-    let accum = 0    
+function scoreLowelInStrings(str: string) {
+    let mass: any[] = ['ы', 'а', 'о', 'у', 'е', 'я', 'и', 'ю', 'ё', 'э',]
+    let accum = 0
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < mass.length; j++) {
-            if (str[i]==mass[j]) {
+            if (str[i] == mass[j]) {
                 accum++
             }
         }
@@ -1780,13 +1780,13 @@ console.log(scoreLowelInStrings('регистр'));
 //! увеличение продаж, только сегодня, не удаляйте, ххх.
 //! Функция должна быть нечувствительна к регистру.
 
-function checkSpam (str:string) {
+function checkSpam(str: string) {
     let mass = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх']
     for (const el of mass) {
         if (str.toLowerCase().includes(el)) {
             return 'Есть спам'
         }
-        
+
     }
     return 'Спама нету'
 }
@@ -1802,7 +1802,7 @@ console.log(checkSpam('Функция принимает строку ххх'));
 //! Например: truncate(“Hello, world!”, 8) должна вернуть
 //! “Hello...”.
 
-function reduceString (str:string, num:number) {
+function reduceString(str: string, num: number) {
 
     return str.slice(0, num) + '...'
 }
@@ -1815,21 +1815,21 @@ console.log(reduceString('Написать функцию, которая про
 
 //! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
 
-function checkPalindrom (str:string) {
+function checkPalindrom(str: string) {
     let deleteSpace = '' as any //сюда пишем строку БЕЗ пробелов
-    str.toLowerCase().split(' ').forEach(el=>deleteSpace+=(el.trim())) //убираем пробелы между словами
+    str.toLowerCase().split(' ').forEach(el => deleteSpace += (el.trim())) //убираем пробелы между словами
     let reverseStr = deleteSpace.split('').reverse().join('') // меняем элементы в обратном порядке  
-      if (reverseStr == deleteSpace) {
-          return 'строка палиндром'
-      }
-     return 'строка не палиндром'
-  } 
-  
-  
-  console.log(checkPalindrom('еле'));
-  console.log(checkPalindrom('Лепс спел'));
-  console.log(checkPalindrom(' а Роза упала на лапу Азора '));
-  
+    if (reverseStr == deleteSpace) {
+        return 'строка палиндром'
+    }
+    return 'строка не палиндром'
+}
+
+
+console.log(checkPalindrom('еле'));
+console.log(checkPalindrom('Лепс спел'));
+console.log(checkPalindrom(' а Роза упала на лапу Азора '));
+
 
 
 
@@ -1839,10 +1839,10 @@ function checkPalindrom (str:string) {
 //! 7. Написать функцию, которая считает количество слов в
 //! предложении.
 
-function scoreWords (str:string) {
+function scoreWords(str: string) {
 
     return 'Количество слов в строке = ' + str.split(' ').length
-} 
+}
 console.log(scoreWords('Написать функцию, которая считает количество слов'));
 console.log(scoreWords('Написать функцию'));
 
@@ -1851,9 +1851,9 @@ console.log(scoreWords('Написать функцию'));
 //! слово из предложения.
 
 
-function findLongestWord (str:string) {
-    return str.split(' ').sort((a,b)=> b.length - a.length)[0]
-} 
+function findLongestWord(str: string) {
+    return str.split(' ').sort((a, b) => b.length - a.length)[0]
+}
 console.log(findLongestWord('Написать функцию, которая возвращает самое длинное'));
 
 
@@ -1861,10 +1861,10 @@ console.log(findLongestWord('Написать функцию, которая в�
 //! 9. Написать функцию, которая считает среднюю длину слова
 //! в предложении.
 
-function averageLenght(str:string) {
+function averageLenght(str: string) {
     let symbols = str.split('').length
     let words = str.split(' ').length
-    return `среднее количество символов с слове = ${(symbols/words).toFixed(2)}  символов`
+    return `среднее количество символов с слове = ${(symbols / words).toFixed(2)}  символов`
 }
 
 console.log(averageLenght('Написать функцию, которая считает среднюю длину слова'));
@@ -1877,19 +1877,19 @@ console.log(averageLenght('Написать функцию, которая сч�
 //! строке. Также вывести, сколько всего раз встречается этот
 //! символ в строке. 
 
-function showIndexsOfElem (str:string, el:string) {
+function showIndexsOfElem(str: string, el: string) {
     let massive = []
     let accum = 0
     for (let i = 0; i < str.length; i++) {
-            if (str[i]==el) {
-                accum++
-                massive.push (i)
-            }
+        if (str[i] == el) {
+            accum++
+            massive.push(i)
+        }
     }
     return 'индексы элемента' + el + '=' + massive + ', количество повторений элемента = ' + accum
     return `индексы элемента '${el}' = ${massive}, количество повторений элемента = ${accum}`
 }
- 
+
 console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'а'));
 console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'е'));
 console.log(showIndexsOfElem('Написать функцию, которая принимает строку и символ', 'к'));
@@ -1911,7 +1911,7 @@ let strTest = 'Hi';
 
 // strTest.slice(0,1).toLowerCase() 
 
-console.log(strTest.slice(0,1) + 'aaa');
+console.log(strTest.slice(0, 1) + 'aaa');
 console.log(strTest);
 console.log(strTest);
 
@@ -1938,18 +1938,18 @@ console.log('“' + date.replaceAll('/', '”,“') + '”');
 //! 1. Написать функцию, которая принимает строку и выводит статистику о ней: количество букв, 
 //! количество цифр и количество других знаков.
 
-function showStringStatistic (str:any) {
+function showStringStatistic(str: any) {
     let symbols = str.toLowerCase().split('')
     let accum1 = 0 // сюда пишем количество букв
     let accum2 = 0 // сюда пишем количество букв
-        for (let i = 0; i < symbols.length; i++) {
-            if (symbols[i]>='а' && symbols[i]<='я') {
-                accum1++
-            } 
-            if (symbols[i]==' ' || symbols[i]==','|| symbols[i]=='.') {
-                accum2++
-            }    
+    for (let i = 0; i < symbols.length; i++) {
+        if (symbols[i] >= 'а' && symbols[i] <= 'я') {
+            accum1++
         }
+        if (symbols[i] == ' ' || symbols[i] == ',' || symbols[i] == '.') {
+            accum2++
+        }
+    }
 
     return `
     Количество букв = ${accum1}
@@ -1966,25 +1966,25 @@ console.log(showStringStatistic('количество букв, 5'));
 //! Например: 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.
 
 
-let num1 = ['ноль','один','два','три','четыре','пять','шесть','семь','восемь','девять',]
-let num2 = ['десять','одиннадцать','двенадать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать',]
-let num3 = ['двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто']
+let num1 = ['ноль', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять',]
+let num2 = ['десять', 'одиннадцать', 'двенадать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать',]
+let num3 = ['двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто']
 
-function writeDidgitalsInText(num:any){
-    if (num>=0 && num<=9) {
+function writeDidgitalsInText(num: any) {
+    if (num >= 0 && num <= 9) {
         return num1[num]
     }
-    if (num<=19) {
-        return num2[num-10]
+    if (num <= 19) {
+        return num2[num - 10]
     }
-    if (num<=99) {
+    if (num <= 99) {
         let firstNum = num.toString()[0]
         let secondNum = num.toString()[1]
-        return num3[firstNum-2] + ' ' + num1[secondNum]
+        return num3[firstNum - 2] + ' ' + num1[secondNum]
     }
 
-return 'Введите корректное число'
-} 
+    return 'Введите корректное число'
+}
 console.log(writeDidgitalsInText(8));
 console.log(writeDidgitalsInText(19));
 console.log(writeDidgitalsInText(23));
@@ -1994,18 +1994,18 @@ console.log(writeDidgitalsInText(125));
 
 let cat = {
     name: 'Vasya',
-    age:5,
+    age: 5,
 
     //! запись свойства  внутри объекта
-    say: function (){
+    say: function () {
         return 'котик сказал мяу'
     },
-    
+
     //! сокращенная запись метода внутри объекта
     walk() {
-        console.log( 'котик ' + this.name + ' может гулять')    
-    } ,
-    feed:feed,
+        console.log('котик ' + this.name + ' может гулять')
+    },
+    feed: feed,
 }
 
 console.log(cat.say());
@@ -2013,8 +2013,8 @@ cat.walk();
 
 console.log(cat);
 
-function feed () {
-    console.log( 'Покормить кота')
+function feed() {
+    console.log('Покормить кота')
 }
 feed()
 
@@ -2044,7 +2044,7 @@ dog.walk()
 
 
 
-function User (name:string){
+function User(name: string) {
     this.name = name;
     this.group = 'Web45';
     this.city = 'Sochi'
@@ -2060,9 +2060,9 @@ console.log(user2);
 
 
 let user3 = {
-name : 'asfadf', 
-group : 'sdfsdf',
-city: 'afdasf' ,
+    name: 'asfadf',
+    group: 'sdfsdf',
+    city: 'afdasf',
 }
 console.log(user3);
 
@@ -2077,29 +2077,29 @@ console.log(` привет новый пользователь ${nickname} ${sur
 
 //! посчитать буквы, числа и символы
 
-function scoreSymbols (str:any) {
+function scoreSymbols(str: any) {
     let splitStr = str.toLowerCase().split('')
     let accNum = 0
     let accLet = 0 // на русс буквы
     let accLet2 = 0 // на англ буквы
 
     for (let i = 0; i < splitStr.length; i++) {
-            if (splitStr[i]>='0' && splitStr[i]<='9') {
-                accNum++  // считаем цифры
-            }        
-            if (splitStr[i]>='а' && splitStr[i]<='я') {
-                accLet++ // считаем русс буквы
-            }        
-            if (splitStr[i]>='a' && splitStr[i]<='z') {
-                accLet2++ // считаем англ буквы
-            }        
+        if (splitStr[i] >= '0' && splitStr[i] <= '9') {
+            accNum++  // считаем цифры
+        }
+        if (splitStr[i] >= 'а' && splitStr[i] <= 'я') {
+            accLet++ // считаем русс буквы
+        }
+        if (splitStr[i] >= 'a' && splitStr[i] <= 'z') {
+            accLet2++ // считаем англ буквы
+        }
     }
-    
+
     return `
         количество цифр: ${accNum},
         количество русс букв: ${accLet},
         количество англ букв: ${accLet2},
-        количество символов: ${splitStr.length -accNum -accLet - accLet2}
+        количество символов: ${splitStr.length - accNum - accLet - accLet2}
     `
 }
 
@@ -2109,28 +2109,28 @@ console.log(scoreSymbols('на ААААААААААААААААА тек @#$ 9 0
 
 
 
-function showSumm (a:number, b:number) {
+function showSumm(a: number, b: number) {
     return a + b
-} 
-console.log(showSumm(3,4));
+}
+console.log(showSumm(3, 4));
 
 
 //! 'длинный' тип записи
-let summ = function show (a:number, b:number) {
+let summ = function show(a: number, b: number) {
     return a + b
-} 
-console.log(summ(3,5));
+}
+console.log(summ(3, 5));
 
 
 //! короткий тип записи
-let summ2 = (a:number,b:number) => {
-    return a + b 
+let summ2 = (a: number, b: number) => {
+    return a + b
 }
-console.log(summ2(3,5));
+console.log(summ2(3, 5));
 
 
 
-let letter = (x:string) => {
+let letter = (x: string) => {
     return x
 }
 console.log(letter('abc'));
@@ -2151,19 +2151,19 @@ console.log(letter4('abcde'));
 
 
 
-let showMass = (mass:number[]) => {
+let showMass = (mass: number[]) => {
     let acc = 0
-    mass.forEach(e=>acc+=e)
+    mass.forEach(e => acc += e)
     return acc
-    
+
     // return mass.reduce((acc,e)=>acc+e)
 }
 console.log(showMass([5, 8, 3]));
 
 let age2 = 10
-console.log(age2 >18 ? 'вы взрослый' : 'вы ребенок') 
+console.log(age2 > 18 ? 'вы взрослый' : 'вы ребенок')
 
- 
+
 
 
 
@@ -2209,13 +2209,13 @@ console.log(age2 >18 ? 'вы взрослый' : 'вы ребенок')
 
 
 
-    //! если пользователь ни ввёл своё имя мы его 'просим' ввести.
+//! если пользователь ни ввёл своё имя мы его 'просим' ввести.
 let userName = 'aaaa'
 
-if (userName=='') {
+if (userName == '') {
     console.log('Введите ваше имя');
-}  else {
-    console.log(userName); 
+} else {
+    console.log(userName);
 }
 
 
@@ -2225,19 +2225,19 @@ let arr1 = [5, 10, 9, 12, 5, 8, 2, 9, 5]
 let arr12 = [10, 12, 5]
 console.log(arr1.concat(arr12)); //! объединяет элементы двух массивов в один массив
 
-console.log(arr1.every(el=>el>6)); //! проверяет, все ли элементы соответствуют определенному условию
+console.log(arr1.every(el => el > 6)); //! проверяет, все ли элементы соответствуют определенному условию
 
-console.log(arr1.filter(el=>el%2==0)); //! filter(): фильтрует элементы массива
+console.log(arr1.filter(el => el % 2 == 0)); //! filter(): фильтрует элементы массива
 
-console.log(arr1.find(el=> el<9)) //!find(): возвращает первый элемент массива, который соответствует некоторому условию
+console.log(arr1.find(el => el < 9)) //!find(): возвращает первый элемент массива, который соответствует некоторому условию
 
-console.log(arr1.findLast(el=> el<9)) //!findLast(): возвращает последний элемент массива, который соответствует некоторому условию
+console.log(arr1.findLast(el => el < 9)) //!findLast(): возвращает последний элемент массива, который соответствует некоторому условию
 
-console.log(arr1.findIndex(el=>el==5)); //! findIndex(): возвращает индекс первого элемента массива, который соответствует некоторому условию
+console.log(arr1.findIndex(el => el == 5)); //! findIndex(): возвращает индекс первого элемента массива, который соответствует некоторому условию
 
-console.log(arr1.findLastIndex(el=>el==5)); // !findLastIndex(): возвращает индекс последнего элемента, который соответствует условию
+console.log(arr1.findLastIndex(el => el == 5)); // !findLastIndex(): возвращает индекс последнего элемента, который соответствует условию
 
-arr1.forEach(el=>console.log(el*2)) //!  forEach() применяет определенную функцию к каждому элементу массива
+arr1.forEach(el => console.log(el * 2)) //!  forEach() применяет определенную функцию к каждому элементу массива
 
 console.log(arr1.includes(5)); //! includes(): проверяет, есть ли в массиве значение
 
@@ -2247,34 +2247,34 @@ console.log(arr1.join('_')) //! join(): объединяет элементы м
 
 console.log(arr1.lastIndexOf(9));//! lastIndexOf(): возвращают индекс последнего включения элемента в массиве.
 
-let newMass = arr1.map(e=> { 
-    return e*5
+let newMass = arr1.map(e => {
+    return e * 5
 });
 console.log(newMass);
 
- console.log(arr1.pop()); //! pop(): удаление элемента с конца массива
+console.log(arr1.pop()); //! pop(): удаление элемента с конца массива
 
 
 
- arr1 = [5, 10, 9, 12, 5, 8, 2, 9, 5]
- arr1.push(1, 2, 3)
- console.log(arr1); //! push(): добавление элемента в конец массива
- 
- console.log(arr1.reduce((acc,e)=>acc+=e, 0) );//!reduce(): объединяет элементы массива в одно значение 
+arr1 = [5, 10, 9, 12, 5, 8, 2, 9, 5]
+arr1.push(1, 2, 3)
+console.log(arr1); //! push(): добавление элемента в конец массива
+
+console.log(arr1.reduce((acc, e) => acc += e, 0));//!reduce(): объединяет элементы массива в одно значение 
 
 console.log(arr1.reverse());//! reverse(): располагает элементы массива в обратном порядке
 
 console.log(arr1.shift()); //!shift(): удаляет первый элемент массива
 console.log(arr1);
 
-console.log(arr1.slice(3,5)) //! slice(): вырезает отдельные элементы из массива
+console.log(arr1.slice(3, 5)) //! slice(): вырезает отдельные элементы из массива
 
-arr1.splice (2,3, 'word')
+arr1.splice(2, 3, 'word')
 console.log(arr1); //! splice(): добавление/удаление элементов на определенных позициях в массиве
 
-console.log(arr1.some(e=>e==10)); //! some(): проверяет, соответствует ли хотя бы один элемент условию.
+console.log(arr1.some(e => e == 10)); //! some(): проверяет, соответствует ли хотя бы один элемент условию.
 
-console.log(arr1.sort((a,b)=>a-b)); //!sort(): сортирует массив
+console.log(arr1.sort((a, b) => a - b)); //!sort(): сортирует массив
 
 arr1.unshift(100, 200, 300)
 console.log(arr1); //! unshift(): добавляет новый элемент в начало массива
@@ -2313,7 +2313,7 @@ let Vasya = {
 }
 console.log(Vasya);
 
-const {surname3, age3:years} = Vasya
+const { surname3, age3: years } = Vasya
 
 console.log(surname3);
 console.log(Vasya.surname3);
@@ -2326,7 +2326,7 @@ console.log(years);
 
 
 
-let [a3,b3, , d3] = 'abcde'
+let [a3, b3, , d3] = 'abcde'
 
 console.log(a3);
 console.log(b3);
@@ -2335,7 +2335,7 @@ console.log(d3);
 
 
 
-let person1 ='Ivan'
+let person1 = 'Ivan'
 let person2 = 'Vasya'
 
 console.log([person1, person2] = [person2, person1])
@@ -2348,10 +2348,10 @@ console.log(person1, person2);
 
 
 
-let color = [ , 'yellow', 'green', 'blue', 'black']
+let color = [, 'yellow', 'green', 'blue', 'black']
 console.log(color);
 
-const [color1 ='оранжевый', color2, ...colors] = color
+const [color1 = 'оранжевый', color2, ...colors] = color
 
 // console.log(color[0]);
 console.log(color1, color2, colors);
@@ -2366,7 +2366,7 @@ console.log(color1, color2, colors);
 
 //!!!!!!!!!!!!!!!!!!!!!!!! Конструктор, оператор "new" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function Aircraft (model:any, age:number) {
+function Aircraft(model: any, age: number) {
     this.model = model; //! динамические данные (меняются с каждой новой переменной)
     this.age = age;
     this.company = 'Boeing'; //! статические данные (они не меняются)
@@ -2377,13 +2377,13 @@ function Aircraft (model:any, age:number) {
     this.fly = () => {
         return 'данный самолёт может летать'
     };
-    repared:repared;
+    repared: repared;
 }
 
 let aircraft1 = new Aircraft('Boeng 777', 12)
 console.log(aircraft1);
 
-let aircraft2 = new Aircraft ('Boeing 999', 5)
+let aircraft2 = new Aircraft('Boeing 999', 5)
 console.log(aircraft2);
 
 
@@ -2396,7 +2396,7 @@ console.log(aircraft1)
 
 
 
-function repared () {
+function repared() {
     console.log('Самолет отремонтирован')
 }
 repared()
@@ -2410,23 +2410,23 @@ repared()
 class Airplane {
     coutry = 'Russia' //! статические данные (они не меняются)
     city = 'Moscow'
-    constructor(model:any, year:number) {
-            this.model = model //! динамические данные (меняются с каждой новой переменной)
-            this.year = year
+    constructor(model: any, year: number) {
+        this.model = model //! динамические данные (меняются с каждой новой переменной)
+        this.year = year
     }
     fly() { //! вызов метода
-console.log(` Самолёт ${this.model} летит,  ${this.year} лет`);
+        console.log(` Самолёт ${this.model} летит,  ${this.year} лет`);
     }
-    get year () {
+    get year() {
         return `${this._year}`
     }
 
-    set year (value:any) {
-        if (value<5) {
-            this._year = 'Самолёт новый ' + value 
+    set year(value: any) {
+        if (value < 5) {
+            this._year = 'Самолёт новый ' + value
         } else {
             this._year = 'Самолёт старый ' + value
-        }        
+        }
     }
 
 
@@ -2440,7 +2440,7 @@ console.log(` Самолёт ${this.model} летит,  ${this.year} лет`);
 
 // console.log(airplane1.model);
 
- 
+
 let airplane1 = new Airplane('Boeng 777', 12)
 airplane1.fly();
 
@@ -2461,30 +2461,30 @@ airplane2.fly();
 
 
 
-                                //! div находится в файле JS_DZ_Modul_2_Week_3.html
+//! div находится в файле JS_DZ_Modul_2_Week_3.html
 let marker_text = document.getElementById('marker_text') as HTMLDivElement
 // let info_about_marker = document.querySelector('#info_about_marker') as HTMLDivElement //! один из способа вывода информации в HTML файл
 let info_about_marker = document.getElementById('info_about_marker') as HTMLDivElement
 
 class Marker {
-    constructor(color:string, ink:number){
+    constructor(color: string, ink: number) {
         this.color = color // цвет маркера
         this.ink = ink // насколько символов хватит чернил в маркере
     }
 
-    print(text:any) {
+    print(text: any) {
 
         // marker_text.style.color = `${this.color}` //! один из способов изменения CSS свойства       
-       
+
         for (let i = 0; i < text.length; i++) {
-            marker_text.innerHTML+= `
-            <span style="color: ${this.color}; opacity: ${1- i/text.length };">${text[i]}</span>
+            marker_text.innerHTML += `
+            <span style="color: ${this.color}; opacity: ${1 - i / text.length};">${text[i]}</span>
             `  //! выводим текст в html файл ( с помощью свойства innerHTML)
         }
         info_about_marker.innerHTML += `
         Цвет маркера <span style="color:${this.color}; font-size:30px">${this.color}</span> <br>
         Количество символов в чернилах: ${this.ink}     <br>
-        Количество напечатанных символов: ${text.length>this.ink ? this.ink : text.length}     <br>
+        Количество напечатанных символов: ${text.length > this.ink ? this.ink : text.length}     <br>
         <div id="battery">
             <div id="inner_battery" style="background-color:${this.color}; height: 30px; width: ${this.ink}px;"></div>
         </div> 
@@ -2510,13 +2510,13 @@ marker4.print('dfgdfgfadsfadfdasfsdt76i')
 // let inner_battery = document.getElementById('inner_battery')
 // let accBattery = 0
 // setInterval(() => {
-    // accBattery++
-    // console.log(inner_battery.style.width+= Number(100px));
-    
-    // inner_battery.style.width+= 100 + 'px'
+// accBattery++
+// console.log(inner_battery.style.width+= Number(100px));
+
+// inner_battery.style.width+= 100 + 'px'
 // }, 1000);
 //!!!!!!!!!!!!!!!! посмотреть плавное изменение ширины батареек ???????
- 
+
 
 
 
@@ -2539,20 +2539,20 @@ marker4.print('dfgdfgfadsfadfdasfsdt76i')
 let printMaсhine = document.getElementById('printMaсhine') as HTMLDivElement
 
 class PrintMaсhine {
-        tag
-        color
-        fontFamily
-    constructor(tag:any, color:string, fontFamily:string) {
-            this.tag = tag
-            this.color = color
-            this.fontFamily = fontFamily
+    tag
+    color
+    fontFamily
+    constructor(tag: any, color: string, fontFamily: string) {
+        this.tag = tag
+        this.color = color
+        this.fontFamily = fontFamily
     }
-    printText(text:any) {
-        printMaсhine.innerHTML+= `<${this.tag} style="color:${this.color}; 
+    printText(text: any) {
+        printMaсhine.innerHTML += `<${this.tag} style="color:${this.color}; 
         font-family: ${this.fontFamily};">${text}</${this.tag}>`
 
 
-}
+    }
 }
 
 let pencil1 = new PrintMaсhine('h6', 'yellow', 'monospace')
@@ -2593,19 +2593,19 @@ console.log(transport);
 
 
 let bus = {
-    number : 105,
+    number: 105,
 }
 
 bus.__proto__ = transport //! первый способ присвоения прототипа
 console.log(bus);
 
- 
+
 
 
 let car = {
     doors: 4,
     age: 10,
-    __proto__ : transport, //! второй способ присвоения прототипа
+    __proto__: transport, //! второй способ присвоения прототипа
 }
 
 
@@ -2623,17 +2623,17 @@ console.log('количество дверей в машине = ' + car.doors);
 console.log(car); //! собстсвенные свойства
 console.log(car.__proto__);//! унаследованные свойства 
 
-console.log (car.drive())
-console.log (car.__proto__.drive())
-console.log (car.__proto__.drive() == car.drive())
- 
+console.log(car.drive())
+console.log(car.__proto__.drive())
+console.log(car.__proto__.drive() == car.drive())
+
 
 
 console.log(Object.keys(car)); //! данный метод показывает ТОЛЬКО собственные ключи объекта
 
 for (const key in car) { //! Цикл for..in проходит не только по собственным, но и по унаследованным свойствам объекта.
     console.log(key);
-    
+
 }
 
 
@@ -2656,7 +2656,7 @@ console.log(Date.prototype);
 
 
 let person = {
-    name : 'Petya'
+    name: 'Petya'
 }
 
 console.log(person.__proto__ == Object.prototype);
@@ -2690,10 +2690,10 @@ console.log(alphabet);
 
 
 class City {
-    name:string
-    age:number
-    constructor (name:string, age:number) {
-        this.name  = name
+    name: string
+    age: number
+    constructor(name: string, age: number) {
+        this.name = name
         this.age = age
     }
     welcome() {
@@ -2710,16 +2710,16 @@ console.log(city);
 
 
 class Country extends City {
-        countryName
-        
-    constructor(name:string, age:number, countryName:string) {
+    countryName
+
+    constructor(name: string, age: number, countryName: string) {
         super(name, age)
         this.countryName = countryName
     }
     welcome() { //! методы можем перезаписывать
         return 'Приветствуем вас в ' + this.name;
     }
-    population(people:number) {
+    population(people: number) {
         return `${super.welcome()} население города ${this.name} = ${people} `//! мы можем возвращать родительские методы
         //! super  работает ТОЛЬКО внутри нашего конструктора
     }
@@ -2734,7 +2734,7 @@ console.log(country.welcome());
 
 
 let pressButton = document.getElementById('pressButton') as HTMLInputElement
-pressButton.addEventListener('input', ()=> {
+pressButton.addEventListener('input', () => {
     console.log(pressButton.value);
 
 })
@@ -2750,13 +2750,13 @@ class Button {
     width
     height
     background
-    constructor(width:number, height:number, background:string){
-            this.width = width
-            this.height = height
-            this.background = background
+    constructor(width: number, height: number, background: string) {
+        this.width = width
+        this.height = height
+        this.background = background
     }
-    showBtn(value:string) {
-        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background};">${value}</button>`
+    showBtn(value: string) {
+        printMaсhine.innerHTML += `<button style="width:${this.width}px; height:${this.height}px ; background:${this.background};">${value}</button>`
     }
 }
 
@@ -2774,17 +2774,17 @@ button3.showBtn('Переместить')
 //! Button. Добавить поле color и переопределить метод showBtn()
 
 class BootstrapButton extends Button {
-        color
-    constructor(width:number, height:number, background:string, color:string) {
-        super(width,height,background)
-            this.color = color
+    color
+    constructor(width: number, height: number, background: string, color: string) {
+        super(width, height, background)
+        this.color = color
     }
-    showBtn(value:string) {
-        printMaсhine.innerHTML+=`<button style="width:${this.width}px; height:${this.height}px ; background:${this.background}; color:${this.color}">${value}</button>`
+    showBtn(value: string) {
+        printMaсhine.innerHTML += `<button style="width:${this.width}px; height:${this.height}px ; background:${this.background}; color:${this.color}">${value}</button>`
     }
 }
 
-let bootstrapButton = new BootstrapButton(200, 50,  'gray', 'orange')
+let bootstrapButton = new BootstrapButton(200, 50, 'gray', 'orange')
 bootstrapButton.showBtn('Кнопка Бутстрапа')
 
 
@@ -2807,7 +2807,7 @@ let newString2 = ''
 class CssClass {
     className
     cssArray
-    constructor(className:string, cssArray:any[]) { //! ■ название css класса, ■ массив стилей;
+    constructor(className: string, cssArray: any[]) { //! ■ название css класса, ■ массив стилей;
         this.className = className
         this.cssArray = cssArray
     }
@@ -2815,34 +2815,34 @@ class CssClass {
     setStyle() { //! ■ метод для установки стиля;
         for (const el of this.cssArray) { //! массив перебираем по элементам
             for (const key in el) { //! ключи и значения элементов записываем в строку
-                   newString+= key + ':' + el[key] + '; ' //! для применения стиля
-                   newString2+= key + ':' + el[key] + '; ' + '<br>' //! для вывода текста в html файл
-                }
+                newString += key + ':' + el[key] + '; ' //! для применения стиля
+                newString2 += key + ':' + el[key] + '; ' + '<br>' //! для вывода текста в html файл
             }
-            printMaсhine.innerHTML+= `<div class="${this.className}" 
+        }
+        printMaсhine.innerHTML += `<div class="${this.className}" 
             style="${newString}"> текст </div>`    //
-        }
-        deleteStyle (num:number) { //! ■ метод для удаления стиля;
-            delete this.cssArray[num]            
-        }
-        getCss() { //! ■ метод getCss(), который возвращает css код в виде строки.
-            console.log(newString);
-            printMaсhine.innerHTML+='Примененные стили: ' + '<br>' + newString2 + '<br>'
-            // printMaсhine.innerHTML = '' //! перезаписывание всего дива
-        }
-
     }
+    deleteStyle(num: number) { //! ■ метод для удаления стиля;
+        delete this.cssArray[num]
+    }
+    getCss() { //! ■ метод getCss(), который возвращает css код в виде строки.
+        console.log(newString);
+        printMaсhine.innerHTML += 'Примененные стили: ' + '<br>' + newString2 + '<br>'
+        // printMaсhine.innerHTML = '' //! перезаписывание всего дива
+    }
+
+}
 
 
 
 let class1 = new CssClass('newStyle', [
-    {background : 'lightgreen'},
-    {'font-size' : '30px'},
-    {width: '100px'},
-    {height: '50px'},
-    {margin: '25px'},
-    {padding: '25px'},
-    {border: '2px solid white'},
+    { background: 'lightgreen' },
+    { 'font-size': '30px' },
+    { width: '100px' },
+    { height: '50px' },
+    { margin: '25px' },
+    { padding: '25px' },
+    { border: '2px solid white' },
 ])
 class1.deleteStyle(0)  //! метод удаления должен идти первым
 class1.deleteStyle(1)
@@ -2875,7 +2875,7 @@ let today2 = new Date()
 console.log(today2.getTime()); //! timestamp (дата показывается в миллисекундах)
 
 console.log(today2.getMonth())
-;
+    ;
 console.log(today2.getDay());
 
 
@@ -2902,7 +2902,7 @@ let newYearDay = new Date('2026')
 console.log(today2.getTime());
 console.log(newYearDay.getTime());
 
-console.log(`До нового года осталось: ${ Math.floor((Number(newYearDay)-Number(today2))/(24*60*60*1000))} дней`);
+console.log(`До нового года осталось: ${Math.floor((Number(newYearDay) - Number(today2)) / (24 * 60 * 60 * 1000))} дней`);
 
 console.log(+today2 == today2.getTime()); //! оба способа перевода даты в timestamp (переводим дату в число)
 
@@ -2928,7 +2928,7 @@ console.log(new Date(2012, 1, 20, 3, 12));
 
 
 
-function getWeekDay(dateOfTask:any) {
+function getWeekDay(dateOfTask: any) {
     let dayOfWeeks = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
     console.log(dayOfWeeks[dateOfTask.getDay()])
 }
@@ -2963,51 +2963,51 @@ class ExtendedDate {
     year
     month
     day
-    constructor(year:number, month:number, day:number) {
+    constructor(year: number, month: number, day: number) {
         this.year = year
         this.month = month
         this.day = day
     }
 
-//! ■ метод для вывода даты (числа и месяца) текстом;
-    printDate(){
+    //! ■ метод для вывода даты (числа и месяца) текстом;
+    printDate() {
         let days = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
-            'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое', 
+            'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
             'восемьнадцатое', 'девятнадцатое', 'двадцатое'
         ]
-        
+
         let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
-        if (this.day>=1 && this.day<=20) {
-            console.log(days[this.day-1], months[this.month-1]);
-        } else if (this.day<30) {
-            console.log('двадцать ' + days[this.day-21], months[this.month-1])
-        } else if (this.day==30) {
-            console.log('тридцатое ' + months[this.month-1])
-        } else if (this.day==31) {
-            console.log('тридцать первое ' + months[this.month-1])
+        if (this.day >= 1 && this.day <= 20) {
+            console.log(days[this.day - 1], months[this.month - 1]);
+        } else if (this.day < 30) {
+            console.log('двадцать ' + days[this.day - 21], months[this.month - 1])
+        } else if (this.day == 30) {
+            console.log('тридцатое ' + months[this.month - 1])
+        } else if (this.day == 31) {
+            console.log('тридцать первое ' + months[this.month - 1])
         } else {
-            console.log(`число ${this.day} вне диапазона`);            
+            console.log(`число ${this.day} вне диапазона`);
         }
-        
+
     }
 
 
-//! ■ метод для проверки – это прошедшая дата или будущая
-//! (если прошедшая, то метод возвращает false; если будущая или текущая, то true);
+    //! ■ метод для проверки – это прошедшая дата или будущая
+    //! (если прошедшая, то метод возвращает false; если будущая или текущая, то true);
     checkDate() {
 
-        let dateStr = `${this.year}${this.month<10 ? 0 + '' + this.month : this.month}${this.day<10 ? 0 + '' + this.day : this.day}`
-        let todayStr = `${today.getFullYear()}0${today.getMonth()+1}${today.getDate()<10 ? 0 + '' + today.getDate() : today.getDate()}`
+        let dateStr = `${this.year}${this.month < 10 ? 0 + '' + this.month : this.month}${this.day < 10 ? 0 + '' + this.day : this.day}`
+        let todayStr = `${today.getFullYear()}0${today.getMonth() + 1}${today.getDate() < 10 ? 0 + '' + today.getDate() : today.getDate()}`
 
-        console.log (todayStr>=dateStr ? 'Дата прошедшая' : 'Дата будущая')     
+        console.log(todayStr >= dateStr ? 'Дата прошедшая' : 'Дата будущая')
     }
 
 
-//! ■ метод для проверки – високосный год или нет;
+    //! ■ метод для проверки – високосный год или нет;
 
     checkLeapYear() {
-        this.year%4==0 ? console.log('Год високосный') : console.log('Год не високосный')
+        this.year % 4 == 0 ? console.log('Год високосный') : console.log('Год не високосный')
     }
 
     //! ■ метод, возвращающий следующую дату.
@@ -3018,28 +3018,28 @@ class ExtendedDate {
         let mounth = this.month
         let day = this.day
 
-        if (day>=32) return 'Введите корректный день'
-        if (day==31 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) return 'Введите корректный день'
-        if (day>=30 && mounth==2 || day==29 && mounth==2 && year%4!=0) return 'Введите корректный день'
-        if (mounth>=13) return 'Введите корректный месяц'
-        if (day<=0 || mounth<=0 || year<=0) return 'введите положительное число'
-    
-        if (day==31 && mounth==12){
-            year+=1, mounth=1, day=1
-        } else if (day==30 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) {
-            day=1
-            mounth+=1
-        } else if (day==31 && (mounth==3 || mounth==5 ||mounth==7 || mounth==8 || mounth==10 || mounth==12)) {
-            day=1
-            mounth+=1
-        } else if(day==28 && mounth==2 && year%4!=0 || day==29 && mounth==2 && year%4==0){
-            day=1
-            mounth+=1
+        if (day >= 32) return 'Введите корректный день'
+        if (day == 31 && (mounth == 4 || mounth == 6 || mounth == 9 || mounth == 11)) return 'Введите корректный день'
+        if (day >= 30 && mounth == 2 || day == 29 && mounth == 2 && year % 4 != 0) return 'Введите корректный день'
+        if (mounth >= 13) return 'Введите корректный месяц'
+        if (day <= 0 || mounth <= 0 || year <= 0) return 'введите положительное число'
+
+        if (day == 31 && mounth == 12) {
+            year += 1, mounth = 1, day = 1
+        } else if (day == 30 && (mounth == 4 || mounth == 6 || mounth == 9 || mounth == 11)) {
+            day = 1
+            mounth += 1
+        } else if (day == 31 && (mounth == 3 || mounth == 5 || mounth == 7 || mounth == 8 || mounth == 10 || mounth == 12)) {
+            day = 1
+            mounth += 1
+        } else if (day == 28 && mounth == 2 && year % 4 != 0 || day == 29 && mounth == 2 && year % 4 == 0) {
+            day = 1
+            mounth += 1
         } else {
-            day+=1
+            day += 1
         }
-    
-        console.log(`«${year}.${mounth}.${day}»`) 
+
+        console.log(`«${year}.${mounth}.${day}»`)
     }
 
 }
@@ -3127,13 +3127,89 @@ day1.showNextDate()
 
 // setTimeout(() => {
 //     alert ('432534635612344')
-    
+
 // }, 3000);
 
 
 
-setTimeout(() => {
-                console.log('123');                
-    }, 0);
+// setTimeout(() => {
+//                 console.log('123');                
+//     }, 0);
 
-console.log('555');
+// console.log('555');
+
+
+
+
+
+//! Задание 2 // JS_PZ_Modul_2_Week_4
+
+//! Реализовать класс, описывающий новость (заголовок, текст,
+//! массив тегов, дата публикации). В классе необходимо реализовать
+//! один метод print, который выводит всю информацию в таком
+//! виде, как на рисунке 1.
+//! Обратите внимание на то, как выводится дата:
+//! ■ если с даты публикации прошло менее дня, то выводится
+//! «сегодня»;
+//! ■ если с даты публикации прошло менее недели, то выводится «N дней назад»;
+//! ■ в остальных случаях, полная дата в формате «дд.мм.гггг»
+
+today = new Date()
+console.log(today.toLocaleDateString());
+
+let newsInHtml = document.getElementById('news') as HTMLDivElement
+
+class News {
+    header
+    tag
+    date
+    constructor(header: any, tag: string, date: any) {
+        this.header = header
+        this.tag = tag
+        this.date = date
+    }
+print(nameHeader:any, text:any) {
+
+
+let day = today.toLocaleDateString() //! метод выводящий ТОЛЬКО дату (без времени)
+
+let todayString = day.split('.').reverse().join('') as any //! переводим сегодняшнюю дату в строку
+// console.log(todayString);
+
+let userDay = this.date.split(', ').join('') //! переводим в строку дату, которую написал пользователь
+// console.log(userDay)
+
+let newsDate = '' //! дата публикации новости
+
+if (todayString-userDay==0) {
+newsDate = '«Сегодня»' 
+} else if (todayString-userDay<=7) {
+    newsDate = `«${todayString-userDay} ${todayString-userDay<=4 ? 'дня' : 'дней'}  назад»` 
+} else if (todayString-userDay>7) {
+    newsDate = '«' + this.date.split(', ').reverse('').join('.') + '»'
+}
+        
+
+ //! выводим в HTML файл
+ newsInHtml.innerHTML += `
+ <${this.header}>${nameHeader}</${this.header}>
+ <p>${newsDate}</p>
+ <${this.tag}>${text}</${this.tag}>        
+ <${this.tag}>${text}</${this.tag}>        
+ <${this.tag}>${text}</${this.tag}>        
+ `
+
+    }
+
+}
+
+let new1 = new News('h2', 'p', '2025, 05, 12')
+new1.print('Новость первая', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.')
+
+let new2 = new News('h5', 'p', '2025, 05, 10')
+new2.print('Новость вторая', 'Velit excepturi aperiam corrupti voluptatum at hic?')
+
+let new3 = new News('h3', 'p', '2025, 03, 09')
+new3.print('Новость третья', 'Velit dicta doloribus in corrupti saepe ex fugit tempore quibusdam voluptas quis, debitis, optio commodi.')
+
+
