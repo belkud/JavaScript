@@ -3163,7 +3163,7 @@ class News {
     header
     tag
     date
-    constructor(header: any, tag: string, date: any) {
+    constructor(header: any, tag:string[]=[], date: any) {
         this.header = header
         this.tag = tag
         this.date = date
@@ -3188,28 +3188,34 @@ newsDate = '«Сегодня»'
 } else if (todayString-userDay>7) {
     newsDate = '«' + this.date.split(', ').reverse('').join('.') + '»'
 }
+console.log(this.tag);
         
 
+
  //! выводим в HTML файл
+
  newsInHtml.innerHTML += `
  <${this.header}>${nameHeader}</${this.header}>
- <p>${newsDate}</p>
- <${this.tag}>${text}</${this.tag}>        
- <${this.tag}>${text}</${this.tag}>        
- <${this.tag}>${text}</${this.tag}>        
- `
+     <p>${newsDate}</p>
+     `
 
-    }
+ for (let i = 0; i < this.tag.length; i++) {
+ newsInHtml.innerHTML += `<${this.tag[i]}>${text}</${this.tag[i]}>`        
+}
 
 }
 
-let new1 = new News('h2', 'p', '2025, 05, 12')
+}
+
+let new1 = new News('h2', ['p', 'div', 'p', 'p'], '2025, 05, 12')
 new1.print('Новость первая', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.')
 
-let new2 = new News('h5', 'p', '2025, 05, 10')
+
+let new2 = new News('h2', ['p', 'div'], '2025, 05, 10')
 new2.print('Новость вторая', 'Velit excepturi aperiam corrupti voluptatum at hic?')
 
-let new3 = new News('h3', 'p', '2025, 03, 09')
+
+let new3 = new News('h4', ['p', 'p'], '2025, 03, 09')
 new3.print('Новость третья', 'Velit dicta doloribus in corrupti saepe ex fugit tempore quibusdam voluptas quis, debitis, optio commodi.')
 
 
