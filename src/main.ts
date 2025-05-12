@@ -3178,7 +3178,6 @@ let todayString = day.split('.').reverse().join('') as any //! переводи�
 
 let userDay = this.date.split(', ').join('') //! переводим в строку дату, которую написал пользователь
 // console.log(userDay)
-
 let newsDate = '' //! дата публикации новости
 
 if (todayString-userDay==0) {

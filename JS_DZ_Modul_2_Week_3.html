@@ -25,6 +25,70 @@
 <br>
 <br>
 
+<div id="container">
+    <div id="top" style="display: flex;">
+        <div>
+            <div><a href="https://dzen.ru/?yredirect=true&utm_referrer=www.google.com">Home</a></div>
+            <div>About</div>
+            <div>Gallery</div>
+            <div>News</div>
+        </div>
+
+        <div>
+            <div>Blog</div>
+            <div>FAQ</div>
+            <div>Contacts</div>
+            <div>Privacy</div>
+        </div>
+
+        <div style="margin-right: 20px;">
+            <img style="margin-left: -80px;" src="src/public/fb.png" alt="" srcset="">
+            <img style="margin-left: -40px;" src="src/public/insta.png" alt="" srcset="">
+            <img style="margin-left: 0px;" src="src/public/youtube.png" alt="" srcset="">
+        </div>
+    </div>
+    <div id="bottom">Copyright 2018-2019</div>
+</div>
+
+<style>
+    #container{
+        background-color: rgb(20, 21, 95);
+        display: flex;
+        flex-direction: column;
+    }
+    #container img{
+        /* filter: grayscale(1); */
+        width: 30px;
+        margin: 6px;
+        transition: .5s;
+        position: absolute;
+    }
+    #container img:hover{
+        filter: grayscale(1);
+        width: 38px;
+    }
+    #container>div{
+        margin: 30px;
+        justify-content: space-between;
+    }
+    #bottom {
+        border-top: 1px solid aliceblue;
+        padding-top: 20px;
+        text-align: center;
+    }
+    #top>div>div:hover {
+        text-decoration:underline;
+        cursor: pointer;
+    }
+
+</style>
+
+
+
+
+
+
+
 <div id="news"></div>
 
 <br>
@@ -39,8 +103,7 @@
 
 
 
-<div id="printMaсhine">
-
+<div id="printMaсhine"> 
 </div>
 
 
