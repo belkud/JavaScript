@@ -2493,7 +2493,7 @@ class Marker {
     }
 }
 
-let marker1 = new Marker('red', 20)
+let marker1 = new Marker('red', 90)
 marker1.print('1_2ffsd74')
 
 let marker2 = new Marker('green', 50)
@@ -3218,3 +3218,4 @@ let new3 = new News('h4', ['p', 'p'], '2025, 03, 09')
 new3.print('Новость третья', 'Velit dicta doloribus in corrupti saepe ex fugit tempore quibusdam voluptas quis, debitis, optio commodi.')
 
 
+console.log(window);

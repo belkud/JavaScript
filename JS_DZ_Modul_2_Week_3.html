@@ -25,6 +25,74 @@
 <br>
 <br>
 
+<ul id="menu">
+    <li>Home</li>
+    <li id="open_menu">Categories
+        <ul id="categories">
+            <li>Men</li>
+            <li id="open_second_menu">Woomen
+                <ul id="women">
+                    <li>dress</li>
+                    <li>panth</li>
+                    <li>shoes</li>
+                </ul>
+            </li>
+            <li>Kids</li>
+        </ul>
+    </li>
+    <li>About</li>
+    <li>Contacts</li>
+</ul>
+
+
+<style>
+    #menu {
+        display: flex;
+        list-style-type: none;
+        /* justify-content: space-around; */
+        text-align: center;
+        cursor: pointer;
+    }
+    li {
+        background-color: rgb(22, 112, 22);
+        padding: 10px;
+        width: 100px;
+        transition: .5s;
+        border: 1px solid #000;
+    }
+    li:hover {
+        background-color: rgb(9, 43, 9);
+    }
+    #categories {
+        position: absolute;
+        list-style-type: none;
+        margin-left: -50.5px;
+        margin-top: 11px;
+        display: none;
+    }
+
+    #women {
+        position: absolute;
+        list-style-type: none;
+        margin-left: 70.5px;
+        margin-top: -29.5px;
+        display: none;
+    }
+    
+    #open_menu:hover #categories {
+        display: block;
+    }
+
+    #open_second_menu:hover #women {
+        display: block;
+    }
+</style>
+
+
+
+
+
+
 <div id="container">
     <div id="top" style="display: flex;">
         <div>
@@ -57,7 +125,6 @@
         flex-direction: column;
     }
     #container img{
-        /* filter: grayscale(1); */
         width: 30px;
         margin: 6px;
         transition: .5s;
@@ -82,7 +149,6 @@
     }
 
 </style>
-
 
 
 
@@ -120,8 +186,8 @@
 
 
 
-
-<!-- <div id="battery">
+<!-- 
+<div id="battery">
     <div id="inner_battery"></div>
 </div> -->
 
@@ -150,15 +216,16 @@
         width: 0px;
         max-width: 100px;
         transition: 3s;
-        animation: changeBatetry 3s forwards;
+        animation: changeBatetry 5s;
+        /* animation-timing-function: steps(10); */
     }
-
-    /* @keyframes changeBatetry {
-
+    
+    @keyframes changeBatetry {
+        
         to {
-            width: 50px;
+            width: 100px;
         }
-    } */
+    }
 
 </style>
 
