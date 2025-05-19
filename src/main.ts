@@ -3218,4 +3218,48 @@ let new3 = new News('h4', ['p', 'p'], '2025, 03, 09')
 new3.print('Новость третья', 'Velit dicta doloribus in corrupti saepe ex fugit tempore quibusdam voluptas quis, debitis, optio commodi.')
 
 
-console.log(window);
+console.log(window.innerWidth);
+console.log(window.innerHeight);
+
+// document.body.style.background = "red";
+console.log(document.head);
+console.log(document);
+console.log(window.history);
+console.log(window.navigator);
+console.log(window.location);
+
+console.log(document.body.children)
+console.log(document.body.parentElement)
+console.log(document.body.hasChildNodes())
+
+
+
+
+let menu = document.getElementById('menu') as HTMLDivElement
+console.log(menu.parentElement);
+console.log(menu.children);
+// console.log(menu.childNodes);
+
+console.log(menu.firstChild);
+console.log(menu.childNodes[0]);
+console.log(menu.childNodes[0] ==  menu.firstChild);
+console.log(menu.childElementCount); // показывает количество детей
+console.log(menu.firstElementChild); // показывает первого ребенка в элементе
+console.log(menu.lastElementChild); // показывает последнего ребенка в элементе
+
+console.log('------------');
+
+// console.log(menu.childNodes[3]);
+console.log(menu.previousElementSibling); //! смотрим предыдущий соседний элемент 
+console.log(menu.nextElementSibling); //! смотрим следующий соседний элемент
+console.log(menu.nextSibling?.nextSibling); //! смотрим следующий соседний элемент
+
+console.log(menu.childElementCount);
+
+
+console.log(menu.children[0].innerHTML);
+console.log(menu.children[0].innerText);
+console.log(menu.children[0].previousSibling);
+console.log(menu.children[0].previousElementSibling);
+
+
