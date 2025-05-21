@@ -3263,3 +3263,75 @@ console.log(menu.children[0].previousSibling);
 console.log(menu.children[0].previousElementSibling);
 
 
+//! Home Work
+let table = document.getElementById('table') as HTMLTableElement
+// console.log(table.children[0]);
+let rows = table.rows
+for (let i = 0; i < rows.length; i++) {
+    // console.log(i);
+    let td = rows[i].cells[i]
+    td.style.backgroundColor = 'red'
+}
+
+
+
+//!!!!!!!!!!!!!!!! Поиск: getElement*, querySelector* !!!!!!!!!!!!!!!!!!!!!
+
+let digitals =document.getElementById('digitals') as any
+console.log(digitals);
+
+//! querySelector - показывает первый элемент  соответствующий запросу 
+let numm =document.querySelector('.num') as HTMLDivElement 
+console.log(numm);
+
+//! querySelectorAll - показывает ВСЕ элементы  соответствующие запросу 
+let numm2 =document.querySelectorAll('.num')
+console.log(numm2) 
+
+console.log(numm==numm2[0]) 
+
+// digitals.hidden = true as any
+
+//! Поиск по классу
+let getEl = document.getElementsByClassName('num')
+console.log(getEl);
+
+//! Поиск по тегу
+let getEl2 = document.getElementsByTagName('br')
+console.log(getEl2.length);
+
+let getEl3 = document.getElementsByName('div')
+console.log(getEl3);
+
+
+console.log(numm.closest('button'));
+
+console.log(digitals.contains(numm));
+console.log(digitals.id);
+
+console.error(digitals)
+console.info(digitals)
+console.dir(digitals);
+console.log(numm.tagName);
+console.log(numm.nodeName);
+
+
+let text = document.querySelector('#text') as HTMLDivElement
+text.innerHTML = 'qwerty'
+
+console.log(text.innerHTML);
+console.log(text.innerText);
+console.log(text.textContent);
+
+console.log(text.outerHTML);
+
+
+
+// document.body.innerHTML = ''
+
+
+// setInterval(() => document.body.hidden = !document.body.hidden, 1000);
+
+
+let dat = new Date()
+console.log(dat.getTime());

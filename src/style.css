@@ -1,10 +1,10 @@
 body{
   background: url(./public/back.webp);
   background: url(./public/back2.webp);
-  /* background: black; */
   background-size: cover;
   background-attachment: fixed;
   color: aliceblue;
+  /* background: linear-gradient(red,blue); */
   /* filter: grayscale(.5); */
 }
 
