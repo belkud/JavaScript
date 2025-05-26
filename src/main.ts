@@ -3264,14 +3264,14 @@ console.log(menu.children[0].previousElementSibling);
 
 
 //! Home Work
-let table = document.getElementById('table') as HTMLTableElement
+// let table = document.getElementById('table') as HTMLTableElement
 // console.log(table.children[0]);
-let rows = table.rows
-for (let i = 0; i < rows.length; i++) {
+// let rows = table.rows
+// for (let i = 0; i < rows.length; i++) {
     // console.log(i);
-    let td = rows[i].cells[i]
-    td.style.backgroundColor = 'red'
-}
+    // let td = rows[i].cells[i]
+    // td.style.backgroundColor = 'red'
+// }
 
 
 
@@ -3309,7 +3309,7 @@ console.log(numm.closest('button'));
 console.log(digitals.contains(numm));
 console.log(digitals.id);
 
-console.error(digitals)
+// console.error(digitals)
 console.info(digitals)
 console.dir(digitals);
 console.log(numm.tagName);
@@ -3335,3 +3335,154 @@ console.log(text.outerHTML);
 
 let dat = new Date()
 console.log(dat.getTime());
+
+//! Задание 3
+//! Реализовать класс Employee, описывающий работника, и создать массив работников банка.
+//! Реализовать класс EmpTable для генерации html кода таблицы
+//! со списком работников банка. Массив работников необходимо
+//! передавать через конструктор, а получать html код с помощью
+//! метода getHtml().
+//! Создать объект класса EmpTable и вывести на экран результат
+//! работы метода getHtml().
+
+//! Реализовать класс Employee, описывающий работника, и создать массив работников банка.
+// let workers =document.getElementById('workers')
+let workers =document.getElementById('workers') as HTMLDivElement
+class Employee  {
+    name
+    age
+    city
+    position
+    constructor(name:string, age:number, city:string, position:string) {
+        this.name = name
+        this.age = age
+        this.city = city
+        this.position = position
+    }
+    pushInmassive() {
+        console.log(this);
+        workers.innerHTML+=`<div>${JSON.stringify(this)}</div>`
+    }
+    
+}
+
+let worker1 = new Employee('Pasha', 25, 'Sochi', 'middle')
+console.log(worker1);
+
+worker1.pushInmassive()
+
+let worker2 = new Employee('Sasha', 23, 'Moscow', 'junior')
+worker2.pushInmassive()
+
+
+
+//! Реализовать класс EmpTable для генерации html кода таблицы
+//! со списком работников банка. Массив работников необходимо
+//! передавать через конструктор, а получать html код с помощью
+//! метода getHtml().
+
+let table_with_workers = document.querySelector('#table_with_workers') as HTMLTableElement
+
+class EmpTable extends Employee {
+    constructor (name:string, age:number, city:string, position:string) {
+        super (name, age, city, position)    
+    }
+    getHtml() {
+        table_with_workers.innerHTML+=`<tr><td>${this.name}</td><td>${this.age}</td>
+        <td>${this.city}</td>
+        <td>${this.position}</td>
+        </tr>`
+    }
+    
+}
+
+let worker3 = new EmpTable('Petya', 25, 'Novosibirsk', 'Senior')
+worker3.getHtml()
+
+let worker4 = new EmpTable('Pasha', 25, 'Sochi', 'middle')
+worker4.getHtml()
+
+let worker5 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker5.getHtml()
+
+let worker6 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker6.getHtml()
+let worker7 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker7.getHtml()
+let worker8 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker8.getHtml()
+let worker9 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker9.getHtml()
+let worker10 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+worker10.getHtml()
+
+
+
+let add_worker = document.querySelector('#add_worker') as HTMLButtonElement // кнопка добавления работника
+let delete_inputs = document.querySelector('#clean_inputs') as HTMLButtonElement // кнопка добавления работника
+let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement // кнопка удаления работника
+let new_worker_form = document.querySelector('#new_worker_form') as HTMLFormElement // окошки, с вводимой информацией
+
+// console.log(new_worker_form.children[0]);
+// console.log(new_worker_form.children[1]);
+// console.log(new_worker_form.children[2]);
+// console.log(new_worker_form.children[3]);
+
+
+add_worker.addEventListener('click', ()=> {
+    console.log(new_worker_form.children[0].value);
+    table_with_workers.innerHTML+=`<tr>
+    <td>${new_worker_form.children[0].value}</td>
+    <td>${new_worker_form.children[1].value}</td>
+    <td>${new_worker_form.children[2].value}</td>
+    <td>${new_worker_form.children[3].value}</td>
+    </tr>`
+})
+
+delete_inputs.addEventListener('click', ()=> {
+    new_worker_form.children[0].value = ''
+    new_worker_form.children[1].value = ''
+    new_worker_form.children[2].value = ''
+    new_worker_form.children[3].value = ''
+    // console.log();
+    
+})
+
+delete_worker.addEventListener('click', ()=> {
+    // console.log(table_with_workers.children[0]);
+    
+    // table_with_workers.children[1].innerHTML=''
+    table_with_workers.lastChild.innerHTML = ''
+})
+
+
+console.log(table_with_workers.children);
+
+
+document.body.test = {
+    a : '1232134'
+} 
+
+console.log(document.body.test.a);
+
+console.log(table_with_workers.hasAttribute('id')); // проверяет наличие атрибута.
+console.log(typeof table_with_workers.getAttribute('id')); // получает значение атрибута.
+console.log(table_with_workers.setAttribute('class', 'newClass'));
+
+// table_with_workers.removeAttribute('id'); // удаляет атрибут
+
+
+console.log(workers.innerHTML);
+console.log(workers.innerText);
+// console.log(workers.outerHTML);
+
+
+
+
+console.log(add_worker.innerHTML);
+console.log(add_worker.innerText);
+console.log(add_worker.outerHTML);
+
+
+// console.log(add_worker.attributes);
+
