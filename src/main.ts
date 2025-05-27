@@ -3371,7 +3371,7 @@ console.log(worker1);
 
 worker1.pushInmassive()
 
-let worker2 = new Employee('Sasha', 23, 'Moscow', 'junior')
+let worker2 = new Employee('Sasha', 23, 'Moscow', 'Junior')
 worker2.pushInmassive()
 
 
@@ -3382,13 +3382,18 @@ worker2.pushInmassive()
 //! метода getHtml().
 
 let table_with_workers = document.querySelector('#table_with_workers') as HTMLTableElement
+// let accWorker = 0
 
 class EmpTable extends Employee {
     constructor (name:string, age:number, city:string, position:string) {
         super (name, age, city, position)    
     }
     getHtml() {
-        table_with_workers.innerHTML+=`<tr><td>${this.name}</td><td>${this.age}</td>
+        // accWorker+=1
+        // <td>${accWorker}</td>
+        table_with_workers.innerHTML+=`<tr>
+        <td>${this.name}</td>
+        <td>${this.age}</td>
         <td>${this.city}</td>
         <td>${this.position}</td>
         </tr>`
@@ -3399,21 +3404,21 @@ class EmpTable extends Employee {
 let worker3 = new EmpTable('Petya', 25, 'Novosibirsk', 'Senior')
 worker3.getHtml()
 
-let worker4 = new EmpTable('Pasha', 25, 'Sochi', 'middle')
+let worker4 = new EmpTable('Pasha', 25, 'Sochi', 'Middle')
 worker4.getHtml()
 
-let worker5 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker5 = new EmpTable('Sasha', 23, 'Krasnodar', 'Junior')
 worker5.getHtml()
 
-let worker6 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker6 = new EmpTable('Ruslan', 27, 'Moscow', 'Junior')
 worker6.getHtml()
-let worker7 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker7 = new EmpTable('Sasha', 36, 'Moscow', 'Middle')
 worker7.getHtml()
-let worker8 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker8 = new EmpTable('Viktor', 29, 'Sochi', 'Junior')
 worker8.getHtml()
-let worker9 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker9 = new EmpTable('Slava', 34, 'Sochi', 'Senior')
 worker9.getHtml()
-let worker10 = new EmpTable('Sasha', 23, 'Moscow', 'junior')
+let worker10 = new EmpTable('Dima', 21, 'Krasnodar', 'Junior')
 worker10.getHtml()
 
 
@@ -3422,15 +3427,12 @@ let add_worker = document.querySelector('#add_worker') as HTMLButtonElement // �
 let delete_inputs = document.querySelector('#clean_inputs') as HTMLButtonElement // кнопка добавления работника
 let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement // кнопка удаления работника
 let new_worker_form = document.querySelector('#new_worker_form') as HTMLFormElement // окошки, с вводимой информацией
-
-// console.log(new_worker_form.children[0]);
-// console.log(new_worker_form.children[1]);
-// console.log(new_worker_form.children[2]);
-// console.log(new_worker_form.children[3]);
+let number_delete_worker = document.querySelector('#number_delete_worker') as HTMLInputElement // окошки, с вводимой информацией
 
 
 add_worker.addEventListener('click', ()=> {
-    console.log(new_worker_form.children[0].value);
+    // accWorker+=1
+    // <td>${accWorker}</td>
     table_with_workers.innerHTML+=`<tr>
     <td>${new_worker_form.children[0].value}</td>
     <td>${new_worker_form.children[1].value}</td>
@@ -3449,14 +3451,12 @@ delete_inputs.addEventListener('click', ()=> {
 })
 
 delete_worker.addEventListener('click', ()=> {
-    // console.log(table_with_workers.children[0]);
-    
-    // table_with_workers.children[1].innerHTML=''
-    table_with_workers.lastChild.innerHTML = ''
+    if (number_delete_worker.value>=1) {
+        table_with_workers.deleteRow(number_delete_worker.value)
+    }
 })
 
 
-console.log(table_with_workers.children);
 
 
 document.body.test = {
@@ -3486,3 +3486,17 @@ console.log(add_worker.outerHTML);
 
 // console.log(add_worker.attributes);
 
+
+
+let testMass = ['gd', 'fgh', 'iku', 'ws', 'xcv']
+testMass.splice(0,1)
+console.log(testMass);
+
+
+// console.log((Object(table_with_workers)).reverse());
+// console.log(table_with_workers.splice(0,1));
+
+
+
+// console.log(table_with_workers.deleteRow(1));
+// console.log();

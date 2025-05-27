@@ -73,6 +73,7 @@
 
   <table id="table_with_workers">
     <tr>
+        <!-- <th></th> -->
         <th>Имя</th>
         <th>Возраст</th>
         <th>Город</th>
@@ -86,12 +87,20 @@
         margin: 50px;
         text-align: center;
         border-collapse: collapse;
+        cursor: pointer;
     }
 
     #table_with_workers td, #table_with_workers th  {
         border: 1px solid black;
         padding: 10px 5px;
     }
+    
+    #table_with_workers tr:hover {
+    transition: .1s;
+    background: pink;
+    color: black;
+    scale: 1.05;
+}
 
 </style>
 <form id="new_worker_form" style="margin-bottom: 20px;">
@@ -111,7 +120,8 @@
 
 <button id="add_worker">Добавить работника</button>
 <button id="clean_inputs">Очистить inputs</button>
-<button id="delete_worker">Удалить работника</button>
+<button id="delete_worker" title="Выберите номер работника">Удалить работника</button>
+<input id="number_delete_worker" type="text" placeholder="номер" style="width: 41px; text-align: center;">
 
 <br>
 <br>
@@ -139,11 +149,11 @@
     <li>Home</li>
     <li>Categories</li>
     <li>About
-        <ul>
+        <!-- <ul>
             <li>1</li>
             <li>1</li>
             <li>1</li>
-        </ul>
+        </ul> -->
     </li>
     <li>Contacts</li>
 </div>
@@ -156,6 +166,7 @@
         /* justify-content: space-around; */
         text-align: center;
         cursor: pointer;
+        margin-bottom: 30px;
     }
     li {
         background-color: rgb(22, 112, 22);
