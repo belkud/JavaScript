@@ -3432,6 +3432,7 @@ let number_delete_worker = document.querySelector('#number_delete_worker') as HT
 let accWorker = table_with_workers.rows.length-1 // количество работников
 let accWorkerInHTML = document.querySelector('#accWorkerInHTML') as HTMLDivElement // вывод количества работников
 accWorkerInHTML.innerHTML=`Количество работников: ${accWorker}`
+
 let child = new_worker_form.children
 add_worker.addEventListener('click', ()=> {
     if (child[0].value=='') {
@@ -3469,6 +3470,7 @@ delete_inputs.addEventListener('click', ()=> { // очищаем инпуты
 })
 
 
+console.log(table_with_workers.rows.length);
 
 
 
@@ -3517,3 +3519,124 @@ console.log(testMass);
 
 // let checkTable=document.getElementsByTagName('tr')
 // console.log(checkTable);
+
+
+
+
+//! Задание 1
+//! Реализуйте класс ExtentedArray, унаследовав его от стандартного класса 
+//! Array и добавив следующие методы:
+//! ■ метод getString(separator) – для получения строки со
+//! всеми элементами массива, перечисленными через указанный разделитель: 
+//! запятая, тире, пробел и т. д.;
+//! ■ метод getHtml(tagName) – для получения строки с html
+//! кодом, где каждый элемент массива будет обернут в указанный тег 
+//! (учтите, если указывается тег li, то все элементы дополнительно необходимо 
+//! обернуть в ul).
+//! Создайте объект класса ExtentedArray, заполните его данными и выведите на экран результаты работы методов getString()
+//! и getHtml().
+
+let show_string_info = document.querySelector('#show_string_info') as HTMLDivElement
+
+
+class ExtentedArray {
+    text
+    separator
+    teg
+    constructor(text:string, separator:string, teg:string) {
+        this.text = text
+        this.separator = separator
+        this.teg = teg
+    }
+    getString() {
+        let str = this.text
+        show_string_info.innerHTML+= str.split(`${this.separator}`).join('|') + ', разделитель: ' + '"' + this.separator + '"' + '<br>' 
+    }
+    getHtml() {
+        let str = this.text.split(`${this.separator}`)
+        for (let i = 0; i < str.length; i++) {
+            if (this.teg == 'li') {
+                show_string_info.innerHTML+=`<ul><${this.teg}>${str[i]}</${this.teg}></ul>`
+            } else {
+                show_string_info.innerHTML+=`<${this.teg}>${str[i]}</${this.teg}>` 
+            }
+        }
+    }
+
+}
+
+let string1 = new ExtentedArray('учтите, если тег li, то все элементы', ',', 'p')
+string1.getString()
+string1.getHtml()
+
+// let string3 = new ExtentedArray('учтите, если тег li, то все элементы', ' ', 'li')
+// string3.getString()
+// string3.getHtml()
+
+
+
+
+
+
+let divPrepend = document.createElement('div') // prepend - идет в начало элемента
+divPrepend.innerHTML = ' Prepend'
+console.log(divPrepend);
+
+show_string_info.prepend(divPrepend)
+
+let divAppend = document.createElement('div') // prepend - идет в конец элемента
+divAppend.innerHTML = ' Append'
+show_string_info.append(divAppend)
+
+let divBefore = document.createElement('div')
+divBefore.innerHTML = ' Before'
+show_string_info.before(divBefore)
+
+let divAfter = document.createElement('button')
+divAfter.innerHTML = '<b>After </b>'
+show_string_info.after(divAfter)
+
+divAfter.style.marginTop = '10px'
+
+let cloneDiv = show_string_info.cloneNode(true) //! копирует элемент с его детьми
+console.log(cloneDiv)
+
+let cloneDiv2 = show_string_info.cloneNode() //! копирует элемент без детей
+cloneDiv2.textContent = 'textContent'
+cloneDiv2.crea = 'textContent'
+
+
+console.log(cloneDiv2)
+
+
+let day = new Date()
+console.log(day.getDay());
+
+let add = document.querySelector('#add') as HTMLButtonElement
+let remove = document.querySelector('#remove') as HTMLButtonElement
+let toggle = document.querySelector('#toggle')  as HTMLButtonElement
+
+add.addEventListener ('click', ()=> {
+    document.body.classList.add('background') //! add - добавляет класс
+})
+
+remove.addEventListener ('click', ()=> {
+    document.body.classList.remove('background') //! remove - удаляет класс
+})
+
+toggle.addEventListener ('click', ()=> {
+    document.body.classList.toggle('background')  //! toggle - добавляет/удаляет класс
+    console.log(document.body.className);
+    console.log(document.body.classList.contains('background'));
+    // console.log(document.body.getElementsByClassName('background'));
+})
+
+ 
+// .classList.contains('название класса ') - проверяет наличие класса (true/false)
+
+document.body.style.marginTop = '50vh' // первый способ записи
+document.body.style.marginTop = 50 + 'vh' // второй способ записи
+document.body.style.color = 'green'
+document.body.style.color = ''
+
+
