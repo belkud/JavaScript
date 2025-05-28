@@ -3382,7 +3382,7 @@ worker2.pushInmassive()
 //! метода getHtml().
 
 let table_with_workers = document.querySelector('#table_with_workers') as HTMLTableElement
-// let accWorker = 0
+
 
 class EmpTable extends Employee {
     constructor (name:string, age:number, city:string, position:string) {
@@ -3429,32 +3429,46 @@ let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElemen
 let new_worker_form = document.querySelector('#new_worker_form') as HTMLFormElement // окошки, с вводимой информацией
 let number_delete_worker = document.querySelector('#number_delete_worker') as HTMLInputElement // окошки, с вводимой информацией
 
-
+let accWorker = table_with_workers.rows.length-1 // количество работников
+let accWorkerInHTML = document.querySelector('#accWorkerInHTML') as HTMLDivElement // вывод количества работников
+accWorkerInHTML.innerHTML=`Количество работников: ${accWorker}`
+let child = new_worker_form.children
 add_worker.addEventListener('click', ()=> {
-    // accWorker+=1
-    // <td>${accWorker}</td>
-    table_with_workers.innerHTML+=`<tr>
-    <td>${new_worker_form.children[0].value}</td>
-    <td>${new_worker_form.children[1].value}</td>
-    <td>${new_worker_form.children[2].value}</td>
-    <td>${new_worker_form.children[3].value}</td>
-    </tr>`
-})
+    if (child[0].value=='') {
+        child[0].style.border = '2px solid red'
+        child[0].style.background = 'pink'
+    } else {
 
-delete_inputs.addEventListener('click', ()=> {
-    new_worker_form.children[0].value = ''
-    new_worker_form.children[1].value = ''
-    new_worker_form.children[2].value = ''
-    new_worker_form.children[3].value = ''
-    // console.log();
-    
+        accWorker+=1
+        // <td>${accWorker}</td>
+        table_with_workers.innerHTML+=`<tr>
+        <td>${child[0].value}</td>
+        <td>${child[1].value}</td>
+        <td>${child[2].value}</td>
+        <td>${child[3].value}</td>
+        </tr>`
+        accWorkerInHTML.innerHTML=`Количество работников: ${accWorker}`
+         child[0].style.border = ''
+         child[0].style.background = ''
+    }
 })
 
 delete_worker.addEventListener('click', ()=> {
     if (number_delete_worker.value>=1) {
         table_with_workers.deleteRow(number_delete_worker.value)
+        accWorker-=1
+        accWorkerInHTML.innerHTML=`Количество работников: ${accWorker}`
     }
 })
+
+delete_inputs.addEventListener('click', ()=> { // очищаем инпуты
+    child[0].value = ''
+    child[1].value = ''
+    child[2].value = ''
+    child[3].value = ''
+})
+
+
 
 
 
@@ -3500,3 +3514,6 @@ console.log(testMass);
 
 // console.log(table_with_workers.deleteRow(1));
 // console.log();
+
+// let checkTable=document.getElementsByTagName('tr')
+// console.log(checkTable);
