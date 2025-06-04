@@ -3574,7 +3574,7 @@ string1.getHtml()
 // string3.getHtml()
 
 
-
+// document.body.style.fontSize = '2em'
 
 
 
@@ -3640,3 +3640,116 @@ document.body.style.color = 'green'
 document.body.style.color = ''
 
 
+let showParametrs = document.querySelector('#showParametrs') as HTMLDivElement
+console.log(showParametrs);
+console.log(getComputedStyle(showParametrs).height);
+console.log(showParametrs.style.height);
+
+console.log(showParametrs.clientHeight); //! содержат «внешнюю» высоту элемента БЕЗ border
+console.log(showParametrs.offsetHeight); //! содержат «внешнюю» высоту элемента вместе с border
+console.log(showParametrs.scrollHeight);
+console.log(showParametrs.clientTop); //! толщина border
+// console.log(showParametrs.scrollTop); //! толщина border
+console.log(); //! толщина border
+// showParametrs.scrollTop ='100px'
+
+console.log(getComputedStyle(showParametrs).background);
+
+
+
+
+
+console.log(document.body.scrollHeight);
+console.log(document.body.offsetHeight);
+
+
+
+console.log(document.body.clientHeight);
+console.log(document.body.clientWidth);
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+
+let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+
+
+
+
+  console.log(document.documentElement.scrollHeight);
+  console.log(document.documentElement.offsetHeight);
+  console.log(document.documentElement.clientHeight);
+//   window.scrollBy(0,200)
+
+
+
+
+
+
+
+let field = document.querySelector('.field') as HTMLDivElement
+let ball = document.getElementById('ball') as HTMLImageElement
+
+console.log(getComputedStyle(ball).height);
+
+
+
+
+
+
+let widthOfField = getComputedStyle(field).width // ширина поля
+let heightOfField = getComputedStyle(field).height // высота поля
+let widthOfBall = (getComputedStyle(ball).width)// ширина мяча
+let heightOfBall = (getComputedStyle(ball).height)// высота мяча
+
+
+ball.style.marginLeft = ((parseInt(widthOfField) - parseInt(widthOfBall))/2) +'px'
+ball.style.marginTop = ((parseInt(heightOfField) - parseInt(heightOfBall))/2) +'px'
+
+let degree = 0
+
+field.addEventListener('click', (e)=> {
+    console.log(e.pageX);
+    degree+=30
+    ball.style.marginLeft = e.clientX-parseInt(widthOfBall) + 'px'
+    ball.style.marginTop = e.clientY-530 + 'px'
+    ball.style.rotate = degree + 'deg'
+
+})
+
+console.log(getComputedStyle(field).top);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let moveToUp = document.querySelector('#moveToUp') as HTMLButtonElement
+moveToUp.addEventListener('click', ()=> {
+    ball.scrollIntoView({
+   
+        behavior: "smooth",
+        block:'center'
+      });
+    
+})

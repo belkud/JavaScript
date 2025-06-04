@@ -13,374 +13,435 @@
     <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
                 href="index.html">Назад</a></button></div>
     <h3>Модуль 2</h3>
+
+    
     <h3>ТЕМА: ОБЪЕКТ. МАССИВЫ. ОБЪЕКТ ARRAY. СТРОКИ.
         ОБЪЕКТ STRING. ОБЪЕКТ DATE. ОБЪЕКТ MATH.
         ВВЕДЕНИЕ В ООП</h3>
+    <div id="showParametrs">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam! Laborum, iste veniam nemo explicabo
+        sunt architecto fuga eius in minima delectus velit pariatur dolor, repellendus laboriosam blanditiis obcaecati
+        inventore.</div>
 
-        <table style="color: aliceblue;" id="table">
-            <th>
-              <td>Город</td>
-              <td>Должность</td>
-              <td>Возраст</td>
-              <td>Стаж</td>
-              <td>5</td>
-            </th>
-            <tr>
-              <td>Петя</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>Вася</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>Света</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>Наташа</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>Таня</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-          </table>
-          
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<script>
-    document.write('asdfsfdgsdfsdf')
-</script>
-
-<div id="show_string_info" style="background-color: gray;"></div>
-
-<br>
-<br>
-<br>
-<button id="add">add</button>
-<button id="remove">remove</button>
-<button id="toggle">toggle</button>
-
-<style>
-   
-   .background {
-        background-color: greenyellow  !important;
-        color: red;
-    }
+        <style>
+            #showParametrs {
+                width: 200px;
+                height: 100px;
+                overflow: scroll;
+                background: green;
+                margin: 100px;
+                border: 10px solid red;
+                padding: 20px;
+            }
+        </style>
 
 
+<div>........................................................</div>
+    <table style="color: aliceblue;" id="table">
+        <th>
+        <td>Город</td>
+        <td>Должность</td>
+        <td>Возраст</td>
+        <td>Стаж</td>
+        <td>5</td>
+        </th>
+        <tr>
+            <td>Петя</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Вася</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Света</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Наташа</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Таня</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
 
-</style>
+    <br>
+    <br>
+    <br>
 
-
-<br>
-<br>
-<br>
-
-  <div id="workers"></div>
-
-  <table id="table_with_workers">
-    <tr>
-        <!-- <th></th> -->
-        <th>Имя</th>
-        <th>Возраст</th>
-        <th>Город</th>
-        <th>Должность</th>
-    </tr>
-</table>
-<div id="accWorkerInHTML" style="margin-top: -30px;"></div>
-<br>
-<br>
-
-<style>
-    #table_with_workers {
-        background-color: gray;
-        margin: 50px;
-        text-align: center;
-        border-collapse: collapse;
-        cursor: pointer;
-        /* border: 2px solid red; */
-    }
-
-    #table_with_workers td, #table_with_workers th  {
-        border: 1px solid black;
-        padding: 10px 5px;
-    }
+    <div class="field">
+        <img id="ball" src="src/public/ball.svg" alt="">
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+        ............................................................................
+    </div>
     
-    #table_with_workers tr:hover {
-    transition: .1s;
-    background: pink;
-    color: black;
-    scale: 1.05;
-}
+    <style>
+        .field {
+            width: 320px;
+            text-align: center;
+            background-color: green;
+            border: 10px solid gray;
+        }
+        
+        #ball {
+            position: absolute;
+            width: 60px;
+            transition: .5s;
+            z-index: 20;
+        }
 
-</style>
-<form id="new_worker_form" style="margin-bottom: 20px;">
-    <input type="text" placeholder="Введите имя">
-    <input type="text" placeholder="Введите возраст">
-    <input type="text" placeholder="Введите город">
-    <input type="text" placeholder="Введите должность">
-</form>
-
-<style>
-    #new_worker_form input {
-        width: 100px;
-    }
-</style>
-
- 
-
-<button id="add_worker">Добавить работника</button>
-<button id="clean_inputs">Очистить inputs</button>
-<button id="delete_worker" title="Выберите номер работника">Удалить работника</button>
-<input id="number_delete_worker" type="text" placeholder="номер" style="width: 41px; text-align: center;">
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div id="text"> <b>какой-нибудь текст</b></div>
+    
+    </style>
 
 
-<div id="digitals">
-    <div class="num">1</div>
-    <div class="num">2</div>
-    <div class="num">3</div>
-    <div class="num">4</div>
-    <div class="num2">5</div>
-    <div class="num2">6</div>
-    <div class="num2">7</div>
-</div>
 
 
-<!-- <table id="table"><tr><td>1</td></tr></table> -->
 
-<div id="menu">
-    <li>Home</li>
-    <li>Categories</li>
-    <li>About
-        <!-- <ul>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        document.write('asdfsfdgsdfsdf')
+    </script>
+
+    <div id="show_string_info" style="background-color: gray;"></div>
+
+    <br>
+    <br>
+    <br>
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <button id="toggle">toggle</button>
+
+    <style>
+        .background {
+            background-color: greenyellow !important;
+            color: red;
+        }
+    </style>
+
+
+    <br>
+    <br>
+    <br>
+
+    <div id="workers"></div>
+
+    <table id="table_with_workers">
+        <tr>
+            <!-- <th></th> -->
+            <th>Имя</th>
+            <th>Возраст</th>
+            <th>Город</th>
+            <th>Должность</th>
+        </tr>
+    </table>
+    <div id="accWorkerInHTML" style="margin-top: -30px;"></div>
+    <br>
+    <br>
+
+    <style>
+        #table_with_workers {
+            background-color: gray;
+            margin: 50px;
+            text-align: center;
+            border-collapse: collapse;
+            cursor: pointer;
+            /* border: 2px solid red; */
+        }
+
+        #table_with_workers td,
+        #table_with_workers th {
+            border: 1px solid black;
+            padding: 10px 5px;
+        }
+
+        #table_with_workers tr:hover {
+            transition: .1s;
+            background: pink;
+            color: black;
+            scale: 1.05;
+        }
+    </style>
+    <form id="new_worker_form" style="margin-bottom: 20px;">
+        <input type="text" placeholder="Введите имя">
+        <input type="text" placeholder="Введите возраст">
+        <input type="text" placeholder="Введите город">
+        <input type="text" placeholder="Введите должность">
+    </form>
+
+    <style>
+        #new_worker_form input {
+            width: 100px;
+        }
+    </style>
+
+
+
+    <button id="add_worker">Добавить работника</button>
+    <button id="clean_inputs">Очистить inputs</button>
+    <button id="delete_worker" title="Выберите номер работника">Удалить работника</button>
+    <input id="number_delete_worker" type="text" placeholder="номер" style="width: 41px; text-align: center;">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="text"> <b>какой-нибудь текст</b></div>
+
+
+    <div id="digitals">
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num2">5</div>
+        <div class="num2">6</div>
+        <div class="num2">7</div>
+    </div>
+
+
+    <!-- <table id="table"><tr><td>1</td></tr></table> -->
+
+    <div id="menu">
+        <li>Home</li>
+        <li>Categories</li>
+        <li>About
+            <!-- <ul>
             <li>1</li>
             <li>1</li>
             <li>1</li>
         </ul> -->
-    </li>
-    <li>Contacts</li>
-</div>
-
-
-<style>
-    #menu {
-        display: flex;
-        list-style-type: none;
-        /* justify-content: space-around; */
-        text-align: center;
-        cursor: pointer;
-        margin-bottom: 30px;
-    }
-    li {
-        background-color: rgb(22, 112, 22);
-        padding: 10px;
-        width: 100px;
-        transition: .5s;
-        border: 1px solid #000;
-    }
-    li:hover {
-        background-color: rgb(9, 43, 9);
-    }
-    #categories {
-        position: absolute;
-        list-style-type: none;
-        margin-left: -50.5px;
-        margin-top: 11px;
-        display: none;
-    }
-
-    #women {
-        position: absolute;
-        list-style-type: none;
-        margin-left: 70.5px;
-        margin-top: -29.5px;
-        display: none;
-    }
-    
-    #open_menu:hover #categories {
-        display: block;
-    }
-
-    #open_second_menu:hover #women {
-        display: block;
-    }
-</style>
-
-
-
-
-
-
-<div id="container">
-    <div id="top" style="display: flex;">
-        <div>
-            <div><a href="https://dzen.ru/?yredirect=true&utm_referrer=www.google.com">Home</a></div>
-            <div>About</div>
-            <div>Gallery</div>
-            <div>News</div>
-        </div>
-
-        <div>
-            <div>Blog</div>
-            <div>FAQ</div>
-            <div>Contacts</div>
-            <div>Privacy</div>
-        </div>
-
-        <div style="margin-right: 20px;">
-            <img style="margin-left: -80px;" src="src/public/fb.png" alt="" srcset="">
-            <img style="margin-left: -40px;" src="src/public/insta.png" alt="" srcset="">
-            <img style="margin-left: 0px;" src="src/public/youtube.png" alt="" srcset="">
-        </div>
+        </li>
+        <li>Contacts</li>
     </div>
-    <div id="bottom">Copyright 2018-2019</div>
-</div>
-
-<style>
-    #container{
-        background-color: rgb(20, 21, 95);
-        display: flex;
-        flex-direction: column;
-    }
-    #container img{
-        width: 30px;
-        margin: 6px;
-        transition: .5s;
-        position: absolute;
-    }
-    #container img:hover{
-        filter: grayscale(1);
-        width: 38px;
-    }
-    #container>div{
-        margin: 30px;
-        justify-content: space-between;
-    }
-    #bottom {
-        border-top: 1px solid aliceblue;
-        padding-top: 20px;
-        text-align: center;
-    }
-    #top>div>div:hover {
-        text-decoration:underline;
-        cursor: pointer;
-    }
-
-</style>
 
 
+    <style>
+        #menu {
+            display: flex;
+            list-style-type: none;
+            /* justify-content: space-around; */
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
 
+        li {
+            background-color: rgb(22, 112, 22);
+            padding: 10px;
+            width: 100px;
+            transition: .5s;
+            border: 1px solid #000;
+        }
 
+        li:hover {
+            background-color: rgb(9, 43, 9);
+        }
 
+        #categories {
+            position: absolute;
+            list-style-type: none;
+            margin-left: -50.5px;
+            margin-top: 11px;
+            display: none;
+        }
 
-<div id="news"></div>
+        #women {
+            position: absolute;
+            list-style-type: none;
+            margin-left: 70.5px;
+            margin-top: -29.5px;
+            display: none;
+        }
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+        #open_menu:hover #categories {
+            display: block;
+        }
 
-
+        #open_second_menu:hover #women {
+            display: block;
+        }
+    </style>
 
 
 
 
-<div id="printMaсhine"> 
-</div>
 
 
-<input id="pressButton" placeholder="Введите какой-нибудь текст"></input>
- 
+    <div id="container">
+        <div id="top" style="display: flex;">
+            <div>
+                <div><a href="https://dzen.ru/?yredirect=true&utm_referrer=www.google.com">Home</a></div>
+                <div>About</div>
+                <div>Gallery</div>
+                <div>News</div>
+            </div>
+
+            <div>
+                <div>Blog</div>
+                <div>FAQ</div>
+                <div>Contacts</div>
+                <div>Privacy</div>
+            </div>
+
+            <div style="margin-right: 20px;">
+                <img style="margin-left: -80px;" src="src/public/fb.png" alt="" srcset="">
+                <img style="margin-left: -40px;" src="src/public/insta.png" alt="" srcset="">
+                <img style="margin-left: 0px;" src="src/public/youtube.png" alt="" srcset="">
+            </div>
+        </div>
+        <div id="bottom">Copyright 2018-2019</div>
+    </div>
+
+    <style>
+        #container {
+            background-color: rgb(20, 21, 95);
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container img {
+            width: 30px;
+            margin: 6px;
+            transition: .5s;
+            position: absolute;
+        }
+
+        #container img:hover {
+            filter: grayscale(1);
+            width: 38px;
+        }
+
+        #container>div {
+            margin: 30px;
+            justify-content: space-between;
+        }
+
+        #bottom {
+            border-top: 1px solid aliceblue;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        #top>div>div:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
 
 
 
 
-<div style="display: flex; flex-wrap: wrap; margin: 30px; background-color: black; font-size: 32px; width: 300px; border: 1px solid aliceblue;" id="marker_text"></div>
-
-<div id="info_about_marker"></div> <!-- сюда выводится ВСЯ информация о маркерах  -->
 
 
+    <div id="news"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
-<!-- 
+
+
+
+
+    <div id="printMaсhine">
+    </div>
+
+
+    <input id="pressButton" placeholder="Введите какой-нибудь текст"></input>
+
+
+
+
+
+    <div style="display: flex; flex-wrap: wrap; margin: 30px; background-color: black; font-size: 32px; width: 300px; border: 1px solid aliceblue;"
+        id="marker_text"></div>
+
+    <div id="info_about_marker"></div> <!-- сюда выводится ВСЯ информация о маркерах  -->
+
+
+
+
+    <!-- 
 <div id="battery">
     <div id="inner_battery"></div>
 </div> -->
 
-<style>
-    #battery{
-        border: 2px solid white; 
-        width:100px; 
-        height: 30px; 
-        margin-top: 10px; 
-        position: relative;
-    }
-    #battery::after {
-        content: '';
-        position: absolute;
-        border: 2px solid white;
-        border-left-color: black ;
-        border-radius: 0px 5px 5px 0px;
-        margin-left: 100px;
-        margin-top: -21.5px;
-        height: 10px;
-        width: 8px;
-    }
-    #inner_battery {
-        background-color:green; 
-        height:30px; 
-        width: 0px;
-        max-width: 100px;
-        transition: 3s;
-        animation: changeBatetry 5s;
-        /* animation-timing-function: steps(10); */
-    }
-    
-    @keyframes changeBatetry {
-        
-        to {
+    <style>
+        #battery {
+            border: 2px solid white;
             width: 100px;
+            height: 30px;
+            margin-top: 10px;
+            position: relative;
         }
-    }
 
-</style>
+        #battery::after {
+            content: '';
+            position: absolute;
+            border: 2px solid white;
+            border-left-color: black;
+            border-radius: 0px 5px 5px 0px;
+            margin-left: 100px;
+            margin-top: -21.5px;
+            height: 10px;
+            width: 8px;
+        }
+
+        #inner_battery {
+            background-color: green;
+            height: 30px;
+            width: 0px;
+            max-width: 100px;
+            transition: 3s;
+            animation: changeBatetry 5s;
+            /* animation-timing-function: steps(10); */
+        }
+
+        @keyframes changeBatetry {
+
+            to {
+                width: 100px;
+            }
+        }
+    </style>
 
 
 
 
-
+<button id="moveToUp">Наверх</button>
 
 
 </body>
