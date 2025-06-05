@@ -3690,9 +3690,10 @@ let scrollHeight = Math.max(
 
 
 let field = document.querySelector('.field') as HTMLDivElement
-let ball = document.getElementById('ball') as HTMLImageElement
+let ball = document.getElementById('ball') as HTMLDivElement
+let ball_shadow = document.getElementById('ball_shadow') as HTMLDivElement
+let ball_image = document.getElementById('ball_image') as HTMLDivElement
 
-console.log(getComputedStyle(ball).height);
 
 
 
@@ -3711,17 +3712,19 @@ ball.style.marginTop = ((parseInt(heightOfField) - parseInt(heightOfBall))/2) +'
 let degree = 0
 
 field.addEventListener('click', (e)=> {
-    console.log(e.pageX);
-    degree+=30
-    ball.style.marginLeft = e.clientX-parseInt(widthOfBall) + 'px'
-    ball.style.marginTop = e.clientY-530 + 'px'
-    ball.style.rotate = degree + 'deg'
-
+    degree+=90
+    ball.style.marginLeft = e.pageX - field.offsetLeft -parseInt(widthOfBall)/2+ 'px'
+    ball.style.marginTop = e.pageY - field.offsetTop -parseInt(heightOfBall)/2 + 'px'
+    ball_image.style.rotate = degree + 'deg'
+    
+    console.log(e.pageY); //! отслеживаем нажатие мышкой по оси У
+    console.log(field.offsetTop); //! расстояние от начала страницы до футбольного поля
 })
 
 console.log(getComputedStyle(field).top);
 
 
+console.log(parseInt(getComputedStyle(ball).height));
 
 
 

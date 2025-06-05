@@ -86,7 +86,10 @@
     <br>
 
     <div class="field">
-        <img id="ball" src="src/public/ball.svg" alt="">
+        <div id="ball">
+            <img id="ball_image"  src="src/public/ball.svg" alt="">
+            <div id="ball_shadow"></div>
+        </div>
         ............................................................................
         ............................................................................
         ............................................................................
@@ -109,9 +112,22 @@
         
         #ball {
             position: absolute;
-            width: 60px;
             transition: .5s;
             z-index: 20;
+        }
+        #ball_shadow {
+            position: absolute;
+            background: rgb(80, 78, 78, .8);
+            height: 40px;
+            width: 40px;
+            margin-top: -33px;
+            margin-left: 12px;
+            border-radius: 50%;
+            z-index: -1 !important;
+        }
+        #ball_image {
+            transition: .5s;
+            /* width: 50px; */
         }
 
     
