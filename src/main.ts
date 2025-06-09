@@ -3655,32 +3655,44 @@ console.log(); //! толщина border
 
 console.log(getComputedStyle(showParametrs).background);
 
+console.log('__________________');
+
+// console.log(showParametrs.clientLeft);
+
+console.log(getComputedStyle(showParametrs).width);
+
+
+
+console.log(showParametrs.scrollWidth);
+console.log(showParametrs.offsetWidth);
+console.log(showParametrs.offsetWidth - showParametrs.clientWidth);
+
+
+console.log('__________________');
+
+// console.log(document.body.scrollHeight);
+// console.log(document.body.offsetHeight);
 
 
 
 
-console.log(document.body.scrollHeight);
-console.log(document.body.offsetHeight);
+// console.log(document.body.clientHeight);
+// console.log(document.body.clientWidth);
+// console.log(window.innerHeight);
+// console.log(window.innerWidth);
 
-
-
-console.log(document.body.clientHeight);
-console.log(document.body.clientWidth);
-console.log(window.innerHeight);
-console.log(window.innerWidth);
-
-let scrollHeight = Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
-  );
+// let scrollHeight = Math.max(
+//     document.body.scrollHeight, document.documentElement.scrollHeight,
+//     document.body.offsetHeight, document.documentElement.offsetHeight,
+//     document.body.clientHeight, document.documentElement.clientHeight
+//   );
 
 
 
 
-  console.log(document.documentElement.scrollHeight);
-  console.log(document.documentElement.offsetHeight);
-  console.log(document.documentElement.clientHeight);
+//   console.log(document.documentElement.scrollHeight);
+//   console.log(document.documentElement.offsetHeight);
+//   console.log(document.documentElement.clientHeight);
 //   window.scrollBy(0,200)
 
 
@@ -3704,6 +3716,7 @@ let widthOfField = getComputedStyle(field).width // ширина поля
 let heightOfField = getComputedStyle(field).height // высота поля
 let widthOfBall = (getComputedStyle(ball).width)// ширина мяча
 let heightOfBall = (getComputedStyle(ball).height)// высота мяча
+console.log(parseInt(widthOfBall));
 
 
 ball.style.marginLeft = ((parseInt(widthOfField) - parseInt(widthOfBall))/2) +'px'
@@ -3716,22 +3729,45 @@ field.addEventListener('click', (e)=> {
     ball.style.marginLeft = e.pageX - field.offsetLeft -parseInt(widthOfBall)/2+ 'px'
     ball.style.marginTop = e.pageY - field.offsetTop -parseInt(heightOfBall)/2 + 'px'
     ball_image.style.rotate = degree + 'deg'
+    console.log(degree);
     
-    console.log(e.pageY); //! отслеживаем нажатие мышкой по оси У
-    console.log(field.offsetTop); //! расстояние от начала страницы до футбольного поля
+    // console.log(e.pageY); //! отслеживаем нажатие мышкой по оси У
+    // console.log(field.offsetTop); //! расстояние от начала страницы до футбольного поля
 })
 
 console.log(getComputedStyle(field).top);
 
 
 console.log(parseInt(getComputedStyle(ball).height));
+console.log(field.offsetLeft);
+
+
+// console.log(getComputedStyle(field).height);
+
+
+
+console.log(field.offsetTop); // от самого верха документа до начала тэга
+
+let height_of_field = field.clientHeight + field.clientTop*2 
+console.log(height_of_field);
+
+
+let body_height = parseInt(getComputedStyle(document.body).height)
+console.log(body_height);
+
+console.log(body_height - field.offsetTop - height_of_field);
 
 
 
 
+let body_width = getComputedStyle(document.body).width
 
+// console.log(window.innerWidth);
 
+console.log(document.body.clientWidth);
+console.log(getComputedStyle(document.body).width);
 
+console.log(document.body.scrollWidth);
 
 
 
@@ -3756,3 +3792,39 @@ moveToUp.addEventListener('click', ()=> {
       });
     
 })
+
+
+let show_coordinates = document.querySelector('#show_coordinates') as HTMLDivElement
+
+
+document.body.addEventListener('mousemove',(e)=> {
+    show_coordinates.innerHTML= `
+координаты по документу:
+<br>
+
+по оси х = ${e.pageX} px
+по оси Y = ${e.pageY} px
+<br>
+<br>
+
+координаты по окну:
+<br>
+
+    по оси х = ${e.clientX} px
+    по оси Y = ${e.clientY} px
+    `
+})
+
+
+function testEvent (e:any) {
+    console.log(e.currentTarget);
+    
+}
+
+field.addEventListener('click', testEvent)
+// field.removeEventListener('click', testEvent)
+// document.body.removeEventListener('click', testEvent)
+
+
+
+

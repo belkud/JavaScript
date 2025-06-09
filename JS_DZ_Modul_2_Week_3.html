@@ -25,8 +25,8 @@
         <style>
             #showParametrs {
                 width: 200px;
-                height: 100px;
-                overflow: scroll;
+                height: 80px;
+                overflow-y:scroll;
                 background: green;
                 margin: 100px;
                 border: 10px solid red;
@@ -85,7 +85,7 @@
     <br>
     <br>
 
-    <div class="field">
+    <div class="field" onclick="document.body.style.color='red'">
         <div id="ball">
             <img id="ball_image"  src="src/public/ball.svg" alt="">
             <div id="ball_shadow"></div>
@@ -102,6 +102,8 @@
         ............................................................................
     </div>
     
+    <div id="show_coordinates"> Координаты:</div>
+
     <style>
         .field {
             width: 320px;
