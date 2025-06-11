@@ -10,32 +10,108 @@
 </head>
 
 <body>
+
+    <input type="number">
+    <div id="container_news" data-table="наша таблица">
+        <div>
+            <button>X</button>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam corrupti dignissimos neque exercitationem
+                nam ipsam debitis consectetur placeat enim natus! Assumenda consequatur fugit enim numquam distinctio,
+                placeat iusto aliquid exercitationem.</p>
+       </div>
+      
+     <div>
+        <button>X</button>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam corrupti dignissimos neque exercitationem
+            nam ipsam debitis consectetur placeat enim natus! Assumenda consequatur fugit enim numquam distinctio,
+            placeat iusto aliquid exercitationem.</p>
+   </div>
+        
+      <div>
+          <button>X</button>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam corrupti dignissimos neque exercitationem
+              nam ipsam debitis consectetur placeat enim natus! Assumenda consequatur fugit enim numquam distinctio,
+              placeat iusto aliquid exercitationem.</p>
+     </div>
+    
+    </div>
+
+    <style>
+        #container_news button {
+            margin-left: calc(100% - 50px);
+            margin-top: 10px;
+            transition: 1s;
+        }
+
+        #container_news div {
+            border: 1px solid white;
+            transition: 1s;
+            height: 150px;
+            /* background: rgb(3, 2, 175); */
+        }
+
+    </style>
+
+
+<script>
+
+    let close_button = document.querySelectorAll('#container_news div')
+    for (let i = 0; i < close_button.length; i++) {
+        close_button[i].firstElementChild.addEventListener('click', (event)=> {
+            close_button[i].style.height = '0px'
+            close_button[i].style.opacity = 0
+            console.log(event.target);
+            console.log(event.currentTarget);
+            
+            setTimeout(() => {
+                close_button[i].style.display = 'none'
+            }, 1000);
+        })
+        
+    }
+
+    
+    let container_news = document.querySelector('#container_news')
+    console.log(container_news.dataset.table);
+        
+</script>
+
+
+
     <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
                 href="index.html">Назад</a></button></div>
     <h3>Модуль 2</h3>
 
-    
+
     <h3>ТЕМА: ОБЪЕКТ. МАССИВЫ. ОБЪЕКТ ARRAY. СТРОКИ.
         ОБЪЕКТ STRING. ОБЪЕКТ DATE. ОБЪЕКТ MATH.
         ВВЕДЕНИЕ В ООП</h3>
-    <div id="showParametrs">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam! Laborum, iste veniam nemo explicabo
+
+
+
+
+    <div id="showParametrs">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam! Laborum, iste veniam
+        nemo explicabo
         sunt architecto fuga eius in minima delectus velit pariatur dolor, repellendus laboriosam blanditiis obcaecati
         inventore.</div>
 
-        <style>
-            #showParametrs {
-                width: 200px;
-                height: 80px;
-                overflow-y:scroll;
-                background: green;
-                margin: 100px;
-                border: 10px solid red;
-                padding: 20px;
-            }
-        </style>
+    <style>
+        #showParametrs {
+            width: 200px;
+            height: 80px;
+            overflow-y: scroll;
+            background: green;
+            margin: 100px;
+            border: 10px solid red;
+            padding: 20px;
+        }
+    </style>
 
 
-<div>........................................................</div>
+    <div>........................................................</div>
     <table style="color: aliceblue;" id="table">
         <th>
         <td>Город</td>
@@ -87,7 +163,7 @@
 
     <div class="field" onclick="document.body.style.color='red'">
         <div id="ball">
-            <img id="ball_image"  src="src/public/ball.svg" alt="">
+            <img id="ball_image" src="src/public/ball.svg" alt="">
             <div id="ball_shadow"></div>
         </div>
         ............................................................................
@@ -101,7 +177,7 @@
         ............................................................................
         ............................................................................
     </div>
-    
+
     <div id="show_coordinates"> Координаты:</div>
 
     <style>
@@ -111,12 +187,13 @@
             background-color: green;
             border: 10px solid gray;
         }
-        
+
         #ball {
             position: absolute;
             transition: .5s;
             z-index: 20;
         }
+
         #ball_shadow {
             position: absolute;
             background: rgb(80, 78, 78, .8);
@@ -127,12 +204,11 @@
             border-radius: 50%;
             z-index: -1 !important;
         }
+
         #ball_image {
             transition: .5s;
             /* width: 50px; */
         }
-
-    
     </style>
 
 
@@ -459,7 +535,7 @@
 
 
 
-<button id="moveToUp">Наверх</button>
+    <button id="moveToUp">Наверх</button>
 
 
 </body>

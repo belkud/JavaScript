@@ -3733,6 +3733,11 @@ field.addEventListener('click', (e)=> {
     
     // console.log(e.pageY); //! отслеживаем нажатие мышкой по оси У
     // console.log(field.offsetTop); //! расстояние от начала страницы до футбольного поля
+
+    console.log(e.target);
+    console.log(e.currentTarget);
+    
+
 })
 
 console.log(getComputedStyle(field).top);
@@ -3772,7 +3777,12 @@ console.log(document.body.scrollWidth);
 
 
 
-
+document.body.addEventListener('click', (e)=> {
+    // console.log(e.target);
+    // console.log(e.currentTarget);
+    // console.log(e.eventPhase);
+    
+})
 
 
 
@@ -3825,6 +3835,18 @@ field.addEventListener('click', testEvent)
 // field.removeEventListener('click', testEvent)
 // document.body.removeEventListener('click', testEvent)
 
+// setInterval(() => {
+//     let acc1 = Math.random()*255
+//     let acc2 = Math.random()*255
+//     let acc3 = Math.random()*255
+//     document.body.style.background = `rgb(${acc1}, ${acc2}, ${acc3})`
+// }, 1000);
 
 
 
+table_with_workers.addEventListener('click', (e)=> {
+    console.log(e);
+    console.log(e.target);
+    console.log(e.currentTarget);
+    
+})
