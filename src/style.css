@@ -34,33 +34,6 @@ p{
   margin-left: 20px;
 }
 
-button {
-  color: white;
-  background-color: blue;
-  padding:5px 15px;
-  border-radius: 5px;
-  transition: 1.5s;
-  cursor: pointer;
-  filter: drop-shadow(0px 0px 3px aliceblue); 
-}
-
-button:hover, button:active {
-  background-color: red;
-  filter: drop-shadow(0px 0px 8px aliceblue); 
-  /* transform: scale(1.03); */
-}
-  
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-.button_fixed {
-  position: fixed;
-  /* margin-left: calc(100% - 100px); */
-}
-
 .color {
   color: transparent;
 }
@@ -89,20 +62,28 @@ a {
 }
 
 
-#container button {
-  margin-top: 5px;
+
+
+
+.button_fixed {
+  position: fixed;
 }
 
-  button {
-    color: white;
-    background-color: blue;
-    border-radius: 5px;
-    padding:5px 15px;
-    transition: .5s;
-  }
 
-  button:hover {
-    background-color: red;
+#container button, .button_fixed {
+  margin-top: 5px;
+  background-color: blue;
+  border-radius: 5px;
+  padding:5px 15px;
+  transition: .5s;
+  filter: drop-shadow(0px 0px 3px aliceblue); 
+
+}
+
+
+#container button:hover, #container button:active, .button_fixed:hover, .button_fixed:active  {
+  background-color: red !important;
+  filter: drop-shadow(0px 0px 8px aliceblue); 
   }
 
 
@@ -112,12 +93,12 @@ a {
   }
 
   .theory {
-    background-color: rgb(26, 171, 50);
+    background: rgb(26, 171, 50) !important;
   }
 
 
 
-  
+
   #check_symbols {
     background-color: lightgray;
     color: red;
@@ -127,6 +108,20 @@ a {
   #check_symbols:hover {
     border:  2px solid wheat;
   }
+
+
+
+/* модалдьное окно */
+#overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgb(0, 0, 0, .5);
+  display: none;
+}
 
 
 
