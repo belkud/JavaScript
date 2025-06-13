@@ -3,9 +3,10 @@ body{
   background: url(./public/back2.webp);
   background-size: cover;
   background-attachment: fixed;
-  color: aliceblue;
   /* font-size: 2em; */
   /* background: linear-gradient(red,blue); */
+  /* color: aliceblue; */
+  background: white;
   /* filter: grayscale(.5); */
 }
 

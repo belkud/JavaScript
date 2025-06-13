@@ -382,7 +382,6 @@ console.log((Math.trunc(Math.random() * 100))); // 3-й способ округ�
 
 
 
-console.clear()
 
 
 console.log(Math.round(5.4)) // округление до ближайшего числа
@@ -2461,12 +2460,21 @@ airplane2.fly();
 
 
 
+
+
+
+
 //! div находится в файле JS_DZ_Modul_2_Week_3.html
-let marker_text = document.getElementById('marker_text') as HTMLDivElement
+
+let marker_text = document.querySelector('#marker_text') as HTMLDivElement
 // let info_about_marker = document.querySelector('#info_about_marker') as HTMLDivElement //! один из способа вывода информации в HTML файл
 let info_about_marker = document.getElementById('info_about_marker') as HTMLDivElement
 
-class Marker {
+document.body.addEventListener('DOMContentLoaded',()=> {
+
+    class Marker {
+        color
+    ink
     constructor(color: string, ink: number) {
         this.color = color // цвет маркера
         this.ink = ink // насколько символов хватит чернил в маркере
@@ -2479,8 +2487,10 @@ class Marker {
         for (let i = 0; i < text.length; i++) {
             marker_text.innerHTML += `
             <span style="color: ${this.color}; opacity: ${1 - i / text.length};">${text[i]}</span>
-            `  //! выводим текст в html файл ( с помощью свойства innerHTML)
+            `  
+            //! выводим текст в html файл ( с помощью свойства innerHTML)
         }
+
         info_about_marker.innerHTML += `
         Цвет маркера <span style="color:${this.color}; font-size:30px">${this.color}</span> <br>
         Количество символов в чернилах: ${this.ink}     <br>
@@ -2940,7 +2950,6 @@ getWeekDay(new Date())
 
 
 
-console.clear()
 
 
 
@@ -3099,7 +3108,6 @@ day1.showNextDate()
 //! setInterval - выполняется через определенный промежуток времени
 
 //! clearInterval - отменяет действие через указанное время
-
 
 
 
@@ -3850,3 +3858,15 @@ table_with_workers.addEventListener('click', (e)=> {
     console.log(e.currentTarget);
     
 })
+
+
+
+// let test_test = document.querySelector('#test_test') as any
+// test_test.style.background = 'red'
+// test_test.addEventListener('click', ()=> {
+    // console.log(123);
+    
+// })
+
+})
+
