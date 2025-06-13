@@ -7,7 +7,7 @@ body{
   /* background: linear-gradient(red,blue); */
   /* color: aliceblue; */
   /* background: white; */
-  /* filter: grayscale(.5); */
+  filter:;
 }
 
 /* body button {
@@ -114,3 +114,24 @@ a {
   .theory {
     background-color: rgb(26, 171, 50);
   }
+
+
+
+  
+  #check_symbols {
+    background-color: lightgray;
+    color: red;
+    margin-top: 25px;
+  }
+
+  #check_symbols:hover {
+    border:  2px solid wheat;
+  }
+
+
+
+
+
+
+
+
