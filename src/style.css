@@ -98,7 +98,7 @@ p{
 
 
 
-
+/* inputs */
   #check_symbols {
     background-color: lightgray;
     color: red;
@@ -111,8 +111,8 @@ p{
 
 
 
-/* модалдьное окно */
-#overlay {
+/* модальное окно */
+#overlay { /* подложка*/
   height: 100vh;
   width: 100%;
   position: absolute;
@@ -121,6 +121,19 @@ p{
   z-index: 100;
   background-color: rgb(0, 0, 0, .5);
   display: none;
+}
+#text_of_window {
+  color: black;
+  background-color: lightgray;
+  width: 300px;
+  position: absolute;
+  top: calc(50vh - 50px);
+  left: calc(50% - 150px);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 

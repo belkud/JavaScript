@@ -3882,10 +3882,26 @@ table_with_workers.addEventListener('click', (e)=> {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
-let check_symbols = document.querySelector('#check_symbols') as any
+// inputs
+let check_symbols = document.querySelector('#check_symbols') as HTMLInputElement
 check_symbols.addEventListener('keydown', (e:any)=> {
     if (e.key>=0 && e.key<=9) {
         e.preventDefault()
     }
 })
+
+
+let open_window = document.querySelector('#open_window') as HTMLButtonElement
+let overlay = document.querySelector('#overlay') as HTMLDivElement
+let close_window = document.querySelector('#overlay button') as HTMLButtonElement
+
+
+// модальное окно
+open_window.addEventListener('click', ()=> {
+    overlay.style.display = 'block'
+})
+
+close_window.addEventListener('click', ()=> {
+    overlay.style.display = 'none'
+})
+
