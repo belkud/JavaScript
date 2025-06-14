@@ -136,10 +136,36 @@ p{
   flex-direction: column;
 }
 
+/* светофор */
+.traffic_light {
+  background: lightblue;
+  display: flex;
+  width: 280px;
+  height: 100px;
+  gap: 10px;
+  margin-top: 10px;
+}
 
+.traffic_light div {
+  background: gray;
+  margin-top: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
 
+.traffic_light div:first-child {
+  margin-left: 10px;
+}
 
+#next_light {
+  margin-top: 10px;
+  width: 130px;
+  background: aquamarine;
+}
 
-
+.new_color {
+  background: yellow !important ;
+}
 
 

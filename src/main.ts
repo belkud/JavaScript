@@ -3905,3 +3905,45 @@ close_window.addEventListener('click', ()=> {
     overlay.style.display = 'none'
 })
 
+
+// светофор
+
+let light = document.querySelectorAll('.traffic_light div') as any
+let next_light = document.querySelector('#next_light') as HTMLButtonElement
+
+
+let light_acc = 0
+next_light.addEventListener('click',()=> {
+    light_acc+=1
+    if (light_acc==1) {
+        light[0].style.background = 'red'
+        light[1].style.background = ''
+        light[2].style.background = ''
+    }
+    if (light_acc==2) {
+        light[1].style.background = 'yellow'
+        light[0].style.background = ''
+        light[2].style.background = ''
+    }
+    if (light_acc==3) {
+        light[2].style.background = 'green'
+        light[0].style.background = ''
+        light[1].style.background = ''
+        light_acc=0
+    }
+    
+    
+    
+    // let color = [ 'red', 'yellow', 'green']
+    // light[light_acc-1].style.background = color[light_acc-1]
+
+
+
+
+
+    
+    
+    
+})
+
+
