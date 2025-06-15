@@ -3950,10 +3950,42 @@ container_string.addEventListener('click', (e:any)=>{
 // Задание с подсказами
 
 let btn_1 = document.querySelector('#btn_1') as HTMLButtonElement
+let title_btn1 = document.querySelector('#title_btn1') as HTMLDivElement
+let title_btn1_inner = document.querySelector('#title_btn1_inner') as HTMLDivElement
+
+btn_1.addEventListener('mousemove',(e:any)=> {
+    title_btn1.style.display = 'block'
+    if (e.clientY<80) {
+        title_btn1.style.marginTop = '20px'
+        title_btn1_inner.style.marginTop = '-40px'
+    } else {
+        title_btn1.style.marginTop = ''
+        title_btn1_inner.style.marginTop = ''
+    }
+    console.log(e.clientY);
+})
 
 
-console.log(btn_1.value);
-console.log(btn_1.title);
+btn_1.addEventListener('mouseleave', ()=> {
+    title_btn1.style.display = 'none'
+})
+
+
+
+console.log(btn_1.clientTop);
+console.log(btn_1.scrollTop);
+console.log(btn_1.offsetTop);
+console.log(btn_1.offsetHeight);
+console.log(window.scrollY);
+console.log(window.top);
+
+
+
+
+
+
+
+
 
 
 
