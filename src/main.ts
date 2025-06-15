@@ -3917,17 +3917,14 @@ next_light.addEventListener('click',()=> {
     light_acc+=1
     if (light_acc==1) {
         light[0].style.background = 'red'
-        light[1].style.background = ''
         light[2].style.background = ''
     }
     if (light_acc==2) {
         light[1].style.background = 'yellow'
         light[0].style.background = ''
-        light[2].style.background = ''
     }
     if (light_acc==3) {
         light[2].style.background = 'green'
-        light[0].style.background = ''
         light[1].style.background = ''
         light_acc=0
     }

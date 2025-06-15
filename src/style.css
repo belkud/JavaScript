@@ -143,7 +143,9 @@ p{
   width: 280px;
   height: 100px;
   gap: 10px;
-  margin-top: 10px;
+  /* margin-top: 120px; */
+  /* margin-left: -80px; */
+  rotate: 90deg;
 }
 
 .traffic_light div {
@@ -162,10 +164,14 @@ p{
   margin-top: 10px;
   width: 130px;
   background: aquamarine;
+  height: 45px;
+}
+#next_light:hover {
+  background: rgb(8, 221, 221);
 }
 
-.new_color {
-  background: yellow !important ;
+#traffic_light_container{
+  margin-top: 130px; 
+  display: flex;
 }
-
 
