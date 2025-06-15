@@ -233,5 +233,17 @@ padding: 10px;
   height: 25px;
   width: 25px;
   margin: 5px;
-
 }
+
+#container_with_comments {
+  background-color: gray;
+  height: auto;
+  min-height: 50px;
+}
+
+
+
+
+
+
+

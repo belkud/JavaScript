@@ -3960,7 +3960,41 @@ info_from_typescript.innerHTML=`
 При нажатии на кнопку Добавить комментарий форма должна 
 очищаться, а комментарий добавляться к списку всех коммента
 риев. Комментарий состоит из имени пользователя, даты и текста. </h4>
+
+<div id="container_with_comments">Ветка с комментариями: (заполните ниже)</div>
+
+<div style="margin-top: 25px;">
+  <input id="name" type="text" placeholder="введите имя">
+  <input id="message_text" type="text" placeholder="введите текст сообщения">
+  <input type="submit" id="send_message" value="Отправить комментарий">
+</div>
+  
 `
+
+//! html-страница со статьей, комментариями к ней
+
+let container_with_comments = document.querySelector('#container_with_comments') as HTMLDivElement
+let name = document.querySelector('#name') as HTMLInputElement
+let message_text = document.querySelector('#message_text') as HTMLInputElement
+let send_message = document.querySelector('#send_message') as HTMLButtonElement
+
+send_message.addEventListener('click', ()=> {
+    name.style.borderColor = 'red'
+    message_text.style.borderColor = 'red'
+    if (name.value!='') {
+        container_with_comments.innerHTML+= `<div>Имя: ${name.value} <br>
+        Комментарий:${message_text.value}<hr></div>`
+        name.value=''
+        message_text.value=''
+        name.style.borderColor = ''
+        message_text.style.borderColor = ''
+    }
+})
+
+
+
+
+
 
 
 //! добавление цветных блоков на страницу
@@ -3983,18 +4017,12 @@ block_with_colors.addEventListener('click', (e:any)=> {
     e.target.style.background = '';    
 })
     
+ 
 
-
-        // table_with_workers.deleteRow(number_delete_worker.value)
-
-
-
-
-
-let check_symbols = document.querySelector('#check_symbols') as HTMLInputElement
 
 
 // inputs
+let check_symbols = document.querySelector('#check_symbols') as HTMLInputElement
 check_symbols.addEventListener('keydown', (e:any)=> {
     if (e.key>=0 && e.key<=9) {
         e.preventDefault()
