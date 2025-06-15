@@ -212,3 +212,26 @@ padding: 10px;
   /* background: red; */
   /* margin-top: -38px; */
 }
+
+
+
+#block_with_colors {
+  height: auto;
+  width: 500px;
+  background: gray;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px;
+}
+
+#add_colors {
+  margin-top: 25px;
+}
+
+.block_with_color {
+  border: 1px solid white;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+
+}

@@ -3723,7 +3723,6 @@ console.log('__________________');
 
 let field = document.querySelector('.field') as HTMLDivElement
 let ball = document.getElementById('ball') as HTMLDivElement
-let ball_shadow = document.getElementById('ball_shadow') as HTMLDivElement
 let ball_image = document.getElementById('ball_image') as HTMLDivElement
 
 
@@ -3781,37 +3780,7 @@ let body_height = parseInt(getComputedStyle(document.body).height)
 console.log(body_height);
 
 console.log(body_height - field.offsetTop - height_of_field);
-
-
-
-
-let body_width = getComputedStyle(document.body).width
-
-// console.log(window.innerWidth);
-
-console.log(document.body.clientWidth);
-console.log(getComputedStyle(document.body).width);
-
-console.log(document.body.scrollWidth);
-
-
-
-
-document.body.addEventListener('click', (e)=> {
-    // console.log(e.target);
-    // console.log(e.currentTarget);
-    // console.log(e.eventPhase);
-    
-})
-
-
-
-
-
-
-
-
-
+ 
 
 let moveToUp = document.querySelector('#moveToUp') as HTMLButtonElement
 moveToUp.addEventListener('click', ()=> {
@@ -3891,18 +3860,18 @@ table_with_workers.addEventListener('click', (e)=> {
 
 //!!!!!!!!!!!!!!!!!!!JS_DZ_Modul_3_Week_11!!!!!!!!!!!!!!!!!!!!!
 
-let special_div = document.querySelector('#special_div') as HTMLDivElement
+let info_from_typescript = document.querySelector('#info_from_typescript') as HTMLDivElement
 
 
-special_div.innerHTML=`
+
+info_from_typescript.innerHTML=`
 <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
         href="index.html">Назад</a></button></div>
 
-  <h3>Модуль 1</h3>
-  <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
-  <p>Задание: Вам необходимо самостоятельно решить, для какого задания
-    какой оператор ветвления лучше использовать: if, switch или
-    тернарный.</p>
+  <h3>Модуль 3</h3>
+  <h3>ТЕМА: ОБРАБОТКА СОБЫТИЙ</h3>
+  <p> «Язык сценариев JavaScript и библиотека jQuery»»
+ </p>
 
 
   <h4> Задание 1. <br>
@@ -3972,10 +3941,53 @@ special_div.innerHTML=`
   <div>5. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
 </div>
   
-<div style="height: 500px;"></div>
 
 
+
+
+<h4>Задание 6. <br> Создать html-страницу с кнопкой, по нажатию на которую 
+добавляются цветные блоки на страницу. По клику на сам блок, 
+он должен удаляться со страницы.
+</h4>
+<div id="change_color_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus earum odit autem qui eveniet animi ex, est beatae
+  natus. Eligendi quis sed repudiandae, rem autem ab aut deserunt id nobis (нажать на квадратик для изменения цвета шрифта).</div>
+<div id="block_with_colors"></div>
+<button id="add_colors">Добавить цветной блок</button>
+
+
+<h4>Задание 7. <br> Создать html-страницу со статьей, комментариями к ней и 
+формой для добавления нового комментария. 
+При нажатии на кнопку Добавить комментарий форма должна 
+очищаться, а комментарий добавляться к списку всех коммента
+риев. Комментарий состоит из имени пользователя, даты и текста. </h4>
 `
+
+
+//! добавление цветных блоков на страницу
+let add_colors = document.querySelector('#add_colors') as HTMLButtonElement
+let block_with_colors = document.querySelector('#block_with_colors') as HTMLDivElement
+let change_color_text = document.querySelector('#change_color_text') as HTMLDivElement
+
+add_colors.addEventListener('click',(e)=> {
+    let colorAcc1 = (Math.random()*255).toFixed()
+    let colorAcc2 = (Math.random()*255).toFixed()
+    let colorAcc3 = (Math.random()*255).toFixed()
+    
+    block_with_colors.innerHTML+=`<div style="background:rgb(${colorAcc1}, ${colorAcc2},${colorAcc3});" class="block_with_color"></div>`
+
+
+})
+
+block_with_colors.addEventListener('click', (e:any)=> {
+    change_color_text.style.color = e.target.style.background
+    e.target.style.background = '';    
+})
+    
+
+
+        // table_with_workers.deleteRow(number_delete_worker.value)
+
+
 
 
 
@@ -4003,6 +4015,9 @@ open_window.addEventListener('click', ()=> {
 close_window.addEventListener('click', ()=> {
     overlay.style.display = 'none'
 })
+
+
+
 
 
 // светофор
@@ -4039,6 +4054,8 @@ container_string.addEventListener('click', (e:any)=>{
     for (let i = 0; i < container_string.childElementCount; i++) {
         if (container_string.children[i]==e.target) {
             container_string.children[i].style.background = 'orange'
+            console.log(3);
+            
         } else {
             container_string.children[i].style.background = ''
         }
@@ -4069,4 +4086,50 @@ btn_1.addEventListener('mouseleave', ()=> {
     title_btn1.style.display = 'none'
 })
 
+
+
+
 //!!!!!!!!!!!!!!!!!!! окончание JS_DZ_Modul_3_Week_11!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!JS_PZ_Modul_4_Week_13!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let info_from_typescript2 = document.querySelector('#info_from_typescript2') as HTMLDivElement
+
+// info_from_typescript2.innerHTML=`
+//     <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
+//         href="index.html">Назад</a></button></div>
+
+//   <h3>Модуль 3</h3>
+//   <h3>ТЕМА: ОБРАБОТКА СОБЫТИЙ</h3>
+//   <p> «Язык сценариев JavaScript и библиотека jQuery»»
+//  </p>
+
+
+//   <h4> Задание 1. <br>
+//     Создать html-страницу для ввода имени пользователя.
+//     Необходимо проверять каждый символ, который вводит поль
+//     зователь. Если он ввел цифру, то не отображать ее в input.</h4>
+// `
+// document.body.addEventListener('DOMContentLoaded', ()=> {
+    
+    // info_from_typescript2. innerHTML = '1111111111111111111134445555555555555555559999999999999'
+// })
