@@ -3927,20 +3927,36 @@ next_light.addEventListener('click',()=> {
         light[2].style.background = 'green'
         light[1].style.background = ''
         light_acc=0
-    }
-    
-    
-    
-    // let color = [ 'red', 'yellow', 'green']
-    // light[light_acc-1].style.background = color[light_acc-1]
-
-
-
-
-
-    
-    
-    
+    }  
 })
+
+
+
+// выделение строки при нажантии
+let container_string = document.querySelector('#container_string') as any
+
+container_string.addEventListener('click', (e:any)=>{
+    
+    for (let i = 0; i < container_string.childElementCount; i++) {
+        if (container_string.children[i]==e.target) {
+            container_string.children[i].style.background = 'orange'
+        } else {
+            container_string.children[i].style.background = ''
+        }
+    }
+})
+    
+
+// Задание с подсказами
+
+let btn_1 = document.querySelector('#btn_1') as HTMLButtonElement
+
+
+console.log(btn_1.value);
+console.log(btn_1.title);
+
+
+
+
 
 

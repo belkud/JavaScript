@@ -5,7 +5,7 @@ body{
   background-attachment: fixed;
   /* font-size: 2em; */
   /* background: linear-gradient(red,blue); */
-  /* color: aliceblue; */
+  color: aliceblue;
   /* background: white; */
   filter:;
 }
@@ -23,8 +23,8 @@ h4 {
   color: red;
   text-shadow: 0px 0px 5px black;
   /* text-shadow: 0px 0px 10px aliceblue; */
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 25px;
   /* font-family:'Courier New', Courier, monospace; */
   /* background-color: black; */
 }
@@ -138,7 +138,7 @@ p{
 
 /* светофор */
 .traffic_light {
-  background: lightblue;
+  background: black;
   display: flex;
   width: 280px;
   height: 100px;
@@ -146,6 +146,8 @@ p{
   /* margin-top: 120px; */
   /* margin-left: -80px; */
   rotate: 90deg;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px white;
 }
 
 .traffic_light div {
@@ -172,6 +174,19 @@ p{
 
 #traffic_light_container{
   margin-top: 130px; 
+  margin-bottom: 130px; 
   display: flex;
 }
+
+#container_string {
+  background: gray;
+  width: 60%;
+}
+
+#container_string div {
+padding: 10px;
+}
+
+
+
 
