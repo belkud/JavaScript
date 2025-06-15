@@ -10,86 +10,9 @@
 </head>
 
 <body>
+  <div id="special_div">
 
-  <div style="display: flex; justify-content: flex-end;"><button class="button_fixed"><a
-        href="index.html">Назад</a></button></div>
-
-  <h3>Модуль 1</h3>
-  <h3>ТЕМА: ВВЕДЕНИЕ В JAVASCRIPT</h3>
-  <p>Задание: Вам необходимо самостоятельно решить, для какого задания
-    какой оператор ветвления лучше использовать: if, switch или
-    тернарный.</p>
-
-
-  <h4> Задание 1. <br>
-    Создать html-страницу для ввода имени пользователя.
-    Необходимо проверять каждый символ, который вводит поль
-    зователь. Если он ввел цифру, то не отображать ее в input.</h4>
-
-
-  <input type="text" id="check_symbols" placeholder="Введите текст">
-
-
-
-  <h4> Задание 2. <br>
-    Создать html-страницу с кнопкой Открыть и модальным
-    окном. На модальном окне должен быть текст и кнопка Закрыть.
-    Изначально модальное окно не отображается. При клике на
-    кнопку Открыть появляется модальное окно, на кнопку Закрыть –
-    исчезает. </h4>
-
-  <button id="open_window" style="margin-top: 25px;">Откыть окно</button>
-  <div id="overlay">
-    <div id="text_of_window">Hello from Modal Window!
-      <button>close</button>
-    </div>
   </div>
-
-
-  <h4> Задание 3. <br>При наведении на кнопку, должна появляться подсказка с тек
-    стом. По умолчанию – подсказка появляется сверху от кнопки. Но 
-    если она не помещается сверху от кнопки, тогда отображается снизу.</h4>
-
-<div style="height: 200px; margin-top: 100px;">
-
-    <button id="btn_1">Наведи на меня</button>
-
-  <div id="title_btn1">
-       Подсказка
-    <div id="title_btn1_inner"></div>
-  </div>
-
-</div>
-
-  <h4> Задание 4. <br>
-    Создать html-страницу со светофором и кнопкой, которая
-    переключает светофор на следующий цвет. </h4>
-
-
-  <div id="traffic_light_container">
-    <div class="traffic_light">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <button id="next_light">Следующий цвет</button>
-  </div>
-
-
-  <h4>Задание 5. <br>
-    При щелчке на строку, цвет фона должен меняться на оранжевый.
-    Учтите, что при повторном щелчке на другую строку, предыдущей –
-    необходимо возвращать прежний цвет.</h4>
-<div id="container_string">
-  <div>1. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
-  <div>2. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
-  <div>3. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
-  <div>4. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
-  <div>5. Lorem ipsum, dolor sit amet consectetur adipisicing elit </div> 
-</div>
-  
-<div style="height: 500px;"></div>
-
 
   <script type="module" src="/src/main.ts"></script>
 </body>
