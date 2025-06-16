@@ -276,3 +276,53 @@ padding: 10px;
   /* border: 1px solid white; */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#title_countries {
+  background-color: gray;
+  width: 177px;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+#title_countries div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: .5s;
+  
+}
+
+#title_countries div:hover {
+  /* border: 1px solid white; */
+  background-color: black;
+}
+#write_countries {
+  margin-left: 100px;
+}
+
+
+
