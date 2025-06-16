@@ -239,11 +239,18 @@ padding: 10px;
   background-color: gray;
   height: auto;
   min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
+#change_color_text {
+  transition: 1.5s;
+}
 
-
-
+#country{
+  margin: 25px;
+}
 
 
 

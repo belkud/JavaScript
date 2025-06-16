@@ -3966,10 +3966,31 @@ info_from_typescript.innerHTML=`
 <div style="margin-top: 25px;">
   <input id="name" type="text" placeholder="введите имя">
   <input id="message_text" type="text" placeholder="введите текст сообщения">
-  <input type="submit" id="send_message" value="Отправить комментарий">
+  <input type="submit" id="send_message" value="Отправить комментарий" style="margin-top:25px;">
 </div>
-  
+
+    <input type="text" id="country">
+<div id="countries_hint"></div>
 `
+
+let country = document.querySelector('#country') as HTMLInputElement
+let countries_hint = document.querySelector('#countries_hint') as HTMLDivElement
+let test3 = ''
+
+let countries = ['Asdfg', 'Boiif', 'Csdfsg', 'Asdgfsfg', 'Csdgg', 'Bsfgsfg'] as any
+// country.value = countries
+country.addEventListener('input', ()=> {
+    for (let i = 0; i < countries.length; i++) {
+    
+    if ((country.value[0]==countries[i][0])) {
+        console.log(countries[i]);
+        test3 += countries[i] + '<br>'
+    } 
+    countries_hint.innerHTML= test3
+}
+    
+})
+
 
 //! html-страница со статьей, комментариями к ней
 
@@ -3982,8 +4003,10 @@ send_message.addEventListener('click', ()=> {
     name.style.borderColor = 'red'
     message_text.style.borderColor = 'red'
     if (name.value!='') {
-        container_with_comments.innerHTML+= `<div>Имя: ${name.value} <br>
-        Комментарий:${message_text.value}<hr></div>`
+        container_with_comments.innerHTML+= `
+        <div style="width: 490px;">
+        <span style="color: red;">Имя: </span> ${name.value} <br>
+        <span style="color: red;">Комментарий: </span> ${message_text.value}<hr><br></div>`
         name.value=''
         message_text.value=''
         name.style.borderColor = ''
@@ -4021,7 +4044,7 @@ block_with_colors.addEventListener('click', (e:any)=> {
 
 
 
-// inputs
+//! inputs
 let check_symbols = document.querySelector('#check_symbols') as HTMLInputElement
 check_symbols.addEventListener('keydown', (e:any)=> {
     if (e.key>=0 && e.key<=9) {
@@ -4035,7 +4058,7 @@ let overlay = document.querySelector('#overlay') as HTMLDivElement
 let close_window = document.querySelector('#overlay button') as HTMLButtonElement
 
 
-// модальное окно
+//! модальное окно
 open_window.addEventListener('click', ()=> {
     overlay.style.display = 'block'
 })
@@ -4048,7 +4071,7 @@ close_window.addEventListener('click', ()=> {
 
 
 
-// светофор
+//! светофор
 
 let light = document.querySelectorAll('.traffic_light div') as any
 let next_light = document.querySelector('#next_light') as HTMLButtonElement
@@ -4074,7 +4097,7 @@ next_light.addEventListener('click',()=> {
 
 
 
-// выделение строки при нажантии
+//! выделение строки при нажатии
 let container_string = document.querySelector('#container_string') as any
 
 container_string.addEventListener('click', (e:any)=>{
@@ -4082,8 +4105,6 @@ container_string.addEventListener('click', (e:any)=>{
     for (let i = 0; i < container_string.childElementCount; i++) {
         if (container_string.children[i]==e.target) {
             container_string.children[i].style.background = 'orange'
-            console.log(3);
-            
         } else {
             container_string.children[i].style.background = ''
         }
@@ -4091,7 +4112,7 @@ container_string.addEventListener('click', (e:any)=>{
 })
     
 
-// Задание с подсказами
+//! Задание с подсказками
 
 let btn_1 = document.querySelector('#btn_1') as HTMLButtonElement
 let title_btn1 = document.querySelector('#title_btn1') as HTMLDivElement
