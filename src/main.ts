@@ -4227,7 +4227,7 @@ console.log(countries);
 
 
 
-console.clear()
+// console.clear()
 
 
 
@@ -4254,7 +4254,7 @@ console.log(massive_with_countries);
 // write_countries.style.outline = 'none'
 // write_countries.style.border = 'none'
 
-write_countries.addEventListener('keydown',(e)=> {
+write_countries.addEventListener('input',(e)=> {
         // e.preventDefault()
 
     for (let i = 0; i < massive_with_countries.length; i++) {
@@ -4290,9 +4290,25 @@ title_countries.addEventListener('click', (e)=> {
     
 })
 
-document.body.addEventListener('mousedown',(e)=> {
-    e.preventDefault()
-    console.log(e.button);
-    console.log(e.buttons);
+// document.body.addEventListener('mousedown',(e)=> {
+//     e.preventDefault()
+//     console.log(e.button);
+//     console.log(e.buttons);
+    
+// })
+
+
+
+
+
+
+let telephone_number = document.querySelector('#telephone_number') as HTMLInputElement
+telephone_number.addEventListener('input',()=> {
+    if (telephone_number.value.length==1) {
+        telephone_number.value+='('
+    } else if(telephone_number.value.length==5) {
+        telephone_number.value+=')'
+    }
+    console.log(telephone_number.value.length);
     
 })
