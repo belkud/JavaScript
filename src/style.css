@@ -253,4 +253,26 @@ padding: 10px;
 }
 
 
+#countries_hint {
+  background: gray;
+  width: 173px;
+  position: absolute;
+  border: 1px solid white;
+  margin-top: -25px;
+  margin-left: 25px;
+  padding-top: 10px;
+}
+.country_hover {
+  padding: 0px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  padding: 5px;
+  transition: .5s;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.country_hover:hover {
+  background: black;
+  /* border: 1px solid white; */
+}
 
