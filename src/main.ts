@@ -4289,23 +4289,60 @@ let telephone_number = document.querySelector('#telephone_number') as HTMLInputE
 let clean_number = document.querySelector('#clean_number') as HTMLInputElement
 
 
+
 telephone_number.addEventListener('keydown',(e:any)=> {
-    console.log(e.key);
-    if (Number(e.key)>=0 && Number(e.key)<=9) {
-        if (telephone_number.value.length>=0 && telephone_number.value.length<=3) {
+    let numbers = telephone_number.value.length
+    if (Number(e.key)<=9) {
+        if (numbers>=0 && numbers<=3) {
             telephone_number.value='+7 ('
-        } else if(telephone_number.value.length==7) {
+        } else if(numbers==7) {
             telephone_number.value+= ') '
-        } else if(telephone_number.value.length==12 || telephone_number.value.length==15) {
+        } else if(numbers==12 || numbers==15) {
             telephone_number.value+='-'
-        }
-        
+        }   
     } else if (e.key !='Backspace') {
         e.preventDefault()
-    }
+    } 
+    // else if (e.key =' ') {
+    //  telephone_number.value+='+'
+    // }
+    console.log(e);
+    
 })
 
 clean_number.addEventListener('click', ()=> {
     telephone_number.value=''
 })
 
+// document.body.addEventListener('keydown', (e)=> {
+//     console.log(e);
+    
+// })
+
+let rabbit = document.querySelector('#rabbit') as HTMLDivElement
+// let eyes = document.querySelectorAll('eyes') as any
+
+rabbit.addEventListener('mousedown', (e)=> {
+    // rabbit.style.marginLeft = '100px'
+    console.log(e.pageX);
+    console.log(e.pageY);
+    
+})
+
+rabbit.addEventListener('mousemove', (e)=> {
+    rabbit.style.left = (e.pageX - parseInt(getComputedStyle(rabbit).width)/2) + 'px'
+    rabbit.style.top = (e.pageY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
+console.log(rabbit.style.left);
+console.log(rabbit.style.top);
+
+    if (parseInt(rabbit.style.top)>=600) {
+        rabbit.style.background = 'red'
+    }  else {
+        rabbit.style.background = 'green'
+    } 
+})    
+
+rabbit.addEventListener('mouseup', (e)=> {
+    rabbit.style.left = (e.clientX - parseInt(getComputedStyle(rabbit).width)/2) + 'px'
+    rabbit.style.top = (e.clientY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
+})    

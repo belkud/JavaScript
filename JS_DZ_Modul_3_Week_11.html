@@ -35,8 +35,7 @@
 
   <input type="text" id="write_countries" placeholder="Введите страну">
   <div id="title_countries"></div>
-
-  <div style="height: 500px;"></div>
+  
 
   <!-- 
   <form action="">
@@ -46,8 +45,69 @@
     <input type="submit">
   </form>
  -->
+ 
+<div id="outer">
+  <div id="inner"></div>
+</div>
 
 
+<style>
+  #outer {
+    background: gray;
+    width: 100px;
+    height: 100px;
+  }
+  #inner {
+    /* position: absolute; */
+    background: black;
+    width: 50px;
+    height: 50px;
+  }
+</style>
+
+<script>
+  let outer = document.querySelector('#outer')
+  let inner = document.querySelector('#inner')
+
+
+  outer.addEventListener ('mouseenter', (e)=> {
+    console.log(e.target);
+    console.log(e.currentTarget);
+  })
+  outer.addEventListener ('mouseleave ', (e)=> {
+    console.log(e.target);
+    console.log(e.currentTarget);
+  })
+  // inner.addEventListener ('click', (e)=> {
+  //   // e.preventDefault()
+  //   console.log(e.target);
+  //   console.log(e.currentTarget);
+    
+  // })
+
+</script>
+
+
+
+<button style="border-color: red;">123123</button>
+
+
+ <pre id="rabbit">
+  |\   /|
+   \|_|/
+   /. .\
+  =\_Y_/=
+  {''o''}
+</pre>
+<style>
+   #rabbit {
+    background: gray;
+    width: 90px;
+    position: absolute;
+    /* z-index: -100; */
+   }
+</style>
+<input type="range">
   <script type="module" src="/src/main.ts"></script>
 </body>
 
