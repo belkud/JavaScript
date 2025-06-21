@@ -4124,14 +4124,14 @@ next_light.addEventListener('click', () => {
 
 //! выделение строки при нажатии
 let container_string = document.querySelector('#container_string') as any
-
+let child = container_string.children
 container_string.addEventListener('click', (e: any) => {
 
     for (let i = 0; i < container_string.childElementCount; i++) {
-        if (container_string.children[i] == e.target) {
-            container_string.children[i].style.background = 'orange'
+        if (child[i] == e.target) {
+            child[i].style.background = 'orange'
         } else {
-            container_string.children[i].style.background = ''
+            child[i].style.background = ''
         }
     }
 })
@@ -4320,7 +4320,7 @@ clean_number.addEventListener('click', ()=> {
 // })
 
 let rabbit = document.querySelector('#rabbit') as HTMLDivElement
-// let eyes = document.querySelectorAll('eyes') as any
+let eyes = document.querySelectorAll('.eyes') as any
 
 rabbit.addEventListener('mousedown', (e)=> {
     // rabbit.style.marginLeft = '100px'
@@ -4335,7 +4335,7 @@ rabbit.addEventListener('mousemove', (e)=> {
 console.log(rabbit.style.left);
 console.log(rabbit.style.top);
 
-    if (parseInt(rabbit.style.top)>=600) {
+    if (parseInt(rabbit.style.top)>=500) {
         rabbit.style.background = 'red'
     }  else {
         rabbit.style.background = 'green'
@@ -4343,6 +4343,22 @@ console.log(rabbit.style.top);
 })    
 
 rabbit.addEventListener('mouseup', (e)=> {
-    rabbit.style.left = (e.clientX - parseInt(getComputedStyle(rabbit).width)/2) + 'px'
-    rabbit.style.top = (e.clientY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
+    let arr = []
+    let x = parseInt(rabbit.style.left)
+    let y = parseInt(rabbit.style.top)
+    arr.push(x , y)
+    console.log(arr);
+    
+    eyes[0].classList.add('eye_color')
+    eyes[1].classList.add('eye_color')
+    rabbit.style.left = arr[0]
+    rabbit.style.top = arr[1] + 'px'
+    // rabbit.style.top = (e.clientY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
 })    
+
+
+// rabbit.ondragstart = function() {
+//   return false;
+//   console.log();
+  
+// };
