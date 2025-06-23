@@ -1,6 +1,6 @@
 body{
   background: url(./public/back.webp);
-  background: url(./public/back2.webp);
+  /* background: url(./public/back2.webp); */
   background-size: cover;
   background-attachment: fixed;
   /* font-size: 2em; */

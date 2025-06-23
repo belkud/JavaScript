@@ -4314,47 +4314,49 @@ clean_number.addEventListener('click', ()=> {
     telephone_number.value=''
 })
 
-// document.body.addEventListener('keydown', (e)=> {
-//     console.log(e);
-    
-// })
 
-let rabbit = document.querySelector('#rabbit') as HTMLDivElement
-let eyes = document.querySelectorAll('.eyes') as any
 
-rabbit.addEventListener('mousedown', (e)=> {
-    // rabbit.style.marginLeft = '100px'
-    console.log(e.pageX);
-    console.log(e.pageY);
-    
+
+
+
+
+
+
+
+//! перетаскивание кролика
+
+let rabbit = document.querySelector('#rabbit') as HTMLElement
+// let eyes = document.querySelectorAll('.eyes') as any
+document.addEventListener('dragstart', (e)=> {
+    console.log(123);
+    e.preventDefault()
 })
 
-rabbit.addEventListener('mousemove', (e)=> {
+  function stopRabbit(e: any) {
     rabbit.style.left = (e.pageX - parseInt(getComputedStyle(rabbit).width)/2) + 'px'
     rabbit.style.top = (e.pageY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
-console.log(rabbit.style.left);
-console.log(rabbit.style.top);
 
     if (parseInt(rabbit.style.top)>=500) {
         rabbit.style.background = 'red'
     }  else {
         rabbit.style.background = 'green'
     } 
-})    
+
+    }
+
+
+rabbit.addEventListener('mousedown', ()=> {
+    document.addEventListener('mousemove', stopRabbit)    
+})
+
 
 rabbit.addEventListener('mouseup', (e)=> {
-    let arr = []
-    let x = parseInt(rabbit.style.left)
-    let y = parseInt(rabbit.style.top)
-    arr.push(x , y)
-    console.log(arr);
+    console.log(123);
     
-    eyes[0].classList.add('eye_color')
-    eyes[1].classList.add('eye_color')
-    rabbit.style.left = arr[0]
-    rabbit.style.top = arr[1] + 'px'
-    // rabbit.style.top = (e.clientY - parseInt(getComputedStyle(rabbit).height)/2) + 'px'
-})    
+    document.removeEventListener('mousedown', stopRabbit)
+    rabbit.removeEventListener('mousedown', stopRabbit)
+}, {once:true})
+
 
 
 // rabbit.ondragstart = function() {
@@ -4362,3 +4364,31 @@ rabbit.addEventListener('mouseup', (e)=> {
 //   console.log();
   
 // };
+
+
+let press_ctrl = document.querySelector('#press_ctrl') as HTMLInputElement
+  
+document.addEventListener('click',(e:any)=> {
+    if(e.target.id == 'press_ctrl') {
+    console.log(e);
+    console.log(getComputedStyle(e.target).color);
+}
+
+})
+
+
+
+document.body.addEventListener('keydown',(e)=> {
+    if (e.key=='Control') return
+if (e.key  && e.ctrlKey) {
+console.log('тест!!!');
+
+}
+//     // console.log(e.key);
+//     // console.log(e.code);
+    console.log(e.key); //! то что печатается пользователем
+    console.log(e.code); //! физическая кнопка
+    
+})
+
+
