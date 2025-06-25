@@ -4378,17 +4378,54 @@ document.addEventListener('click',(e:any)=> {
 
 
 
-document.body.addEventListener('keydown',(e)=> {
-    if (e.key=='Control') return
-if (e.key  && e.ctrlKey) {
-console.log('тест!!!');
+// document.body.addEventListener('keydown',(e)=> {
+//     if (e.key=='Control') return
+// if (e.key  && e.ctrlKey) {
+// console.log('тест!!!');
+
+// }
+// //     // console.log(e.key);
+// //     // console.log(e.code);
+//     console.log(e.key); //! то что печатается пользователем
+//     console.log(e.code); //! физическая кнопка
+    
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('keyup', clicks)
+
+function clicks (e:any) {
+    if (e.ctrlKey && e.key) {
+        
+    }
+    console.log(e.key);
+    console.log(e.code);
 
 }
-//     // console.log(e.key);
-//     // console.log(e.code);
-    console.log(e.key); //! то что печатается пользователем
-    console.log(e.code); //! физическая кнопка
-    
-})
+
+
+
+
 
 
