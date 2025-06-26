@@ -10,10 +10,26 @@
 </head>
 
 <body>
-  <div id="info_from_typescript" style="display: none;">
+  <div id="info_from_typescript" style="display: ;">
 
   </div>
-  
+
+  <div id="rgb">RGB</div>
+<style>
+  #rgb{
+    height: 60px;
+    width: 150px;
+    /* background: rgb(0, 38, 255); */
+    position: fixed;
+    top: 100px;
+    opacity: .9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+
   <h4>Задание №9 <br>
     При вводе пользователем телефона в input должны автоматически вводится скобки и тире, реализовать кнопку очистить
     номер. Важно! В input отображаются только цифры.</h4>
@@ -33,9 +49,17 @@
   <!-- JS_PZ_Modul_4_Week_13 -->
 
 
-  <input type="text" id="write_countries" placeholder="Введите страну">
+  <input onclick="clicks()" type="text" id="write_countries" placeholder="Введите страну">
   <div id="title_countries"></div>
   
+  <script>
+    
+function clicks () {
+    console.log('Hello');
+}
+
+
+  </script>
 
   <!-- 
   <form action="">
@@ -91,13 +115,22 @@
 
 <button style="border-color: red;">123123</button>
 
- <pre id="rabbit">
+ <pre id="rabbit" onclick="pressTarget()">
   |\   /|
    \|_|/
   /<span class="eyes" style=" font-size: 2em;">.</span> <span class="eyes" style=" font-size: 2em;">.</span>\
   =\_Y_/=
   {''o''}
 </pre>
+
+<script>
+  function pressTarget (e) {
+    console.log(`Вы нажали на ${e.target.id}`);
+    
+  }
+  console.log(`Вы нажали на ${e.target.id}`);
+</script>
+
 <style>
    #rabbit {
     background: gray;

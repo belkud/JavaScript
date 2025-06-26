@@ -4395,6 +4395,26 @@ document.addEventListener('click',(e:any)=> {
 
 
 
+document.addEventListener('touchstart', ()=> {
+    // console.log('touch');
+    
+})
+
+
+
+// rgb.style.background = `rgb(0, 38, ${255})`
+
+//! rgb- квадрат
+let rgb = document.querySelector('#rgb') as HTMLDivElement
+document.addEventListener('click', (e:any)=> {
+console.log(document.body.offsetHeight);
+console.log(rgb.offsetTop);
+console.log(rgb.offsetHeight);
+console.log(e.pageY as any);
+    rgb.innerHTML= `rgb(255, 0, ${(e.pageY/12).toFixed()})`
+    rgb.style.background = `rgb(255, 0, ${e.pageY/12})`
+})
+    rgb.style.background = 'rgb(255, 0, 255)'
 
 
 
@@ -4407,22 +4427,17 @@ document.addEventListener('click',(e:any)=> {
 
 
 
+// document.addEventListener('keyup', clicks)
 
-
-
-
-
-
-document.addEventListener('keyup', clicks)
-
-function clicks (e:any) {
-    if (e.ctrlKey && e.key) {
+// function clicks (e:any) {
+//     if (e.ctrlKey && e.key) {
         
-    }
-    console.log(e.key);
-    console.log(e.code);
+//     }
+//     console.log(e);
+//     // console.log(e.key);
+//     // console.log(e.code);
 
-}
+// }
 
 
 
