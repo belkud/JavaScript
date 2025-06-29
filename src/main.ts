@@ -4406,18 +4406,47 @@ document.addEventListener('touchstart', ()=> {
 
 //! rgb- квадрат
 let rgb = document.querySelector('#rgb') as HTMLDivElement
-document.addEventListener('click', (e:any)=> {
-console.log(document.body.offsetHeight);
-console.log(rgb.offsetTop);
-console.log(rgb.offsetHeight);
-console.log(e.pageY as any);
-    rgb.innerHTML= `rgb(255, 0, ${(e.pageY/12).toFixed()})`
-    rgb.style.background = `rgb(255, 0, ${e.pageY/12})`
+// document.addEventListener('mousemove', (e:any)=> {
+// console.log(document.body.offsetHeight);
+// console.log(rgb.offsetTop);
+// console.log(rgb.offsetHeight);
+// console.log(e.pageY as any);
+//     rgb.innerHTML= `rgb(255, 0, ${(e.pageY/12).toFixed()})`
+//     rgb.style.background = `rgb(255, 0, ${e.pageY/12})`
+// })
+//     rgb.style.background = 'rgb(255, 0, 255)'
+    
+    
+    
+    
+// шаг в 40 px
+// высота 3200 px  80 раз
+// высота 2000 px  50 раз
+
+let heightAcc = document.body.offsetHeight/40
+let heightAccStep = 0
+
+function eCode (e:any) {
+    if (heightAccStep<0) return heightAccStep==0
+    if (heightAccStep>51) return heightAccStep==255
+    rgb.innerHTML= `rgb(255, 0, ${(heightAccStep*5).toFixed()})`
+    rgb.style.background = `rgb(255, 0, ${heightAccStep*4.5})`
+    console.log(e.code);
+    console.log((heightAccStep*5).toFixed());
+}
+
+document.addEventListener('keydown', (e:any)=> {
+    if (e.key=='ArrowDown') {
+        eCode(e)        
+        heightAccStep+=1
+    }
+    if (e.key=='ArrowUp') {
+        eCode(e)        
+        heightAccStep-=1
+    }
+
 })
     rgb.style.background = 'rgb(255, 0, 255)'
-
-
-
 
 
 
@@ -4438,6 +4467,41 @@ console.log(e.pageY as any);
 //     // console.log(e.code);
 
 // }
+
+
+
+
+
+
+window.addEventListener('scroll', (e)=> {
+    console.log(e);
+    console.log(window.pageYOffset);
+    
+})
+
+
+
+
+
+document.addEventListener('mousemove', (e:any)=> {
+console.log(document.body.offsetHeight);
+console.log(rgb.offsetTop);
+console.log(rgb.offsetHeight);
+console.log(e.pageY as any);
+    rgb.innerHTML= `rgb(255, 0, ${(e.pageY/12).toFixed()})`
+    rgb.style.background = `rgb(255, 0, ${e.pageY/12})`
+})
+    rgb.style.background = 'rgb(255, 0, 255)'
+
+
+
+
+
+
+
+
+
+
 
 
 
