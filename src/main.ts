@@ -4474,8 +4474,8 @@ document.addEventListener('keydown', (e:any)=> {
 
 
 window.addEventListener('scroll', (e)=> {
-    console.log(e);
-    console.log(window.pageYOffset);
+    // console.log(e);
+    // console.log(window.pageYOffset);
     
 })
 
@@ -4484,10 +4484,10 @@ window.addEventListener('scroll', (e)=> {
 
 
 document.addEventListener('mousemove', (e:any)=> {
-console.log(document.body.offsetHeight);
-console.log(rgb.offsetTop);
-console.log(rgb.offsetHeight);
-console.log(e.pageY as any);
+// console.log(document.body.offsetHeight);
+// console.log(rgb.offsetTop);
+// console.log(rgb.offsetHeight);
+// console.log(e.pageY as any);
     rgb.innerHTML= `rgb(255, 0, ${(e.pageY/12).toFixed()})`
     rgb.style.background = `rgb(255, 0, ${e.pageY/12})`
 })
@@ -4497,14 +4497,66 @@ console.log(e.pageY as any);
 
 
 
+let blocknote = document.getElementById('blocknote') as HTMLInputElement
+let userText = document.getElementById('userText') as HTMLDivElement
+
+// userText.innerHTML=' Пишем сюда текст'
+
+blocknote.addEventListener('keydown',(e)=> {
+    console.log(e.key);
+    console.log(e.code);
+    userText.innerHTML+=e.key
+    
+})
+
+
+
+// let changeBackground = document.getElementById('changeBackground') as HTMLButtonElement
+let changeBackground = document.querySelector('#changeBackground') as HTMLButtonElement
+
+changeBackground.addEventListener('contextmenu', (e)=> {
+    let x1 = Math.round(Math.random()*255)
+    let x2 = Math.round(Math.random()*255)
+    let x3 = Math.round(Math.random()*255)
+        e.preventDefault()
+    console.log('x1  ' + x1);
+    console.log('x2  ' + x2);
+    console.log('x3  ' + x3);
+    // document.body.style.background = `${rgb(x1, x2, x3)}`;
+    document.body.style.background = `rgb(${x1}, ${x2}, ${x3})`
+    
+})
+
+
+let accWidth = 200
+ changeBackground.addEventListener('click',()=> {
+    accWidth+=5
+    changeBackground.style.width = accWidth + 'px'
+}) 
+
+document.body.addEventListener('keydown', ()=> {
+    accWidth+=5
+    changeBackground.style.marginTop = accWidth + 'px'
+
+})
+
+    changeBackground.style.position = 'absolute'
 
 
 
 
 
 
+let accum = 0
+
+setInterval(() => {
+    accum++
+    changeBackground.innerText=`Поменять цвет документа ${accum}`
+    // console.log(accum);
+}, 1000);
 
 
-
+console.log(changeBackground);
+console.log(changeBackground.innerText);
 
 
