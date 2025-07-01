@@ -10,9 +10,11 @@
 </head>
 
 <body>
-  <div id="info_from_typescript" style="display: none;">
+  <div id="info_from_typescript" style="display: none ;">
 
   </div>
+
+
 
   <div id="rgb">RGB</div>
 <style>
@@ -157,38 +159,50 @@ function clicks () {
 <input type="text" id="press_ctrl">
 
 
-<div id="userText">Текст</div>
-<input type="text" id="blocknote">
+<div id="userText"></div>
+<input type="text" id="blocknote" placeholder="введите текст">
 
 <style>
-#blocknote {
-  width: 199px;
-  margin-top: 150px;
-  height: 100px;
-  background: lightgray;
-}
-
-#userText {
-  margin-top: 150px;
-  width: 399px;
-  height: 200px;
-  background: lightgray;
-  color: rgb(221, 176, 176);
   
-}
+  #userText {
+    margin-top: 150px;
+    width: 399px;
+    height: 200px;
+    background: lightgray;
+    color: red;
+  }
+    
+  #blocknote {
+    width: 199px;
+    margin-top: 50px !important;
+    /* height: 100px; */
+    background: lightgray;
+  }
 
 </style>
 
-<button id="changeBackground">Поменять цвет документа</button>
+<br>
+<button id="changeBackground">Поменять цвет документа (правая кнопка  мыши), левой возврат</button>
 <style>
   #changeBackground {
     background: rgb(0, 255, 25);
-    margin-top: 200px;
+    margin-top: 50px;
+    width: 180px;
   }
 </style>
 
+<br>
+<br>
+<br>
 
-<input type="text" value="123">
+<img id="new_ball" src="" width="100px" alt="" data-ball="src/public/ball.svg">
+<br>
+<br>
+<br>
+<button id="ball_button">нажми меня</button>
+<br>
+<br>
+<br>
 
 
   <script type="module" src="/src/main.ts"></script>

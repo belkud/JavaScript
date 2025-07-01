@@ -4423,30 +4423,28 @@ let rgb = document.querySelector('#rgb') as HTMLDivElement
 // высота 3200 px  80 раз
 // высота 2000 px  50 раз
 
-let heightAcc = document.body.offsetHeight/40
-let heightAccStep = 0
+// let heightAcc = document.body.offsetHeight/40
+// let heightAccStep = 0
 
-function eCode (e:any) {
-    if (heightAccStep<0) return heightAccStep==0
-    if (heightAccStep>51) return heightAccStep==255
-    rgb.innerHTML= `rgb(255, 0, ${(heightAccStep*5).toFixed()})`
-    rgb.style.background = `rgb(255, 0, ${heightAccStep*4.5})`
-    console.log(e.code);
-    console.log((heightAccStep*5).toFixed());
-}
+// function eCode (e:any) {
+//     if (heightAccStep<0) return heightAccStep==0
+//     if (heightAccStep>51) return heightAccStep==255
+//     rgb.innerHTML= `rgb(255, 0, ${(heightAccStep*5).toFixed()})`
+//     rgb.style.background = `rgb(255, 0, ${heightAccStep*4.5})`
+// }
 
-document.addEventListener('keydown', (e:any)=> {
-    if (e.key=='ArrowDown') {
-        eCode(e)        
-        heightAccStep+=1
-    }
-    if (e.key=='ArrowUp') {
-        eCode(e)        
-        heightAccStep-=1
-    }
+// document.addEventListener('keydown', (e:any)=> {
+//     if (e.key=='ArrowDown') {
+//         eCode(e)        
+//         heightAccStep+=1
+//     }
+//     if (e.key=='ArrowUp') {
+//         eCode(e)        
+//         heightAccStep-=1
+//     }
 
-})
-    rgb.style.background = 'rgb(255, 0, 255)'
+// })
+//     rgb.style.background = 'rgb(255, 0, 255)'
 
 
 
@@ -4496,21 +4494,22 @@ document.addEventListener('mousemove', (e:any)=> {
 
 
 
-
+//!ввод текста в инпут с отображением его в div
 let blocknote = document.getElementById('blocknote') as HTMLInputElement
 let userText = document.getElementById('userText') as HTMLDivElement
 
-// userText.innerHTML=' Пишем сюда текст'
 
 blocknote.addEventListener('keydown',(e)=> {
     console.log(e.key);
     console.log(e.code);
-    userText.innerHTML+=e.key
+    if (e.key=='Backspace') return
+        userText.innerHTML+=e.key
     
 })
 
 
 
+//! изменение background у body
 // let changeBackground = document.getElementById('changeBackground') as HTMLButtonElement
 let changeBackground = document.querySelector('#changeBackground') as HTMLButtonElement
 
@@ -4527,36 +4526,54 @@ changeBackground.addEventListener('contextmenu', (e)=> {
     
 })
 
+changeBackground.addEventListener('click', ()=> {
+    document.body.style.background = ''
+    
+})
 
-let accWidth = 200
- changeBackground.addEventListener('click',()=> {
-    accWidth+=5
-    changeBackground.style.width = accWidth + 'px'
-}) 
 
-document.body.addEventListener('keydown', ()=> {
-    accWidth+=5
-    changeBackground.style.marginTop = accWidth + 'px'
+
+
+//! бесконечная прокрутка вниз
+
+
+let docHeightAcc = 0
+document.body.addEventListener('keydown',()=> {
+    if (parseInt(getComputedStyle(document.body).height)<Number(window.pageYOffset.toFixed())+window.innerHeight) {
+        docHeightAcc+=1
+        document.body.style.height = window.innerHeight * docHeightAcc+'px'
+
+    }
+console.log(parseInt(getComputedStyle(document.body).height));
+console.log(window.pageYOffset.toFixed());
+console.log(window.innerHeight);
+console.log(docHeightAcc);
 
 })
 
-    changeBackground.style.position = 'absolute'
 
 
 
 
 
+let ball_button = document.querySelector('#ball_button') as HTMLButtonElement
+let new_ball = document.querySelector('#new_ball') as HTMLImageElement
 
-let accum = 0
-
-setInterval(() => {
-    accum++
-    changeBackground.innerText=`Поменять цвет документа ${accum}`
-    // console.log(accum);
-}, 1000);
-
-
-console.log(changeBackground);
-console.log(changeBackground.innerText);
+let ballAcc = 0
+ball_button.addEventListener('click', ()=> {
+    //! делаем img ссылку на мяч
+    new_ball.src=new_ball.dataset.ball as any
+    
+    let imageBall = document.createElement('img')
+    imageBall.src = 'src/public/ball.svg'
+    
+    ballAcc+=30
+    imageBall.style.transition= '1s'
+    imageBall.style.rotate= `${ballAcc}deg`
+    
+    document.body.append(imageBall)
+    
+    
+})
 
 
