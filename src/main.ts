@@ -4310,7 +4310,10 @@ telephone_number.addEventListener('keydown',(e:any)=> {
     
 })
 
-clean_number.addEventListener('click', ()=> {
+clean_number.addEventListener('click', (e)=> {
+    e.preventDefault()
+    console.log(e);
+    
     telephone_number.value=''
 })
 
@@ -4576,4 +4579,87 @@ ball_button.addEventListener('click', ()=> {
     
 })
 
+
+//! Задание 6
+//! Создать html-страницу с несколькими кнопками.
+//! При наведении на кнопку, должна появляться подсказка с текстом. По умолчанию – подсказка появляется сверху от кнопки. Но
+//! если она не помещается сверху от кнопки, тогда отображается снизу.
+
+let container_title = document.querySelector('.container_title') as HTMLDivElement
+let button_title = document.querySelector('.button_title') as HTMLDivElement
+let button_with_title = document.querySelector('.button_with_title') as HTMLButtonElement //!кнопка
+
+button_with_title.addEventListener('mousemove', (e)=> {
+    button_title.style.display= 'block'
+    if (e.clientY< 45) {
+        button_title.style.top= '75px'
+        button_title.children[1].style.top= '-8px'
+    } else {
+        button_title.style.top= '0px'
+        button_title.children[1].style.top= '17px'   
+    }    
+})
+
+
+button_with_title.addEventListener('mouseleave', ()=> {
+    button_title.style.display= 'none'
+})
+
+
+
+
+;
+console.log(document.forms[0].id);
+console.log(document.forms[0].elements[0].placeholder = '7777777777777');
+console.log(document.forms[0].elements[0]);
+console.log(document.forms[0][1].innerHTML);
+console.log(document.forms[0][1].innerText);
+
+
+console.log(document.forms)
+
+console.log(document.forms.formId);
+
+
+console.log(document.forms[1][0][0].innerHTML)
+console.log(document.forms[1][0][0].value)
+console.log(document.forms[1][0][0])
+
+
+let selected = document.querySelector('#selected') as HTMLSelectElement
+
+console.log(selected.selectedIndex);
+console.log(selected.value);
+
+
+
+// console.log(selected.options[2].selected = true);
+// console.log(selected.options[2].selected == true);
+
+
+let genres = document.querySelector('#genres') as HTMLSelectElement
+genres.innerHTML+=`<option value="classic" selected>Классика</option>`
+console.log(genres);
+
+
+
+
+
+
+
+
+window.addEventListener('scroll', function(event) {
+    console.log(this.pageYOffset);
+    event.preventDefault()
+    // document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
+});
+
+
+window.addEventListener('keydown', function(event) {
+    if (event.key == 'ArrowDown' || event.key == 'PageDown') {
+        event.preventDefault()
+    }
+    console.log(event.key);
+    
+});
 

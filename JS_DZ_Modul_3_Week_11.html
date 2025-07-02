@@ -31,17 +31,90 @@
   }
 </style>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
   <h4>Задание №9 <br>
     При вводе пользователем телефона в input должны автоматически вводится скобки и тире, реализовать кнопку очистить
     номер. Важно! В input отображаются только цифры.</h4>
-  <div style="display: flex; flex-direction: column; gap: 10px;">
-    <div style="color: lightgrey;">Введите номер телефона</div>
-    <input type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
-    <button id="clean_number">
-      <div id="button_line"></div>Очистить номер
-    </button>
+  <form id="formId" style="display: flex; flex-direction: column; gap: 10px;">
+    <fieldset style="border: 2px solid red; width: 180px;">
+      <legend>Info</legend>
+
+      <div style="color: lightgrey;">Введите номер телефона</div>
+      <input type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
+      <button id="clean_number">
+        <div id="button_line"></div>Очистить номер
+      </button>
+    </fieldset>
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <form action="">
+    <select name="" id="selected" >
+      <option value="" selected disabled>-</option>
+      <option value="qwerty" disabled>синий</option>
+      <option value="">красный</option>
+      <option value="">желтый</option>
+      <option value="">зеленый</option>
+      <option value="">оранжевый</option>
+    </select>
+  </form>
+
+  <select id="genres">
+    <option value="rock">Рок</option>
+    <option value="blues" selected>Блюз</option>
+  </select>
+  
+    <br>
+    <br>
+
+  <!--! задание с подсказкой при наведении -->
+
+  <div class="container_title">
+    <div class="button_title" style="position: absolute;  top: 0px; display: none;">
+      <div style="text-align: center;">title</div>
+      <div></div>
+    </div>
+    <button class="button_with_title">Кнопка 1</button>
   </div>
+
+  <style>
+    .container_title {
+      position: relative;
+    }
+
+    .button_title :nth-child(1) {
+      width: 80px;
+      height: 25px;
+      background: purple;
+      position: absolute;
+    }
+    .button_title :nth-child(2) {
+      width: 15px;
+      height: 15px;
+      background: purple;
+      position: absolute;
+      rotate: 45deg;
+      left: 33px;
+      top: 17px;
+      z-index: -10;
+    }
+    .button_with_title {
+      margin-top: 38px;
+      width: 80px;
+      position: absolute;
+    }
+
+  </style>
 
   <br>
   <br>

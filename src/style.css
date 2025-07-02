@@ -8,6 +8,7 @@ body{
   color: aliceblue;
   /* background: white; */
   filter:;
+  /* overflow: hidden; */
 }
 
 /* body button {
@@ -72,10 +73,10 @@ p{
 
 #container button, .button_fixed {
   margin-top: 5px;
-  background-color: blue;
-  border-radius: 5px;
-  padding:5px 15px;
   transition: .5s;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: blue;
   filter: drop-shadow(0px 0px 3px aliceblue); 
 
 }
