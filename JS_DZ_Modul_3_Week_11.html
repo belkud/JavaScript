@@ -262,6 +262,12 @@ function clicks () {
     margin-top: 50px;
     width: 180px;
   }
+
+
+
+  .newClass {
+    background: greenyellow;
+  }
 </style>
 
 <br>
@@ -276,6 +282,84 @@ function clicks () {
 <br>
 <br>
 <br>
+
+<div id="board_with_color"></div>
+<br>
+<br>
+
+<form action="" id="colorRGB" style="display: flex; flex-direction: column;">
+  <div>
+  <div>
+    <label for="">R</label>
+    <input tabindex="3" id="inputR" type="text" maxlength="3">
+  </div>
+  <div>
+    <label for="">G</label>
+    <input tabindex="2" id="inputG" type="text" maxlength="3">
+  </div>
+  <div>
+    <label for="">B</label>
+    <input tabindex="1" id="inputB" type="text" maxlength="3">
+  </div>
+  </div>
+  <input id="add_color" style="width: 180px; margin: 15px;" type="submit" value="Add color">
+</form>
+
+<!-- <input type="tel">
+<input type="radio">
+<input type="password">
+<input type="number">
+ -->
+<textarea name="" id=""></textarea>
+<input type="text">
+<style>
+  #board_with_color{
+    background-color: rgb(141, 140, 140);
+    width: 300px;
+    min-height: 100px;
+  }
+  #colorRGB div {
+    display: flex;
+  }
+  #colorRGB input {
+    width: 50px;
+  }
+
+</style>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<select id="select" multiple >
+  <option value="apple" disabled selected>-</option>
+  <option value="apple">Яблоко</option>
+  <option value="pear" >Груша</option>
+  <option value="banana" >Банан</option>
+</select>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 
   <script type="module" src="/src/main.ts"></script>

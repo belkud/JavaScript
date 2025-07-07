@@ -4289,7 +4289,6 @@ let telephone_number = document.querySelector('#telephone_number') as HTMLInputE
 let clean_number = document.querySelector('#clean_number') as HTMLInputElement
 
 
-
 telephone_number.addEventListener('keydown',(e:any)=> {
     let numbers = telephone_number.value.length
     if (Number(e.key)<=9) {
@@ -4306,7 +4305,7 @@ telephone_number.addEventListener('keydown',(e:any)=> {
     // else if (e.key =' ') {
     //  telephone_number.value+='+'
     // }
-    console.log(e);
+    // console.log(e);
     
 })
 
@@ -4319,7 +4318,10 @@ clean_number.addEventListener('click', (e)=> {
 
 
 
-
+// document.addEventListener('keydown', (event)=> {
+//     console.log(event);
+    
+// })
 
 
 
@@ -4547,10 +4549,10 @@ document.body.addEventListener('keydown',()=> {
         document.body.style.height = window.innerHeight * docHeightAcc+'px'
 
     }
-console.log(parseInt(getComputedStyle(document.body).height));
-console.log(window.pageYOffset.toFixed());
-console.log(window.innerHeight);
-console.log(docHeightAcc);
+// console.log(parseInt(getComputedStyle(document.body).height));
+// console.log(window.pageYOffset.toFixed());
+// console.log(window.innerHeight);
+// console.log(docHeightAcc);
 
 })
 
@@ -4649,7 +4651,7 @@ console.log(genres);
 
 
 window.addEventListener('scroll', function(event) {
-    console.log(this.pageYOffset);
+    // console.log(this.pageYOffset);
     event.preventDefault()
     // document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
 });
@@ -4659,7 +4661,80 @@ window.addEventListener('keydown', function(event) {
     if (event.key == 'ArrowDown' || event.key == 'PageDown') {
         event.preventDefault()
     }
-    console.log(event.key);
+    // console.log(event.key);
     
 });
 
+console.clear()
+
+
+
+//! /JS_PZ_Module_5_Week_14
+//! Создать html-страницу с палитрой цветов и формой для добавления нового цвета. После заполнения формы новый цвет должен
+//! добавиться в палитру.
+
+
+// let colorRGB = document.querySelector('#colorRGB div') as HTMLFormElement
+
+// console.log(colorRGB);
+
+let inputR = document.querySelector('#inputR') as HTMLInputElement
+let inputG = document.querySelector('#inputG') as HTMLInputElement
+let inputB = document.querySelector('#inputB') as HTMLInputElement
+let board_with_color = document.querySelector('#board_with_color') as HTMLDivElement
+let add_color = document.querySelector('#add_color') as HTMLButtonElement //! кнопка
+
+
+inputR.addEventListener('keydown', (e)=> {
+    if(Number(inputR.value)>=255 || Number(inputG.value>=255) || Number(inputB.value>=255)) {
+        inputR.style.background = 'red'
+        inputG.style.background = 'red'
+        inputB.style.background = 'red'
+    }
+    console.log(inputR.value);
+    
+})
+
+add_color.addEventListener('click', (e)=> {
+    e.preventDefault()
+    board_with_color.innerHTML+= `
+     <div style="display:flex; justify-content: center; gap:20px; margin-top:10px"> 
+        <div style="height: 20px; width: 20px; background:rgb(${inputR.value}, ${inputG.value}, ${inputB.value});"></div>
+        <div>RGB (${inputR.value}, ${inputG.value}, ${inputB.value}) </div>
+     </div>`
+    inputR.value = ''
+    inputG.value = ''
+    inputB.value = ''
+})
+
+// console.log(document.forms.colorRGB);
+// console.log(document.forms[2][3].value = 'Отправить');
+// add_color.value = '55555'
+
+// console.log(document.forms.colorRGB.elements[2]);
+// console.log(document.forms.colorRGB[2]);
+
+// console.log(document);
+
+
+// document.addEventListener('keydown',(e)=> {
+//     console.log(e.target);
+    
+// })
+
+inputB.addEventListener('focus', ()=> {
+    inputB.style.background = 'green'
+    console.log('Мы вошли в элемент');
+})
+
+inputB.addEventListener('blur', ()=> {
+    inputB.style.background = ''
+    console.log('Мы ушли с элемента');
+})
+    
+
+
+
+// .newClass {
+//     background: greenyellow;
+//   }
