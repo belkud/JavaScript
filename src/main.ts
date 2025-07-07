@@ -4707,20 +4707,6 @@ add_color.addEventListener('click', (e)=> {
     inputB.value = ''
 })
 
-// console.log(document.forms.colorRGB);
-// console.log(document.forms[2][3].value = 'Отправить');
-// add_color.value = '55555'
-
-// console.log(document.forms.colorRGB.elements[2]);
-// console.log(document.forms.colorRGB[2]);
-
-// console.log(document);
-
-
-// document.addEventListener('keydown',(e)=> {
-//     console.log(e.target);
-    
-// })
 
 inputB.addEventListener('focus', ()=> {
     inputB.style.background = 'green'
