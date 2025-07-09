@@ -4623,9 +4623,9 @@ console.log(document.forms)
 console.log(document.forms.formId);
 
 
-console.log(document.forms[1][0][0].innerHTML)
-console.log(document.forms[1][0][0].value)
-console.log(document.forms[1][0][0])
+// console.log(document.forms[1][0][0].innerHTML)
+// console.log(document.forms[1][0][0].value)
+// console.log(document.forms[1][0][0])
 
 
 let selected = document.querySelector('#selected') as HTMLSelectElement
@@ -4697,15 +4697,22 @@ inputR.addEventListener('keydown', (e)=> {
 
 add_color.addEventListener('click', (e)=> {
     e.preventDefault()
-    board_with_color.innerHTML+= `
-     <div style="display:flex; justify-content: center; gap:20px; margin-top:10px"> 
+    if ( Number(inputR.value)<=255) {
+        
+        board_with_color.innerHTML+= `
+    <div style="display:flex; justify-content: center; gap:20px; margin-top:10px"> 
         <div style="height: 20px; width: 20px; background:rgb(${inputR.value}, ${inputG.value}, ${inputB.value});"></div>
         <div>RGB (${inputR.value}, ${inputG.value}, ${inputB.value}) </div>
      </div>`
-    inputR.value = ''
-    inputG.value = ''
-    inputB.value = ''
+     inputR.value = ''
+     inputG.value = ''
+     inputB.value = ''
+    }
+     
 })
+    
+    
+
 
 
 inputB.addEventListener('focus', ()=> {
@@ -4717,10 +4724,83 @@ inputB.addEventListener('blur', ()=> {
     inputB.style.background = ''
     console.log('Мы ушли с элемента');
 })
-    
+
 
 
 
 // .newClass {
-//     background: greenyellow;
+    //     background: greenyellow;
 //   }
+
+
+document.addEventListener('keydown', (e)=> {
+    
+    
+})
+
+
+let formWithInputs = document.querySelector('#formWithInputs') as HTMLFormElement
+
+document.addEventListener('keydown', (e:any)=> {
+    e.target.classList.remove('changeBackground')
+})
+
+
+formWithInputs.addEventListener('keyup', (e:any)=> {
+    console.log(e.key);
+    
+    e.target.classList.add('changeBackground')
+    
+    
+})
+
+
+document.addEventListener('keydown', (e:any)=> {
+    e.target.classList.remove('changeBackground')
+})
+
+
+// let accumulator = 0
+// let max =30
+// add_color.addEventListener('click', ()=> {
+    //     accumulator+=5
+    //     if (accumulator>=max) {
+        //         accumulator=max
+        //     }
+        //     console.log(accumulator)
+        //     console.log(Math.round(Math.random()*255))
+        // })
+
+
+        
+        document.addEventListener('copy', (event)=> {
+            let text = window.getSelection() + ' мы скопировали данный текст'
+            navigator.clipboard.writeText(text)
+            console.log(navigator.clipboard.writeText(text));
+    
+})
+
+console.log(navigator);
+
+
+// let numbers[]
+
+
+
+let buttonSubmit = document.querySelector('#buttonSubmit') as HTMLButtonElement
+
+buttonSubmit.addEventListener('submit', ()=> {
+    console.log('test');
+    
+})
+
+// console.log(document.getc);
+console.log(document.cookie.split(';'));
+
+console.log(document.cookie);
+
+document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent('Ivan')
+document.cookie = encodeURIComponent('name1') + '=' + encodeURIComponent('Ivan')
+document.cookie = encodeURIComponent('name2') + '=' + encodeURIComponent('Ivan')
+document.cookie = encodeURIComponent('name3') + '=' + encodeURIComponent('Ivan')
+document.cookie = encodeURIComponent('name5') + '=' + encodeURIComponent('Ivan')

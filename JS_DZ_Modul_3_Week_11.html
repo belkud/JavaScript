@@ -10,10 +10,33 @@
 </head>
 
 <body>
-  <div id="info_from_typescript" style="display: none ;">
+  <div  id="info_from_typescript" style="display: none ;">
 
   </div>
+<form id="formWithInputs" action="" style="display: flex; gap: 5px; flex-direction: column; width: 150px; padding: 10px; margin: 150px;" >
+  <input size="10"  tabindex="7" type="text">
+  <input tabindex="6" type="text">
+  <input tabindex="5" type="text">
+  <input tabindex="4" type="text">
+  <input tabindex="3" type="submit" style="
+  background-image: url(/src/public/ball.svg);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: right;
 
+  ">
+  <input tabindex="2" type="text">
+  <input tabindex="1" type="text">
+</form>
+
+<button id="buttonSubmit" style="
+background-image: url(/src/public/ball.svg);
+background-repeat: no-repeat;
+background-size: contain;
+background-position: right;
+
+
+">hjgasdfasdfdsfhj</button>
 
 
   <div id="rgb">RGB</div>
@@ -48,7 +71,7 @@
       <legend>Info</legend>
 
       <div style="color: lightgrey;">Введите номер телефона</div>
-      <input type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
+      <input  type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
       <button id="clean_number">
         <div id="button_line"></div>Очистить номер
       </button>
@@ -124,7 +147,7 @@
   <!-- JS_PZ_Modul_4_Week_13 -->
 
 
-  <input onclick="clicks()" type="text" id="write_countries" placeholder="Введите страну">
+  <input  onclick="clicks()" type="text" id="write_countries" placeholder="Введите страну">
   <div id="title_countries"></div>
   
   <script>
@@ -292,15 +315,15 @@ function clicks () {
   <div>
   <div>
     <label for="">R</label>
-    <input tabindex="3" id="inputR" type="text" maxlength="3">
+    <input id="inputR" type="text" maxlength="3">
   </div>
   <div>
     <label for="">G</label>
-    <input tabindex="2" id="inputG" type="text" maxlength="3">
+    <input id="inputG" type="text" maxlength="3">
   </div>
   <div>
     <label for="">B</label>
-    <input tabindex="1" id="inputB" type="text" maxlength="3">
+    <input id="inputB" type="text" maxlength="3">
   </div>
   </div>
   <input id="add_color" style="width: 180px; margin: 15px;" type="submit" value="Add color">
