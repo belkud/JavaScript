@@ -13,6 +13,10 @@
   <div  id="info_from_typescript" style="display: none ;">
 
   </div>
+
+
+
+
 <form id="formWithInputs" action="" style="display: flex; gap: 5px; flex-direction: column; width: 150px; padding: 10px; margin: 150px;" >
   <input size="10"  tabindex="7" type="text">
   <input tabindex="6" type="text">
@@ -28,6 +32,164 @@
   <input tabindex="2" type="text">
   <input tabindex="1" type="text">
 </form>
+
+
+<form id="info_about_user" action="">
+
+  <div class="user_info">
+    <div>
+      <label for="gender">Firstname</label>
+      <input type="text">
+    </div>
+    <div>
+      <label for="gender">Lastname</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <div class="user_info">
+    <div>
+      <label for="">Birthday</label>
+      <input type="date" style="width: 170px;">
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: flex-end; margin-left: 0px; width: 190px;">
+      <b>Gender:</b>
+      <div>
+        <input id="men" type="radio" name="gender"  value="Male">
+        <label for="men">Male</label>
+      </div>
+      <div>
+        <input id="women" type="radio" name="gender" value="Female">
+        <label for="women">Female</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="user_info">
+    <div>
+      <label for="">Country</label>
+      <input type="text">
+    </div>
+    <div>
+      <label for="">City</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <div class="user_info2">
+    <b>Skills:</b>
+    <div>
+      <input  type="checkbox">
+      <label for="">HTML</label>
+    </div>
+    <div>
+      <input type="checkbox">
+      <label for="">CSS</label>
+    </div>
+    <div>
+      <input type="checkbox">
+      <label for="">JS</label>
+    </div>
+    <div>
+      <input type="checkbox">
+      <label for="">PHP</label>
+    </div>
+    <div>
+      <input type="checkbox">
+      <label for="">C++</label>
+    </div>
+    <div>
+      <input type="checkbox">
+      <label for="">С#</label>
+    </div>
+  </div>
+<input id="form_submit" type="submit" value="Save">
+
+</form>
+
+<style>
+    #info_about_user {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 380px;
+      background-color: rgb(128, 128, 128, 0.8);
+      padding: 20px;
+    }
+
+    .user_info{
+      display: flex;
+      gap: 15px;
+    }
+    
+    .user_info>div{
+      display: flex;
+      flex-direction: column;
+    }
+    .user_info2{
+      display: flex;
+    }
+  </style>
+
+<br>
+<br>
+<br>
+
+<div>Result</div>
+
+<br>
+
+<div id="result">
+  <div>
+    <div>Firstname</div>
+    <div>Lastname</div>
+    <div>Birthday</div>
+    <div>Gender</div>
+    <div>Country</div>
+    <div>City</div>
+    <div>Skills</div>
+  </div>
+  <div id="form_result">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+  </div>
+</div>
+
+<style>
+
+  #result {
+    display: flex;
+    width: 380px;
+    background-color: rgb(128, 128, 128, 0.8);
+  }
+  #result>div>div{
+    border: 1px solid whitesmoke;
+    gap: 10px;
+    width: 188px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  </style>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
 
 <button id="buttonSubmit" style="
 background-image: url(/src/public/ball.svg);
@@ -379,7 +541,8 @@ function clicks () {
 
 
 
-  <script type="module" src="/src/main.ts"></script>
+  <!-- <script type="module" src="/src/main.ts"></script> -->
+  <script type="module" src="/src/main2.ts"></script>
 </body>
 
 </html>

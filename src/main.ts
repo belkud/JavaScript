@@ -4801,6 +4801,16 @@ console.log(document.cookie);
 
 document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent('Ivan')
 document.cookie = encodeURIComponent('name1') + '=' + encodeURIComponent('Ivan')
-document.cookie = encodeURIComponent('name2') + '=' + encodeURIComponent('Ivan')
-document.cookie = encodeURIComponent('name3') + '=' + encodeURIComponent('Ivan')
-document.cookie = encodeURIComponent('name5') + '=' + encodeURIComponent('Ivan')
+// document.cookie = encodeURIComponent('name2') + '=' + encodeURIComponent('Ivan')
+// document.cookie = encodeURIComponent('name3') + '=' + encodeURIComponent('Ivan')
+// document.cookie = encodeURIComponent('name5') + '=' + encodeURIComponent('Ivan')
+
+console.log(document.cookie);
+console.log(document.cookie);
+
+
+
+
+
+
+
