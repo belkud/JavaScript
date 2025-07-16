@@ -34,6 +34,84 @@
 </form>
 
 
+<!-- ! Задание 3 -->
+<!-- !Создать html-страницу с формой для ввода стилизованного текста. После заполнения формы, в -->
+<div id="text_from_form"></div>
+<br>
+
+<form action="">
+  <div id="form_header">
+    <input type="checkbox">
+    <label for="">Bold</label>
+    <input type="checkbox">
+    <label for="">Underline</label>
+    <input type="checkbox">
+
+    <label for="">Italics</label>
+    <input type="radio" name="font-style">
+    <label for="">Left</label>
+    <input type="radio" name="font-style">
+    <label for="">Right</label>
+    <input type="radio" name="font-style">
+    <label for="">Jusify</label>
+  </div>
+  <br>
+  <textarea name="" id="textArea" cols="55" rows="6">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi assumenda porro asperiores recusandae sint nostrum adipisci libero commodi suscipit eligendi, eum corporis, veniam error necessitatibus. Ratione vitae eligendi iste obcaecati?
+  </textarea>
+  <br>
+  <br>
+  <input id="submit_form" type="submit" style="width: 412px;" value="Отправить текст">
+</form>
+<style>
+  #text_from_form {
+    background: rgb(6, 133, 133);
+    width: 412px;
+    min-height: 50px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+  .underline {
+    text-decoration: underline;
+    }
+  .italic {
+    font-style: italic;
+  }
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: right;
+  }
+  .justify {
+    text-align: justify;
+  }
+/* 
+#textArea {
+  text-align: right;
+} */
+</style>
+
+
+
+<script>
+
+</script>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <form id="info_about_user" action="">
 
   <div class="user_info">
@@ -170,6 +248,7 @@
   #result>div>div{
     border: 1px solid whitesmoke;
     gap: 10px;
+    min-height: 19px;
     width: 188px;
     padding-top: 10px;
     padding-bottom: 10px;

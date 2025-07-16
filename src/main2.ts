@@ -1,6 +1,7 @@
 import './style.css'
 
-
+let start = new Date()
+console.log(start.getMilliseconds());
 
 
 
@@ -124,3 +125,113 @@ localStorage.setItem('11111', '22222');
 
   console.log(localStorage);
   
+
+
+  let text_from_form = document.querySelector('#text_from_form') as HTMLDivElement
+  let form_header = document.querySelectorAll('#form_header input') as any
+  let textArea = document.querySelector('#textArea') as HTMLTextAreaElement
+  let submit_form = document.querySelector('#submit_form') as HTMLInputElement
+
+  submit_form.addEventListener('click',(e)=> {
+    e.preventDefault()
+
+//     let mass = ['bold', 'underline', 'italic', 'left', 'right', 'justify']
+    
+//     text_from_form.innerHTML = textArea.value
+// for (let i = 0; i < form_header.length; i++) {
+//     if (form_header[i].checked == true) {
+//         text_from_form.classList.add(mass[i])
+//     } else {
+//         text_from_form.classList.remove(mass[i])
+//     }
+// }
+
+
+
+
+
+})
+
+
+let mass = [
+    {'font-weight' : 'bold'},
+    {'text-decoration' : 'underline'},
+    {'font-style' : 'italic'},
+    {'text-align' : 'left'},
+    {'text-align' : 'right'},
+    {'text-align' : 'justify'},
+]
+
+console.log(JSON.stringify(mass[3]).split('"').join('').split('{').join('').split('}').join(''));
+
+
+// for (let i = 0; i < mass.length; i++) {
+    
+//     text_from_form.innerHTML = `
+//     <div style="${(JSON.stringify(mass[0]).slice(2,length-2)).split('"').join('')}">${textArea.value}</div>`
+//     }
+
+
+// console.log((JSON.stringify(mass[0]).slice(2,length-2)).split('"').join(''));
+
+// console.log(document.cookie);
+textArea.value
+
+let color = JSON.stringify(mass[3]).split('"').join('').split('{').join('').split('}').join('')
+
+
+
+
+
+
+
+let newEl = document.createElement('style')
+
+
+setTimeout (()=> {
+
+    newEl.innerHTML = `#textArea {
+        text-align: right;
+        }`
+        submit_form.append(newEl)
+    },0)
+
+
+
+
+
+
+
+
+let prom = new Promise ((resolve, reject)=> {
+    console.log('promise start');
+    // adsfasdfasdfs
+    setTimeout(() => {
+        console.log('promise end');
+        resolve('выполнено')
+        reject('eeeeror')
+    }, 2500);
+    
+}).then ((data)=> {
+    console.log(data);
+}).catch((error)=> {
+    console.log(error.name);
+    console.log(error);
+    document.body.style.background = 'black'
+}).finally(()=> {
+    console.log('promise завершен');
+})
+
+
+console.log(123);
+
+
+
+
+let end = new Date()
+console.log(start.getMilliseconds());
+console.log(end.getMilliseconds());
+
+
+console.log(end.getMilliseconds() - start.getMilliseconds() + ' миллисекунд ');
+
