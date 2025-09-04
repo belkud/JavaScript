@@ -1,8 +1,29 @@
 
-Создание до страницы 
+<h2>Создание доп страницы</h2>
+
+В терминале пишем:
 ```
 npm i path
 ```
+
+В файле vite.config.ts пишем:
+
+import { resolve } from "path";
+
+export default {
+    base: '/Название проекта/',
+    build: {
+      rollupOptions: {
+        input: {
+          // @ts-ignore
+          main: resolve(__dirname, 'index.html'),
+          // @ts-ignore
+          chat: resolve(__dirname, '(название файла).html'),
+        }
+      }
+    }
+  }
+
 
 
 Проверка версии Node.JS  
