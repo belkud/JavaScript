@@ -8,6 +8,7 @@ npm i path
 
 В файле vite.config.ts пишем:
 
+```
 import { resolve } from "path";
 
 export default {
@@ -18,12 +19,12 @@ export default {
           // @ts-ignore
           main: resolve(__dirname, 'index.html'),
           // @ts-ignore
-          chat: resolve(__dirname, '(название файла).html'),
+          (название файла БЕЗ разширения): resolve(__dirname, '(название файла).html'),
         }
       }
     }
   }
-
+```
 
 
 Проверка версии Node.JS  
